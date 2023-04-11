@@ -1,0 +1,12 @@
+
+> react-typescript-starter@0.1.0 test
+> react-scripts test --coverage
+
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In /home/runner/work/final-project-starter/final-project-starter
+  4 files checked.
+  testMatch: /home/runner/work/final-project-starter/final-project-starter/src/**/__tests__/**/*.{js,jsx,ts,tsx}, /home/runner/work/final-project-starter/final-project-starter/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+  testPathIgnorePatterns: /node_modules/ - 4 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
