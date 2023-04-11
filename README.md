@@ -1,20 +1,16 @@
-# 275 Final Project Starter Repo
-Hello! This repository has been pre-configured with eslint and gh-pages to automatically deploy your app when you push to the main branch. 
+# Team16
 
-You will, however, need to finish setting up the deployment.
+## How to run locally
 
-## Setting Up the Deployment
+- Checkout code: `git clone https://github.com/talhaMahmood1992/Team16.git`
+- Install dependencies: `npm install`
+- Run Server: `npm run start`
 
-### 1. Generate a personal access token
-Click on your picture -> settings in the top right of Github. Then, scroll to "Developer Settings" and click "Personal access tokens." Generate a new token with "repo" access and no expiration date. Make sure you copy the created token as you will not be able to see it after this.
+## Personas
 
-### 2. Add a secret to the forked repo
-Go to settings -> secrets and click "New repository secret." Name the secret "GH_TOKEN" and paste in the value you copied in the previous step. 
-
-### 3. Test your deployment
-
-Make a change in `src/App.tsx`. Commit and push the change to the main branch and see if your deployment was successful. 
-
-In the future, you will no longer need to use the `npm run deploy` command - you just need to have a successful push to the `main` branch and it'll automatically deploy!
-
-All your teammates will additionally need to make feature branches to add your names to the site, merging them as Pull Requests to main. Follow the instructions in the Canvas Assignment for more details.
+| Persona      | Who are they? | What is their main goal? | What is their main barrier to achieving this goal? |
+| -----------  | ------------- | ------------------------ | -------------------------------------------------- |
+| Karen        | 70 years old, retired & married | To find TV shows from her youth, and see how they have ages | Has hard time navigating websites and using technology |
+| Jorge        | 16 years old, High School Student | to see how other people rate his favorite shows and to argue with others about their ratings | Has hard time finding what others have to say about his favorite TV shows, and would like more sociability |
+| Alice        | 25 years old, recently graduated from college & new in the workforce | To find new good dhows to watch after getting home from work | Has hard time finding shows that are good |
+| Bobby        | 14 years old, Middle School student | To find TV shows that are well known and liked by the public | Has hard time finding good TV shows by own |
