@@ -9,12 +9,15 @@ import { MyListsPage } from "./Pages/MyListsPage";
 function App(): JSX.Element {
     return (
         <div>
+            <p>Header will go here</p>
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/friends" element={<FriendsPage />} />
-                <Route path="/mylists" element={<MyListsPage />} />
-                <Route path="/addMedia" element={<AddMediaPage />} />
-                <Route path="/browseMedia" element={<BrowseMedia />} />
+                <Route path="https://talhamahmood1992.github.io/final-project-starter/">
+                    <Route index element={<HomePage />} />
+                    <Route path="friends" element={<FriendsPage />} />
+                    <Route path="mylists" element={<MyListsPage />} />
+                    <Route path="addMedia" element={<AddMediaPage />} />
+                    <Route path="browseMedia" element={<BrowseMedia />} />
+                </Route>
             </Routes>
         </div>
     );
