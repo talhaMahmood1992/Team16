@@ -1,0 +1,111 @@
+.icon {
+    display: inline-block;
+
+    transition: all 300ms;
+}
+
+.active_icon > .icon {
+    transform: rotate(-90deg);
+}
+
+.active_icon.menu_trigger {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 3px var(--primary);
+    color: var(--primary);
+}
+
+.menu_trigger {
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0.1rem;
+    width: 18rem;
+    background-color: var(--primary);
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--grey-2);
+    font-weight: 500;
+    cursor: pointer;
+
+    padding: 0.5rem 0;
+
+    transition: all 300ms;
+}
+
+.menu_trigger:hover {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 3px var(--primary);
+    color: var(--primary);
+}
+
+.menu_trigger:hover > .icon {
+    transform: rotate(-90deg);
+}
+
+.dropdown_wrapper {
+    position: relative;
+}
+
+.dropdown_menu {
+    position: relative;
+    top: calc(100%);
+    left: 1;
+    background-color: var(--tint-1);
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+    padding: 0;
+    width: 18rem;
+}
+
+.dropdown_menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 400ms ease;
+}
+
+.dropdown_menu.inactive {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 400ms ease;
+}
+
+.dropdown_menu a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--grey-2);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+
+    transition: all 300ms;
+}
+
+.dropdown_menu a:hover {
+    background-color: var(--tint-2);
+    color: var(--grey-2);
+}
+
+.dropdown_menu a:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.dropdownItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.dropdownItem a {
+    max-width: 10rem;
+    margin-left: 10px;
+    transition: 500ms;
+}

@@ -1,0 +1,22 @@
+.not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 9.6rem);
+    background-color: var(--primary);
+}
+
+.not_found img {
+    width: 60%;
+    padding: 1.5rem 0;
+}
+
+.not_found_text {
+    font-size: 3rem;
+}
+
+.redirecting {
+    font-size: 2rem;
+}

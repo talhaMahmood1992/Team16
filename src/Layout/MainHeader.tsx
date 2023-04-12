@@ -3,13 +3,26 @@ import { NavLink } from "react-router-dom";
 import classes from "./MainHeader.module.css";
 import { MainNavigation } from "./MainNavigation";
 
-export const MainHeader = (): JSX.Element => {
+type Role = "Default" | "Admin" | "Super";
+
+interface MainHeaderProps {
+    showSettingsHandler: () => void;
+    role: Role;
+}
+
+export const MainHeader = ({
+    showSettingsHandler,
+    role
+}: MainHeaderProps): JSX.Element => {
     return (
         <header className={classes.header}>
             <NavLink to="/" className={classes.logo}>
                 PROJECTX
             </NavLink>
-            <MainNavigation />
+            <MainNavigation
+                showSettingsHandler={showSettingsHandler}
+                role={role}
+            />
         </header>
     );
 };

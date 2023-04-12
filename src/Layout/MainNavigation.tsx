@@ -6,16 +6,31 @@ import { IoSearchCircleSharp } from "react-icons/io5";
 
 import classes from "./MainNavigation.module.css";
 
-export const MainNavigation = (): JSX.Element => {
+type Role = "Default" | "Admin" | "Super";
+
+interface MainNavigationProps {
+    showSettingsHandler: () => void;
+    role: Role;
+}
+
+export const MainNavigation = ({
+    showSettingsHandler,
+    role
+}: MainNavigationProps): JSX.Element => {
     return (
         <nav>
             <ul className={classes.main_nav_list}>
-                <li>
-                    <NavLink to="/addMedia" className={classes.main_nav_link}>
-                        <IoSearchCircleSharp className={classes.icon} />
-                        <span>Add Media</span>
-                    </NavLink>
-                </li>
+                {role === "Admin" && (
+                    <li>
+                        <NavLink
+                            to="/addMedia"
+                            className={classes.main_nav_link}
+                        >
+                            <IoSearchCircleSharp className={classes.icon} />
+                            <span>Add Media</span>
+                        </NavLink>
+                    </li>
+                )}
 
                 <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>
@@ -30,9 +45,12 @@ export const MainNavigation = (): JSX.Element => {
                     </NavLink>
                 </li>
                 <li>
-                    <button className={classes.role_button}>
+                    <button
+                        className={classes.role_button}
+                        onClick={showSettingsHandler}
+                    >
                         <IoMdSettings className={classes.icon} />{" "}
-                        <span>Default</span>
+                        <span>{role}</span>
                     </button>
                 </li>
             </ul>

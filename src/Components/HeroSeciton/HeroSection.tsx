@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { ActiveUsers } from "./ActiveUsers";
 import classes from "./HeroSection.module.css";
 
@@ -16,9 +17,11 @@ export const HeroSection = (): JSX.Element => {
                         friends and family online
                     </p>
                     <div className={classes.action_buttons}>
-                        <button className={classes.browse_media_button}>
-                            Browse Media
-                        </button>
+                        <NavLink to="/browseMedia">
+                            <button className={classes.browse_media_button}>
+                                Browse Media
+                            </button>
+                        </NavLink>
                         <button className={classes.learn_more_button}>
                             Learn more &darr;
                         </button>
