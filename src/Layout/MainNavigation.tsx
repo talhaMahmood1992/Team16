@@ -12,27 +12,28 @@ export const MainNavigation = (): JSX.Element => {
             <ul className={classes.main_nav_list}>
                 <li>
                     <NavLink to="/addMedia" className={classes.main_nav_link}>
-                        <IoSearchCircleSharp /> Add Media
+                        <IoSearchCircleSharp className={classes.icon} />
+                        <span>Add Media</span>
                     </NavLink>
                 </li>
 
                 <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>
-                        <FaUserFriends /> Friends
+                        <FaUserFriends className={classes.icon} />
+                        <span>Friends</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/mylists" className={classes.main_nav_link}>
-                        <FaStar /> My Lists
+                        <FaStar className={classes.icon} />
+                        <span>My Lists</span>
                     </NavLink>
                 </li>
                 <li>
-                    <a
-                        href="#"
-                        className={`${classes.main_nav_link} ${classes.nav_cta}`}
-                    >
-                        <IoMdSettings /> Default
-                    </a>
+                    <button className={classes.role_button}>
+                        <IoMdSettings className={classes.icon} />{" "}
+                        <span>Default</span>
+                    </button>
                 </li>
             </ul>
         </nav>
