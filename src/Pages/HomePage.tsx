@@ -1,9 +1,6 @@
 import React from "react";
+import { HeroSection } from "../Components/HeroSeciton/HeroSection";
 
 export const HomePage = (): JSX.Element => {
-    return (
-        <div>
-            <p>This is HomePage</p>
-        </div>
-    );
+    return <HeroSection />;
 };

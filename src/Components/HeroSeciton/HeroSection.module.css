@@ -1,0 +1,71 @@
+.section_hero {
+    background-color: var(--primary);
+    padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 9.6rem;
+}
+
+.hero_description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+}
+
+.hero_img img {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+
+    pointer-events: none;
+}
+
+.action_buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.browse_media_button,
+.learn_more_button {
+    gap: 0.5rem;
+
+    padding: 1.6rem 3.2rem;
+    font-weight: 600;
+    font-size: 2rem;
+    width: 20rem;
+    height: 6.5rem;
+
+    border-radius: 0.9rem;
+    border: none;
+
+    transition: all 300ms;
+}
+
+.browse_media_button {
+    color: white;
+    background-color: var(--grey-2);
+}
+
+.learn_more_button {
+    color: var(--grey-2);
+    background-color: white;
+}
+
+.browse_media_button:hover {
+    color: var(--grey-2);
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.4rem var(--grey-2);
+}
+
+.learn_more_button:hover {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.4rem white;
+}
