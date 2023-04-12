@@ -28,7 +28,8 @@ const ModalOverlay = ({
     return <div className={`${classes.modal} ${className}`}>{children}</div>;
 };
 
-const portalElement: HTMLElement = document.getElementById("overlays")!;
+const portalElement: HTMLElement =
+    document.getElementById("overlays")!; /* eslint-disable-line */
 
 const Modal = ({
     className,
