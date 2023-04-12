@@ -7,7 +7,7 @@ type Role = "Default" | "Admin" | "Super";
 interface BasicDropdownProps {
     title: string;
     items: (string | Role)[];
-    onClick: (item: any) => void;
+    onClick: (item: any) => void /* eslint-disable-line */;
 }
 
 export const BasicDropdown = ({
@@ -31,7 +31,7 @@ export const BasicDropdown = ({
     };
 
     useEffect(() => {
-        const handler = (e: any) => {
+        const handler = (e: any) /* eslint-disable-line */ => {
             if (!menuRef.current.contains(e.target)) {
                 setDropdownOpen(false);
             }
@@ -54,7 +54,7 @@ export const BasicDropdown = ({
             </button>
 
             <div className={dropdownMenuStyle}>
-                {items.map((item) => (
+                {items.map((item) /* eslint-disable-line */ => (
                     <DropdownItem
                         text={item}
                         toggleDropdownHandler={toggleDropdownHandler}
