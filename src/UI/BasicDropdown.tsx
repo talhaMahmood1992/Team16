@@ -1,10 +1,4 @@
-import React, {
-    MutableRefObject,
-    SyntheticEvent,
-    useEffect,
-    useRef,
-    useState
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classes from "./BasicDropdown.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 

@@ -20,7 +20,7 @@ export const MainNavigation = ({
     return (
         <nav>
             <ul className={classes.main_nav_list}>
-                {role === "Admin" && (
+                {role === "Admin" /* eslint-disable-line */ && (
                     <li>
                         <NavLink
                             to="/addMedia"

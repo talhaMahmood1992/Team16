@@ -241,7 +241,7 @@ function App(): JSX.Element {
         <div>
             <MainHeader showSettingsHandler={showSettingsHandler} role={role} />
 
-            {settingsIsShown && (
+            {settingsIsShown /* eslint-disable-line */ && (
                 <Settings
                     hideSettingsHandler={hideSettingsHandler}
                     role={role}
