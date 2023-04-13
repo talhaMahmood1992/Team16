@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/final-project-starter/static/css/main.efce3fdd.css",
+    "main.css": "/final-project-starter/static/css/main.186ae146.css",
     "main.js": "/final-project-starter/static/js/main.f4286b62.js",
     "static/js/787.4ef7427d.chunk.js": "/final-project-starter/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/final-project-starter/static/media/hero-img.57463f0c952b507daf45.png",
@@ -36,12 +36,12 @@
     "static/media/shameless.jpg": "/final-project-starter/static/media/shameless.7b5e79f4bb31e0319d7e.jpg",
     "static/media/where_the_crawdads_sing.jpg": "/final-project-starter/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
     "index.html": "/final-project-starter/index.html",
-    "main.efce3fdd.css.map": "/final-project-starter/static/css/main.efce3fdd.css.map",
+    "main.186ae146.css.map": "/final-project-starter/static/css/main.186ae146.css.map",
     "main.f4286b62.js.map": "/final-project-starter/static/js/main.f4286b62.js.map",
     "787.4ef7427d.chunk.js.map": "/final-project-starter/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efce3fdd.css",
+    "static/css/main.186ae146.css",
     "static/js/main.f4286b62.js"
   ]
 }
