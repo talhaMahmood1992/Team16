@@ -10,13 +10,23 @@
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    gap: 9.6rem;
+    gap: 3rem;
 }
 
 .hero_description {
     font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 4.8rem;
+}
+
+.hero_text {
+    padding-right: 3rem;
+}
+
+.hero_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero_img img {
