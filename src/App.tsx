@@ -8,7 +8,7 @@ import { HomePage } from "./Pages/HomePage";
 import { MyListsPage } from "./Pages/MyListsPage";
 import { NotFound } from "./Pages/NotFound";
 import { nanoid } from "nanoid";
-
+import { BrowseMedia } from "./Pages/BrowseMedia";
 export const mediaData = [
     {
         title: "The Hunger Games",
@@ -286,6 +286,7 @@ function App(): JSX.Element {
                     path="/addMedia"
                     element={<AddMediaPage role={role} />}
                 />
+                <Route path="/browseMedia" element={<BrowseMedia />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
         </div>
