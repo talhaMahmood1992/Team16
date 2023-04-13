@@ -7,7 +7,7 @@ export const HeroSection = (): JSX.Element => {
     return (
         <section className={classes.section_hero}>
             <div className={classes.hero}>
-                <div>
+                <div className={classes.hero_text}>
                     <h1 className="heading-primary">
                         All the latest Movies, Shows and Documentaries
                     </h1>
