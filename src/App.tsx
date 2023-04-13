@@ -257,7 +257,7 @@ type Role = "Default" | "Admin" | "Super";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
-    const [media, setMedia] = useState(mediaData);
+    //const [media, setMedia] = useState(mediaData);
 
     const showSettingsHandler = (): void => {
         setSettingsIsShown(true);
