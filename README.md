@@ -2,7 +2,7 @@
 
 ## How to run locally
 
-- Checkout code: `git clone https://github.com/talhaMahmood1992/Team16.git`
+- Checkout code: `git clone https://github.com/talhaMahmood1992/final-project-starter.git`
 - Install dependencies: `npm install`
 - Run Server: `npm run start`
 
