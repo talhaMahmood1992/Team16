@@ -15,12 +15,16 @@
     color: #fff;
 }
 .header {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary);
 
     /* Because we want the header to be fixed later */
+    top: 0;
+    left: 0;
     height: 9.6rem;
     padding: 0 4.8rem;
+    z-index: 10;
 }
