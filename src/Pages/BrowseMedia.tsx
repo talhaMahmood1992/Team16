@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import React from "react";
 import { mediaData } from "../MediaData";
-
+import classes from "../Components/HeroSeciton/HeroSection.module.css";
 const mediaToElement = (media: {
     title: string;
     type: string;
@@ -14,7 +14,10 @@ const mediaToElement = (media: {
         <div>
             <Card
                 border="dark"
-                style={{ margin: "20px auto", width: "50%" }}
+                style={{
+                    margin: "20px auto",
+                    width: "50%"
+                }}
                 id={media.movieId}
             >
                 <Card.Img
@@ -29,13 +32,17 @@ const mediaToElement = (media: {
                     }}
                 />
                 <Card.Body>
-                    {"Name: " + media.title}
+                    <h1 className="card-title">
+                        <p>{"Name: " + media.title}</p>
+                    </h1>
+                    <h5 className="card-title">
+                        {"Type: " + media.type}
+                        <br />
+                        {"Released: " + media.yearReleased}
+                        <br />
+                        {"Rated " + media.rating + " / 5"}
+                    </h5>
                     <br />
-                    {"Type: " + media.type}
-                    <br />
-                    {"Released: " + media.yearReleased}
-                    <br />
-                    {"Rated " + media.rating + " / 5"}
                 </Card.Body>
             </Card>
         </div>
@@ -44,20 +51,24 @@ const mediaToElement = (media: {
 
 export const BrowseMedia = (): JSX.Element => {
     return (
-        <div className="HeroSection_section_hero__bCGwu">
-            <h1 style={{ textAlign: "center" }}>Browse Media</h1>
-            <div>
-                {mediaData.map(
-                    (media: {
-                        title: string;
-                        type: string;
-                        yearReleased: number;
-                        rating: number;
-                        movieId: string;
-                        image: string;
-                    }): JSX.Element => mediaToElement(media)
-                )}
+        <section className={classes.section_hero}>
+            <div className="HeroSection_section_hero__bCGwu">
+                <h1 style={{ textAlign: "center" }} className="heading-primary">
+                    Browse Media
+                </h1>
+                <div>
+                    {mediaData.map(
+                        (media: {
+                            title: string;
+                            type: string;
+                            yearReleased: number;
+                            rating: number;
+                            movieId: string;
+                            image: string;
+                        }): JSX.Element => mediaToElement(media)
+                    )}
+                </div>
             </div>
-        </div>
+        </section>
     );
 };

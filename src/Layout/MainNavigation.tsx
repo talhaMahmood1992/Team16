@@ -41,7 +41,7 @@ export const MainNavigation = ({
                 <li>
                     <NavLink to="/mylists" className={classes.main_nav_link}>
                         <FaStar className={classes.icon} />
-                        <span>My Lists</span>
+                        <span>Favorites</span>
                     </NavLink>
                 </li>
                 <li>
