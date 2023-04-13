@@ -1,6 +1,19 @@
 import { nanoid } from "nanoid";
 
-export const mediaData = [
+export interface Media {
+    title: string;
+    type: string;
+    yearReleased: number;
+    rating: number;
+    image: string;
+    movieId: string;
+}
+
+export interface PersonalMedia extends Media {
+    review: string;
+}
+
+export const mediaData: Media[] = [
     {
         title: "The Hunger Games",
         type: "Movie",
