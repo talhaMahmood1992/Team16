@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import React from "react";
-import { mediaData } from "../App";
+import { mediaData } from "../MediaData";
 
 const mediaToElement = (media: {
     title: string;
@@ -29,7 +29,9 @@ const mediaToElement = (media: {
                     }}
                 />
                 <Card.Body>
-                    {"Name: " + media.title + " (" + media.type + ")"}
+                    {"Name: " + media.title}
+                    <br />
+                    {"Type: " + media.type}
                     <br />
                     {"Released: " + media.yearReleased}
                     <br />
