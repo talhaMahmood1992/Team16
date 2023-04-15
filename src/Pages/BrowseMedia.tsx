@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import React from "react";
 import { mediaData } from "../MediaData";
 import classes from "../Components/HeroSeciton/HeroSection.module.css";
+import { Slider } from "../Components/Slider/Slider";
 const mediaToElement = (media: {
     title: string;
     type: string;
@@ -56,6 +57,7 @@ export const BrowseMedia = (): JSX.Element => {
                 <h1 style={{ textAlign: "center" }} className="heading-primary">
                     Browse Media
                 </h1>
+                <Slider />
                 <div>
                     {mediaData.map(
                         (media: {

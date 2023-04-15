@@ -172,3 +172,44 @@ body {
 strong {
     font-weight: 500;
 }
+
+/* SLIDER STYLES */
+
+.swiper-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    color: black;
+    background-color: var(--primary);
+    border-radius: 100%;
+    border: 0.3rem solid transparent;
+
+    transition: all 300ms;
+}
+
+.swiper-button:hover {
+    border: 0.3rem solid var(--primary);
+    color: var(--primary);
+    background-color: white;
+}
+
+.swiper-button svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.swiper-button-next-unique {
+    right: 20%;
+}
+
+.swiper-button-prev-unique {
+    left: 20%;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary) !important;
+}
+.swiper-pagination-bullet {
+    border: 0.8rem solid var(--primary) !important;
+    background-color: var(--primary) !important;
+}
