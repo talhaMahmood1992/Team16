@@ -35,6 +35,13 @@
     height: 90%;
     padding-left: 0;
 
+    /* so image can't be highlighted */
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
     pointer-events: none;
 }
 
