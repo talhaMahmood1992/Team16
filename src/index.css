@@ -87,6 +87,10 @@ body {
     color: var(--grey-1);
 }
 
+.page {
+    background-color: var(--primary);
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -194,16 +198,16 @@ strong {
 }
 
 .swiper-button svg {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .swiper-button-next-unique {
-    right: 20%;
+    right: 25%;
 }
 
 .swiper-button-prev-unique {
-    left: 20%;
+    left: 25%;
 }
 
 .swiper-pagination-bullet-active {
