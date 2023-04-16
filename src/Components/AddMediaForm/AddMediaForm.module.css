@@ -1,0 +1,80 @@
+.form_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--grey-1);
+    padding: 8rem 0;
+}
+
+.form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form p {
+    display: inline-block;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: red;
+}
+
+.form input,
+.form select {
+    padding: 1rem 0.5rem;
+    background-color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: 0.2rem solid white;
+    border-radius: 0.4rem;
+}
+
+.form input[type="number"]::-webkit-inner-spin-button,
+.form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form input:focus,
+.form select:focus {
+    outline: none;
+}
+
+.form label {
+    font-weight: 500;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.image_holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey-4);
+    border-radius: 1rem;
+    width: 22%;
+}
+
+.image_holder img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image_goes_here {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.image_goes_here svg {
+    font-size: 5rem;
+
+    transition: all 300ms;
+}
+
+.image_goes_here svg:hover {
+    color: var(--primary);
+}
