@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/final-project-starter/static/css/main.806c1ec3.css",
-    "main.js": "/final-project-starter/static/js/main.9e8a33dc.js",
+    "main.css": "/final-project-starter/static/css/main.0be78910.css",
+    "main.js": "/final-project-starter/static/js/main.ec76f998.js",
     "static/js/787.4ef7427d.chunk.js": "/final-project-starter/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/final-project-starter/static/media/hero-img.57463f0c952b507daf45.png",
     "static/media/not-found.png": "/final-project-starter/static/media/not-found.4380ec89f0806b86f75e.png",
@@ -36,12 +36,12 @@
     "static/media/shameless.jpg": "/final-project-starter/static/media/shameless.7b5e79f4bb31e0319d7e.jpg",
     "static/media/where_the_crawdads_sing.jpg": "/final-project-starter/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
     "index.html": "/final-project-starter/index.html",
-    "main.806c1ec3.css.map": "/final-project-starter/static/css/main.806c1ec3.css.map",
-    "main.9e8a33dc.js.map": "/final-project-starter/static/js/main.9e8a33dc.js.map",
+    "main.0be78910.css.map": "/final-project-starter/static/css/main.0be78910.css.map",
+    "main.ec76f998.js.map": "/final-project-starter/static/js/main.ec76f998.js.map",
     "787.4ef7427d.chunk.js.map": "/final-project-starter/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.806c1ec3.css",
-    "static/js/main.9e8a33dc.js"
+    "static/css/main.0be78910.css",
+    "static/js/main.ec76f998.js"
   ]
 }
