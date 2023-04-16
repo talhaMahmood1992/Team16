@@ -1,6 +1,9 @@
 .section_hero {
     background-color: var(--primary);
     padding: 1rem 0 9.6rem 0;
+    height: calc(100vh - 9.6rem);
+    width: 100%;
+    display: flex;
 }
 
 .hero {

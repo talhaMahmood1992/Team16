@@ -16,14 +16,21 @@
 }
 
 .slider {
-    width: 50%;
-    height: 70%;
+    width: 40%;
     margin-bottom: 3rem;
 }
 
+.swiper_slide {
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .slider_img {
-    height: 100%;
-    width: 100%;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
     border: 0.2rem solid transparent;
 
     /* so image can't be highlighted */

@@ -29,73 +29,73 @@ export const Slider = (): JSX.Element => {
                     }}
                     pagination={{ clickable: true }}
                 >
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/21_jump_street.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/black_mirror.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/breaking_bad.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/friends.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/game_of_thrones.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/gilmore_girls.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/hidden_figures.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/icarly.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/lawrence_of_arabia.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/mad_men.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/modern_family.jpg")}
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
                             src={require("../../imgs/media-covers/my_neighbor_totoro.jpg")}
