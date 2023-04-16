@@ -2,7 +2,6 @@ import Card from "react-bootstrap/Card";
 import React from "react";
 import { mediaData } from "../MediaData";
 import classes from "../Components/HeroSeciton/HeroSection.module.css";
-import MediaFeature from "../Components/MediaRatting";
 import { SearchBar } from "../Components/Search";
 const mediaToElement = (media: {
     title: string;
@@ -42,7 +41,7 @@ const mediaToElement = (media: {
                         <br />
                         {"Released: " + media.yearReleased}
                         <br />
-                        <MediaFeature></MediaFeature>
+                        {"Rated " + media.rating + " / 5"}
                     </h5>
                     <br />
                 </Card.Body>

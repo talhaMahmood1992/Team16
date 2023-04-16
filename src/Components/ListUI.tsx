@@ -1,7 +1,9 @@
 import Card from "react-bootstrap/Card";
 import React from "react";
 //import { mediaData } from "../MediaData";
+//import MediaFeature from "../Components/MediaRatting";
 import { Media } from "../MediaData";
+import RatingFeature from "../Components/MediaRatting";
 const mediaToElement = (media: {
     title: string;
     type: string;
@@ -40,7 +42,7 @@ const mediaToElement = (media: {
                         <br />
                         {"Released: " + media.yearReleased}
                         <br />
-                        {"Rated " + media.rating + " / 5"}
+                        <RatingFeature></RatingFeature>
                     </h5>
                     <br />
                 </Card.Body>
