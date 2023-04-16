@@ -53,9 +53,7 @@ export const BrowseMedia = (): JSX.Element => {
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
-                <h1 style={{ textAlign: "center" }} className="heading-primary">
-                    Browse Media
-                </h1>
+                <h2 className="heading-secondary">Browse Media</h2>
                 <Slider />
                 <div>
                     {mediaData.map(

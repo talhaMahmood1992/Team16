@@ -3,9 +3,7 @@ import React from "react";
 export const MyListsPage = (): JSX.Element => {
     return (
         <section className="page">
-            <h1 style={{ textAlign: "center" }} className="heading-primary">
-                My Favorites
-            </h1>
+            <h2 className="heading-secondary">My Favorites</h2>
         </section>
     );
 };

@@ -108,13 +108,15 @@ body {
 .heading-secondary {
     font-size: 4.4rem;
     line-height: 1.2;
-    margin-bottom: 9.6rem;
+    text-align: center;
+    background-color: var(--primary);
+    padding: 0 0 1rem 0;
+    margin: 0;
 }
 
 .heading-tertiary {
     font-size: 3rem;
     line-height: 1.2;
-    margin-bottom: 3.2rem;
 }
 
 .btn:link,
@@ -208,12 +210,4 @@ strong {
 
 .swiper-button-prev-unique {
     left: 25%;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--primary) !important;
-}
-.swiper-pagination-bullet {
-    border: 0.8rem solid var(--primary) !important;
-    background-color: var(--primary) !important;
 }

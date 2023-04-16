@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { AddMediaForm } from "../Components/AddMediaForm/AddMediaForm";
 
 type Role = "Default" | "Admin" | "Super";
 
@@ -15,8 +16,9 @@ export const AddMediaPage = ({ role }: AddMediaPageProps): JSX.Element => {
         }
     }, [role]);
     return (
-        <div>
-            <p>This is AddMediaPage</p>
-        </div>
+        <>
+            <h2 className="heading-secondary">Add Media</h2>
+            <AddMediaForm />
+        </>
     );
 };

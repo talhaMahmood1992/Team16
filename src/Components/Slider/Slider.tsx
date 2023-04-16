@@ -1,10 +1,9 @@
 import React from "react";
 import classes from "./Slider.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper";
+import { Navigation, A11y } from "swiper";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "swiper/css";
-import "swiper/css/pagination";
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 export const Slider = (): JSX.Element => {
@@ -19,7 +18,7 @@ export const Slider = (): JSX.Element => {
             </div>
             <div className={classes.slider}>
                 <Swiper
-                    modules={[Navigation, Pagination, A11y]}
+                    modules={[Navigation, A11y]}
                     spaceBetween={0}
                     slidesPerView={3}
                     navigation={{
@@ -27,7 +26,6 @@ export const Slider = (): JSX.Element => {
                         prevEl: ".swiper-button-prev-unique",
                         disabledClass: "swiper-button-disabled"
                     }}
-                    pagination={{ clickable: true }}
                 >
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
@@ -102,7 +100,6 @@ export const Slider = (): JSX.Element => {
                         />
                     </SwiperSlide>
                 </Swiper>
-                <div className={classes.pagination} />
             </div>
         </div>
     );
