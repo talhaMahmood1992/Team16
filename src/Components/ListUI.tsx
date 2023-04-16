@@ -1,9 +1,7 @@
 import Card from "react-bootstrap/Card";
 import React from "react";
-import { mediaData } from "../MediaData";
-import classes from "../Components/HeroSeciton/HeroSection.module.css";
-import MediaFeature from "../Components/MediaRatting";
-import { SearchBar } from "../Components/Search";
+//import { mediaData } from "../MediaData";
+import { Media } from "../MediaData";
 const mediaToElement = (media: {
     title: string;
     type: string;
@@ -42,7 +40,7 @@ const mediaToElement = (media: {
                         <br />
                         {"Released: " + media.yearReleased}
                         <br />
-                        <MediaFeature></MediaFeature>
+                        {"Rated " + media.rating + " / 5"}
                     </h5>
                     <br />
                 </Card.Body>
@@ -51,15 +49,25 @@ const mediaToElement = (media: {
     );
 };
 
-export const BrowseMedia = (): JSX.Element => {
+export default function BrowseMedia({
+    MediaData
+}: {
+    MediaData: Media[];
+}): JSX.Element {
+    const mediaList = MediaData.map((Media) => {
+        return {
+            ...Media
+        };
+    });
+
     return (
-        <section className={classes.section_hero}>
+        <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
                 <h1 style={{ textAlign: "center" }} className="heading-primary">
                     Browse Media
                 </h1>
                 <div>
-                    {mediaData.map(
+                    {mediaList.map(
                         (media: {
                             title: string;
                             type: string;
@@ -71,8 +79,6 @@ export const BrowseMedia = (): JSX.Element => {
                     )}
                 </div>
             </div>
-            <SearchBar></SearchBar>
-            <br></br>
         </section>
     );
-};
+}
