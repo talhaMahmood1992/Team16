@@ -1,17 +1,31 @@
 {
   "files": {
     "main.css": "/final-project-starter/static/css/main.27b5d857.css",
-    "main.js": "/final-project-starter/static/js/main.904eaa0d.js",
+    "main.js": "/final-project-starter/static/js/main.52b06b2f.js",
     "static/js/787.4ef7427d.chunk.js": "/final-project-starter/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/final-project-starter/static/media/hero-img.57463f0c952b507daf45.png",
     "static/media/not-found.png": "/final-project-starter/static/media/not-found.4380ec89f0806b86f75e.png",
+    "static/media/The_Batman.jpg": "/final-project-starter/static/media/The_Batman.693a07e5ea16a5518d4f.jpg",
+    "static/media/Iron_Man2.jpg": "/final-project-starter/static/media/Iron_Man2.2c64b74b30a849c7cb21.jpg",
+    "static/media/house_of_dragon.jpg": "/final-project-starter/static/media/house_of_dragon.68252203dd8181f1a2ad.jpg",
+    "static/media/Spider_Man.jpg": "/final-project-starter/static/media/Spider_Man.72e8a6a6d9aa5c9c4031.jpg",
+    "static/media/Sipder_Man2.jpg": "/final-project-starter/static/media/Sipder_Man2.60f72ed9189888e7690f.jpg",
+    "static/media/Iron_Man3.jpg": "/final-project-starter/static/media/Iron_Man3.22b11d268a440cb28089.jpg",
+    "static/media/Joker.jpg": "/final-project-starter/static/media/Joker.e715ddc7934d25f6f883.jpg",
+    "static/media/BatMan_Begins.jpg": "/final-project-starter/static/media/BatMan_Begins.5c56ddcc2b36b2fad6a1.jpg",
+    "static/media/The_Dark_Knight.jpg": "/final-project-starter/static/media/The_Dark_Knight.fc950b5e5098ebbfae7d.jpg",
+    "static/media/The_Dark_Knight_Rises.jpg": "/final-project-starter/static/media/The_Dark_Knight_Rises.92b2e09a6752e2aa2102.jpg",
+    "static/media/The_Godfather.jpg": "/final-project-starter/static/media/The_Godfather.46c5bf54ba6255027658.jpg",
+    "static/media/better_call_saul.jpg": "/final-project-starter/static/media/better_call_saul.505b997ce1380b9d0727.jpg",
     "static/media/stranger_things.jpg": "/final-project-starter/static/media/stranger_things.4a48021e49bd81152725.jpg",
     "static/media/mad_men.jpg": "/final-project-starter/static/media/mad_men.0c32e81cab9f5acf2609.jpg",
+    "static/media/The_Prestige.jpg": "/final-project-starter/static/media/The_Prestige.8cf4551d78a334dfdd83.jpg",
     "static/media/new_girl.jpg": "/final-project-starter/static/media/new_girl.b054c26aa175f4263bc0.jpg",
     "static/media/the_maze_runner.jpg": "/final-project-starter/static/media/the_maze_runner.2ac1d0b0a8e41501d8be.jpg",
     "static/media/my_neighbor_totoro.jpg": "/final-project-starter/static/media/my_neighbor_totoro.fd77d24ed73aabbe0e3e.jpg",
     "static/media/lawrence_of_arabia.jpg": "/final-project-starter/static/media/lawrence_of_arabia.3be9430ebfed6e0fdd2c.jpg",
     "static/media/titanic.jpg": "/final-project-starter/static/media/titanic.de866b3666bdbd04dedc.jpg",
+    "static/media/Spider_Man3.jpg": "/final-project-starter/static/media/Spider_Man3.e7844ce925d7f2107101.jpg",
     "static/media/the_office.jpg": "/final-project-starter/static/media/the_office.f0bcb3e31e6bd226b600.jpg",
     "static/media/black_mirror.jpg": "/final-project-starter/static/media/black_mirror.1917ed5fe9c9c6f17a75.jpg",
     "static/media/the_hunger_games.jpg": "/final-project-starter/static/media/the_hunger_games.9ba0b55894c8569ab00e.jpg",
@@ -32,16 +46,17 @@
     "static/media/game_of_thrones.jpg": "/final-project-starter/static/media/game_of_thrones.c414efac709d2b3fba9d.jpg",
     "static/media/shutter_island.jpg": "/final-project-starter/static/media/shutter_island.00acfe94c1c449704584.jpg",
     "static/media/breaking_bad.jpg": "/final-project-starter/static/media/breaking_bad.8b65869eafd1d613e6b5.jpg",
+    "static/media/Iron_Man.jpg": "/final-project-starter/static/media/Iron_Man.805640f66e170fb8bf54.jpg",
     "static/media/ponyo.jpg": "/final-project-starter/static/media/ponyo.880dfdbd3467eb52b820.jpg",
     "static/media/shameless.jpg": "/final-project-starter/static/media/shameless.7b5e79f4bb31e0319d7e.jpg",
     "static/media/where_the_crawdads_sing.jpg": "/final-project-starter/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
     "index.html": "/final-project-starter/index.html",
     "main.27b5d857.css.map": "/final-project-starter/static/css/main.27b5d857.css.map",
-    "main.904eaa0d.js.map": "/final-project-starter/static/js/main.904eaa0d.js.map",
+    "main.52b06b2f.js.map": "/final-project-starter/static/js/main.52b06b2f.js.map",
     "787.4ef7427d.chunk.js.map": "/final-project-starter/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27b5d857.css",
-    "static/js/main.904eaa0d.js"
+    "static/js/main.52b06b2f.js"
   ]
 }
