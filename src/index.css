@@ -87,6 +87,10 @@ body {
     color: var(--grey-1);
 }
 
+.page {
+    background-color: var(--primary);
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -104,13 +108,15 @@ body {
 .heading-secondary {
     font-size: 4.4rem;
     line-height: 1.2;
-    margin-bottom: 9.6rem;
+    text-align: center;
+    background-color: var(--primary);
+    padding: 0 0 1rem 0;
+    margin: 0;
 }
 
 .heading-tertiary {
     font-size: 3rem;
     line-height: 1.2;
-    margin-bottom: 3.2rem;
 }
 
 .btn:link,
@@ -171,4 +177,37 @@ body {
 
 strong {
     font-weight: 500;
+}
+
+/* SLIDER STYLES */
+
+.swiper-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    color: black;
+    background-color: var(--primary);
+    border-radius: 100%;
+    border: 0.3rem solid transparent;
+
+    transition: all 300ms;
+}
+
+.swiper-button:hover {
+    border: 0.3rem solid var(--primary);
+    color: var(--primary);
+    background-color: white;
+}
+
+.swiper-button svg {
+    width: 4rem;
+    height: 4rem;
+}
+
+.swiper-button-next-unique {
+    right: 25%;
+}
+
+.swiper-button-prev-unique {
+    left: 25%;
 }

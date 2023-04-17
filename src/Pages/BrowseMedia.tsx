@@ -1,7 +1,7 @@
 //import Card from "react-bootstrap/Card";
 import React from "react";
 //import { mediaData } from "../MediaData";
-import classes from "../Components/HeroSeciton/HeroSection.module.css";
+import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
 // const mediaToElement = (media: {
 //     title: string;
@@ -52,7 +52,7 @@ import { SearchBar } from "../Components/Search";
 
 export const BrowseMedia = (): JSX.Element => {
     return (
-        <section className={classes.section_hero}>
+        <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
                 {/* <h1 style={{ textAlign: "center" }} className="heading-primary">
                     Browse Media

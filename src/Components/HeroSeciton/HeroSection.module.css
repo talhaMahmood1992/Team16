@@ -1,6 +1,9 @@
 .section_hero {
     background-color: var(--primary);
     padding: 1rem 0 9.6rem 0;
+    height: calc(100vh - 9.6rem);
+    width: 100%;
+    display: flex;
 }
 
 .hero {
@@ -34,6 +37,13 @@
     width: 90%;
     height: 90%;
     padding-left: 0;
+
+    /* so image can't be highlighted */
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 
     pointer-events: none;
 }
