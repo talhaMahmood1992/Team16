@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { GrStar } from "react-icons/gr";
 interface RatingFeatureProps {
     rating: number; // Rating value from 1-5
@@ -45,6 +45,8 @@ export default function RatingFeature({
     /*
   Renders 5 stars, filling in only as many stars as the provided rating value.
   */
+    /* eslint no-extra-parens: "off" */
+
     return (
         <div>
             {[1, 2, 3, 4, 5].map((star) => (

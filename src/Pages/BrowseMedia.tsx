@@ -54,6 +54,8 @@ export const BrowseMedia = (): JSX.Element => {
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
+                <Slider />
+
                 {/* <h1 style={{ textAlign: "center" }} className="heading-primary">
                     Browse Media
                 </h1>
