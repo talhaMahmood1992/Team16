@@ -15,7 +15,9 @@ export function SearchBar(): JSX.Element {
             : setList(
                   mediaData.filter(
                       (x: Media): boolean =>
-                          x.title.includes(text) || x.type.includes(text)
+                          x.title.includes(text) ||
+                          x.type.includes(text) ||
+                          x.yearReleased.toString().includes(text)
                   )
               );
     }

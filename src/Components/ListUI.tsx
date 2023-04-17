@@ -42,7 +42,7 @@ const mediaToElement = (media: {
                         <br />
                         {"Released: " + media.yearReleased}
                         <br />
-                        <RatingFeature></RatingFeature>
+                        <RatingFeature rating={media.rating}></RatingFeature>
                     </h5>
                     <br />
                 </Card.Body>
