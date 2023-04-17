@@ -65,9 +65,6 @@ export default function BrowseMedia({
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
-                <h1 style={{ textAlign: "center" }} className="heading-primary">
-                    Browse Media
-                </h1>
                 <div>
                     {mediaList.map(
                         (media: {

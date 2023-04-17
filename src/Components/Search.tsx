@@ -29,6 +29,10 @@ export function SearchBar(): JSX.Element {
     };
     return (
         <div>
+            {" "}
+            <h1 style={{ textAlign: "center" }} className="heading-primary">
+                Browse Media
+            </h1>
             <div style={styles.container}>
                 <input
                     type="text"

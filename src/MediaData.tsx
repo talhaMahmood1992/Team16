@@ -291,7 +291,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2008,
         rating: 5,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/The_Dark_Knight.jpg"),
         movieId: nanoid()
     },
     {
@@ -299,7 +299,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2012,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/The_Dark_Knight_Rises.jpg"),
         movieId: nanoid()
     },
     {
@@ -307,7 +307,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2019,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Joker.jpg"),
         movieId: nanoid()
     },
     {
@@ -315,7 +315,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2006,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/The_Prestige.jpg"),
         movieId: nanoid()
     },
     {
@@ -323,7 +323,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2008,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Iron_Man.jpg"),
         movieId: nanoid()
     },
     {
@@ -331,7 +331,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2010,
         rating: 3,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Iron_Man2.jpg"),
         movieId: nanoid()
     },
     {
@@ -339,7 +339,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2013,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Iron_Man3.jpg"),
         movieId: nanoid()
     },
     {
@@ -347,7 +347,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1972,
         rating: 5,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/The_Godfather.jpg"),
         movieId: nanoid()
     },
     {
@@ -355,7 +355,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2002,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Spider_Man.jpg"),
         movieId: nanoid()
     },
     {
@@ -363,7 +363,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2004,
         rating: 4,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Sipder_Man2.jpg"),
         movieId: nanoid()
     },
     {
@@ -371,7 +371,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2007,
         rating: 3,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: require("./imgs/media-covers/Spider_Man3.jpg"),
         movieId: nanoid()
     }
 ];
