@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Dropdown from "react-bootstrap/Dropdown";
 //import classes from "../index";
 //import classes from "../UI/SearchBar.module.css";
 export function SearchBar(): JSX.Element {
@@ -40,20 +41,58 @@ export function SearchBar(): JSX.Element {
             <div>
                 <Container>
                     <Row className="justify-content-md-center">
-                        <Col xs lg="2"></Col>
+                        <Col xs lg="1"></Col>
                         <Col md="auto">
-                            <Form>
-                                <Form.Group>
-                                    <Form.Control
-                                        placeholder="Search Media"
-                                        className="rounded-pill"
-                                        style={styles.search}
-                                        onChange={handleInputChange}
-                                    />
-                                </Form.Group>
-                            </Form>
+                            <Row>
+                                <Col md="auto">
+                                    <Form>
+                                        <Form.Group>
+                                            <Form.Control
+                                                placeholder="Search Media"
+                                                className="rounded-pill"
+                                                style={styles.search}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                    </Form>
+                                </Col>
+                                <Col md="auto">
+                                    <Dropdown>
+                                        <Dropdown.Toggle
+                                            variant="secondary"
+                                            className="rounded-pill"
+                                            style={styles.sort}
+                                        >
+                                            Sort Media
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu style={styles.dropdown}>
+                                            <Dropdown.Item
+                                                onClick={() =>
+                                                    alert("Alphabetically")
+                                                }
+                                            >
+                                                Alphabetically
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                onClick={() =>
+                                                    alert("High to Low Ratings")
+                                                }
+                                            >
+                                                High to Low Ratings
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                onClick={() =>
+                                                    alert("Low to High Ratings")
+                                                }
+                                            >
+                                                Low to High Ratings
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col xs lg="2"></Col>
+                        <Col xs lg="1"></Col>
                     </Row>
                 </Container>
             </div>
@@ -67,6 +106,14 @@ export function SearchBar(): JSX.Element {
 const styles = {
     search: {
         fontSize: "22px",
+        padding: "10px 10px 10px 20px"
+    },
+    sort: {
+        fontSize: "22px",
+        padding: "10px 40px 10px 20px"
+    },
+    dropdown: {
+        fontSize: "15px",
         padding: "10px 10px 10px 20px"
     },
     logo: {
