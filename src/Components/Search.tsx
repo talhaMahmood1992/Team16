@@ -38,22 +38,24 @@ export function SearchBar(): JSX.Element {
                 Browse Media
             </h1>
             <div>
-                <Row className="justify-content-md-center">
-                    <Col xs lg="2"></Col>
-                    <Col md="auto">
-                        <Form>
-                            <Form.Group>
-                                <Form.Control
-                                    placeholder="Search Media"
-                                    className="rounded-pill"
-                                    style={styles.search}
-                                    onChange={handleInputChange}
-                                />
-                            </Form.Group>
-                        </Form>
-                    </Col>
-                    <Col xs lg="2"></Col>
-                </Row>
+                <Container>
+                    <Row className="justify-content-md-center">
+                        <Col xs lg="2"></Col>
+                        <Col md="auto">
+                            <Form>
+                                <Form.Group>
+                                    <Form.Control
+                                        placeholder="Search Media"
+                                        className="rounded-pill"
+                                        style={styles.search}
+                                        onChange={handleInputChange}
+                                    />
+                                </Form.Group>
+                            </Form>
+                        </Col>
+                        <Col xs lg="2"></Col>
+                    </Row>
+                </Container>
             </div>
             <div>
                 <ListUI MediaData={list}></ListUI>
