@@ -60,36 +60,3 @@ export function SearchBar(): JSX.Element {
         </div>
     );
 }
-
-const styles = {
-    container: {
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "white",
-        borderRadius: "24px",
-        boxShadow: "0 1px 6px rgba(32, 33, 36, 0.28)",
-        padding: "8px",
-        width: "300px",
-        margin: "0 auto"
-    },
-    input: {
-        flex: 1,
-        border: "none",
-        outline: "none",
-        fontSize: "16px",
-        fontWeight: "500",
-        padding: "8px"
-    },
-    button: {
-        border: "none",
-        outline: "none",
-        backgroundColor: "#fecb00",
-        borderRadius: "24px",
-        padding: "8px",
-        marginLeft: "8px",
-        cursor: "pointer"
-    },
-    logo: {
-        backgroundColor: "white" // Set the background color for the logo
-    }
-};
