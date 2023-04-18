@@ -1,8 +1,10 @@
 import { nanoid } from "nanoid";
 
+type mediaType = "Movie" | "Show";
+
 export interface Media {
     title: string;
-    type: "Movie" | "Show";
+    type: mediaType;
     yearReleased: number;
     rating: number;
     image: string;

@@ -32,7 +32,11 @@ export const AddMediaForm = (): JSX.Element => {
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
             mediaData.push({
-                ...data,
+                title: data.title,
+                type: "Movie", //fix this
+                yearReleased: data.yearReleased,
+                rating: data.rating,
+                image: data.image,
                 movieId: nanoid()
             });
             reset();
