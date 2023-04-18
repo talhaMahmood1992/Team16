@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-type mediaType = "Movie" | "Show";
+export type mediaType = "Movie" | "Show";
 
 export interface Media {
     title: string;
