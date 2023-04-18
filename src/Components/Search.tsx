@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { Media } from "../MediaData";
 import { mediaData } from "../MediaData";
 import ListUI from "./ListUI";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 //import classes from "../index";
 //import classes from "../UI/SearchBar.module.css";
 export function SearchBar(): JSX.Element {
@@ -15,8 +19,8 @@ export function SearchBar(): JSX.Element {
             : setList(
                   mediaData.filter(
                       (x: Media): boolean =>
-                          x.title.includes(text) ||
-                          x.type.includes(text) ||
+                          x.title.toLowerCase().includes(text.toLowerCase()) ||
+                          x.type.toLowerCase().includes(text.toLowerCase()) ||
                           x.yearReleased.toString().includes(text)
                   )
               );
@@ -33,25 +37,23 @@ export function SearchBar(): JSX.Element {
             <h1 style={{ textAlign: "center" }} className="heading-primary">
                 Browse Media
             </h1>
-            <div style={styles.container}>
-                <input
-                    type="text"
-                    placeholder="Search Media"
-                    style={styles.input}
-                    onChange={handleInputChange}
-                />
-                <button style={styles.button}>
-                    <svg
-                        xmlns=""
-                        viewBox="0 0 24 24"
-                        fill="black"
-                        width="24px"
-                        height="24px"
-                    >
-                        <path d="M0 0h24v24H0z" fill="None" />
-                        <path d="M10.996 15.5A5.978 5.978 0 0 1 11 13h2v2h-2v.5zM17 11h-.38l-.67-.66A6.96 6.96 0 0 0 19 6.978V6h2v.978A6.96 6.96 0 0 0 17 11zm4.293-6.293l-1.414 1.414C17.528 5.746 15.296 5 13 5a9.957 9.957 0 0 0-6.516 2.398L4.22 6.22A11.932 11.932 0 0 1 13 3c2.29 0 4.526.646 6.293 1.707z" />
-                    </svg>
-                </button>
+            <div>
+                <Row className="justify-content-md-center">
+                    <Col xs lg="2"></Col>
+                    <Col md="auto">
+                        <Form>
+                            <Form.Group>
+                                <Form.Control
+                                    placeholder="Search Media"
+                                    className="rounded-pill"
+                                    style={styles.search}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                    <Col xs lg="2"></Col>
+                </Row>
             </div>
             <div>
                 <ListUI MediaData={list}></ListUI>
@@ -61,32 +63,9 @@ export function SearchBar(): JSX.Element {
 }
 
 const styles = {
-    container: {
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "white",
-        borderRadius: "24px",
-        boxShadow: "0 1px 6px rgba(32, 33, 36, 0.28)",
-        padding: "8px",
-        width: "300px",
-        margin: "0 auto"
-    },
-    input: {
-        flex: 1,
-        border: "none",
-        outline: "none",
-        fontSize: "16px",
-        fontWeight: "500",
-        padding: "8px"
-    },
-    button: {
-        border: "none",
-        outline: "none",
-        backgroundColor: "#fecb00",
-        borderRadius: "24px",
-        padding: "8px",
-        marginLeft: "8px",
-        cursor: "pointer"
+    search: {
+        fontSize: "22px",
+        padding: "10px 10px 10px 20px"
     },
     logo: {
         backgroundColor: "white" // Set the background color for the logo
