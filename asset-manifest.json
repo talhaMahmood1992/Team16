@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Team16/static/css/main.27b5d857.css",
-    "main.js": "/Team16/static/js/main.08539e7f.js",
+    "main.js": "/Team16/static/js/main.be92664e.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/Team16/static/media/hero-img.57463f0c952b507daf45.png",
     "static/media/not-found.png": "/Team16/static/media/not-found.4380ec89f0806b86f75e.png",
@@ -52,11 +52,11 @@
     "static/media/where_the_crawdads_sing.jpg": "/Team16/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
     "index.html": "/Team16/index.html",
     "main.27b5d857.css.map": "/Team16/static/css/main.27b5d857.css.map",
-    "main.08539e7f.js.map": "/Team16/static/js/main.08539e7f.js.map",
+    "main.be92664e.js.map": "/Team16/static/js/main.be92664e.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27b5d857.css",
-    "static/js/main.08539e7f.js"
+    "static/js/main.be92664e.js"
   ]
 }
