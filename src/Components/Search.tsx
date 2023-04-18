@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Media } from "../MediaData";
 import { mediaData } from "../MediaData";
 import ListUI from "../Pages/ListUI";
+import clasess from "./Search.module.css";
 //import classes from "../index";
 //import classes from "../UI/SearchBar.module.css";
 export function SearchBar(): JSX.Element {
@@ -33,14 +34,14 @@ export function SearchBar(): JSX.Element {
             <h1 style={{ textAlign: "center" }} className="heading-primary">
                 Browse Media
             </h1>
-            <div style={styles.container}>
+            <div className={clasess.container}>
                 <input
                     type="text"
                     placeholder="Search Media"
-                    style={styles.input}
+                    className={clasess.input}
                     onChange={handleInputChange}
                 />
-                <button style={styles.button}>
+                <button className={clasess.button}>
                     <svg
                         xmlns=""
                         viewBox="0 0 24 24"
