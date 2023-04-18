@@ -16,8 +16,8 @@ export function SearchBar(): JSX.Element {
             : setList(
                   mediaData.filter(
                       (x: Media): boolean =>
-                          x.title.includes(text) ||
-                          x.type.includes(text) ||
+                          x.title.toLowerCase().includes(text.toLowerCase()) ||
+                          x.type.toLowerCase().includes(text.toLowerCase()) ||
                           x.yearReleased.toString().includes(text)
                   )
               );
