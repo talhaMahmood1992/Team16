@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Media } from "../MediaData";
 import { mediaData } from "../MediaData";
-import ListUI from "../Pages/ListUI";
+import ListUI from "../Pages/RenderMedia";
 import clasess from "./Search.module.css";
 //import classes from "../index";
 //import classes from "../UI/SearchBar.module.css";

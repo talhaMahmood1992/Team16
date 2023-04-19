@@ -1,0 +1,57 @@
+/* Reset some default styles for consistency */
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the media list */
+.media-list-container {
+    background-color: var(--primary);
+}
+
+/* Style for the media list */
+.media-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+/* Style for each media item */
+.media-item {
+    flex: 0 0 15.625rem; /* Fixed width for each item */
+    padding: 0.625rem;
+    background-color: var(--grey-1);
+    color: #fff;
+}
+
+/* Style for the media item image */
+.media-item img {
+    width: 100%;
+    height: 18.75rem;
+    object-fit: cover;
+}
+
+/* Style for the media item details */
+.media-details {
+    margin-top: 2rem;
+}
+
+/* Style for the media item title */
+.media-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Style for the media item year released */
+.media-year {
+    font-size: 1.5rem;
+}
+
+/* Style for the media item rating */
+.media-rating {
+    font-size: 0.875rem;
+    color: var(--primary);
+    margin-top: 0.313rem;
+}
