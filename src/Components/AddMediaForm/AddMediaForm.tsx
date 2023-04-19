@@ -7,13 +7,14 @@ import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
+import { mediaType } from "../../MediaData";
 /* eslint no-extra-parens: "off" */
 
 type UserSubmitForm = {
     title: string;
     yearReleased: number;
     rating: number;
-    type: string;
+    type: mediaType;
     image: string;
 };
 
@@ -32,7 +33,11 @@ export const AddMediaForm = (): JSX.Element => {
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
             mediaData.push({
-                ...data,
+                title: data.title,
+                type: data.type,
+                yearReleased: data.yearReleased,
+                rating: data.rating,
+                image: data.image,
                 movieId: nanoid()
             });
             reset();

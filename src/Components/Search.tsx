@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { Media } from "../MediaData";
 import { mediaData } from "../MediaData";
-import ListUI from "../Pages/ListUI";
+import ListUI from "../Pages/RenderMedia";
+import clasess from "./Search.module.css";
 //import classes from "../index";
 //import classes from "../UI/SearchBar.module.css";
 export function SearchBar(): JSX.Element {
@@ -33,14 +34,14 @@ export function SearchBar(): JSX.Element {
             <h1 style={{ textAlign: "center" }} className="heading-primary">
                 Browse Media
             </h1>
-            <div style={styles.container}>
+            <div className={clasess.container}>
                 <input
                     type="text"
                     placeholder="Search Media"
-                    style={styles.input}
+                    className={clasess.input}
                     onChange={handleInputChange}
                 />
-                <button style={styles.button}>
+                <button className={clasess.button}>
                     <svg
                         xmlns=""
                         viewBox="0 0 24 24"
@@ -59,36 +60,3 @@ export function SearchBar(): JSX.Element {
         </div>
     );
 }
-
-const styles = {
-    container: {
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "white",
-        borderRadius: "24px",
-        boxShadow: "0 1px 6px rgba(32, 33, 36, 0.28)",
-        padding: "8px",
-        width: "300px",
-        margin: "0 auto"
-    },
-    input: {
-        flex: 1,
-        border: "none",
-        outline: "none",
-        fontSize: "16px",
-        fontWeight: "500",
-        padding: "8px"
-    },
-    button: {
-        border: "none",
-        outline: "none",
-        backgroundColor: "#fecb00",
-        borderRadius: "24px",
-        padding: "8px",
-        marginLeft: "8px",
-        cursor: "pointer"
-    },
-    logo: {
-        backgroundColor: "white" // Set the background color for the logo
-    }
-};
