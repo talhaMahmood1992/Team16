@@ -6,30 +6,56 @@ import ListUI from "../Pages/ListUI";
 import clasess from "./Search.module.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import classes from "./Search.module.css";
-//import classes from "../index";
-//import classes from "../UI/SearchBar.module.css";
+
 export function SearchBar(): JSX.Element {
-    function updateName(event: React.ChangeEvent<HTMLInputElement>) {
-        setName(event.target.value);
-    }
-    function setListHelper(text: string) {
-        text === ""
-            ? setList(mediaData)
-            : setList(
-                  mediaData.filter(
-                      (x: Media): boolean =>
-                          x.title.toLowerCase().includes(text.toLowerCase()) ||
-                          x.type.toLowerCase().includes(text.toLowerCase()) ||
-                          x.yearReleased.toString().includes(text)
-                  )
-              );
-    }
-    const [, setName] = useState<string>("");
+    const [currentSearchTerm, setCurrentSearchTerm] = useState<string>("");
+    const [currentSortType, setCurrentSortType] = useState<string>("default");
     const [list, setList] = useState<Media[]>(mediaData);
+
+    // compareFunction?: (a: Media, b: Media) => number
+    function setListHelper(searchTerm: string, sortType: string) {
+        if (searchTerm === "") {
+            setList([...mediaData].sort(sortCompareFunction(sortType)));
+        } else {
+            setList(
+                mediaData
+                    .filter((x: Media): boolean =>
+                        x.title.toLowerCase().includes(searchTerm)
+                    )
+                    .sort(sortCompareFunction(sortType))
+            );
+        }
+    }
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        updateName(event as React.ChangeEvent<HTMLInputElement>);
-        setListHelper(event.target.value);
+        setCurrentSearchTerm(event.target.value.toLowerCase());
+        setListHelper(event.target.value.toLowerCase(), currentSortType);
     };
+    function sortCompareFunction(type: string) {
+        if (type.toLowerCase() === "alphabetically") {
+            return (a: Media, b: Media) => a.title.localeCompare(b.title);
+        }
+        if (type.toLowerCase() === "lowtohigh") {
+            return (a: Media, b: Media) => a.rating - b.rating;
+        }
+        if (type.toLowerCase() === "hightolow") {
+            return (a: Media, b: Media) => b.rating - a.rating;
+        }
+
+        // default
+        return;
+    }
+    function sortAlphabetically() {
+        setCurrentSortType("alphabetically");
+        setListHelper(currentSearchTerm, "alphabetically");
+    }
+    function sortLowToHigh() {
+        setCurrentSortType("lowtohigh");
+        setListHelper(currentSearchTerm, "lowtohigh");
+    }
+    function sortHighToLow() {
+        setCurrentSortType("hightolow");
+        setListHelper(currentSearchTerm, "hightolow");
+    }
     return (
         <div>
             <h1 style={{ textAlign: "center" }} className="heading-primary">
@@ -70,19 +96,13 @@ export function SearchBar(): JSX.Element {
                                 Sort Media
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={classes.dropdown}>
-                                <Dropdown.Item
-                                    onClick={() => alert("Alphabetically")}
-                                >
+                                <Dropdown.Item onClick={sortAlphabetically}>
                                     Alphabetically
                                 </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => alert("High to Low Ratings")}
-                                >
+                                <Dropdown.Item onClick={sortHighToLow}>
                                     High to Low Ratings
                                 </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => alert("Low to High Ratings")}
-                                >
+                                <Dropdown.Item onClick={sortLowToHigh}>
                                     Low to High Ratings
                                 </Dropdown.Item>
                             </Dropdown.Menu>
