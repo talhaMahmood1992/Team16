@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Team16/static/css/main.54340e79.css",
-    "main.js": "/Team16/static/js/main.7e9c86fc.js",
+    "main.css": "/Team16/static/css/main.b757cf26.css",
+    "main.js": "/Team16/static/js/main.d93fa4d2.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/Team16/static/media/hero-img.57463f0c952b507daf45.png",
     "static/media/not-found.png": "/Team16/static/media/not-found.4380ec89f0806b86f75e.png",
@@ -51,12 +51,12 @@
     "static/media/shameless.jpg": "/Team16/static/media/shameless.7b5e79f4bb31e0319d7e.jpg",
     "static/media/where_the_crawdads_sing.jpg": "/Team16/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
     "index.html": "/Team16/index.html",
-    "main.54340e79.css.map": "/Team16/static/css/main.54340e79.css.map",
-    "main.7e9c86fc.js.map": "/Team16/static/js/main.7e9c86fc.js.map",
+    "main.b757cf26.css.map": "/Team16/static/css/main.b757cf26.css.map",
+    "main.d93fa4d2.js.map": "/Team16/static/js/main.d93fa4d2.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54340e79.css",
-    "static/js/main.7e9c86fc.js"
+    "static/css/main.b757cf26.css",
+    "static/js/main.d93fa4d2.js"
   ]
 }
