@@ -6,6 +6,21 @@ import { Media } from "../MediaData";
 import RatingFeature from "../Components/MediaRatting";
 import "./RenderMedia.css"; // Import CSS file for styling
 
+export const mediaToElement = (mediaItem: Media): JSX.Element => {
+    return (
+        <div key={mediaItem.movieId} className="media-item">
+            <img src={mediaItem.image} alt={mediaItem.title} />
+            <div className="media-details">
+                {/* <h2 className="media-title">{mediaItem.title}</h2> */}
+                <p className="media-year">{mediaItem.yearReleased}</p>
+                <p className="media-rating">
+                    {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
+                </p>
+            </div>
+        </div>
+    );
+};
+
 export default function RenderMedia({
     MediaData
 }: {
@@ -19,45 +34,8 @@ export default function RenderMedia({
     return (
         <div className="media-list-container">
             <div className="media-list">
-                {mediaList.map((mediaItem) => (
-                    <div key={mediaItem.movieId} className="media-item">
-                        <img src={mediaItem.image} alt={mediaItem.title} />
-                        <div className="media-details">
-                            {/* <h2 className="media-title">{mediaItem.title}</h2> */}
-                            <p className="media-year">
-                                {mediaItem.yearReleased}
-                            </p>
-                            <p className="media-rating">
-                                {
-                                    <RatingFeature
-                                        rating={mediaItem.rating}
-                                    ></RatingFeature>
-                                }
-                            </p>
-                        </div>
-                    </div>
-                ))}
+                {mediaList.map((mediaItem) => mediaToElement(mediaItem))}
             </div>
         </div>
     );
 }
-
-//     return (
-//         <section className="page">
-//             <div className="HeroSection_section_hero__bCGwu">
-//                 <div>
-//                     {mediaList.map(
-//                         (media: {
-//                             title: string;
-//                             type: string;
-//                             yearReleased: number;
-//                             rating: number;
-//                             movieId: string;
-//                             image: string;
-//                         }): JSX.Element => mediaToElement(media)
-//                     )}
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
