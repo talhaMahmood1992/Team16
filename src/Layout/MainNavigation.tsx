@@ -5,8 +5,7 @@ import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
 
 import classes from "./MainNavigation.module.css";
-
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "../Interfaces";
 
 interface MainNavigationProps {
     showSettingsHandler: () => void;

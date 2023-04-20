@@ -8,8 +8,7 @@ import { HomePage } from "./Pages/HomePage";
 import { MyListsPage } from "./Pages/MyListsPage";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
-
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "./Interfaces";
 
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
