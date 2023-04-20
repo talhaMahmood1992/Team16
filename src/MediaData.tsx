@@ -1,22 +1,5 @@
 import { nanoid } from "nanoid";
-
-export type mediaType = "Movie" | "Show";
-
-export interface Media {
-    title: string;
-    type: mediaType;
-    yearReleased: number;
-    rating: number;
-    image: string;
-    movieId: string;
-    //reviews: string[];
-}
-
-export interface PersonalMedia {
-    media: Media;
-    review: string;
-    id: string;
-}
+import { Media } from "./Interfaces";
 
 export function findMedia(data: Media[], title: string): number {
     return data.findIndex((datum: Media): boolean => datum.title === title);

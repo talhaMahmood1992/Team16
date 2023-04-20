@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import classes from "./BasicDropdown.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "../Interfaces";
 
 interface BasicDropdownProps {
     title: string;

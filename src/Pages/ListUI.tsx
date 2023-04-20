@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
-import { Media } from "../MediaData";
+import { Media } from "../Interfaces";
 import RatingFeature from "../Components/MediaRatting";
 const mediaToElement = (media: {
     title: string;

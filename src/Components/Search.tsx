@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React, { useState } from "react";
-import { Media } from "../MediaData";
+import { Media } from "../Interfaces";
 import { mediaData } from "../MediaData";
 import ListUI from "../Pages/ListUI";
 //import classes from "../index";
