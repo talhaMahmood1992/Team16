@@ -7,16 +7,8 @@ import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
-import { mediaType } from "../../MediaData";
+import { UserSubmitForm } from "../../Interfaces";
 /* eslint no-extra-parens: "off" */
-
-type UserSubmitForm = {
-    title: string;
-    yearReleased: number;
-    rating: number;
-    type: mediaType;
-    image: string;
-};
 
 export const AddMediaForm = (): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
@@ -91,13 +83,6 @@ export const AddMediaForm = (): JSX.Element => {
                     {...register("yearReleased")}
                 />
                 <p>{errors.yearReleased?.message}</p>
-                <label htmlFor="rating">Rating:</label>
-                <input
-                    type="number"
-                    placeholder="Rating..."
-                    {...register("rating")}
-                />
-                <p>{errors.rating?.message}</p>
                 <label htmlFor="type">Media type:</label>
                 <select {...register("type")}>
                     <option value="Movie">Movie</option>

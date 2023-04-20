@@ -3,8 +3,7 @@ import Modal from "../UI/Modal";
 import { IoMdSettings } from "react-icons/io";
 import classes from "./Settings.module.css";
 import { BasicDropdown } from "../UI/BasicDropdown";
-
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "../Interfaces";
 
 interface SettingsProps {
     hideSettingsHandler: () => void;

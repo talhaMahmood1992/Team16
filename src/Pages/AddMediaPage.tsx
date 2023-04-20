@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AddMediaForm } from "../Components/AddMediaForm/AddMediaForm";
-
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "../Interfaces";
 
 interface AddMediaPageProps {
     role: Role;
