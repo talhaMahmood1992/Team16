@@ -25,13 +25,22 @@ export const FriendsPage = (): JSX.Element => {
             <h3>Temporary Drag and Drop will be here:</h3>
             <p>Drag These:</p>
             <div>
-                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie A")}>
+                <div
+                    draggable={!widgets.includes("Movie A")}
+                    onDragStart={(e) => handleOnDrag(e, "Movie A")}
+                >
                     Widget A
                 </div>
-                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie B")}>
+                <div
+                    draggable={!widgets.includes("Movie B")}
+                    onDragStart={(e) => handleOnDrag(e, "Movie B")}
+                >
                     Widget B
                 </div>
-                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie C")}>
+                <div
+                    draggable={!widgets.includes("Movie C")}
+                    onDragStart={(e) => handleOnDrag(e, "Movie C")}
+                >
                     Widget C
                 </div>
             </div>
