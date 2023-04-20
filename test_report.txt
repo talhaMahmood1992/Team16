@@ -5,8 +5,8 @@
 No tests found, exiting with code 1
 Run with `--passWithNoTests` to exit with code 0
 In /home/runner/work/Team16/Team16
-  25 files checked.
+  26 files checked.
   testMatch: /home/runner/work/Team16/Team16/src/**/__tests__/**/*.{js,jsx,ts,tsx}, /home/runner/work/Team16/Team16/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
-  testPathIgnorePatterns: /node_modules/ - 25 matches
+  testPathIgnorePatterns: /node_modules/ - 26 matches
   testRegex:  - 0 matches
 Pattern:  - 0 matches
