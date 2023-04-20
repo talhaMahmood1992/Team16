@@ -39,11 +39,13 @@ export const FriendsPage = (): JSX.Element => {
                     Widget C
                 </div>
             </div>
+            <br />
             <div
                 className="page"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
+                <p>Drop Below:</p>
                 {widgets.map((widget, index) => (
                     <div className="dropped-widget" key={index}>
                         {widget}
