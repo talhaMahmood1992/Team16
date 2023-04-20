@@ -12,45 +12,36 @@ export const FriendsPage = (): JSX.Element => {
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
     }
+    function widgetToElement(widget: string, index: number) {
+        return (
+            <div className="dropped-widget" key={index}>
+                {widget}
+            </div>
+        );
+    }
     return (
         <section className="page">
             <h2 className="heading-secondary">Friends List</h2>
             <h3>Temporary Drag and Drop will be here:</h3>
-            <div className="widgets">
-                <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "Widget A")}
-                >
+            <p>Drag These:</p>
+            <div>
+                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie A")}>
                     Widget A
                 </div>
-                <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "Widget B")}
-                >
+                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie B")}>
                     Widget B
                 </div>
-                <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "Widget C")}
-                >
+                <div draggable onDragStart={(e) => handleOnDrag(e, "Movie C")}>
                     Widget C
                 </div>
             </div>
             <br />
-            <div
-                className="page"
-                onDrop={handleOnDrop}
-                onDragOver={handleDragOver}
-            >
+            <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
+                {/*In the future we will place an image like a folder
+                to drag items into rather than displaying them, but this
+                display helps to show functionality */}
                 <p>Drop Below:</p>
-                {widgets.map((widget, index) => (
-                    <div className="dropped-widget" key={index}>
-                        {widget}
-                    </div>
-                ))}
+                {widgets.map((widget, index) => widgetToElement(widget, index))}
             </div>
         </section>
     );
