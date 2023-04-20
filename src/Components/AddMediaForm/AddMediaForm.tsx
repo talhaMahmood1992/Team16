@@ -83,13 +83,6 @@ export const AddMediaForm = (): JSX.Element => {
                     {...register("yearReleased")}
                 />
                 <p>{errors.yearReleased?.message}</p>
-                <label htmlFor="rating">Rating:</label>
-                <input
-                    type="number"
-                    placeholder="Rating..."
-                    {...register("rating")}
-                />
-                <p>{errors.rating?.message}</p>
                 <label htmlFor="type">Media type:</label>
                 <select {...register("type")}>
                     <option value="Movie">Movie</option>

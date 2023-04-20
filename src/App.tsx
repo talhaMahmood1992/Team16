@@ -45,10 +45,6 @@ function App(): JSX.Element {
                 <Route path="/browseMedia" element={<BrowseMedia />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
-            <h2>
-                Talha Mahmood, Abdulrahman Abdulhamid, Joseph Hooper, Mercedes
-                Mathews, Ian Steele
-            </h2>
         </div>
     );
 }
