@@ -8,6 +8,25 @@ export type UserSubmitForm = {
     image: string;
 };
 export type mediaType = "Movie" | "Show";
+export type mediaGenre =
+    | "Action"
+    | "Adventure"
+    | "Animated"
+    | "Comedy"
+    | "Crime"
+    | "Drama"
+    | "Fantasy"
+    | "History"
+    | "Horror"
+    | "Kids"
+    | "Mystery"
+    | "Reality"
+    | "Romance"
+    | "Science Fiction"
+    | "Sports"
+    | "Superhero"
+    | "Thriller"
+    | "Western";
 
 //Interfaces
 export interface Media {
@@ -16,6 +35,7 @@ export interface Media {
     yearReleased: number;
     rating: number;
     image: string;
+    genres: mediaGenre[];
     movieId: string;
     //reviews: string[];
 }
