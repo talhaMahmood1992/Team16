@@ -1,16 +1,23 @@
 {
   "files": {
     "main.css": "/Team16/static/css/main.b757cf26.css",
-    "main.js": "/Team16/static/js/main.b4bd910f.js",
+    "main.js": "/Team16/static/js/main.bb6d09de.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/hero-img.png": "/Team16/static/media/hero-img.57463f0c952b507daf45.png",
     "static/media/not-found.png": "/Team16/static/media/not-found.4380ec89f0806b86f75e.png",
+    "static/media/taxi_driver.jpg": "/Team16/static/media/taxi_driver.fe7fb64a3a2cb4656e33.jpg",
+    "static/media/2001_a_space_odyssey.jpg": "/Team16/static/media/2001_a_space_odyssey.ab599b424cec4e80a74a.jpg",
     "static/media/The_Batman.jpg": "/Team16/static/media/The_Batman.693a07e5ea16a5518d4f.jpg",
+    "static/media/superbad.jpg": "/Team16/static/media/superbad.4fa80eec10753d504f94.jpg",
+    "static/media/scarface.jpg": "/Team16/static/media/scarface.822fdad4ac2e2a9fde7c.jpg",
+    "static/media/full_metal_jacket.jpg": "/Team16/static/media/full_metal_jacket.315b9e92e48365fdfa3a.jpg",
     "static/media/Iron_Man2.jpg": "/Team16/static/media/Iron_Man2.2c64b74b30a849c7cb21.jpg",
     "static/media/house_of_dragon.jpg": "/Team16/static/media/house_of_dragon.68252203dd8181f1a2ad.jpg",
+    "static/media/Apocalypse_Now.jpg": "/Team16/static/media/Apocalypse_Now.b21ced85dcb809cc064d.jpg",
     "static/media/Spider_Man.jpg": "/Team16/static/media/Spider_Man.72e8a6a6d9aa5c9c4031.jpg",
     "static/media/Sipder_Man2.jpg": "/Team16/static/media/Sipder_Man2.60f72ed9189888e7690f.jpg",
     "static/media/Iron_Man3.jpg": "/Team16/static/media/Iron_Man3.22b11d268a440cb28089.jpg",
+    "static/media/twin_peaks.jpg": "/Team16/static/media/twin_peaks.4f8ce16df3785d486647.jpg",
     "static/media/Joker.jpg": "/Team16/static/media/Joker.e715ddc7934d25f6f883.jpg",
     "static/media/BatMan_Begins.jpg": "/Team16/static/media/BatMan_Begins.5c56ddcc2b36b2fad6a1.jpg",
     "static/media/The_Dark_Knight.jpg": "/Team16/static/media/The_Dark_Knight.fc950b5e5098ebbfae7d.jpg",
@@ -50,13 +57,14 @@
     "static/media/ponyo.jpg": "/Team16/static/media/ponyo.880dfdbd3467eb52b820.jpg",
     "static/media/shameless.jpg": "/Team16/static/media/shameless.7b5e79f4bb31e0319d7e.jpg",
     "static/media/where_the_crawdads_sing.jpg": "/Team16/static/media/where_the_crawdads_sing.5ed39e2b924e87d76499.jpg",
+    "static/media/fight_club.jpg": "/Team16/static/media/fight_club.9a3f1c7565a02e40be0a.jpg",
     "index.html": "/Team16/index.html",
     "main.b757cf26.css.map": "/Team16/static/css/main.b757cf26.css.map",
-    "main.b4bd910f.js.map": "/Team16/static/js/main.b4bd910f.js.map",
+    "main.bb6d09de.js.map": "/Team16/static/js/main.bb6d09de.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b757cf26.css",
-    "static/js/main.b4bd910f.js"
+    "static/js/main.bb6d09de.js"
   ]
 }
