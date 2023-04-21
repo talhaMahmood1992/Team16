@@ -10,6 +10,27 @@ import axios from "axios";
 import { UserSubmitForm } from "../../Interfaces";
 /* eslint no-extra-parens: "off" */
 
+/*const genreList = [
+    "Action", 
+    "Adventure", 
+    "Animated", 
+    "Comedy", 
+    "Crime", 
+    "Drama",
+    "Fantasy",
+    "History",
+    "Horror", 
+    "Kids", 
+    "Mystery", 
+    "Reality",
+    "Romance",
+    "Science Fiction",
+    "Sports",
+    "Superhero",
+    "Thriller",
+    "Western];
+*/
+
 export const AddMediaForm = (): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
     const {
