@@ -2,7 +2,7 @@
 import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
-import { Media } from "../MediaData";
+import { Media } from "../Interfaces";
 import RatingFeature from "../Components/MediaRatting";
 import "./RenderMedia.css"; // Import CSS file for styling
 

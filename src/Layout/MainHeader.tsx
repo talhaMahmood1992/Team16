@@ -2,8 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./MainHeader.module.css";
 import { MainNavigation } from "./MainNavigation";
-
-type Role = "Default" | "Admin" | "Super";
+import { Role } from "../Interfaces";
 
 interface MainHeaderProps {
     showSettingsHandler: () => void;

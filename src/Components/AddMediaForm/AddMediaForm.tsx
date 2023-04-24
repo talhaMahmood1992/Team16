@@ -7,16 +7,29 @@ import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
-import { mediaType } from "../../MediaData";
+import { UserSubmitForm } from "../../Interfaces";
 /* eslint no-extra-parens: "off" */
 
-type UserSubmitForm = {
-    title: string;
-    yearReleased: number;
-    rating: number;
-    type: mediaType;
-    image: string;
-};
+/*const genreList = [
+    "Action", 
+    "Adventure", 
+    "Animated", 
+    "Comedy", 
+    "Crime", 
+    "Drama",
+    "Fantasy",
+    "History",
+    "Horror", 
+    "Kids", 
+    "Mystery", 
+    "Reality",
+    "Romance",
+    "Science Fiction",
+    "Sports",
+    "Superhero",
+    "Thriller",
+    "Western];
+*/
 
 export const AddMediaForm = (): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
@@ -38,6 +51,7 @@ export const AddMediaForm = (): JSX.Element => {
                 yearReleased: data.yearReleased,
                 rating: data.rating,
                 image: data.image,
+                genres: [],
                 movieId: nanoid()
             });
             reset();
@@ -84,6 +98,7 @@ export const AddMediaForm = (): JSX.Element => {
                     {...register("title")}
                 />
                 <p>{errors.title?.message}</p>
+
                 <label htmlFor="yearReleased">Year Released:</label>
                 <input
                     type="number"
@@ -91,19 +106,22 @@ export const AddMediaForm = (): JSX.Element => {
                     {...register("yearReleased")}
                 />
                 <p>{errors.yearReleased?.message}</p>
-                <label htmlFor="rating">Rating:</label>
-                <input
-                    type="number"
-                    placeholder="Rating..."
-                    {...register("rating")}
-                />
-                <p>{errors.rating?.message}</p>
+
                 <label htmlFor="type">Media type:</label>
                 <select {...register("type")}>
                     <option value="Movie">Movie</option>
                     <option value="Show">Show</option>
                 </select>
                 <p>{errors.type?.message}</p>
+
+                {/**
+                <label htmlFor="genres">Genres:</label>
+                <select {...register("genres")}>
+                    MAP GENRES HERE for a MULIT-SELECT CHECKBOX
+                </select>
+                <p>{errors.genres?.message}</p>
+                */}
+
                 <label htmlFor="image">Media Poster:</label>
                 <input
                     id="media-poster-input"

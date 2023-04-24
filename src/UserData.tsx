@@ -1,11 +1,5 @@
-import { Media, PersonalMedia, findMedia, mediaData } from "./MediaData";
-
-export interface UserInterface {
-    username: string;
-    watched: PersonalMedia[];
-    toWatch: Media[];
-    friends: string[];
-}
+import { UserInterface } from "./Interfaces";
+import { findMedia, mediaData } from "./MediaData";
 
 export const UserData: UserInterface[] = [
     {
