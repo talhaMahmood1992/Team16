@@ -1,44 +1,100 @@
+// import React, { useState } from "react";
+// import { Media } from "../MediaData";
+// import classes from "./Search.module.css";
+
+// interface SearchProps {
+//     mediaList: Media[];
+//     setMediaList: (mediaList: Media[]) => void;
+// }
+
+// export function SearchBar({
+//     mediaList,
+//     setMediaList
+// }: SearchProps): JSX.Element {
+//     const [searchText, setSearchText] = useState("");
+
+//     function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
+//         const searchValue = event.target.value.toLowerCase().trim();
+//         if (searchValue === "") {
+//             setMediaList(mediaList);
+//         }
+//         const filteredMedia = mediaList.filter(
+//             (media) =>
+//                 media.title.toLowerCase().includes(searchValue) ||
+//                 media.type.toLowerCase().includes(searchValue) ||
+//                 media.yearReleased
+//                     .toString()
+//                     .toLowerCase()
+//                     .includes(searchValue)
+//         );
+//         setMediaList([...filteredMedia]);
+//         setSearchText(event.target.value);
+//     }
+
+//     return (
+//         <div>
+//             <h1 style={{ textAlign: "center" }} className="heading-primary">
+//                 Browse Media
+//             </h1>
+//             <div className={classes.container}>
+//                 <input
+//                     type="text"
+//                     placeholder="Search Media"
+//                     className={classes.input}
+//                     value={searchText}
+//                     onChange={handleSearch}
+//                 />
+//             </div>
+//         </div>
+//     );
+// }
 import React, { useState } from "react";
 import { Media } from "../MediaData";
-//import ListUI from "../Pages/RenderMedia";
 import classes from "./Search.module.css";
 
 interface SearchProps {
-    mediaList: Media[];
-    //  setVisible: (newVisibility: boolean) => void
-
-    setMediaList: React.Dispatch<React.SetStateAction<Media[]>>;
+    //The data we are gonna search In
+    MediaData: Media[];
+    //The setter Function for the MediaList state in the BrowseMedia
+    onSearch: (mediaList: Media[]) => void;
 }
 
-export function SearchBar({
-    mediaList,
-    setMediaList
-}: SearchProps): JSX.Element {
+export function SearchBar({ MediaData, onSearch }: SearchProps): JSX.Element {
+    //The Text in the SearchBar
     const [searchText, setSearchText] = useState("");
-
+    //Handles all the Search, filtering the MediaData, and setting the MediaList state in
+    //the BrowseMedia.tsx using the onSearch function
     function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
-        const searchValue = event.target.value.toLowerCase().trim();
+        const searchValue = event.target.value;
+        setSearchText(searchValue);
+
         if (searchValue === "") {
-            setMediaList([]);
+            //If nothing, the state is set to All the mediaData
+            onSearch(MediaData);
+            return;
+        } else {
+            //Filtering the Data based on the text input in the SearchBar
+            const filteredMedia = MediaData.filter(
+                (media) =>
+                    media.title
+                        .toLowerCase()
+                        .includes(searchValue.toLowerCase()) ||
+                    media.type
+                        .toLowerCase()
+                        .includes(searchValue.toLowerCase()) ||
+                    media.yearReleased
+                        .toString()
+                        .toLowerCase()
+                        .includes(searchValue.toLowerCase())
+            );
+            //Setting the state to the FilteredData from the MediaData
+            onSearch([...filteredMedia]);
         }
-        const filteredMedia = mediaList.filter(
-            (media) =>
-                media.title.toLowerCase().includes(searchValue) ||
-                media.type.toLowerCase().includes(searchValue) ||
-                media.yearReleased
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchValue)
-        );
-        setMediaList(filteredMedia);
-        setSearchText(event.target.value);
     }
 
     return (
         <div>
-            <h1 style={{ textAlign: "center" }} className="heading-primary">
-                Browse Media
-            </h1>
+            <h3 style={{ marginBottom: "1.25rem" }}></h3>
             <div className={classes.container}>
                 <input
                     type="text"

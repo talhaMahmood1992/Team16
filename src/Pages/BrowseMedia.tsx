@@ -6,16 +6,16 @@ import RenderMedia from "./RenderMedia";
 
 export const BrowseMedia = (): JSX.Element => {
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
-    // const handleMediaListChange = (newList: Media[]): void => {
-    //     setMediaList(newList);
-    // };
+    function handleSearch(mediaList: Media[]) {
+        setMediaList([...mediaList]);
+    }
 
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
                 <Slider />
             </div>
-            <SearchBar mediaList={mediaList} setMediaList={setMediaList} />
+            <SearchBar onSearch={handleSearch} MediaData={mediaData} />
             {<RenderMedia MediaData={mediaList} />}
         </section>
     );
