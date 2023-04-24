@@ -49,7 +49,7 @@
 //     );
 // }
 import React, { useState } from "react";
-import { Media } from "../MediaData";
+import { Media } from "../Interfaces";
 import classes from "./Search.module.css";
 
 interface SearchProps {

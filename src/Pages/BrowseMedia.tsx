@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
-import { mediaData, Media } from "../MediaData";
+import { mediaData } from "../MediaData";
+import { Media } from "../Interfaces";
 import RenderMedia from "./RenderMedia";
 
 export const BrowseMedia = (): JSX.Element => {
