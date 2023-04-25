@@ -3,7 +3,7 @@ import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
-import RenderMedia from "./RenderMedia";
+import RenderMedia from "../Components/RenderMedia";
 
 export const BrowseMedia = (): JSX.Element => {
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);

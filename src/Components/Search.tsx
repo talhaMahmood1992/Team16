@@ -76,13 +76,21 @@ export function SearchBar({ MediaData, onSearch }: SearchProps): JSX.Element {
             //Filtering the Data based on the text input in the SearchBar
             const filteredMedia = MediaData.filter(
                 (media) =>
+                    //Search By tile
                     media.title
                         .toLowerCase()
                         .includes(searchValue.toLowerCase()) ||
+                    //Search By type
                     media.type
                         .toLowerCase()
                         .includes(searchValue.toLowerCase()) ||
+                    //Search By year
                     media.yearReleased
+                        .toString()
+                        .toLowerCase()
+                        .includes(searchValue.toLowerCase()) ||
+                    //Search By genre
+                    media.genres
                         .toString()
                         .toLowerCase()
                         .includes(searchValue.toLowerCase())
