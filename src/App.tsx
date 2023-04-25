@@ -8,6 +8,7 @@ import { HomePage } from "./Pages/HomePage";
 import { MyListsPage } from "./Pages/MyListsPage";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
+import { LearnMorePage } from "./Pages/LearnMorePage";
 import { Role } from "./Interfaces";
 
 function App(): JSX.Element {
@@ -43,6 +44,7 @@ function App(): JSX.Element {
                     element={<AddMediaPage role={role} />}
                 />
                 <Route path="/browseMedia" element={<BrowseMedia />} />
+                <Route path="/learnMorePage" element={<LearnMorePage />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
         </div>
