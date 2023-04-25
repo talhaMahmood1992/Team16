@@ -25,12 +25,12 @@ export const mediaData: Media[] = [
         movieId: nanoid()
     },
     {
-        title: "Shutter Island",
+        title: "Citizen Kane",
         type: "Movie",
-        yearReleased: 2010,
-        rating: 4,
-        image: require("./imgs/media-covers/shutter_island.jpg"),
-        genres: ["Mystery", "Thriller"],
+        yearReleased: 1941,
+        rating: 5,
+        image: require("./imgs/media-covers/citizen_kane.jpg"),
+        genres: ["Drama", "Mystery"],
         movieId: nanoid()
     },
     {
@@ -169,6 +169,24 @@ export const mediaData: Media[] = [
         movieId: nanoid()
     },
     {
+        title: "The Breakfast Club",
+        type: "Movie",
+        yearReleased: 1985,
+        rating: 4,
+        image: require("./imgs/media-covers/the_breakfast_club.jpg"),
+        genres: ["Comedy", "Drama"],
+        movieId: nanoid()
+    },
+    {
+        title: "Beetlejuice",
+        type: "Movie",
+        yearReleased: 1988,
+        rating: 4,
+        image: require("./imgs/media-covers/Beetlejuice.jpg"),
+        genres: ["Comedy", "Horror", "Kids", "Fantasy"],
+        movieId: nanoid()
+    },
+    {
         title: "The Lorax",
         type: "Movie",
         yearReleased: 2012,
@@ -250,6 +268,69 @@ export const mediaData: Media[] = [
         movieId: nanoid()
     },
     {
+        title: "Resevoir Dogs",
+        type: "Movie",
+        yearReleased: 1992,
+        rating: 4,
+        image: require("./imgs/media-covers/reservoir_dogs.jpg"),
+        genres: ["Crime", "Drama", "Mystery", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Pulp Fiction",
+        type: "Movie",
+        yearReleased: 1994,
+        rating: 4,
+        image: require("./imgs/media-covers/pulp_fiction.jpg"),
+        genres: ["Comedy", "Crime", "Drama", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Se7en",
+        type: "Movie",
+        yearReleased: 1995,
+        rating: 4,
+        image: require("./imgs/media-covers/se7en.jpg"),
+        genres: ["Crime", "Drama", "Mystery", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Blade Runner",
+        type: "Movie",
+        yearReleased: 1982,
+        rating: 4,
+        image: require("./imgs/media-covers/blade_runner.jpg"),
+        genres: ["Action", "Science Fiction", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Blade Runner 2049",
+        type: "Movie",
+        yearReleased: 2017,
+        rating: 3,
+        image: require("./imgs/media-covers/blade_runner2049.jpg"),
+        genres: ["Action", "Adventure", "Science Fiction", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Fargo",
+        type: "Movie",
+        yearReleased: 1996,
+        rating: 4,
+        image: require("./imgs/media-covers/Fargo.jpg"),
+        genres: ["Comedy", "Crime", "Drama", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "No Country for Old Men",
+        type: "Movie",
+        yearReleased: 2007,
+        rating: 4,
+        image: require("./imgs/media-covers/No_Country_for_Old_Men.jpg"),
+        genres: ["Crime", "Drama", "Mystery", "Thriller", "Western"],
+        movieId: nanoid()
+    },
+    {
         title: "The Matrix",
         type: "Movie",
         yearReleased: 1999,
@@ -327,7 +408,7 @@ export const mediaData: Media[] = [
         yearReleased: 2016,
         rating: 4,
         image: require("./imgs/media-covers/nocturnal_animals.jpg"),
-        genres: ["Crime", "Drama", "Romance", "Thriller"],
+        genres: ["Crime", "Drama", "Romance", "Thriller", "Western"],
         movieId: nanoid()
     },
     {
@@ -355,6 +436,15 @@ export const mediaData: Media[] = [
         rating: 2,
         image: require("./imgs/media-covers/southland_tales.jpg"),
         genres: ["Comedy", "Drama", "Science Fiction", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "The Shawshank Redemption",
+        type: "Movie",
+        yearReleased: 1994,
+        rating: 4,
+        image: require("./imgs/media-covers/the_shawshank_redemption.jpg"),
+        genres: ["Crime", "Drama", "Mystery"],
         movieId: nanoid()
     },
     {
@@ -475,6 +565,15 @@ export const mediaData: Media[] = [
         movieId: nanoid()
     },
     {
+        title: "The Super Mario Bros. Movie",
+        type: "Movie",
+        yearReleased: 2023,
+        rating: 4,
+        image: require("./imgs/media-covers//mario.jpg"),
+        genres: ["Animated", "Adventure", "Comedy", "Kids"],
+        movieId: nanoid()
+    },
+    {
         title: "Stranger Things",
         type: "Show",
         yearReleased: 2016,
@@ -490,6 +589,15 @@ export const mediaData: Media[] = [
         rating: 4,
         image: require("./imgs/media-covers/american_psycho.jpg"),
         genres: ["Comedy", "Crime", "Drama", "Horror", "Thriller"],
+        movieId: nanoid()
+    },
+    {
+        title: "Buffalo '66",
+        type: "Movie",
+        yearReleased: 1998,
+        rating: 3,
+        image: require("./imgs/media-covers/buffalo66.jpg"),
+        genres: ["Comedy", "Crime", "Drama", "Romance"],
         movieId: nanoid()
     },
     {
@@ -697,6 +805,24 @@ export const mediaData: Media[] = [
         rating: 3,
         image: require("./imgs/media-covers/Iron_Man3.jpg"),
         genres: ["Action", "Adventure", "Science Fiction", "Superhero"],
+        movieId: nanoid()
+    },
+    {
+        title: "The Wolf of Wall Street",
+        type: "Movie",
+        yearReleased: 2013,
+        rating: 4,
+        image: require("./imgs/media-covers/wolf_of_wall_st.jpg"),
+        genres: ["Comedy", "Crime", "Drama"],
+        movieId: nanoid()
+    },
+    {
+        title: "Shutter Island",
+        type: "Movie",
+        yearReleased: 2010,
+        rating: 4,
+        image: require("./imgs/media-covers/shutter_island.jpg"),
+        genres: ["Mystery", "Thriller"],
         movieId: nanoid()
     },
     {
