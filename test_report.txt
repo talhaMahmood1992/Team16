@@ -7,30 +7,31 @@ Browserslist: caniuse-lite is outdated. Please run:
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/Components/MediaRatting.test.tsx
   RatingFeature tests
-    ✓ renders without crashing (45 ms)
-    ✓ displays correct number of stars (26 ms)
-    ✓ displays all empty stars when rating is 0 (16 ms)
-    ✓ displays all filled stars when rating is 5 (11 ms)
-    ✓ displays correct number of filled stars (12 ms)
-    ✓ displays 5 stars when rating is greater than 5 (9 ms)
-    ✓ displays 5 stars when rating is less than 0 (10 ms)
-    ✓ displays 5 stars when rating is not a number (11 ms)
-    ✓ it renders five stars (12 ms)
-    ✓ displays all empty stars when rating is -1 (9 ms)
-    ✓ displays all empty stars when rating is not a number (19 ms)
+    ✓ renders without crashing (32 ms)
+    ✓ displays correct number of stars (18 ms)
+    ✓ displays all empty stars when rating is 0 (12 ms)
+    ✓ displays all filled stars when rating is 5 (8 ms)
+    ✓ displays correct number of filled stars (7 ms)
+    ✓ displays 5 stars when rating is greater than 5 (7 ms)
+    ✓ displays 5 stars when rating is less than 0 (6 ms)
+    ✓ displays 5 stars when rating is not a number (7 ms)
+    ✓ it renders five stars (9 ms)
+    ✓ displays all empty stars when rating is -1 (6 ms)
+    ✓ displays all empty stars when rating is not a number (14 ms)
 
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    1.48 |     6.06 |    3.38 |     1.5 |                   
+All files                    |    1.48 |     5.88 |    3.38 |     1.5 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 14-26             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
- src/Components              |    9.52 |    15.38 |   33.33 |    9.52 |                   
+ src/Components              |     7.4 |    14.28 |      20 |     7.4 |                   
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
-  Search.tsx                 |       0 |        0 |       0 |       0 | 64-95             
+  RenderMedia.tsx            |       0 |      100 |       0 |       0 | 9-37              
+  Search.tsx                 |       0 |        0 |       0 |       0 | 64-103            
   Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-131            
@@ -50,7 +51,6 @@ All files                    |    1.48 |     6.06 |    3.38 |     1.5 |
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   MyListsPage.tsx            |       0 |      100 |       0 |       0 | 3-4               
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
-  RenderMedia.tsx            |       0 |      100 |       0 |       0 | 9-37              
  src/UI                      |       0 |        0 |       0 |       0 |                   
   BasicDropdown.tsx          |       0 |        0 |       0 |       0 | 13-88             
   Modal.tsx                  |       0 |      100 |       0 |       0 | 20-39             
@@ -58,5 +58,5 @@ All files                    |    1.48 |     6.06 |    3.38 |     1.5 |
 Test Suites: 1 passed, 1 total
 Tests:       11 passed, 11 total
 Snapshots:   0 total
-Time:        4.224 s
+Time:        3.092 s
 Ran all test suites.
