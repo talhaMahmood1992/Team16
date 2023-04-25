@@ -7,17 +7,17 @@ Browserslist: caniuse-lite is outdated. Please run:
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/Components/MediaRatting.test.tsx
   RatingFeature tests
-    ✓ renders without crashing (32 ms)
-    ✓ displays correct number of stars (18 ms)
-    ✓ displays all empty stars when rating is 0 (12 ms)
-    ✓ displays all filled stars when rating is 5 (8 ms)
-    ✓ displays correct number of filled stars (7 ms)
-    ✓ displays 5 stars when rating is greater than 5 (7 ms)
-    ✓ displays 5 stars when rating is less than 0 (6 ms)
-    ✓ displays 5 stars when rating is not a number (7 ms)
-    ✓ it renders five stars (9 ms)
-    ✓ displays all empty stars when rating is -1 (19 ms)
-    ✓ displays all empty stars when rating is not a number (8 ms)
+    ✓ renders without crashing (45 ms)
+    ✓ displays correct number of stars (26 ms)
+    ✓ displays all empty stars when rating is 0 (16 ms)
+    ✓ displays all filled stars when rating is 5 (11 ms)
+    ✓ displays correct number of filled stars (12 ms)
+    ✓ displays 5 stars when rating is greater than 5 (9 ms)
+    ✓ displays 5 stars when rating is less than 0 (10 ms)
+    ✓ displays 5 stars when rating is not a number (11 ms)
+    ✓ it renders five stars (12 ms)
+    ✓ displays all empty stars when rating is -1 (9 ms)
+    ✓ displays all empty stars when rating is not a number (19 ms)
 
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -58,5 +58,5 @@ All files                    |    1.48 |     6.06 |    3.38 |     1.5 |
 Test Suites: 1 passed, 1 total
 Tests:       11 passed, 11 total
 Snapshots:   0 total
-Time:        3.062 s
+Time:        4.224 s
 Ran all test suites.
