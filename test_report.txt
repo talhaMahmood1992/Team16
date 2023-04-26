@@ -9,22 +9,22 @@ PASS src/Components/MediaRatting.test.tsx
   RatingFeature tests
     ✓ renders without crashing (32 ms)
     ✓ displays correct number of stars (18 ms)
-    ✓ displays all empty stars when rating is 0 (12 ms)
-    ✓ displays all filled stars when rating is 5 (8 ms)
+    ✓ displays all empty stars when rating is 0 (11 ms)
+    ✓ displays all filled stars when rating is 5 (9 ms)
     ✓ displays correct number of filled stars (7 ms)
     ✓ displays 5 stars when rating is greater than 5 (7 ms)
     ✓ displays 5 stars when rating is less than 0 (6 ms)
     ✓ displays 5 stars when rating is not a number (7 ms)
-    ✓ it renders five stars (9 ms)
-    ✓ displays all empty stars when rating is -1 (6 ms)
-    ✓ displays all empty stars when rating is not a number (14 ms)
+    ✓ it renders five stars (8 ms)
+    ✓ displays all empty stars when rating is -1 (17 ms)
+    ✓ displays all empty stars when rating is not a number (7 ms)
 
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    1.48 |     5.88 |    3.38 |     1.5 |                   
+All files                    |    1.45 |     5.88 |    3.33 |    1.48 |                   
  src                         |       0 |        0 |       0 |       0 |                   
-  App.tsx                    |       0 |        0 |       0 |       0 | 14-26             
+  App.tsx                    |       0 |        0 |       0 |       0 | 15-27             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
@@ -49,6 +49,7 @@ All files                    |    1.48 |     5.88 |    3.38 |     1.5 |
   BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 8-14              
   FriendsPage.tsx            |       0 |      100 |       0 |       0 | 3-53              
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
+  LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
   MyListsPage.tsx            |       0 |      100 |       0 |       0 | 3-4               
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
  src/UI                      |       0 |        0 |       0 |       0 |                   
@@ -58,5 +59,5 @@ All files                    |    1.48 |     5.88 |    3.38 |     1.5 |
 Test Suites: 1 passed, 1 total
 Tests:       11 passed, 11 total
 Snapshots:   0 total
-Time:        3.092 s
+Time:        3.097 s
 Ran all test suites.
