@@ -22,9 +22,11 @@ export const HeroSection = (): JSX.Element => {
                                 Browse Media
                             </button>
                         </NavLink>
-                        <button className={classes.learn_more_button}>
-                            Learn more &darr;
-                        </button>
+                        <NavLink to="/LearnMorePage">
+                            <button className={classes.learn_more_button}>
+                                Learn more &darr;
+                            </button>
+                        </NavLink>
                     </div>
                     <ActiveUsers />
                 </div>
