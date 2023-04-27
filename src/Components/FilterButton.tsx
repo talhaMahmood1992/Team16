@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import React, { useState } from "react";
+import React from "react";
 import { Media } from "../Interfaces";
 import classes from "./FilterButton.module.css";
 import { BasicDropdown } from "../UI/BasicDropdown";
@@ -14,52 +14,47 @@ export function FilterButton({
     MediaData,
     onFilter
 }: FilterProps): JSX.Element {
-    const [currentSearchTerm, setCurrentSearchTerm] = useState<string>("");
-    const [currentSortType, setCurrentSortType] = useState<string>("default");
-
-    function handleFilter(searchTerm: string, sortType: string) {
-        if (searchTerm === "") {
-            onFilter([...MediaData].sort(sortCompareFunction(sortType)));
-        } else {
+    function handleFilter(sortType: string) {
+        if (sortType === "") {
+            onFilter([...MediaData]);
+        }
+        if (sortType === "Alphabetically") {
+            onFilter(MediaData.sort((a, b) => a.title.localeCompare(b.title)));
+        }
+        if (sortType === "hightolow") {
             onFilter(
-                MediaData.filter((x: Media): boolean =>
-                    x.title.toLowerCase().includes(searchTerm)
-                ).sort(sortCompareFunction(sortType))
+                MediaData.sort((a: Media, b: Media) => b.rating - a.rating)
             );
         }
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrentSearchTerm(event.target.value.toLowerCase());
-        handleFilter(event.target.value.toLowerCase(), currentSortType);
-    };
-
-    function sortCompareFunction(type: string) {
-        if (type.toLowerCase() === "alphabetically") {
-            return (a: Media, b: Media) => a.title.localeCompare(b.title);
+        if (sortType === "lowtohigh") {
+            onFilter(
+                MediaData.sort((a: Media, b: Media) => a.rating - b.rating)
+            );
         }
-        if (type.toLowerCase() === "lowtohigh") {
-            return (a: Media, b: Media) => a.rating - b.rating;
+        if (sortType === "Show") {
+            onFilter(MediaData.filter((media) => media.type === "Show"));
         }
-        if (type.toLowerCase() === "hightolow") {
-            return (a: Media, b: Media) => b.rating - a.rating;
+        if (sortType === "Movie") {
+            onFilter(MediaData.filter((media) => media.type === "Movie"));
         }
     }
-
     function sortAlphabetically() {
-        setCurrentSortType("alphabetically");
-        handleFilter(currentSearchTerm, "alphabetically");
+        handleFilter("Alphabetically");
     }
 
     function sortLowToHigh() {
-        setCurrentSortType("lowtohigh");
-        handleFilter(currentSearchTerm, "lowtohigh");
+        handleFilter("lowtohigh");
     }
 
     function sortHighToLow() {
-        setCurrentSortType("hightolow");
-        handleFilter(currentSearchTerm, "hightolow");
+        handleFilter("hightolow");
+    }
+
+    function sortShow() {
+        handleFilter("Show");
+    }
+    function sortMovie() {
+        handleFilter("Movie");
     }
 
     const handleSort = (option: string) => {
@@ -73,6 +68,12 @@ export function FilterButton({
             case "Low to High Ratings":
                 sortLowToHigh();
                 break;
+            case "Show":
+                sortShow();
+                break;
+            case "Movie":
+                sortMovie();
+                break;
             default:
                 break;
         }
@@ -85,7 +86,9 @@ export function FilterButton({
                     items={[
                         "Alphabetically",
                         "High to Low Ratings",
-                        "Low to High Ratings"
+                        "Low to High Ratings",
+                        "Show",
+                        "Movie"
                     ]}
                     title={"Sort Media"}
                     onClick={(option) => handleSort(option)}
