@@ -1,0 +1,9 @@
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.flexPadding {
+    padding: 10px;
+}

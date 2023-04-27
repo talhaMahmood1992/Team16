@@ -4,10 +4,11 @@ import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
+import { FilterButton } from "../Components/FilterButton";
 
 export const BrowseMedia = (): JSX.Element => {
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
-    function handleSearch(mediaList: Media[]) {
+    function handleRender(mediaList: Media[]) {
         setMediaList([...mediaList]);
     }
 
@@ -16,7 +17,9 @@ export const BrowseMedia = (): JSX.Element => {
             <div className="HeroSection_section_hero__bCGwu">
                 <Slider />
             </div>
-            <SearchBar onSearch={handleSearch} MediaData={mediaData} />
+
+            <SearchBar onSearch={handleRender} MediaData={mediaData} />
+            <FilterButton MediaData={mediaData} onFilter={handleRender} />
             {<RenderMedia MediaData={mediaList} />}
         </section>
     );

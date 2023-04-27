@@ -51,6 +51,7 @@
 import React, { useState } from "react";
 import { Media } from "../Interfaces";
 import classes from "./Search.module.css";
+import { IoSearchCircleSharp } from "react-icons/io5";
 
 interface SearchProps {
     //The data we are gonna search In
@@ -110,6 +111,11 @@ export function SearchBar({ MediaData, onSearch }: SearchProps): JSX.Element {
                     className={classes.input}
                     value={searchText}
                     onChange={handleSearch}
+                />
+                <IoSearchCircleSharp
+                    className={classes.icon}
+                    size={15}
+                    style={{ fill: "black" }}
                 />
             </div>
         </div>
