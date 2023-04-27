@@ -32,7 +32,7 @@ export const BrowseMedia = (): JSX.Element => {
             {<RenderMedia MediaData={mediaList} />}
             <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
                 <h1>Right Here!</h1>
-                <h2>{favorites}</h2>
+                <h2>{favorites.join(", ")}</h2>
             </div>
         </section>
     );
