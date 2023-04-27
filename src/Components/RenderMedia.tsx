@@ -5,8 +5,8 @@ import React from "react";
 import { Media } from "../Interfaces";
 import RatingFeature from "../Components/MediaRatting";
 import "./RenderMedia.css"; // Import CSS file for styling
-function handleOnDrag(e: React.DragEvent, widgetType: string) {
-    e.dataTransfer.setData("widgetType", widgetType);
+function handleOnDrag(e: React.DragEvent, newFavorite: string) {
+    e.dataTransfer.setData("newFavorite", newFavorite);
 }
 export const mediaToElement = (mediaItem: Media): JSX.Element => {
     return (
@@ -14,7 +14,7 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
             key={mediaItem.movieId}
             className="media-item"
             draggable
-            onDragStart={(e) => handleOnDrag(e, mediaItem.movieId)}
+            onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
         >
             <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">

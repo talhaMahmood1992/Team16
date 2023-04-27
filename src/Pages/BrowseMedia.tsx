@@ -11,10 +11,11 @@ export const BrowseMedia = (): JSX.Element => {
         setMediaList([...mediaList]);
     }
 
-    const [widgets, setWidgets] = useState<string[]>([]);
+    const [favorites, setFavorites] = useState<string[]>([]);
     function handleOnDrop(e: React.DragEvent) {
-        const widgetType = e.dataTransfer.getData("widgetType") as string;
-        setWidgets([...widgets, widgetType]);
+        const newFavorite = e.dataTransfer.getData("newFavorite") as string;
+        setFavorites([...favorites, newFavorite]);
+        console.log([...favorites, newFavorite]);
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
@@ -31,7 +32,7 @@ export const BrowseMedia = (): JSX.Element => {
             {<RenderMedia MediaData={mediaList} />}
             <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
                 <h1>Right Here!</h1>
-                <h2>{widgets}</h2>
+                <h2>{favorites}</h2>
             </div>
         </section>
     );
