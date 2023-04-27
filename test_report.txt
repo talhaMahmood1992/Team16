@@ -7,31 +7,31 @@ Browserslist: caniuse-lite is outdated. Please run:
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/Components/MediaRatting.test.tsx
   RatingFeature tests
-    ✓ renders without crashing (53 ms)
-    ✓ displays correct number of stars (27 ms)
-    ✓ displays all empty stars when rating is 0 (17 ms)
-    ✓ displays all filled stars when rating is 5 (11 ms)
-    ✓ displays correct number of filled stars (10 ms)
-    ✓ displays 5 stars when rating is greater than 5 (10 ms)
-    ✓ displays 5 stars when rating is less than 0 (10 ms)
-    ✓ displays 5 stars when rating is not a number (11 ms)
-    ✓ it renders five stars (17 ms)
-    ✓ displays all empty stars when rating is -1 (19 ms)
-    ✓ displays all empty stars when rating is not a number (12 ms)
+    ✓ renders without crashing (32 ms)
+    ✓ displays correct number of stars (18 ms)
+    ✓ displays all empty stars when rating is 0 (12 ms)
+    ✓ displays all filled stars when rating is 5 (8 ms)
+    ✓ displays correct number of filled stars (7 ms)
+    ✓ displays 5 stars when rating is greater than 5 (7 ms)
+    ✓ displays 5 stars when rating is less than 0 (6 ms)
+    ✓ displays 5 stars when rating is not a number (7 ms)
+    ✓ it renders five stars (8 ms)
+    ✓ displays all empty stars when rating is -1 (13 ms)
+    ✓ displays all empty stars when rating is not a number (8 ms)
 
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    1.14 |     3.84 |     2.7 |    1.18 |                   
+All files                    |    1.16 |     3.84 |    2.85 |     1.2 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 15-27             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
- src/Components              |    3.12 |     6.25 |    8.33 |    3.27 |                   
+ src/Components              |    3.03 |     6.25 |    7.69 |    3.17 |                   
   FilterButton.tsx           |       0 |        0 |       0 |       0 | 18-94             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
-  RenderMedia.tsx            |       0 |      100 |       0 |       0 | 9-37              
+  RenderMedia.tsx            |       0 |      100 |       0 |       0 | 9-44              
   Search.tsx                 |       0 |        0 |       0 |       0 | 65-104            
   Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
@@ -47,8 +47,8 @@ All files                    |    1.14 |     3.84 |     2.7 |    1.18 |
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 15-19             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 9-15              
-  FriendsPage.tsx            |       0 |      100 |       0 |       0 | 3-53              
+  BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 8-24              
+  FriendsPage.tsx            |       0 |      100 |       0 |       0 | 2-3               
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
   MyListsPage.tsx            |       0 |      100 |       0 |       0 | 3-4               
@@ -60,5 +60,5 @@ All files                    |    1.14 |     3.84 |     2.7 |    1.18 |
 Test Suites: 1 passed, 1 total
 Tests:       11 passed, 11 total
 Snapshots:   0 total
-Time:        4.837 s
+Time:        3.049 s
 Ran all test suites.
