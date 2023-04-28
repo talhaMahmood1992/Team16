@@ -8,11 +8,16 @@ import "./RenderMedia.css"; // Import CSS file for styling
 
 export const mediaToElement = (mediaItem: Media): JSX.Element => {
     return (
-        <div key={mediaItem.movieId} className="media-item">
+        <div
+            key={mediaItem.movieId}
+            className="media-item"
+            data-testid="mediaItem"
+        >
             <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">
-                {/* <h2 className="media-title">{mediaItem.title}</h2> */}
-                <p className="media-year">{mediaItem.yearReleased}</p>
+                <p className="media-year" data-testid="mediaYear">
+                    {mediaItem.yearReleased}
+                </p>
                 <p className="media-rating">
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
                 </p>
@@ -32,7 +37,10 @@ export default function RenderMedia({
         };
     });
     return (
-        <div className="media-list-container">
+        <div
+            className="media-list-container"
+            data-testid="media-list-container"
+        >
             <div className="media-list">
                 {mediaList.map((mediaItem) => mediaToElement(mediaItem))}
             </div>
