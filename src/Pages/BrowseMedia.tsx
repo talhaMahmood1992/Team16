@@ -5,6 +5,7 @@ import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import { FilterButton } from "../Components/FilterButton";
+import "./Header.css";
 export const BrowseMedia = (): JSX.Element => {
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
     function handleRender(mediaList: Media[]) {
@@ -30,9 +31,11 @@ export const BrowseMedia = (): JSX.Element => {
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             <FilterButton MediaData={mediaData} onFilter={handleRender} />
             {<RenderMedia MediaData={mediaList} />}
-            <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
-                <h1>Right Here!</h1>
-                <h2>{favorites.join(", ")}</h2>
+            <div className="header-container">
+                <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
+                    <h1>Right Here!</h1>
+                    <h2>{favorites.join(", ")}</h2>
+                </div>
             </div>
         </section>
     );
