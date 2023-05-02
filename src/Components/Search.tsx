@@ -112,11 +112,13 @@ export function SearchBar({ MediaData, onSearch }: SearchProps): JSX.Element {
                     value={searchText}
                     onChange={handleSearch}
                 />
-                <IoSearchCircleSharp
-                    className={classes.icon}
-                    size={15}
-                    style={{ fill: "black" }}
-                />
+                <div data-testid="search-icon">
+                    <IoSearchCircleSharp
+                        className={classes.icon}
+                        size={15}
+                        style={{ fill: "black" }}
+                    />
+                </div>
             </div>
         </div>
     );
