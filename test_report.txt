@@ -6,33 +6,22 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/Components/MediaRatting.test.tsx
-  RatingFeature tests
-    ✓ renders without crashing (32 ms)
-    ✓ displays correct number of stars (18 ms)
-    ✓ displays all empty stars when rating is 0 (12 ms)
-    ✓ displays all filled stars when rating is 5 (8 ms)
-    ✓ displays correct number of filled stars (7 ms)
-    ✓ displays 5 stars when rating is greater than 5 (7 ms)
-    ✓ displays 5 stars when rating is less than 0 (6 ms)
-    ✓ displays 5 stars when rating is not a number (7 ms)
-    ✓ it renders five stars (8 ms)
-    ✓ displays all empty stars when rating is -1 (13 ms)
-    ✓ displays all empty stars when rating is not a number (8 ms)
-
+PASS src/Components/Search.test.tsx
+PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    1.16 |     3.84 |    2.85 |     1.2 |                   
+All files                    |    8.83 |    13.46 |   11.84 |    9.14 |                   
  src                         |       0 |        0 |       0 |       0 |                   
-  App.tsx                    |       0 |        0 |       0 |       0 | 15-27             
+  App.tsx                    |       0 |        0 |       0 |       0 | 15-31             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
- src/Components              |    3.03 |     6.25 |    7.69 |    3.17 |                   
+ src/Components              |   24.24 |    21.87 |   34.61 |   25.39 |                   
   FilterButton.tsx           |       0 |        0 |       0 |       0 | 18-94             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
-  RenderMedia.tsx            |       0 |      100 |       0 |       0 | 9-44              
-  Search.tsx                 |       0 |        0 |       0 |       0 | 65-104            
+  RenderMedia.tsx            |      75 |      100 |   66.66 |      75 | 9,18              
+  Search.tsx                 |      80 |    83.33 |     100 |      80 | 74-75             
   Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-131            
@@ -47,18 +36,19 @@ All files                    |    1.16 |     3.84 |    2.85 |     1.2 |
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 15-19             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 8-24              
+  BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 15-48             
   FriendsPage.tsx            |       0 |      100 |       0 |       0 | 2-3               
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
-  MyListsPage.tsx            |       0 |      100 |       0 |       0 | 3-4               
+  MyListsPage.tsx            |       0 |      100 |       0 |       0 | 7-27              
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
  src/UI                      |       0 |        0 |       0 |       0 |                   
   BasicDropdown.tsx          |       0 |        0 |       0 |       0 | 13-88             
   Modal.tsx                  |       0 |      100 |       0 |       0 | 20-39             
 -----------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 passed, 1 total
-Tests:       11 passed, 11 total
+
+Test Suites: 3 passed, 3 total
+Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        3.049 s
+Time:        3.981 s
 Ran all test suites.
