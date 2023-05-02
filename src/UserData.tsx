@@ -17,31 +17,26 @@ export const UserData: UserInterface[] = [
                     .movieId
             }
         ],
-        toWatch: [mediaData[findMedia(mediaData, "Mad Men")]],
-        friends: ["Joey", "Bood"]
+        toWatch: [mediaData[findMedia(mediaData, "Mad Men")]]
     },
     {
         username: "Joey",
         watched: [],
-        toWatch: [],
-        friends: ["Ian", "Mercedes"]
+        toWatch: []
     },
     {
         username: "Bood",
         watched: [],
-        toWatch: [],
-        friends: ["Ian", "Talha"]
+        toWatch: []
     },
     {
         username: "Talha",
         watched: [],
-        toWatch: [],
-        friends: ["Bood", "Mercedes"]
+        toWatch: []
     },
     {
         username: "Mercedes",
         watched: [],
-        toWatch: [],
-        friends: ["Joey", "Talha"]
+        toWatch: []
     }
 ];

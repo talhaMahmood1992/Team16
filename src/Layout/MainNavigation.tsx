@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaUserFriends, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
 
@@ -31,12 +31,12 @@ export const MainNavigation = ({
                     </li>
                 )}
 
-                <li>
+                {/* <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>
                         <FaUserFriends className={classes.icon} />
                         <span>Friends</span>
                     </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink to="/mylists" className={classes.main_nav_link}>
                         <FaStar className={classes.icon} />
