@@ -14,7 +14,11 @@ import { Role } from "./Interfaces";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
-    //const [media, setMedia] = useState(mediaData);
+    const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
+
+    function handleFavorites(titles: string[]) {
+        setFavoriteMedia([...titles]);
+    }
 
     const showSettingsHandler = (): void => {
         setSettingsIsShown(true);
@@ -38,12 +42,23 @@ function App(): JSX.Element {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/friends" element={<FriendsPage />} />
-                <Route path="/mylists" element={<MyListsPage />} />
+                <Route
+                    path="/mylists"
+                    element={<MyListsPage titles={FavoriteMedia} />}
+                />
                 <Route
                     path="/addMedia"
                     element={<AddMediaPage role={role} />}
                 />
-                <Route path="/browseMedia" element={<BrowseMedia />} />
+                <Route
+                    path="/browseMedia"
+                    element={
+                        <BrowseMedia
+                            titles={FavoriteMedia}
+                            handleFavorites={handleFavorites}
+                        />
+                    }
+                />
                 <Route path="/learnMorePage" element={<LearnMorePage />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
