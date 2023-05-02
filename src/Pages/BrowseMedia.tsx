@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
@@ -49,7 +50,6 @@ export const BrowseMedia = ({
                     </ul>{" "}
                 </div>
             </div>
-            {/* <MyListsPage titles={favorites} /> */}
         </section>
     );
 };
