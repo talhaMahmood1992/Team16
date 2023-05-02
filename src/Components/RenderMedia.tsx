@@ -22,9 +22,9 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}
                 </p>
-                <p className="media-rating">
+                <div className="media-rating">
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
-                </p>
+                </div>
             </div>
         </div>
     );
@@ -41,10 +41,7 @@ export default function RenderMedia({
         };
     });
     return (
-        <div
-            className="media-list-container"
-            data-testid="media-list-container"
-        >
+        <div className="media-list-container" data-testid="mediaListContainer">
             <div className="media-list">
                 {mediaList.map((mediaItem) => mediaToElement(mediaItem))}
             </div>

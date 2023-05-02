@@ -22,7 +22,7 @@ describe("RenderMedia", () => {
             rating: 3,
             image: require("../imgs/media-covers/drive.jpg"),
             genres: ["Action", "Crime", "Drama", "Thriller"],
-            movieId: "1"
+            movieId: "2"
         }
     ];
 
@@ -35,7 +35,7 @@ describe("RenderMedia", () => {
     });
 
     test("renders media list container", () => {
-        const container = screen.getByTestId("media-list-container");
+        const container = screen.getByTestId("mediaListContainer");
         expect(container).toBeInTheDocument();
     });
 

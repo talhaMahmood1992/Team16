@@ -1,9 +1,32 @@
 import React from "react";
-
-export const MyListsPage = (): JSX.Element => {
+import { mediaData } from "../MediaData";
+import RenderMedia from "../Components/RenderMedia";
+interface FavoriteMediaProps {
+    titles: string[];
+}
+export const MyListsPage = (props: FavoriteMediaProps): JSX.Element => {
     return (
-        <section className="page">
-            <h2 className="heading-secondary">My Favorites</h2>
-        </section>
+        <>
+            <FavoriteMedia titles={props.titles} />
+            <section className="page">
+                <h2 className="heading-secondary">My Favorites</h2>
+            </section>
+        </>
     );
 };
+
+function FindMedia(searchTerm: string) {
+    const filteredData = mediaData.filter(
+        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
+    );
+    return filteredData[0];
+}
+
+export function FavoriteMedia(props: FavoriteMediaProps) {
+    const filteredMedia = props.titles.map((title) => FindMedia(title));
+    return (
+        <div>
+            <RenderMedia MediaData={filteredMedia} />
+        </div>
+    );
+}
