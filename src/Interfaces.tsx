@@ -48,5 +48,4 @@ export interface UserInterface {
     username: string;
     watched: PersonalMedia[];
     toWatch: Media[];
-    friends: string[];
 }
