@@ -7,6 +7,8 @@ import { Media } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
+import { FaStar } from "react-icons/fa";
+
 interface FavoriteMediaProps {
     titles: string[];
     handleFavorites: (titles: string[]) => void;
@@ -40,14 +42,16 @@ export const BrowseMedia = ({
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             <FilterButton MediaData={mediaData} onFilter={handleRender} />
             {<RenderMedia MediaData={mediaList} />}
-            <div className="header-container">
-                <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
-                    <h1>Right Here!</h1>
-                    <ul>
+            <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
+                <div className="header-container">
+                    <h1>
+                        <FaStar></FaStar>
+                    </h1>
+                    {/* <ul>
                         {favorites.map((item, index) => (
                             <li key={index}>{item}</li>
                         ))}
-                    </ul>{" "}
+                    </ul> */}
                 </div>
             </div>
         </section>
