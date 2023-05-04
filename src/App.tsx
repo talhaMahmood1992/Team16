@@ -5,7 +5,7 @@ import { MainHeader } from "./Layout/MainHeader";
 import { AddMediaPage } from "./Pages/AddMediaPage";
 // import { FriendsPage } from "./Pages/FriendsPage";
 import { HomePage } from "./Pages/HomePage";
-import { MyListsPage } from "./Pages/MyListsPage";
+import { Favorite } from "./Pages/Favorite";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
@@ -45,7 +45,7 @@ function App(): JSX.Element {
                 <Route
                     path="/mylists"
                     element={
-                        <MyListsPage
+                        <Favorite
                             titles={FavoriteMedia}
                             handleFavorites={handleFavorites}
                         />
