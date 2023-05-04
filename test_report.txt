@@ -38,9 +38,9 @@ All files                    |    8.37 |    12.72 |   11.68 |    8.64 |
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
   BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 17-46             
+  Favorite.tsx               |       0 |      100 |       0 |       0 | 9-32              
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
-  MyListsPage.tsx            |       0 |      100 |       0 |       0 | 9-32              
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
  src/UI                      |       0 |        0 |       0 |       0 |                   
   BasicDropdown.tsx          |       0 |        0 |       0 |       0 | 13-88             
@@ -50,5 +50,5 @@ All files                    |    8.37 |    12.72 |   11.68 |    8.64 |
 Test Suites: 3 passed, 3 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        4.976 s
+Time:        3.973 s
 Ran all test suites.
