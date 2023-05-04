@@ -1,11 +1,55 @@
 /* eslint-disable no-extra-parens */
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Role } from "../Interfaces";
-import { RenderSelectedMedia } from "./Favorites";
+import { Media, Role } from "../Interfaces";
+import RatingFeature from "../Components/MediaRatting";
+import { FindMedia } from "./Favorites";
 interface EditMediaPageProps {
     role: Role;
     titles: string[];
+}
+
+const MediaToButton = (mediaItem: Media): JSX.Element => {
+    return (
+        <div key={mediaItem.movieId} className="media-item">
+            <img src={mediaItem.image} alt={mediaItem.title} />
+            <div className="media-details">
+                <p className="media-year" data-testid="mediaYear">
+                    {mediaItem.yearReleased}
+                </p>
+                <div className="media-rating">
+                    {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
+                </div>
+            </div>
+            <p>Will be a Button</p>
+        </div>
+    );
+};
+export default function ListToButons({
+    MediaData
+}: {
+    MediaData: Media[];
+}): JSX.Element {
+    const mediaList = MediaData.map((Media) => {
+        return {
+            ...Media
+        };
+    });
+    return (
+        <div className="media-list-container" data-testid="mediaListContainer">
+            <div className="media-list">
+                {mediaList.map((mediaItem) => MediaToButton(mediaItem))}
+            </div>
+        </div>
+    );
+}
+function RenderSelectedMediaButtons(props: EditMediaPageProps) {
+    const filteredMedia = props.titles.map((title: string) => FindMedia(title));
+    return (
+        <div>
+            <ListToButons MediaData={filteredMedia} />
+        </div>
+    );
 }
 
 export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
@@ -18,7 +62,10 @@ export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <RenderSelectedMedia titles={props.titles} />
+            <RenderSelectedMediaButtons
+                titles={props.titles}
+                role={props.role}
+            />
         </>
     );
 };
