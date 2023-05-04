@@ -7,6 +7,8 @@ import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
+import { FaStar } from "react-icons/fa";
+
 interface FavoriteMediaProps {
     favTitles: string[];
     superTitles: string[];
@@ -22,18 +24,23 @@ export const BrowseMedia = ({
     handleEdits,
     role
 }: FavoriteMediaProps): JSX.Element => {
+    //The MediaData
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
+    //Function to change mediaList in other components
     function handleRender(mediaList: Media[]) {
         setMediaList([...mediaList]);
     }
 
     const [favorites, setFavorites] = useState<string[]>(favTitles);
     const [edits, setEdits] = useState<string[]>(superTitles);
+    const [starColor, setStarColor] = useState<string>("black");
     function handleOnFavoritesDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newMedia") as string;
         setFavorites([...favorites, newFavorite]);
         handleFavorites([...favorites, newFavorite]);
-        console.log([...favorites, newFavorite]);
+        // console.log([...favorites, newFavorite]);
+        //Set the color of the star back to the original one
+        setStarColor("black");
     }
     function handleOnEditsDrop(e: React.DragEvent) {
         const newEdit = e.dataTransfer.getData("newMedia") as string;
@@ -43,8 +50,10 @@ export const BrowseMedia = ({
             console.log([...edits, newEdit]);
         }
     }
+    //To change the color of the star when the image can be dragged into the favoritesList
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
+        setStarColor("green");
     }
 
     return (
@@ -78,6 +87,9 @@ export const BrowseMedia = ({
                     <></>
                 )}
             </div>
+            <h1>
+                <FaStar style={{ color: starColor }} />
+            </h1>
         </section>
     );
 };

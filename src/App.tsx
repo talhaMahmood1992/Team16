@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Settings } from "./Components/Settings";
 import { MainHeader } from "./Layout/MainHeader";
 import { AddMediaPage } from "./Pages/AddMediaPage";
-import { FriendsPage } from "./Pages/FriendsPage";
+// import { FriendsPage } from "./Pages/FriendsPage";
 import { HomePage } from "./Pages/HomePage";
 import { FavoritesPage } from "./Pages/Favorites";
 import { NotFound } from "./Pages/NotFound";
@@ -46,10 +46,15 @@ function App(): JSX.Element {
             )}
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/friends" element={<FriendsPage />} />
+                {/* <Route path="/friends" element={<FriendsPage />} /> */}
                 <Route
                     path="/mylists"
-                    element={<FavoritesPage titles={FavoriteMedia} />}
+                    element={
+                        <FavoritesPage
+                            titles={FavoriteMedia}
+                            handleFavorites={handleFavorites}
+                        />
+                    }
                 />
                 <Route
                     path="/addMedia"

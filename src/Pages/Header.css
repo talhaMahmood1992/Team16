@@ -1,4 +1,6 @@
 .header-container {
+    background-color: transparent;
+    color: black;
     position: fixed;
     top: 0;
     right: 0;
@@ -8,8 +10,6 @@
     justify-content: center;
     align-items: center;
     width: 80px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {

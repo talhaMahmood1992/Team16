@@ -86,9 +86,9 @@ export function FilterButton({
                     items={[
                         "Alphabetically",
                         "High to Low Ratings",
-                        "Low to High Ratings",
-                        "Show",
-                        "Movie"
+                        "Low to High Ratings"
+                        // "Show",
+                        // "Movie"
                     ]}
                     title={"Sort Media"}
                     onClick={(option) => handleSort(option)}
