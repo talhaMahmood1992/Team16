@@ -11,9 +11,9 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    8.37 |    12.72 |   11.68 |    8.64 |                   
+All files                    |    7.14 |    10.76 |    9.57 |     7.4 |                   
  src                         |       0 |        0 |       0 |       0 |                   
-  App.tsx                    |       0 |        0 |       0 |       0 | 15-31             
+  App.tsx                    |       0 |        0 |       0 |       0 | 16-36             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
@@ -37,8 +37,10 @@ All files                    |    8.37 |    12.72 |   11.68 |    8.64 |
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 16-20             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 17-46             
+  BrowseMedia.tsx            |       0 |        0 |       0 |       0 | 20-82             
+  EditMedia.tsx              |       0 |        0 |       0 |       0 | 12-62             
   Favorite.tsx               |       0 |      100 |       0 |       0 | 9-32              
+  Favorites.tsx              |       0 |      100 |       0 |       0 | 7-27              
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
@@ -50,5 +52,5 @@ All files                    |    8.37 |    12.72 |   11.68 |    8.64 |
 Test Suites: 3 passed, 3 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        3.973 s
+Time:        4.809 s
 Ran all test suites.
