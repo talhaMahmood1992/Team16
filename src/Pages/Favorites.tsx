@@ -4,7 +4,7 @@ import RenderMedia from "../Components/RenderMedia";
 interface FavoriteMediaProps {
     titles: string[];
 }
-export const MyListsPage = (props: FavoriteMediaProps): JSX.Element => {
+export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
     return (
         <>
             <FavoriteMedia titles={props.titles} />

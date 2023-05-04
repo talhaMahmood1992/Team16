@@ -5,7 +5,7 @@ import { MainHeader } from "./Layout/MainHeader";
 import { AddMediaPage } from "./Pages/AddMediaPage";
 import { FriendsPage } from "./Pages/FriendsPage";
 import { HomePage } from "./Pages/HomePage";
-import { MyListsPage } from "./Pages/MyListsPage";
+import { FavoritesPage } from "./Pages/Favorites";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
@@ -15,6 +15,7 @@ function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
     const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
+    //const [superList, setSuperList] = useState<string[]>([]);
 
     function handleFavorites(titles: string[]) {
         setFavoriteMedia([...titles]);
@@ -44,10 +45,14 @@ function App(): JSX.Element {
                 <Route path="/friends" element={<FriendsPage />} />
                 <Route
                     path="/mylists"
-                    element={<MyListsPage titles={FavoriteMedia} />}
+                    element={<FavoritesPage titles={FavoriteMedia} />}
                 />
                 <Route
                     path="/addMedia"
+                    element={<AddMediaPage role={role} />}
+                />
+                <Route
+                    path="/editMedia"
                     element={<AddMediaPage role={role} />}
                 />
                 <Route

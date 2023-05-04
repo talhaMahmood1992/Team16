@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaUserFriends, FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
-
+import { IoPencil } from "react-icons/io5";
 import classes from "./MainNavigation.module.css";
 import { Role } from "../Interfaces";
 
@@ -30,6 +30,18 @@ export const MainNavigation = ({
                         </NavLink>
                     </li>
                 )}
+                {role === "Admin" ||
+                    (role === "Super" /* eslint-disable-line */ && (
+                        <li>
+                            <NavLink
+                                to="/editMedia"
+                                className={classes.main_nav_link}
+                            >
+                                <IoPencil className={classes.icon} />
+                                <span>Edit Media</span>
+                            </NavLink>
+                        </li>
+                    ))}
 
                 <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>
