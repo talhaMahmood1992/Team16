@@ -3,18 +3,22 @@ import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
-import { Media } from "../Interfaces";
+import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 interface FavoriteMediaProps {
     titles: string[];
     handleFavorites: (titles: string[]) => void;
+    handleEdits: (titles: string[]) => void;
+    role: Role;
 }
 
 export const BrowseMedia = ({
     titles,
-    handleFavorites
+    handleFavorites,
+    handleEdits,
+    role
 }: FavoriteMediaProps): JSX.Element => {
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
     function handleRender(mediaList: Media[]) {
@@ -22,11 +26,18 @@ export const BrowseMedia = ({
     }
 
     const [favorites, setFavorites] = useState<string[]>(titles);
-    function handleOnDrop(e: React.DragEvent) {
-        const newFavorite = e.dataTransfer.getData("newFavorite") as string;
+    const [edits, setEdits] = useState<string[]>(titles);
+    function handleOnFavoritesDrop(e: React.DragEvent) {
+        const newFavorite = e.dataTransfer.getData("newMedia") as string;
         setFavorites([...favorites, newFavorite]);
         handleFavorites([...favorites, newFavorite]);
         console.log([...favorites, newFavorite]);
+    }
+    function handleOnEditsDrop(e: React.DragEvent) {
+        const newEdit = e.dataTransfer.getData("newMedia") as string;
+        setEdits([...edits, newEdit]);
+        handleEdits([...edits, newEdit]);
+        console.log([...edits, newEdit]);
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
@@ -41,14 +52,27 @@ export const BrowseMedia = ({
             <FilterButton MediaData={mediaData} onFilter={handleRender} />
             {<RenderMedia MediaData={mediaList} />}
             <div className="header-container">
-                <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
-                    <h1>Right Here!</h1>
+                <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
+                    <h1>Add To Favorites!</h1>
                     <ul>
                         {favorites.map((item, index) => (
                             <li key={index}>{item}</li>
                         ))}
                     </ul>{" "}
                 </div>
+                <br />
+                {role !== "Default" ? (
+                    <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
+                        <h1>Add to Edits</h1>
+                        <ul>
+                            {edits.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>{" "}
+                    </div>
+                ) : (
+                    <></>
+                )}
             </div>
         </section>
     );

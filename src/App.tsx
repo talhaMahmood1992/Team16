@@ -21,6 +21,9 @@ function App(): JSX.Element {
     function handleFavorites(titles: string[]) {
         setFavoriteMedia([...titles]);
     }
+    function handleEdits(titles: string[]) {
+        setSuperList([...titles]);
+    }
 
     const showSettingsHandler = (): void => {
         setSettingsIsShown(true);
@@ -54,13 +57,7 @@ function App(): JSX.Element {
                 />
                 <Route
                     path="/editMedia"
-                    element={
-                        <EditMediaPage
-                            role={role}
-                            titles={superList}
-                            setList={setSuperList}
-                        />
-                    }
+                    element={<EditMediaPage role={role} titles={superList} />}
                 />
                 <Route
                     path="/browseMedia"
@@ -68,6 +65,8 @@ function App(): JSX.Element {
                         <BrowseMedia
                             titles={FavoriteMedia}
                             handleFavorites={handleFavorites}
+                            handleEdits={handleEdits}
+                            role={role}
                         />
                     }
                 />

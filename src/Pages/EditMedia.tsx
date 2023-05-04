@@ -5,7 +5,6 @@ import { Role } from "../Interfaces";
 interface EditMediaPageProps {
     role: Role;
     titles: string[];
-    setList: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export const EditMediaPage = ({ role }: EditMediaPageProps): JSX.Element => {
