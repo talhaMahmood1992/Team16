@@ -49,7 +49,12 @@ function App(): JSX.Element {
                 {/* <Route path="/friends" element={<FriendsPage />} /> */}
                 <Route
                     path="/mylists"
-                    element={<FavoritesPage titles={FavoriteMedia} />}
+                    element={
+                        <FavoritesPage
+                            titles={FavoriteMedia}
+                            handleFavorites={handleFavorites}
+                        />
+                    }
                 />
                 <Route
                     path="/addMedia"

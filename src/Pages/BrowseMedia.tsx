@@ -64,14 +64,11 @@ export const BrowseMedia = ({
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             <FilterButton MediaData={mediaData} onFilter={handleRender} />
             {<RenderMedia MediaData={mediaList} />}
-            <div className="header-container">
-                <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
-                    <h1>Add To Favorites!</h1>
-                    <ul>
-                        {favorites.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>{" "}
+            <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
+                <div className="header-container">
+                    <h1>
+                        <FaStar style={{ color: starColor }} />
+                    </h1>
                 </div>
                 <br />
                 {role !== "Default" ? (
@@ -87,9 +84,6 @@ export const BrowseMedia = ({
                     <></>
                 )}
             </div>
-            <h1>
-                <FaStar style={{ color: starColor }} />
-            </h1>
         </section>
     );
 };

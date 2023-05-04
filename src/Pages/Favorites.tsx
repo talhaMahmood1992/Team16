@@ -1,8 +1,10 @@
 import React from "react";
 import { mediaData } from "../MediaData";
 import RenderMedia from "../Components/RenderMedia";
+import { DeleteMedia } from "../Components/RemoveMedia";
 interface FavoriteMediaProps {
     titles: string[];
+    handleFavorites: (titles: string[]) => void;
 }
 export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
     return (
@@ -10,7 +12,15 @@ export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
             <section className="page">
                 <h2 className="heading-secondary">My Favorites</h2>
             </section>
-            <RenderSelectedMedia titles={props.titles} />
+            <DeleteMedia
+                titles={props.titles}
+                handleFavorites={props.handleFavorites}
+            ></DeleteMedia>
+
+            <RenderSelectedMedia
+                titles={props.titles}
+                handleFavorites={props.handleFavorites}
+            />
         </>
     );
 };
