@@ -1,4 +1,3 @@
-/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
@@ -10,6 +9,7 @@ import "./Header.css";
 import { FaStar } from "react-icons/fa";
 
 interface FavoriteMediaProps {
+    //Because the media is dragged by the title
     titles: string[];
     handleFavorites: (titles: string[]) => void;
 }
@@ -18,20 +18,29 @@ export const BrowseMedia = ({
     titles,
     handleFavorites
 }: FavoriteMediaProps): JSX.Element => {
+    //The MediaData
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
+    //Function to change mediaList in other components
     function handleRender(mediaList: Media[]) {
         setMediaList([...mediaList]);
     }
-
+    //The list were we are dragging//adding the movies
     const [favorites, setFavorites] = useState<string[]>(titles);
+    //The color for the star
+    const [starColor, setStarColor] = useState<string>("black");
+
     function handleOnDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newFavorite") as string;
         setFavorites([...favorites, newFavorite]);
         handleFavorites([...favorites, newFavorite]);
-        console.log([...favorites, newFavorite]);
+        // console.log([...favorites, newFavorite]);
+        //Set the color of the star back to the original one
+        setStarColor("black");
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
+        //To change the color of the star when the image can be dragged into the favoritesList
+        setStarColor("green");
     }
 
     return (
@@ -41,18 +50,15 @@ export const BrowseMedia = ({
             </div>
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             <FilterButton MediaData={mediaData} onFilter={handleRender} />
-            {<RenderMedia MediaData={mediaList} />}
-            <div onDrop={handleOnDrop} onDragOver={handleDragOver}>
-                <div className="header-container">
-                    <h1>
-                        <FaStar></FaStar>
-                    </h1>
-                    {/* <ul>
-                        {favorites.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul> */}
-                </div>
+            <RenderMedia MediaData={mediaList} />
+            <div
+                className="header-container"
+                onDrop={handleOnDrop}
+                onDragOver={handleDragOver}
+            >
+                <h1>
+                    <FaStar style={{ color: starColor }} />
+                </h1>
             </div>
         </section>
     );
