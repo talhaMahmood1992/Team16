@@ -37,9 +37,11 @@ export const BrowseMedia = ({
     }
     function handleOnEditsDrop(e: React.DragEvent) {
         const newEdit = e.dataTransfer.getData("newMedia") as string;
-        setEdits([...edits, newEdit]);
-        handleEdits([...edits, newEdit]);
-        console.log([...edits, newEdit]);
+        if (!superTitles.includes(newEdit)) {
+            setEdits([...edits, newEdit]);
+            handleEdits([...edits, newEdit]);
+            console.log([...edits, newEdit]);
+        }
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();

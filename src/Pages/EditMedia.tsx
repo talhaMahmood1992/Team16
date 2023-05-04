@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Role } from "../Interfaces";
-
+import { RenderSelectedMedia } from "./Favorites";
 interface EditMediaPageProps {
     role: Role;
     titles: string[];
@@ -18,11 +18,7 @@ export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <ul>
-                {props.titles.map((title: string) => (
-                    <li key={props.titles.indexOf(title)}>{title}</li>
-                ))}
-            </ul>{" "}
+            <RenderSelectedMedia titles={props.titles} />
         </>
     );
 };

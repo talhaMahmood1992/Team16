@@ -7,22 +7,22 @@ interface FavoriteMediaProps {
 export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
     return (
         <>
-            <FavoriteMedia titles={props.titles} />
             <section className="page">
                 <h2 className="heading-secondary">My Favorites</h2>
             </section>
+            <RenderSelectedMedia titles={props.titles} />
         </>
     );
 };
 
-function FindMedia(searchTerm: string) {
+export function FindMedia(searchTerm: string) {
     const filteredData = mediaData.filter(
         (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
     );
     return filteredData[0];
 }
 
-export function FavoriteMedia(props: FavoriteMediaProps) {
+export function RenderSelectedMedia(props: FavoriteMediaProps) {
     const filteredMedia = props.titles.map((title) => FindMedia(title));
     return (
         <div>
