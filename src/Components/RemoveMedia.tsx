@@ -7,11 +7,6 @@ interface FavoriteMediaProps {
 export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     //State to see which Iteam the userWants to delete
     const [deletedMediaTitle, setDeletedMediaTitle] = useState<string>();
-    //Now filtering the titles to remove the deletedMediaTitle
-    //Now converting the filteredTitles to a List of
-    let filteredTitles = props.titles.filter(
-        (media) => media !== deletedMediaTitle
-    );
 
     //The color for the TrashCan
     const [trashColor, setTrashColor] = useState<string>("black");
@@ -19,7 +14,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("newFavorite") as string;
         setDeletedMediaTitle(toDelete);
-        filteredTitles = props.titles.filter(
+        const filteredTitles = props.titles.filter(
             (media) => media !== deletedMediaTitle
         );
 
@@ -35,23 +30,19 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
         // props.handleFavorites([...filteredTitles]);
     }
     return (
-        <>
-            <div
-                className="header-container"
-                onDrop={handleOnDrop}
-                onDragOver={handleDragOver}
-            >
-                {" "}
-                <div>
-                    <h2>Deleted Media List:</h2>
-                    <ul>
-                        <div>{deletedMediaTitle} state rect</div>
-                    </ul>
-                </div>
-                <h1>
-                    <FaTrash style={{ color: trashColor }} />
-                </h1>
+        <div
+            className="header-container"
+            onDrop={handleOnDrop}
+            onDragOver={handleDragOver}
+        >
+            <div>
+                <ul>
+                    <div>{deletedMediaTitle}</div>
+                </ul>
             </div>
-        </>
+            <h1>
+                <FaTrash style={{ color: trashColor }} />
+            </h1>
+        </div>
     );
 };
