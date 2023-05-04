@@ -37,9 +37,9 @@ export const BrowseMedia = ({
         //Set the color of the star back to the original one
         setStarColor("black");
     }
+    //To change the color of the star when the image can be dragged into the favoritesList
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
-        //To change the color of the star when the image can be dragged into the favoritesList
         setStarColor("green");
     }
 
