@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaUserFriends, FaStar } from "react-icons/fa";
@@ -19,7 +20,7 @@ export const MainNavigation = ({
     return (
         <nav>
             <ul className={classes.main_nav_list}>
-                {role === "Admin" /* eslint-disable-line */ && (
+                {role === "Super" /* eslint-disable-line */ && (
                     <li>
                         <NavLink
                             to="/addMedia"
@@ -30,18 +31,19 @@ export const MainNavigation = ({
                         </NavLink>
                     </li>
                 )}
-                {role === "Admin" ||
-                    (role === "Super" /* eslint-disable-line */ && (
-                        <li>
-                            <NavLink
-                                to="/editMedia"
-                                className={classes.main_nav_link}
-                            >
-                                <IoPencil className={classes.icon} />
-                                <span>Edit Media</span>
-                            </NavLink>
-                        </li>
-                    ))}
+                {role === "Admin" || role === "Super" ? (
+                    <li>
+                        <NavLink
+                            to="/editMedia"
+                            className={classes.main_nav_link}
+                        >
+                            <IoPencil className={classes.icon} />
+                            <span>Edit Media</span>
+                        </NavLink>
+                    </li>
+                ) : (
+                    <></>
+                )}
 
                 <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>

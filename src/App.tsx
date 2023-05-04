@@ -10,12 +10,13 @@ import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
 import { Role } from "./Interfaces";
+import { EditMediaPage } from "./Pages/EditMedia";
 
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
     const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
-    //const [superList, setSuperList] = useState<string[]>([]);
+    const [superList, setSuperList] = useState<string[]>([]);
 
     function handleFavorites(titles: string[]) {
         setFavoriteMedia([...titles]);
@@ -53,7 +54,13 @@ function App(): JSX.Element {
                 />
                 <Route
                     path="/editMedia"
-                    element={<AddMediaPage role={role} />}
+                    element={
+                        <EditMediaPage
+                            role={role}
+                            titles={superList}
+                            setList={setSuperList}
+                        />
+                    }
                 />
                 <Route
                     path="/browseMedia"

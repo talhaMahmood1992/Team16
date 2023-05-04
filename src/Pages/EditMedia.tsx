@@ -1,32 +1,23 @@
-import React from "react";
-import { mediaData } from "../MediaData";
-import RenderMedia from "../Components/RenderMedia";
-interface FavoriteMediaProps {
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Role } from "../Interfaces";
+
+interface EditMediaPageProps {
+    role: Role;
     titles: string[];
+    setList: React.Dispatch<React.SetStateAction<string[]>>;
 }
-export const MyListsPage = (props: FavoriteMediaProps): JSX.Element => {
+
+export const EditMediaPage = ({ role }: EditMediaPageProps): JSX.Element => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (role == "Default") {
+            navigate("/");
+        }
+    }, [role]);
     return (
         <>
-            <FavoriteMedia titles={props.titles} />
-            <section className="page">
-                <h2 className="heading-secondary">Admin List</h2>
-            </section>
+            <h2 className="heading-secondary">Edit Media</h2>
         </>
     );
 };
-
-function FindMedia(searchTerm: string) {
-    const filteredData = mediaData.filter(
-        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
-    );
-    return filteredData[0];
-}
-
-export function FavoriteMedia(props: FavoriteMediaProps) {
-    const filteredMedia = props.titles.map((title) => FindMedia(title));
-    return (
-        <div>
-            <RenderMedia MediaData={filteredMedia} />
-        </div>
-    );
-}
