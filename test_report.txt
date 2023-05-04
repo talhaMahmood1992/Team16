@@ -11,15 +11,16 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    8.88 |    12.72 |   12.16 |    9.19 |                   
+All files                    |    8.29 |    12.72 |   11.53 |    8.55 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 15-31             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
- src/Components              |   24.24 |    21.87 |   34.61 |   25.39 |                   
+ src/Components              |      20 |    21.87 |   29.03 |   20.77 |                   
   FilterButton.tsx           |       0 |        0 |       0 |       0 | 18-94             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
+  RemoveMedia.tsx            |       0 |      100 |       0 |       0 | 7-37              
   RenderMedia.tsx            |      75 |      100 |   66.66 |      75 | 9,18              
   Search.tsx                 |      80 |    83.33 |     100 |      80 | 74-75             
   Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
@@ -39,7 +40,7 @@ All files                    |    8.88 |    12.72 |   12.16 |    9.19 |
   BrowseMedia.tsx            |       0 |      100 |       0 |       0 | 17-46             
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
-  MyListsPage.tsx            |       0 |      100 |       0 |       0 | 7-27              
+  MyListsPage.tsx            |       0 |      100 |       0 |       0 | 9-32              
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
  src/UI                      |       0 |        0 |       0 |       0 |                   
   BasicDropdown.tsx          |       0 |        0 |       0 |       0 | 13-88             
@@ -49,5 +50,5 @@ All files                    |    8.88 |    12.72 |   12.16 |    9.19 |
 Test Suites: 3 passed, 3 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        4.237 s
+Time:        4.266 s
 Ran all test suites.
