@@ -63,7 +63,8 @@ function App(): JSX.Element {
                     path="/browseMedia"
                     element={
                         <BrowseMedia
-                            titles={FavoriteMedia}
+                            favTitles={FavoriteMedia}
+                            superTitles={superList}
                             handleFavorites={handleFavorites}
                             handleEdits={handleEdits}
                             role={role}

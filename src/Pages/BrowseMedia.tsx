@@ -8,14 +8,16 @@ import RenderMedia from "../Components/RenderMedia";
 import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 interface FavoriteMediaProps {
-    titles: string[];
+    favTitles: string[];
+    superTitles: string[];
     handleFavorites: (titles: string[]) => void;
     handleEdits: (titles: string[]) => void;
     role: Role;
 }
 
 export const BrowseMedia = ({
-    titles,
+    favTitles,
+    superTitles,
     handleFavorites,
     handleEdits,
     role
@@ -25,8 +27,8 @@ export const BrowseMedia = ({
         setMediaList([...mediaList]);
     }
 
-    const [favorites, setFavorites] = useState<string[]>(titles);
-    const [edits, setEdits] = useState<string[]>(titles);
+    const [favorites, setFavorites] = useState<string[]>(favTitles);
+    const [edits, setEdits] = useState<string[]>(superTitles);
     function handleOnFavoritesDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newMedia") as string;
         setFavorites([...favorites, newFavorite]);
