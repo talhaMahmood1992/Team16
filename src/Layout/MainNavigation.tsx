@@ -1,6 +1,7 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaUserFriends, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
 
@@ -19,7 +20,7 @@ export const MainNavigation = ({
     return (
         <nav>
             <ul className={classes.main_nav_list}>
-                {role === "Admin" /* eslint-disable-line */ && (
+                {role === "Super" /* eslint-disable-line */ && ( //Now Add Media will only show for the Super
                     <li>
                         <NavLink
                             to="/addMedia"
@@ -31,18 +32,24 @@ export const MainNavigation = ({
                     </li>
                 )}
 
-                <li>
+                {/* <li>
                     <NavLink to="/friends" className={classes.main_nav_link}>
                         <FaUserFriends className={classes.icon} />
                         <span>Friends</span>
                     </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/mylists" className={classes.main_nav_link}>
-                        <FaStar className={classes.icon} />
-                        <span>Favorites</span>
-                    </NavLink>
-                </li>
+                </li> */}
+
+                {role !== "Super" && role !== "Admin" && (
+                    /* eslint-disable-line */ <li>
+                        <NavLink
+                            to="/mylists"
+                            className={classes.main_nav_link}
+                        >
+                            <FaStar className={classes.icon} />
+                            <span>Favorites</span>
+                        </NavLink>
+                    </li>
+                )}
                 <li>
                     <button
                         className={classes.role_button}
