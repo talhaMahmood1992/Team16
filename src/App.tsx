@@ -50,7 +50,6 @@ function App(): JSX.Element {
                 <Route
                     path="/mylists"
                     element={<FavoritesPage titles={FavoriteMedia} />}
-
                 />
                 <Route
                     path="/addMedia"
