@@ -6,7 +6,7 @@ interface FavoriteMediaProps {
     titles: string[];
     handleFavorites: (titles: string[]) => void;
 }
-export const MyListsPage = (props: FavoriteMediaProps): JSX.Element => {
+export const Favorite = (props: FavoriteMediaProps): JSX.Element => {
     const filteredMedia = props.titles.map((title) => FindMedia(title));
 
     return (
