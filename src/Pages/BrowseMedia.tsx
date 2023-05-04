@@ -33,7 +33,7 @@ export const BrowseMedia = ({
         const newFavorite = e.dataTransfer.getData("newFavorite") as string;
         setFavorites([...favorites, newFavorite]);
         handleFavorites([...favorites, newFavorite]);
-        // console.log([...favorites, newFavorite]);
+
         //Set the color of the star back to the original one
         setStarColor("black");
     }
