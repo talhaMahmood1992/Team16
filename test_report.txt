@@ -11,16 +11,16 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    8.29 |    12.72 |   11.53 |    8.55 |                   
+All files                    |    8.37 |    12.72 |   11.68 |    8.64 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 15-31             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |       0 |      100 |       0 |       0 | 5-8               
   UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
- src/Components              |      20 |    21.87 |   29.03 |   20.77 |                   
+ src/Components              |   20.51 |    21.87 |      30 |   21.33 |                   
   FilterButton.tsx           |       0 |        0 |       0 |       0 | 18-94             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
-  RemoveMedia.tsx            |       0 |      100 |       0 |       0 | 7-37              
+  RemoveMedia.tsx            |       0 |      100 |       0 |       0 | 7-32              
   RenderMedia.tsx            |      75 |      100 |   66.66 |      75 | 9,18              
   Search.tsx                 |      80 |    83.33 |     100 |      80 | 74-75             
   Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
@@ -50,5 +50,5 @@ All files                    |    8.29 |    12.72 |   11.53 |    8.55 |
 Test Suites: 3 passed, 3 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        4.266 s
+Time:        4.976 s
 Ran all test suites.
