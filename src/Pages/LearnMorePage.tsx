@@ -10,10 +10,8 @@ export const LearnMorePage = (): JSX.Element => {
                     ProjectX is an easy way to discover new movies and shows to
                     watch! You can find top movies and shows by ratings or
                     search through genres. Add any movie or show to a favorites
-                    list or a to-watch list and add ratings to your favorites.
-                    Check out what your friends are watching by looking at their
-                    favorites! Can&apos;t find a movie or show you like? Send in
-                    a request to have that media added!
+                    list and add a rating or review. Can&apos;t find a movie or
+                    show you like? Send in a request to have that media added!
                 </p>
             </div>
             <div className={classes.creators_text}>
@@ -22,19 +20,11 @@ export const LearnMorePage = (): JSX.Element => {
                     <div className={classes.column}>
                         <div className={classes.card}>
                             <img
-                                className={classes.creator_image}
-                                src={require("../imgs/creators/dog2.png")}
+                                src={require("../imgs/creators/dog.jpg")}
                                 alt="Abdulrahman Abdulhamid"
                             />
                             <div className={classes.container}>
                                 <h2>Abdulrahman Abdulhamid</h2>
-                                <p className={classes.creator_position}>
-                                    CEO & Founder
-                                </p>
-                                <p>
-                                    Some text that describes me lorem ipsum
-                                    ipsum lorem.
-                                </p>
                                 <p>bood@udel.edu</p>
                             </div>
                         </div>
@@ -42,19 +32,11 @@ export const LearnMorePage = (): JSX.Element => {
                     <div className={classes.column}>
                         <div className={classes.card}>
                             <img
-                                className={classes.creator_image}
-                                src={require("../imgs/creators/dog2.png")}
+                                src={require("../imgs/creators/dog.jpg")}
                                 alt="Talha Mahmood"
                             />
                             <div className={classes.container}>
                                 <h2>Talha Mahmood</h2>
-                                <p className={classes.creator_position}>
-                                    CEO & Founder
-                                </p>
-                                <p>
-                                    Some text that describes me lorem ipsum
-                                    ipsum lorem.
-                                </p>
                                 <p>talha@udel.edu</p>
                             </div>
                         </div>
@@ -62,60 +44,36 @@ export const LearnMorePage = (): JSX.Element => {
                     <div className={classes.column}>
                         <div className={classes.card}>
                             <img
-                                className={classes.creator_image}
-                                src={require("../imgs/creators/dog2.png")}
-                                alt="Talha Mahmood"
+                                src={require("../imgs/creators/dog.jpg")}
+                                alt="Joey Hooper"
                             />
                             <div className={classes.container}>
-                                <h2>Talha Mahmood</h2>
-                                <p className={classes.creator_position}>
-                                    CEO & Founder
-                                </p>
-                                <p>
-                                    Some text that describes me lorem ipsum
-                                    ipsum lorem.
-                                </p>
-                                <p>talha@udel.edu</p>
+                                <h2>Joey Hooper</h2>
+                                <p>joeyhoop@udel.edu</p>
                             </div>
                         </div>
                     </div>
                     <div className={classes.column}>
                         <div className={classes.card}>
                             <img
-                                className={classes.creator_image}
-                                src={require("../imgs/creators/dog2.png")}
-                                alt="Talha Mahmood"
+                                src={require("../imgs/creators/dog.jpg")}
+                                alt="Ian Steele"
                             />
                             <div className={classes.container}>
-                                <h2>Talha Mahmood</h2>
-                                <p className={classes.creator_position}>
-                                    CEO & Founder
-                                </p>
-                                <p>
-                                    Some text that describes me lorem ipsum
-                                    ipsum lorem.
-                                </p>
-                                <p>talha@udel.edu</p>
+                                <h2>Ian Steele</h2>
+                                <p>ijsteele@udel.edu</p>
                             </div>
                         </div>
                     </div>
                     <div className={classes.column}>
                         <div className={classes.card}>
                             <img
-                                className={classes.creator_image}
-                                src={require("../imgs/creators/dog2.png")}
-                                alt="Talha Mahmood"
+                                src={require("../imgs/creators/dog.jpg")}
+                                alt="Mercedes Mathews"
                             />
                             <div className={classes.container}>
-                                <h2>Talha Mahmood</h2>
-                                <p className={classes.creator_position}>
-                                    CEO & Founder
-                                </p>
-                                <p>
-                                    Some text that describes me lorem ipsum
-                                    ipsum lorem.
-                                </p>
-                                <p>talha@udel.edu</p>
+                                <h2>Mercedes Mathews</h2>
+                                <p>mmathews@udel.edu</p>
                             </div>
                         </div>
                     </div>
