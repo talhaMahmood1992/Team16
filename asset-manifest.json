@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Team16/static/css/main.568a4e42.css",
-    "main.js": "/Team16/static/js/main.757c50b2.js",
+    "main.css": "/Team16/static/css/main.cb76ea19.css",
+    "main.js": "/Team16/static/js/main.1cb5b58f.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland_drive.jpg": "/Team16/static/media/mulholland_drive.d988b4999281e7db8809.jpg",
     "static/media/the_matrix.jpg": "/Team16/static/media/the_matrix.874c36d00d9ec6af151c.jpg",
@@ -55,6 +55,7 @@
     "static/media/american_psycho.jpg": "/Team16/static/media/american_psycho.13bb71d94e2be9730230.jpg",
     "static/media/Sipder_Man2.jpg": "/Team16/static/media/Sipder_Man2.60f72ed9189888e7690f.jpg",
     "static/media/Iron_Man3.jpg": "/Team16/static/media/Iron_Man3.22b11d268a440cb28089.jpg",
+    "static/media/dog.jpg": "/Team16/static/media/dog.42a984b4572d040c26ea.jpg",
     "static/media/twin_peaks.jpg": "/Team16/static/media/twin_peaks.4f8ce16df3785d486647.jpg",
     "static/media/Joker.jpg": "/Team16/static/media/Joker.e715ddc7934d25f6f883.jpg",
     "static/media/BatMan_Begins.jpg": "/Team16/static/media/BatMan_Begins.5c56ddcc2b36b2fad6a1.jpg",
@@ -109,12 +110,12 @@
     "static/media/fight_club.jpg": "/Team16/static/media/fight_club.9a3f1c7565a02e40be0a.jpg",
     "static/media/Mr_Robot.jpg": "/Team16/static/media/Mr_Robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
-    "main.568a4e42.css.map": "/Team16/static/css/main.568a4e42.css.map",
-    "main.757c50b2.js.map": "/Team16/static/js/main.757c50b2.js.map",
+    "main.cb76ea19.css.map": "/Team16/static/css/main.cb76ea19.css.map",
+    "main.1cb5b58f.js.map": "/Team16/static/js/main.1cb5b58f.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.568a4e42.css",
-    "static/js/main.757c50b2.js"
+    "static/css/main.cb76ea19.css",
+    "static/js/main.1cb5b58f.js"
   ]
 }
