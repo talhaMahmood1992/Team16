@@ -8,6 +8,7 @@ import RenderMedia from "../Components/RenderMedia";
 // import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
+import { GiFlexibleLamp } from "react-icons/gi";
 
 interface FavoriteMediaProps {
     favTitles: string[];
@@ -48,6 +49,7 @@ export const BrowseMedia = ({
             setEdits([...edits, newEdit]);
             handleEdits([...edits, newEdit]);
             console.log([...edits, newEdit]);
+            setStarColor("black");
         }
     }
     //To change the color of the star when the image can be dragged into the favoritesList
@@ -64,26 +66,30 @@ export const BrowseMedia = ({
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
             {<RenderMedia MediaData={mediaList} />}
-            <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
-                <div className="header-container">
-                    <h1>
-                        <FaStar style={{ color: starColor }} />
-                    </h1>
-                </div>
-                <br />
-                {role !== "Default" ? (
-                    <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
-                        <h1>Add to Edits</h1>
-                        <ul>
-                            {edits.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>{" "}
+            {role !== "Admin" && role !== "Super" ? (
+                <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
+                    <div className="header-container">
+                        <h1>
+                            <FaStar style={{ color: starColor }} />
+                        </h1>
                     </div>
-                ) : (
-                    <></>
-                )}
-            </div>
+                    <br />
+                </div>
+            ) : (
+                <></>
+            )}
+
+            {role !== "Default" ? (
+                <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
+                    <div className="header-container">
+                        <GiFlexibleLamp
+                            style={{ color: starColor, fontSize: "24px" }}
+                        />
+                    </div>
+                </div>
+            ) : (
+                <></>
+            )}
         </section>
     );
 };
