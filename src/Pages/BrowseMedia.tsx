@@ -5,7 +5,7 @@ import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
-import { FilterButton } from "../Components/FilterButton";
+// import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 
@@ -62,7 +62,7 @@ export const BrowseMedia = ({
                 <Slider />
             </div>
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
-            <FilterButton MediaData={mediaData} onFilter={handleRender} />
+            {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
             {<RenderMedia MediaData={mediaList} />}
             <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                 <div className="header-container">
