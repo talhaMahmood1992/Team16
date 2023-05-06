@@ -5,7 +5,7 @@ import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
-import { FilterButton } from "../Components/FilterButton";
+// import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 
@@ -62,16 +62,13 @@ export const BrowseMedia = ({
                 <Slider />
             </div>
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
-            <FilterButton MediaData={mediaData} onFilter={handleRender} />
+            {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
             {<RenderMedia MediaData={mediaList} />}
-            <div className="header-container">
-                <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
-                    <h1>Add To Favorites!</h1>
-                    <ul>
-                        {favorites.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>{" "}
+            <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
+                <div className="header-container">
+                    <h1>
+                        <FaStar style={{ color: starColor }} />
+                    </h1>
                 </div>
                 <br />
                 {role !== "Default" ? (
@@ -87,9 +84,6 @@ export const BrowseMedia = ({
                     <></>
                 )}
             </div>
-            <h1>
-                <FaStar style={{ color: starColor }} />
-            </h1>
         </section>
     );
 };

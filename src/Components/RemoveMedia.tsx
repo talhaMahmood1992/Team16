@@ -12,7 +12,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     const [trashColor, setTrashColor] = useState<string>("black");
 
     function handleOnDrop(e: React.DragEvent) {
-        const toDelete = e.dataTransfer.getData("newFavorite") as string;
+        const toDelete = e.dataTransfer.getData("newMedia") as string;
         setDeletedMediaTitle(toDelete);
         const filteredTitles = props.titles.filter(
             (media) => media !== deletedMediaTitle
