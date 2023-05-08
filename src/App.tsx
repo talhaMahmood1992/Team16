@@ -11,6 +11,7 @@ import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
 import { Role } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
+import { AddUsers } from "./Pages/AddUser";
 
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
@@ -78,6 +79,7 @@ function App(): JSX.Element {
                 />
                 <Route path="/learnMorePage" element={<LearnMorePage />} />
                 <Route path="/*" element={<NotFound />} />
+                <Route path="/AddUser" element={<AddUsers />} />
             </Routes>
         </div>
     );
