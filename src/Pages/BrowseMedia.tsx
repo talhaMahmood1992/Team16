@@ -66,7 +66,7 @@ export const BrowseMedia = ({
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
             {<RenderMedia MediaData={mediaList} />}
-            {role !== "Admin" && role !== "Super" ? (
+            {role === "Default" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">
                         <h1>
