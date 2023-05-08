@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Settings } from "./Components/Settings";
 import { MainHeader } from "./Layout/MainHeader";
@@ -15,7 +15,7 @@ import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
 import { Media } from "./Interfaces";
 import { AddUsers } from "./Pages/AddUser";
-
+import axios from "axios";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
@@ -36,6 +36,21 @@ function App(): JSX.Element {
     const hideSettingsHandler = (): void => {
         setSettingsIsShown(false);
     };
+
+    useEffect(() => {
+        const getMediaData = async () => {
+            try {
+                const mediaData = await axios.get(
+                    "https://team16-c5r2.onrender.com/media"
+                );
+                console.log(mediaData);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        getMediaData();
+    }, []);
 
     return (
         <div>
