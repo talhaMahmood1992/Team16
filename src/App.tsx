@@ -13,11 +13,13 @@ import { Role } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
 import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
+import { Media } from "./Interfaces";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
     const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
     const [superList, setSuperList] = useState<string[]>([]);
+    const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
     function handleFavorites(titles: string[]) {
         setFavoriteMedia([...titles]);
     }
@@ -62,7 +64,13 @@ function App(): JSX.Element {
                 />
                 <Route
                     path="/editMedia"
-                    element={<EditMediaPage role={role} titles={superList} />}
+                    element={
+                        <EditMediaPage
+                            role={role}
+                            titles={superList}
+                            setter={setChangeMedia}
+                        />
+                    }
                 />
                 <Route
                     path="/browseMedia"
@@ -80,7 +88,7 @@ function App(): JSX.Element {
                 <Route
                     path="/mediaRevision"
                     element={
-                        <EditorInterface role={role} media={mediaData[0]} />
+                        <EditorInterface role={role} media={changeMedia} />
                     }
                 />
                 <Route path="/*" element={<NotFound />} />

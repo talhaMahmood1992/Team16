@@ -8,9 +8,18 @@ import { NavLink } from "react-router-dom";
 interface EditMediaPageProps {
     role: Role;
     titles: string[];
+    setter: React.Dispatch<React.SetStateAction<Media>>;
 }
-
-const MediaToButton = (mediaItem: Media): JSX.Element => {
+const prepareRevision = (
+    media: Media,
+    setter: React.Dispatch<React.SetStateAction<Media>>
+) => {
+    setter(media);
+};
+const MediaToButton = (
+    mediaItem: Media,
+    setter: React.Dispatch<React.SetStateAction<Media>>
+): JSX.Element => {
     return (
         <div key={mediaItem.movieId} className="media-item">
             <img src={mediaItem.image} alt={mediaItem.title} />
@@ -22,18 +31,20 @@ const MediaToButton = (mediaItem: Media): JSX.Element => {
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
                 </div>
             </div>
-            <NavLink to="/mediaRevision">
+            <NavLink
+                to="/mediaRevision"
+                onClick={() => prepareRevision(mediaItem, setter)}
+            >
                 <p>Edit This Media</p>
             </NavLink>
         </div>
     );
 };
-export default function ListToButons({
-    MediaData
-}: {
+export default function ListToButons(props: {
     MediaData: Media[];
+    setter: React.Dispatch<React.SetStateAction<Media>>;
 }): JSX.Element {
-    const mediaList = MediaData.map((Media) => {
+    const mediaList = props.MediaData.map((Media) => {
         return {
             ...Media
         };
@@ -41,7 +52,9 @@ export default function ListToButons({
     return (
         <div className="media-list-container" data-testid="mediaListContainer">
             <div className="media-list">
-                {mediaList.map((mediaItem) => MediaToButton(mediaItem))}
+                {mediaList.map((mediaItem) =>
+                    MediaToButton(mediaItem, props.setter)
+                )}
             </div>
         </div>
     );
@@ -50,7 +63,7 @@ function RenderSelectedMediaButtons(props: EditMediaPageProps) {
     const filteredMedia = props.titles.map((title: string) => FindMedia(title));
     return (
         <div>
-            <ListToButons MediaData={filteredMedia} />
+            <ListToButons MediaData={filteredMedia} setter={props.setter} />
         </div>
     );
 }
@@ -68,6 +81,7 @@ export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
             <RenderSelectedMediaButtons
                 titles={props.titles}
                 role={props.role}
+                setter={props.setter}
             />
         </>
     );
