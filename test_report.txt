@@ -11,19 +11,19 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   17.35 |    15.06 |   17.97 |   17.92 |                   
- src                         |    6.66 |        0 |       0 |    7.14 |                   
+All files                    |   17.19 |    15.06 |   17.58 |   17.84 |                   
+ src                         |    5.88 |        0 |       0 |    6.66 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 16-36             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |   33.33 |      100 |       0 |      50 | 5                 
-  UserData.tsx               |       0 |      100 |     100 |       0 | 4                 
+  UserData.tsx               |       0 |      100 |       0 |       0 | 4-68              
  src/Components              |   25.92 |    26.47 |   35.48 |   26.92 |                   
   FilterButton.tsx           |     5.4 |        0 |    7.14 |    5.88 | 18-57,61-78,94    
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
   RemoveMedia.tsx            |       0 |      100 |       0 |       0 | 7-32              
   RenderMedia.tsx            |      75 |      100 |   66.66 |      75 | 9,18              
   Search.tsx                 |   84.61 |     87.5 |     100 |   84.61 | 35-36             
-  Settings.tsx               |       0 |        0 |       0 |       0 | 14-29             
+  Settings.tsx               |       0 |        0 |       0 |       0 | 15-30             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-131            
   FormSchema.tsx             |       0 |      100 |     100 |       0 | 3-4               
@@ -51,5 +51,5 @@ All files                    |   17.35 |    15.06 |   17.97 |   17.92 |
 Test Suites: 3 passed, 3 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        6.343 s
+Time:        5.533 s
 Ran all test suites.
