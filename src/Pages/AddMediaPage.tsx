@@ -10,7 +10,7 @@ interface AddMediaPageProps {
 export const AddMediaPage = ({ role }: AddMediaPageProps): JSX.Element => {
     const navigate = useNavigate();
     useEffect(() => {
-        if (role !== "Admin") {
+        if (role !== "Super") {
             navigate("/");
         }
     }, [role]);
