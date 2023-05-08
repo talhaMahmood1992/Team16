@@ -3,6 +3,24 @@ import { findMedia, mediaData } from "./MediaData";
 
 export const UserData: UserInterface[] = [
     {
+        username: "Test",
+        watched: [],
+        toWatch: [],
+        role: "Default"
+    },
+    {
+        username: "Super",
+        watched: [],
+        toWatch: [],
+        role: "Super"
+    },
+    {
+        username: "Admin",
+        watched: [],
+        toWatch: [],
+        role: "Admin"
+    },
+    {
         username: "Ian",
         watched: [
             {
@@ -17,26 +35,35 @@ export const UserData: UserInterface[] = [
                     .movieId
             }
         ],
-        toWatch: [mediaData[findMedia(mediaData, "Mad Men")]]
+        toWatch: [mediaData[findMedia(mediaData, "Mad Men")]],
+        role: "Default"
     },
     {
         username: "Joey",
         watched: [],
-        toWatch: []
+        toWatch: [],
+        role: "Default"
     },
     {
         username: "Bood",
         watched: [],
-        toWatch: []
+        toWatch: [],
+        role: "Default"
     },
     {
         username: "Talha",
         watched: [],
-        toWatch: []
+        toWatch: [],
+        role: "Default"
     },
     {
         username: "Mercedes",
         watched: [],
-        toWatch: []
+        toWatch: [],
+        role: "Default"
     }
 ];
+
+export function getUserNames(): string[] {
+    return UserData.map((user) => user.username);
+}
