@@ -12,6 +12,7 @@ import { LearnMorePage } from "./Pages/LearnMorePage";
 import { Role } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
 import { EditorInterface } from "./Pages/EditorInterface";
+import { mediaData } from "./MediaData";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
@@ -78,7 +79,9 @@ function App(): JSX.Element {
                 <Route path="/learnMorePage" element={<LearnMorePage />} />
                 <Route
                     path="/mediaRevision"
-                    element={<EditorInterface role={role} />}
+                    element={
+                        <EditorInterface role={role} media={mediaData[0]} />
+                    }
                 />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
