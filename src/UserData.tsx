@@ -17,26 +17,26 @@ export const UserData: UserInterface[] = [
                     .movieId
             }
         ],
-        toWatch: [mediaData[findMedia(mediaData, "Mad Men")]]
+        role: "Default"
     },
     {
         username: "Joey",
         watched: [],
-        toWatch: []
+        role: "Default"
     },
     {
         username: "Bood",
         watched: [],
-        toWatch: []
+        role: "Default"
     },
     {
         username: "Talha",
         watched: [],
-        toWatch: []
+        role: "Default"
     },
     {
         username: "Mercedes",
         watched: [],
-        toWatch: []
+        role: "Default"
     }
 ];

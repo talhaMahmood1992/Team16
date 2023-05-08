@@ -7,10 +7,10 @@ interface FavoriteMediaProps {
 export const MyListsPage = (props: FavoriteMediaProps): JSX.Element => {
     return (
         <>
-            <FavoriteMedia titles={props.titles} />
             <section className="page">
                 <h2 className="heading-secondary">My Favorites</h2>
             </section>
+            <FavoriteMedia titles={props.titles} />
         </>
     );
 };
