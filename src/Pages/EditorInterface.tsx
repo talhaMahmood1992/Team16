@@ -1,23 +1,24 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { EditMediaForm } from "../Components/AddMediaForm/EditMediaForm";
-import { Role } from "../Interfaces";
+import { Media, Role } from "../Interfaces";
 
-interface AddMediaPageProps {
+interface EditInterfaceProps {
     role: Role;
+    media: Media;
 }
 
-export const EditorInterface = ({ role }: AddMediaPageProps): JSX.Element => {
+export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
     const navigate = useNavigate();
     useEffect(() => {
-        if (role == "Default") {
+        if (props.role == "Default") {
             navigate("/");
         }
-    }, [role]);
+    }, [props.role]);
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <EditMediaForm />
+            <EditMediaForm media={props.media} />
         </>
     );
 };
