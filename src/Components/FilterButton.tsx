@@ -3,7 +3,7 @@ import React from "react";
 import { Media } from "../Interfaces";
 import classes from "./FilterButton.module.css";
 import { BasicDropdown } from "../UI/BasicDropdown";
-interface FilterProps {
+export interface FilterProps {
     //The data we are gonna search In
     MediaData: Media[];
     //The setter Function for the MediaList state in the BrowseMedia
