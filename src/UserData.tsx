@@ -26,13 +26,12 @@ export const UserData: UserInterface[] = [
             {
                 media: mediaData[findMedia(mediaData, "Mad Men")],
                 review: "",
-                id: mediaData[findMedia(mediaData, "Mad Men")].movieId
+                id: mediaData[findMedia(mediaData, "Mad Men")]._id
             },
             {
                 media: mediaData[findMedia(mediaData, "Lawrence of Arabia")],
                 review: "",
-                id: mediaData[findMedia(mediaData, "Lawrence of Arabia")]
-                    .movieId
+                id: mediaData[findMedia(mediaData, "Lawrence of Arabia")]._id
             }
         ],
         toWatch: [mediaData[findMedia(mediaData, "Mad Men")]],

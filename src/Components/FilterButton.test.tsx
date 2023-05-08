@@ -12,7 +12,7 @@ const mockMediaData: Media[] = [
         rating: 5,
         image: "",
         genres: ["Adventure", "Drama", "Science Fiction", "Thriller"],
-        movieId: "1"
+        _id: "1"
     },
     {
         title: "Apocalypse Now",
@@ -21,7 +21,7 @@ const mockMediaData: Media[] = [
         rating: 5,
         image: "",
         genres: ["Adventure", "History", "Thriller"],
-        movieId: "2"
+        _id: "2"
     }
 ];
 

@@ -13,7 +13,7 @@ describe("RenderMedia", () => {
             rating: 4,
             image: require("../imgs/media-covers/fight_club.jpg"),
             genres: ["Action", "Crime", "Drama", "Mystery", "Thriller"],
-            movieId: "1"
+            _id: "1"
         },
         {
             title: "Drive",
@@ -22,7 +22,7 @@ describe("RenderMedia", () => {
             rating: 3,
             image: require("../imgs/media-covers/drive.jpg"),
             genres: ["Action", "Crime", "Drama", "Thriller"],
-            movieId: "2"
+            _id: "2"
         }
     ];
 

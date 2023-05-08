@@ -52,7 +52,7 @@ export const AddMediaForm = (): JSX.Element => {
                 rating: data.rating,
                 image: data.image,
                 genres: [],
-                movieId: nanoid()
+                _id: nanoid()
             });
             reset();
         }

@@ -30,7 +30,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 rating: data.rating,
                 image: data.image,
                 genres: [],
-                movieId: nanoid()
+                _id: nanoid()
             });
             reset();
         }

@@ -21,7 +21,7 @@ const MediaToButton = (
     setter: React.Dispatch<React.SetStateAction<Media>>
 ): JSX.Element => {
     return (
-        <div key={mediaItem.movieId} className="media-item">
+        <div key={mediaItem._id} className="media-item">
             <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
