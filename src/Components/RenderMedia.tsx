@@ -11,7 +11,7 @@ function handleOnDrag(e: React.DragEvent, newMedia: string) {
 export const mediaToElement = (mediaItem: Media): JSX.Element => {
     return (
         <div
-            key={mediaItem.movieId}
+            key={mediaItem._id}
             className="media-item"
             data-testid="mediaItem"
             draggable

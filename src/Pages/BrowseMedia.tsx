@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
@@ -9,6 +9,7 @@ import RenderMedia from "../Components/RenderMedia";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
+import axios from "axios";
 
 interface FavoriteMediaProps {
     favTitles: string[];
@@ -35,6 +36,21 @@ export const BrowseMedia = ({
     const [favorites, setFavorites] = useState<string[]>(favTitles);
     const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
+    useEffect(() => {
+        const getMediaData = async () => {
+            try {
+                const mediaData = await axios.get(
+                    "https://team16-c5r2.onrender.com/media"
+                );
+                // console.log("DATA PRINT");
+                console.log(mediaData["data"]["data"]["media"]);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getMediaData();
+    }, []);
+
     function handleOnFavoritesDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newMedia") as string;
         setFavorites([...favorites, newFavorite]);
@@ -66,7 +82,7 @@ export const BrowseMedia = ({
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
             {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
             {<RenderMedia MediaData={mediaList} />}
-            {role === "Default" ? (
+            {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">
                         <h1>
@@ -79,7 +95,7 @@ export const BrowseMedia = ({
                 <></>
             )}
 
-            {role !== "Default" ? (
+            {role === "Super" || role === "Admin" ? (
                 <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
                     <div className="header-container">
                         <GiFlexibleLamp

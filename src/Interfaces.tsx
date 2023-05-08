@@ -36,7 +36,7 @@ export interface Media {
     rating: number;
     image: string;
     genres: mediaGenre[];
-    movieId: string;
+    _id: string;
     //reviews: string[];
 }
 export interface PersonalMedia {
