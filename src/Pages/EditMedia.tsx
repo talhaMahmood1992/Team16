@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Media, Role } from "../Interfaces";
 import RatingFeature from "../Components/MediaRatting";
 import { FindMedia } from "./Favorites";
+import { NavLink } from "react-router-dom";
 interface EditMediaPageProps {
     role: Role;
     titles: string[];
@@ -21,7 +22,9 @@ const MediaToButton = (mediaItem: Media): JSX.Element => {
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
                 </div>
             </div>
-            <p>Will be a Button</p>
+            <NavLink to="/mediaRevision">
+                <p>Edit This Media</p>
+            </NavLink>
         </div>
     );
 };

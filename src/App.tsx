@@ -11,13 +11,12 @@ import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
 import { Role } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
-
+import { EditorInterface } from "./Pages/EditorInterface";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
     const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
     const [superList, setSuperList] = useState<string[]>([]);
-
     function handleFavorites(titles: string[]) {
         setFavoriteMedia([...titles]);
     }
@@ -77,6 +76,10 @@ function App(): JSX.Element {
                     }
                 />
                 <Route path="/learnMorePage" element={<LearnMorePage />} />
+                <Route
+                    path="/mediaRevision"
+                    element={<EditorInterface role={role} />}
+                />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
         </div>
