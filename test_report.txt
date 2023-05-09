@@ -12,7 +12,7 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   25.08 |    30.92 |   26.22 |   24.91 |                   
+All files                    |   24.91 |    30.92 |   26.22 |   24.74 |                   
  src                         |    2.43 |        0 |       0 |    2.85 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 20-43             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
@@ -27,10 +27,11 @@ All files                    |   25.08 |    30.92 |   26.22 |   24.91 |
   Search.tsx                 |   84.61 |     87.5 |     100 |   84.61 | 35-36             
   Settings.tsx               |       0 |        0 |       0 |       0 | 16-32             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
-  AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-131            
+  AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-139            
   AddUserForm.tsx            |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx          |       0 |        0 |       0 |       0 | 12-111            
+  EditMediaForm.tsx          |       0 |        0 |       0 |       0 | 12-119            
   FormSchema.tsx             |       0 |      100 |     100 |       0 | 3-4               
+  UserFormSchema.tsx         |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton  |       0 |      100 |       0 |       0 |                   
   ActiveUsers.tsx            |       0 |      100 |       0 |       0 | 4-5               
   HeroSection.tsx            |       0 |      100 |       0 |       0 | 6-7               
@@ -57,5 +58,5 @@ All files                    |   25.08 |    30.92 |   26.22 |   24.91 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        8.054 s
+Time:        7.666 s
 Ran all test suites.
