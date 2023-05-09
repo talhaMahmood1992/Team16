@@ -38,7 +38,7 @@ All files                    |   25.33 |     30.3 |   26.66 |   25.08 |
  src/Components/Slider       |       0 |      100 |       0 |       0 |                   
   Slider.tsx                 |       0 |      100 |       0 |       0 | 9-10              
  src/Layout                  |       0 |        0 |       0 |       0 |                   
-  MainHeader.tsx             |       0 |        0 |       0 |       0 | 14-18             
+  MainHeader.tsx             |       0 |      100 |       0 |       0 | 13-17             
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 16-20             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
@@ -58,5 +58,5 @@ All files                    |   25.33 |     30.3 |   26.66 |   25.08 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        7.334 s
+Time:        6.39 s
 Ran all test suites.
