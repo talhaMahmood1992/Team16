@@ -20,10 +20,15 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
     } = useForm<UserSubmitForm>({
         resolver: yupResolver(schema)
     });
-
+    function updateMediaInList(media: Media, mediaList: Media[]): void {
+        const index = mediaList.findIndex((m) => m._id === media._id);
+        if (index >= 0) {
+            mediaList[index] = media;
+        }
+    }
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
-            mediaData.push({
+            const createdMedia = {
                 title: data.title,
                 type: data.type,
                 yearReleased: data.yearReleased,
@@ -31,7 +36,9 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 image: data.image,
                 genres: [],
                 _id: nanoid()
-            });
+            };
+            updateMediaInList(createdMedia, mediaData);
+
             reset();
         }
     };
