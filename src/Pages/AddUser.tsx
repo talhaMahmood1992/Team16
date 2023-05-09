@@ -1,14 +1,23 @@
-import React from "react";
-import classes from "./LearnMorePage.module.css";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { AddUserForm } from "../Components/AddMediaForm/AddUserForm";
+import { Role } from "../Interfaces";
 
-export const AddUsers = (): JSX.Element => {
+interface AddUserProps {
+    role: Role;
+}
+
+export const AddUser = ({ role }: AddUserProps): JSX.Element => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (role !== "Super") {
+            navigate("/");
+        }
+    }, [role]);
     return (
-        <section className={classes.section_learn_more}>
-            <div className={classes.lm_text}>
-                <p className={classes.lm_description}>
-                    This is where the Super will add More User{" "}
-                </p>
-            </div>
-        </section>
+        <>
+            <h2 className="heading-secondary">Add User</h2>
+            <AddUserForm />
+        </>
     );
 };
