@@ -13,10 +13,10 @@ PASS src/Components/RenderMedia.test.tsx
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
 All files                    |   24.91 |    30.92 |   26.22 |   24.74 |                   
- src                         |    2.43 |        0 |       0 |    2.85 |                   
+ src                         |    2.22 |        0 |       0 |    2.63 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 20-43             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx              |   33.33 |      100 |       0 |      50 | 5                 
+  MediaData.tsx              |   14.28 |        0 |       0 |      20 | 5-10              
   UserData.tsx               |       0 |        0 |       0 |       0 | 4-121             
  src/Components              |   59.34 |    73.52 |   66.66 |   58.62 |                   
   FilterButton.tsx           |   94.59 |    88.88 |     100 |   94.11 | 19,78             
@@ -29,7 +29,7 @@ All files                    |   24.91 |    30.92 |   26.22 |   24.74 |
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx           |       0 |        0 |       0 |       0 | 34-139            
   AddUserForm.tsx            |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx          |       0 |        0 |       0 |       0 | 12-119            
+  EditMediaForm.tsx          |       0 |        0 |       0 |       0 | 12-113            
   FormSchema.tsx             |       0 |      100 |     100 |       0 | 3-4               
   UserFormSchema.tsx         |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton  |       0 |      100 |       0 |       0 |                   
@@ -58,5 +58,5 @@ All files                    |   24.91 |    30.92 |   26.22 |   24.74 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        7.289 s
+Time:        7.888 s
 Ran all test suites.
