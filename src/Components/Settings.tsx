@@ -10,12 +10,14 @@ interface SettingsProps {
     hideSettingsHandler: () => void;
     role: Role;
     setRole: (role: Role) => void;
+    handleCurrentUser: (userName: string) => void;
 }
 
 export const Settings = ({
     hideSettingsHandler,
     role,
-    setRole
+    setRole,
+    handleCurrentUser
 }: SettingsProps): JSX.Element => {
     let roleInfo = "Default";
 
@@ -26,7 +28,7 @@ export const Settings = ({
     } else if (role === "Super") {
         roleInfo = "Super user is even... better";
     }
-
+    handleCurrentUser(role);
     return (
         <Modal
             hideSettingsHandler={hideSettingsHandler}

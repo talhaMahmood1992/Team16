@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Settings } from "./Components/Settings";
 import { MainHeader } from "./Layout/MainHeader";
@@ -9,21 +9,36 @@ import { FavoritesPage } from "./Pages/Favorites";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
-import { Role } from "./Interfaces";
+import { Role, UserInterface } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
 import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
 import { Media } from "./Interfaces";
 import { AddUser } from "./Pages/AddUser";
-import axios from "axios";
+import { getUserByUsername } from "./UserData";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
-    const [FavoriteMedia, setFavoriteMedia] = useState<string[]>([]);
     const [superList, setSuperList] = useState<string[]>([]);
     const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
-    function handleFavorites(titles: string[]) {
-        setFavoriteMedia([...titles]);
+
+    // what is the name of the currentUser
+    const [currentUserName, setCurrentUser] = useState<string>("Default");
+    //The UserInterface of the currentUserName
+    const currentUser = getUserByUsername(currentUserName);
+
+    function getWatchedList(user: UserInterface): Media[] {
+        const watchedList: Media[] = user.watched.map((item) => item.media);
+        return watchedList;
+    }
+    //toWatch list of the currentUser
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [userMediaList, setuserMediaList] = useState<Media[]>(
+        getWatchedList(currentUser)
+    );
+
+    function handleCurrentUser(userName: string) {
+        setCurrentUser(userName);
     }
     function handleEdits(titles: string[]) {
         setSuperList([...titles]);
@@ -37,21 +52,6 @@ function App(): JSX.Element {
         setSettingsIsShown(false);
     };
 
-    useEffect(() => {
-        const getMediaData = async () => {
-            try {
-                const mediaData = await axios.get(
-                    "https://team16-c5r2.onrender.com/media"
-                );
-                console.log(mediaData);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        getMediaData();
-    }, []);
-
     return (
         <div>
             <MainHeader showSettingsHandler={showSettingsHandler} role={role} />
@@ -61,6 +61,7 @@ function App(): JSX.Element {
                     hideSettingsHandler={hideSettingsHandler}
                     role={role}
                     setRole={setRole}
+                    handleCurrentUser={handleCurrentUser}
                 />
             )}
             <Routes>
@@ -68,12 +69,7 @@ function App(): JSX.Element {
                 {/* <Route path="/friends" element={<FriendsPage />} /> */}
                 <Route
                     path="/mylists"
-                    element={
-                        <FavoritesPage
-                            titles={FavoriteMedia}
-                            handleFavorites={handleFavorites}
-                        />
-                    }
+                    element={<FavoritesPage userName={currentUserName} />}
                 />
                 <Route
                     path="/addMedia"
@@ -93,11 +89,10 @@ function App(): JSX.Element {
                     path="/browseMedia"
                     element={
                         <BrowseMedia
-                            favTitles={FavoriteMedia}
                             superTitles={superList}
-                            handleFavorites={handleFavorites}
                             handleEdits={handleEdits}
                             role={role}
+                            userName={currentUserName}
                         />
                     }
                 />

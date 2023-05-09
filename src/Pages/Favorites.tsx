@@ -1,42 +1,27 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
-import { mediaData } from "../MediaData";
 import RenderMedia from "../Components/RenderMedia";
-import { DeleteMedia } from "../Components/RemoveMedia";
+// import { DeleteMedia } from "../Components/RemoveMedia";
+import { getUserByUsername } from "../UserData";
+import { Media, UserInterface } from "../Interfaces";
 interface FavoriteMediaProps {
-    titles: string[];
-    handleFavorites: (titles: string[]) => void;
+    userName: string;
 }
 export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
+    const currentUser = getUserByUsername(props.userName);
+    function getWatchedList(user: UserInterface): Media[] {
+        const watchedList: Media[] = user.watched.map((item) => item.media);
+        return watchedList;
+    }
+
     return (
         <>
+            {" "}
             <section className="page">
                 <h2 className="heading-secondary">My Favorites</h2>
+                <h2>CurrentUserName = {props.userName}</h2>
             </section>
-            <DeleteMedia
-                titles={props.titles}
-                handleFavorites={props.handleFavorites}
-            ></DeleteMedia>
-
-            <RenderSelectedMedia
-                titles={props.titles}
-                handleFavorites={props.handleFavorites}
-            />
+            <RenderMedia MediaData={getWatchedList(currentUser)} />
         </>
     );
 };
-
-export function FindMedia(searchTerm: string) {
-    const filteredData = mediaData.filter(
-        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
-    );
-    return filteredData[0];
-}
-
-export function RenderSelectedMedia(props: FavoriteMediaProps) {
-    const filteredMedia = props.titles.map((title) => FindMedia(title));
-    return (
-        <div>
-            <RenderMedia MediaData={filteredMedia} />
-        </div>
-    );
-}
