@@ -7,6 +7,9 @@ export type UserSubmitForm = {
     type: mediaType;
     image: string;
 };
+export type UserAddForm = {
+    username: string;
+};
 export type mediaType = "Movie" | "Show";
 export type mediaGenre =
     | "Action"
@@ -47,6 +50,5 @@ export interface PersonalMedia {
 export interface UserInterface {
     username: string;
     watched: PersonalMedia[];
-    toWatch: Media[];
     role: "Default" | "Admin" | "Super";
 }

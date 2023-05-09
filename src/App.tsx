@@ -14,7 +14,7 @@ import { EditMediaPage } from "./Pages/EditMedia";
 import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
 import { Media } from "./Interfaces";
-import { AddUsers } from "./Pages/AddUser";
+import { AddUser } from "./Pages/AddUser";
 import axios from "axios";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
@@ -109,7 +109,7 @@ function App(): JSX.Element {
                     }
                 />
                 <Route path="/*" element={<NotFound />} />
-                <Route path="/AddUser" element={<AddUsers />} />
+                <Route path="/AddUser" element={<AddUser role={role} />} />
             </Routes>
         </div>
     );
