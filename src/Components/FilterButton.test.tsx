@@ -36,12 +36,6 @@ describe("FilterButton component", () => {
         expect(getByText("Sort Media")).toBeInTheDocument();
     });
 
-    // it("should call onFilter with unsorted media data when 'Sort Media' is clicked", () => {
-    //     const { getByText } = render(<FilterButton {...mockFilterProps} />);
-    //     fireEvent.click(getByText("Sort Media"));
-    //     expect(mockFilterProps.onFilter).toHaveBeenCalledWith(mockMediaData);
-    // });
-
     it("should call onFilter with media data sorted alphabetically when 'Alphabetically' is clicked", () => {
         const { getByText } = render(<FilterButton {...mockFilterProps} />);
         fireEvent.click(getByText("Sort Media"));
