@@ -44,7 +44,6 @@ export interface Media {
 }
 export interface PersonalMedia {
     media: Media;
-    review: string;
     id: string;
 }
 export interface UserInterface {
