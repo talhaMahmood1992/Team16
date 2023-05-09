@@ -1,30 +1,26 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React from "react";
 // import RenderMedia from "../Components/RenderMedia";
-import { getUserByUsername } from "../UserData";
-import { Media, UserInterface } from "../Interfaces";
 import { DeleteMedia } from "../Components/RemoveMedia";
+import { Role, Media } from "../Interfaces";
 interface FavoriteMediaProps {
     userName: string;
+    role: Role;
+    titles: string[];
+    setter: React.Dispatch<React.SetStateAction<Media>>;
 }
 export const FavoritesPage = (props: FavoriteMediaProps): JSX.Element => {
-    const currentUser = getUserByUsername(props.userName);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [watched, setDleteMedia] = useState<Media[]>(
-        getWatchedList(currentUser)
-    );
-
-    function getWatchedList(user: UserInterface): Media[] {
-        const watchedList: Media[] = user.watched.map((item) => item.media);
-        return watchedList;
-    }
-
     return (
         <>
             <section className="page">
                 <h2 className="heading-secondary">My Favorites</h2>
             </section>
-            <DeleteMedia userName={props.userName}></DeleteMedia>
+            <DeleteMedia
+                userName={props.userName}
+                role={props.role}
+                titles={props.titles}
+                setter={props.setter}
+            ></DeleteMedia>
         </>
     );
 };
