@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { mediaData } from "../../MediaData";
+import { mediaData, updateMediaInList } from "../../MediaData";
 import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import axios from "axios";
@@ -20,12 +20,6 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
     } = useForm<UserSubmitForm>({
         resolver: yupResolver(schema)
     });
-    function updateMediaInList(media: Media, mediaList: Media[]): void {
-        const index = mediaList.findIndex((m) => m._id === media._id);
-        if (index >= 0) {
-            mediaList[index] = media;
-        }
-    }
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
             const createdMedia = {
@@ -37,7 +31,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 genres: [],
                 _id: nanoid()
             };
-            updateMediaInList(createdMedia, mediaData);
+            updateMediaInList(createdMedia);
 
             reset();
         }

@@ -4,6 +4,12 @@ import { Media } from "./Interfaces";
 export function findMedia(data: Media[], title: string): number {
     return data.findIndex((datum: Media): boolean => datum.title === title);
 }
+export function updateMediaInList(media: Media): void {
+    const index = mediaData.findIndex((m) => m._id === media._id);
+    if (index >= 0) {
+        mediaData[index] = media;
+    }
+}
 
 export const mediaData: Media[] = [
     {
