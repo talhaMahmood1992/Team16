@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserData } from "../../UserData";
 import { schema } from "./FormSchema";
-import axios from "axios";
+// import axios from "axios";
 import { UserAddForm } from "../../Interfaces";
 
 export const AddUserForm = (): JSX.Element => {
