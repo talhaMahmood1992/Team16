@@ -1,7 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import RenderMedia from "../Components/RenderMedia";
-// import { DeleteMedia } from "../Components/RemoveMedia";
 import { getUserByUsername } from "../UserData";
 import { Media, UserInterface } from "../Interfaces";
 interface FavoriteMediaProps {

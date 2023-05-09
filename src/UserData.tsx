@@ -5,19 +5,16 @@ export const UserData: UserInterface[] = [
     {
         username: "Default",
         watched: [],
-        // toWatch: [],
         role: "Default"
     },
     {
         username: "Super",
         watched: [],
-        // toWatch: [],
         role: "Super"
     },
     {
         username: "Admin",
         watched: [],
-        // toWatch: [],
         role: "Admin"
     },
     {
@@ -34,31 +31,26 @@ export const UserData: UserInterface[] = [
                 id: mediaData[findMedia(mediaData, "Lawrence of Arabia")]._id
             }
         ],
-        // toWatch: [mediaData[findMedia(mediaData, "Mad Men")]],
         role: "Default"
     },
     {
         username: "Joey",
         watched: [],
-        // toWatch: [],
         role: "Default"
     },
     {
         username: "Bood",
         watched: [],
-        // toWatch: [],
         role: "Default"
     },
     {
         username: "Talha",
         watched: [],
-        // toWatch: [],
         role: "Default"
     },
     {
         username: "Mercedes",
         watched: [],
-        // toWatch: [],
         role: "Default"
     }
 ];
@@ -67,13 +59,16 @@ export function getUserNames(): string[] {
     return UserData.map((user) => user.username);
 }
 
-//Function that return the UserInterace Given the userName
-//If it is not found, it returns a default
+//The function consumes a userName (userInterface has username),
+//and returns a userInterface belongiong to the user
 export function getUserByUsername(username: string): UserInterface {
     const user = UserData.find((user) => user.username === username);
     return user ? user : { username: "", watched: [], role: "Default" };
 }
 
+//The function consumes a list of Media, and a list of PersonalMedia
+//and returns a list of PersonalMedia that has extra elements
+//made using the mediaList argument
 function createPersonalMediaList(
     mediaList: Media[],
     oldWatched: PersonalMedia[]
@@ -85,7 +80,9 @@ function createPersonalMediaList(
     }));
     return [...oldWatched, ...newPersonalMedia];
 }
-
+//The function consumes a userName and NewMedia, finds it userInterface
+//in the userData and changed its Wathced property
+//and changed
 export function updateWatchedMediaForUser(
     userName: string,
     newMedia: Media[]

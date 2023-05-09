@@ -9,13 +9,12 @@ import { FavoritesPage } from "./Pages/Favorites";
 import { NotFound } from "./Pages/NotFound";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
-import { Role, UserInterface } from "./Interfaces";
+import { Role } from "./Interfaces";
 import { EditMediaPage } from "./Pages/EditMedia";
 import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
 import { Media } from "./Interfaces";
 import { AddUsers } from "./Pages/AddUser";
-import { getUserByUsername } from "./UserData";
 
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
@@ -25,18 +24,6 @@ function App(): JSX.Element {
 
     // what is the name of the currentUser
     const [currentUserName, setCurrentUser] = useState<string>("Default");
-    //The UserInterface of the currentUserName
-    const currentUser = getUserByUsername(currentUserName);
-
-    function getWatchedList(user: UserInterface): Media[] {
-        const watchedList: Media[] = user.watched.map((item) => item.media);
-        return watchedList;
-    }
-    //toWatch list of the currentUser
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [userMediaList, setuserMediaList] = useState<Media[]>(
-        getWatchedList(currentUser)
-    );
 
     function handleCurrentUser(userName: string) {
         setCurrentUser(userName);
