@@ -20,7 +20,7 @@ export const MainHeader = ({
             <NavLink to="/" className={classes.logo}>
                 PROJECTX
             </NavLink>
-            {/* {useLocation().pathname === "/" && ( */}
+            {/* {useLocation().pathname !== "/mylists" && ( */}
             <MainNavigation
                 showSettingsHandler={showSettingsHandler}
                 role={role}

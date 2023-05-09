@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
@@ -9,20 +9,18 @@ import RenderMedia from "../Components/RenderMedia";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
-import axios from "axios";
+import { updateWatchedMediaForUser } from "../UserData";
 
 interface FavoriteMediaProps {
-    favTitles: string[];
+    userName: string;
     superTitles: string[];
-    handleFavorites: (titles: string[]) => void;
     handleEdits: (titles: string[]) => void;
     role: Role;
 }
 
 export const BrowseMedia = ({
-    favTitles,
+    userName,
     superTitles,
-    handleFavorites,
     handleEdits,
     role
 }: FavoriteMediaProps): JSX.Element => {
@@ -33,30 +31,20 @@ export const BrowseMedia = ({
         setMediaList([...mediaList]);
     }
 
-    const [favorites, setFavorites] = useState<string[]>(favTitles);
     const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
-    useEffect(() => {
-        const getMediaData = async () => {
-            try {
-                const mediaData = await axios.get(
-                    "https://team16-c5r2.onrender.com/media"
-                );
-                // console.log("DATA PRINT");
-                console.log(mediaData["data"]["data"]["media"]);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getMediaData();
-    }, []);
+    const [favMedia, setFavMedia] = useState<Media[]>([]);
+
+    // function handleFavMedia(title: string) {
+    //     setFavMedia([...favMedia, FindMedia(title)]);
+    //     updateWatchedMediaForUser(userName, [...favMedia]);
+    // }
 
     function handleOnFavoritesDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newMedia") as string;
-        setFavorites([...favorites, newFavorite]);
-        handleFavorites([...favorites, newFavorite]);
-
-        //Set the color of the star back to the original one
+        // handleFavMedia(newFavorite);
+        setFavMedia([...favMedia, FindMedia(newFavorite)]);
+        updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
         setStarColor("black");
     }
     function handleOnEditsDrop(e: React.DragEvent) {
@@ -80,7 +68,28 @@ export const BrowseMedia = ({
                 <Slider />
             </div>
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
-            {/* <FilterButton MediaData={mediaData} onFilter={handleRender} /> */}
+            <h1>Here is your FavMedia</h1>
+            {<RenderMedia MediaData={favMedia} />}
+            <br></br>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
             {<RenderMedia MediaData={mediaList} />}
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
@@ -109,3 +118,9 @@ export const BrowseMedia = ({
         </section>
     );
 };
+export function FindMedia(searchTerm: string) {
+    const filteredData = mediaData.filter(
+        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
+    );
+    return filteredData[0];
+}
