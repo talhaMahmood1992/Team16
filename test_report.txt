@@ -12,7 +12,7 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   24.91 |    30.92 |   26.22 |   24.74 |                   
+All files                    |   25.33 |     30.3 |   26.66 |   25.08 |                   
  src                         |    2.22 |        0 |       0 |    2.63 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 20-43             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
@@ -38,7 +38,7 @@ All files                    |   24.91 |    30.92 |   26.22 |   24.74 |
  src/Components/Slider       |       0 |      100 |       0 |       0 |                   
   Slider.tsx                 |       0 |      100 |       0 |       0 | 9-10              
  src/Layout                  |       0 |        0 |       0 |       0 |                   
-  MainHeader.tsx             |       0 |      100 |       0 |       0 | 14-18             
+  MainHeader.tsx             |       0 |        0 |       0 |       0 | 14-18             
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 16-20             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
@@ -46,7 +46,7 @@ All files                    |   24.91 |    30.92 |   26.22 |   24.74 |
   BrowseMedia.tsx            |       0 |        0 |       0 |       0 | 22-96             
   EditMedia.tsx              |       0 |        0 |       0 |       0 | 13-78             
   EditorInterface.tsx        |       0 |        0 |       0 |       0 | 11-18             
-  Favorites.tsx              |       0 |      100 |       0 |       0 | 10-22             
+  Favorites.tsx              |       0 |      100 |       0 |       0 | 8-9               
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
@@ -58,5 +58,5 @@ All files                    |   24.91 |    30.92 |   26.22 |   24.74 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        7.888 s
+Time:        7.334 s
 Ran all test suites.
