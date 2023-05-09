@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { mediaData, updateMediaInList } from "../../MediaData";
+import { updateMediaInList } from "../../MediaData";
 import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import axios from "axios";
