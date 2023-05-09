@@ -12,12 +12,12 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   27.73 |    34.48 |   28.31 |   27.48 |                   
- src                         |    3.03 |        0 |       0 |     3.7 |                   
-  App.tsx                    |       0 |        0 |       0 |       0 | 21-56             
+All files                    |   28.25 |    34.48 |   28.82 |    27.9 |                   
+ src                         |    3.57 |        0 |       0 |    4.34 |                   
+  App.tsx                    |       0 |        0 |       0 |       0 | 20-43             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |   33.33 |      100 |       0 |      50 | 5                 
-  UserData.tsx               |       0 |        0 |       0 |       0 | 4-95              
+  UserData.tsx               |       0 |        0 |       0 |       0 | 4-92              
  src/Components              |   62.79 |    73.52 |   72.72 |   61.44 |                   
   FilterButton.tsx           |   94.59 |    88.88 |     100 |   94.11 | 19,78             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
@@ -41,10 +41,10 @@ All files                    |   27.73 |    34.48 |   28.31 |   27.48 |
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
   AddUser.tsx                |       0 |      100 |       0 |       0 | 4-5               
-  BrowseMedia.tsx            |       0 |        0 |       0 |       0 | 21-125            
+  BrowseMedia.tsx            |       0 |        0 |       0 |       0 | 22-96             
   EditMedia.tsx              |       0 |        0 |       0 |       0 | 13-78             
   EditorInterface.tsx        |       0 |        0 |       0 |       0 | 11-18             
-  Favorites.tsx              |       0 |      100 |       0 |       0 | 10-17             
+  Favorites.tsx              |       0 |      100 |       0 |       0 | 9-16              
   HomePage.tsx               |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx          |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx               |       0 |      100 |       0 |       0 | 5-16              
@@ -56,5 +56,5 @@ All files                    |   27.73 |    34.48 |   28.31 |   27.48 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        6.163 s
+Time:        6.16 s
 Ran all test suites.
