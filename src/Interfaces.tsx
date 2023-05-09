@@ -47,6 +47,6 @@ export interface PersonalMedia {
 export interface UserInterface {
     username: string;
     watched: PersonalMedia[];
-    toWatch: Media[];
+    // toWatch: Media[];
     role: "Default" | "Admin" | "Super";
 }
