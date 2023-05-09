@@ -7,6 +7,9 @@ export type UserSubmitForm = {
     type: mediaType;
     image: string;
 };
+export type UserAddForm = {
+    username: string;
+};
 export type mediaType = "Movie" | "Show";
 export type mediaGenre =
     | "Action"
