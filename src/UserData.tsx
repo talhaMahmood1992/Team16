@@ -19,7 +19,18 @@ export const UserData: UserInterface[] = [
     },
     {
         username: "Ian",
-        watched: [],
+        watched: [
+            {
+                media: mediaData[findMedia(mediaData, "Mad Men")],
+                review: "",
+                id: mediaData[findMedia(mediaData, "Mad Men")]._id
+            },
+            {
+                media: mediaData[findMedia(mediaData, "Lawrence of Arabia")],
+                review: "",
+                id: mediaData[findMedia(mediaData, "Lawrence of Arabia")]._id
+            }
+        ],
         role: "Default"
     },
     {
@@ -48,13 +59,17 @@ export function getUserNames(): string[] {
     return UserData.map((user) => user.username);
 }
 
-//Function that return the UserInterace Given the userName
-//If it is not found, it returns a default
+//The function consumes a userName (userInterface has username),
+//and returns a userInterface belongiong to the user
 export function getUserByUsername(username: string): UserInterface {
     const user = UserData.find((user) => user.username === username);
+    //It will never return emtpy becauae we are seaching in Data
     return user ? user : { username: "", watched: [], role: "Default" };
 }
 
+//The function consumes a list of Media, and a list of PersonalMedia
+//and returns a list of PersonalMedia that has extra elements
+//made using the mediaList argument
 function createPersonalMediaList(
     mediaList: Media[],
     oldWatched: PersonalMedia[]
@@ -66,7 +81,9 @@ function createPersonalMediaList(
     }));
     return [...oldWatched, ...newPersonalMedia];
 }
-
+//The function consumes a userName and NewMedia, finds it userInterface
+//in the userData and changed its Wathced property
+//and changed
 export function updateWatchedMediaForUser(
     userName: string,
     newMedia: Media[]
@@ -77,5 +94,30 @@ export function updateWatchedMediaForUser(
             newMedia,
             UserData[userIndex].watched
         );
+    }
+}
+
+export function updateDeletedWatchedMedia(
+    userName: string,
+    media: Media
+): void {
+    const userIndex = UserData.findIndex((user) => user.username === userName);
+    if (userIndex >= 0) {
+        if (UserData[userIndex].watched.length === 1) {
+            UserData[userIndex].watched = [];
+            return;
+        }
+
+        const newUser = { ...UserData[userIndex] };
+        newUser.watched = [...newUser.watched]; // create a copy of watched array
+
+        const indexToRemove = newUser.watched.findIndex(
+            (userMedia) => userMedia.media.title === media.title
+        );
+
+        if (indexToRemove >= 0) {
+            newUser.watched.splice(indexToRemove, 1); // remove the element at indexToRemove
+        }
+        UserData[userIndex] = newUser;
     }
 }
