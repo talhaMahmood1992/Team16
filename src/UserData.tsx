@@ -63,6 +63,7 @@ export function getUserNames(): string[] {
 //and returns a userInterface belongiong to the user
 export function getUserByUsername(username: string): UserInterface {
     const user = UserData.find((user) => user.username === username);
+    //It will never return emtpy becauae we are seaching in Data
     return user ? user : { username: "", watched: [], role: "Default" };
 }
 
@@ -93,5 +94,30 @@ export function updateWatchedMediaForUser(
             newMedia,
             UserData[userIndex].watched
         );
+    }
+}
+
+export function updateDeletedWatchedMedia(
+    userName: string,
+    media: Media
+): void {
+    const userIndex = UserData.findIndex((user) => user.username === userName);
+    if (userIndex >= 0) {
+        if (UserData[userIndex].watched.length === 1) {
+            UserData[userIndex].watched = [];
+            return;
+        }
+
+        const newUser = { ...UserData[userIndex] };
+        newUser.watched = [...newUser.watched]; // create a copy of watched array
+
+        const indexToRemove = newUser.watched.findIndex(
+            (userMedia) => userMedia.media.title === media.title
+        );
+
+        if (indexToRemove >= 0) {
+            newUser.watched.splice(indexToRemove, 1); // remove the element at indexToRemove
+        }
+        UserData[userIndex] = newUser;
     }
 }
