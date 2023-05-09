@@ -5,16 +5,17 @@ import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
-// import { FilterButton } from "../Components/FilterButton";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
 import { updateWatchedMediaForUser } from "../UserData";
 
 interface FavoriteMediaProps {
+    //UserName of the CurrentUser
     userName: string;
     superTitles: string[];
     handleEdits: (titles: string[]) => void;
+    //Role of the current User
     role: Role;
 }
 
@@ -24,25 +25,17 @@ export const BrowseMedia = ({
     handleEdits,
     role
 }: FavoriteMediaProps): JSX.Element => {
-    //The MediaData
     const [mediaList, setMediaList] = useState<Media[]>(mediaData);
-    //Function to change mediaList in other components
     function handleRender(mediaList: Media[]) {
         setMediaList([...mediaList]);
     }
-
     const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
     const [favMedia, setFavMedia] = useState<Media[]>([]);
 
-    // function handleFavMedia(title: string) {
-    //     setFavMedia([...favMedia, FindMedia(title)]);
-    //     updateWatchedMediaForUser(userName, [...favMedia]);
-    // }
-
     function handleOnFavoritesDrop(e: React.DragEvent) {
         const newFavorite = e.dataTransfer.getData("newMedia") as string;
-        // handleFavMedia(newFavorite);
+        //Update the state and then update the userData
         setFavMedia([...favMedia, FindMedia(newFavorite)]);
         updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
         setStarColor("black");
@@ -68,28 +61,6 @@ export const BrowseMedia = ({
                 <Slider />
             </div>
             <SearchBar onSearch={handleRender} MediaData={mediaData} />
-            <h1>Here is your FavMedia</h1>
-            {<RenderMedia MediaData={favMedia} />}
-            <br></br>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-
             {<RenderMedia MediaData={mediaList} />}
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
