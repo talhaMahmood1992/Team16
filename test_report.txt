@@ -12,17 +12,18 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   28.46 |    35.29 |    29.9 |   27.79 |                   
+All files                    |   28.04 |    35.29 |   29.35 |   27.37 |                   
  src                         |       4 |        0 |       0 |    4.34 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 20-55             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
   MediaData.tsx              |   33.33 |      100 |       0 |      50 | 5                 
   UserData.tsx               |       0 |      100 |       0 |       0 | 4-67              
- src/Components              |   66.66 |    73.52 |   77.41 |   65.38 |                   
+ src/Components              |   63.52 |    73.52 |   72.72 |   62.19 |                   
   FilterButton.tsx           |   94.59 |    88.88 |     100 |   94.11 | 19,78             
   MediaRatting.tsx           |     100 |      100 |     100 |     100 |                   
   RemoveMedia.tsx            |       0 |      100 |       0 |       0 | 7-32              
   RenderMedia.tsx            |      75 |      100 |   66.66 |      75 | 9,18              
+  ReviewMedia.tsx            |       0 |      100 |       0 |       0 | 5-12              
   Search.tsx                 |   84.61 |     87.5 |     100 |   84.61 | 35-36             
   Settings.tsx               |       0 |        0 |       0 |       0 | 15-30             
  src/Components/AddMediaForm |       0 |        0 |       0 |       0 |                   
@@ -55,5 +56,5 @@ All files                    |   28.46 |    35.29 |    29.9 |   27.79 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        6.418 s
+Time:        7.347 s
 Ran all test suites.
