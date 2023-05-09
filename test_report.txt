@@ -12,7 +12,7 @@ PASS src/Components/RenderMedia.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   28.04 |    35.29 |   29.35 |   27.37 |                   
+All files                    |   28.04 |    36.14 |   29.35 |   27.37 |                   
  src                         |       4 |        0 |       0 |    4.34 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 20-55             
   Interfaces.tsx             |       0 |        0 |       0 |       0 |                   
@@ -36,7 +36,7 @@ All files                    |   28.04 |    35.29 |   29.35 |   27.37 |
  src/Components/Slider       |       0 |      100 |       0 |       0 |                   
   Slider.tsx                 |       0 |      100 |       0 |       0 | 9-10              
  src/Layout                  |       0 |        0 |       0 |       0 |                   
-  MainHeader.tsx             |       0 |        0 |       0 |       0 | 14-18             
+  MainHeader.tsx             |       0 |      100 |       0 |       0 | 14-18             
   MainNavigation.tsx         |       0 |        0 |       0 |       0 | 16-20             
  src/Pages                   |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx           |       0 |        0 |       0 |       0 | 10-17             
@@ -56,5 +56,5 @@ All files                    |   28.04 |    35.29 |   29.35 |   27.37 |
 Test Suites: 4 passed, 4 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        7.347 s
+Time:        7.095 s
 Ran all test suites.
