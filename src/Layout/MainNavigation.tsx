@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
-
+import { IoPencil } from "react-icons/io5";
 import classes from "./MainNavigation.module.css";
 import { Role } from "../Interfaces";
 
@@ -32,12 +32,31 @@ export const MainNavigation = ({
                     </li>
                 )}
 
-                {/* <li>
-                    <NavLink to="/friends" className={classes.main_nav_link}>
-                        <FaUserFriends className={classes.icon} />
-                        <span>Friends</span>
-                    </NavLink>
-                </li> */}
+                {role === "Super" /* eslint-disable-line */ && ( //Now Add Media will only show for the Super
+                    <li>
+                        <NavLink
+                            to="/addUser"
+                            className={classes.main_nav_link}
+                        >
+                            <IoSearchCircleSharp className={classes.icon} />
+                            <span>Add User</span>
+                        </NavLink>
+                    </li>
+                )}
+
+                {role === "Admin" || role === "Super" ? (
+                    <li>
+                        <NavLink
+                            to="/editMedia"
+                            className={classes.main_nav_link}
+                        >
+                            <IoPencil className={classes.icon} />
+                            <span>Edit Media</span>
+                        </NavLink>
+                    </li>
+                ) : (
+                    <></>
+                )}
 
                 {role !== "Super" && role !== "Admin" && (
                     /* eslint-disable-line */ <li>
@@ -50,6 +69,7 @@ export const MainNavigation = ({
                         </NavLink>
                     </li>
                 )}
+
                 <li>
                     <button
                         className={classes.role_button}

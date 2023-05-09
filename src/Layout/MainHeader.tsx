@@ -1,8 +1,10 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./MainHeader.module.css";
 import { MainNavigation } from "./MainNavigation";
 import { Role } from "../Interfaces";
+import { useLocation } from "react-router-dom";
 
 interface MainHeaderProps {
     showSettingsHandler: () => void;
@@ -18,10 +20,12 @@ export const MainHeader = ({
             <NavLink to="/" className={classes.logo}>
                 PROJECTX
             </NavLink>
-            <MainNavigation
-                showSettingsHandler={showSettingsHandler}
-                role={role}
-            />
+            {useLocation().pathname === "/" && (
+                <MainNavigation
+                    showSettingsHandler={showSettingsHandler}
+                    role={role}
+                />
+            )}
         </header>
     );
 };

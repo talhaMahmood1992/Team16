@@ -36,7 +36,7 @@ export interface Media {
     rating: number;
     image: string;
     genres: mediaGenre[];
-    movieId: string;
+    _id: string;
     //reviews: string[];
 }
 export interface PersonalMedia {
@@ -47,5 +47,6 @@ export interface PersonalMedia {
 export interface UserInterface {
     username: string;
     watched: PersonalMedia[];
-    role: Role;
+    toWatch: Media[];
+    role: "Default" | "Admin" | "Super";
 }

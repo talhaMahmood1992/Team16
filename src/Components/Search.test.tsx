@@ -12,7 +12,7 @@ const mockMediaData: Media[] = [
         rating: 5,
         image: "./imgs/media-covers/2001_a_space_odyssey.jpg",
         genres: ["Adventure", "Drama", "Science Fiction", "Thriller"],
-        movieId: "1"
+        _id: "1"
     },
     {
         title: "Apocalypse Now",
@@ -21,7 +21,7 @@ const mockMediaData: Media[] = [
         rating: 5,
         image: "./imgs/media-covers/Apocalypse_Now.jpg",
         genres: ["Adventure", "History", "Thriller"],
-        movieId: "2"
+        _id: "2"
     },
     {
         title: "Citizen Kane",
@@ -30,7 +30,7 @@ const mockMediaData: Media[] = [
         rating: 5,
         image: "./imgs/media-covers/citizen_kane.jpg",
         genres: ["Drama", "Mystery"],
-        movieId: "3"
+        _id: "3"
     }
 ];
 

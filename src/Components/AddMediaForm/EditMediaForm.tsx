@@ -5,33 +5,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { mediaData } from "../../MediaData";
 import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
-import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
-import { UserSubmitForm } from "../../Interfaces";
+import { Media, UserSubmitForm } from "../../Interfaces";
 /* eslint no-extra-parens: "off" */
 
-/*const genreList = [
-    "Action", 
-    "Adventure", 
-    "Animated", 
-    "Comedy", 
-    "Crime", 
-    "Drama",
-    "Fantasy",
-    "History",
-    "Horror", 
-    "Kids", 
-    "Mystery", 
-    "Reality",
-    "Romance",
-    "Science Fiction",
-    "Sports",
-    "Superhero",
-    "Thriller",
-    "Western];
-*/
-
-export const AddMediaForm = (): JSX.Element => {
+export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
     const {
         register,
@@ -78,12 +56,7 @@ export const AddMediaForm = (): JSX.Element => {
     } else {
         imageHTMLoutput = (
             <div className={classes.image_goes_here}>
-                <AiFillPlusCircle
-                    onClick={() =>
-                        document.getElementById("media-poster-input")?.focus()
-                    }
-                />
-                <p>Add Image</p>
+                <img src={media.image} alt={media.title} />
             </div>
         );
     }
@@ -94,21 +67,21 @@ export const AddMediaForm = (): JSX.Element => {
                 <label htmlFor="title">Media title:</label>
                 <input
                     type="text"
-                    placeholder="Media title..."
                     {...register("title")}
+                    defaultValue={media.title}
                 />
                 <p>{errors.title?.message}</p>
 
                 <label htmlFor="yearReleased">Year Released:</label>
                 <input
                     type="number"
-                    placeholder="Year Released..."
                     {...register("yearReleased")}
+                    defaultValue={media.yearReleased}
                 />
                 <p>{errors.yearReleased?.message}</p>
 
                 <label htmlFor="type">Media type:</label>
-                <select {...register("type")}>
+                <select {...register("type")} defaultValue={media.type}>
                     <option value="Movie">Movie</option>
                     <option value="Show">Show</option>
                 </select>
@@ -126,7 +99,7 @@ export const AddMediaForm = (): JSX.Element => {
                 <input
                     id="media-poster-input"
                     type="text"
-                    placeholder="Media poster link address..."
+                    defaultValue={media.image}
                     {...register("image", {
                         onChange: (e) => imageLinkChangeHandler(e)
                     })}

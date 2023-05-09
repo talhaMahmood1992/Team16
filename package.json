@@ -1,11 +1,10 @@
 {
     "name": "react-typescript-starter",
-    "homepage": "https://talhamahmood1992.github.io/Team16",
+    "homepage": "https://talhamahmood1992.github.io/final-project-starter",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@hookform/resolvers": "^3.1.0",
-        "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.4.0",
@@ -57,6 +56,7 @@
         ]
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
         "@typescript-eslint/eslint-plugin": "^5.10.1",
         "@typescript-eslint/parser": "^5.10.1",
         "eslint": "^8.7.0",
