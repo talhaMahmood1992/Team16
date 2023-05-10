@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Team16/static/css/main.a6a9253a.css",
-    "main.js": "/Team16/static/js/main.f311000a.js",
+    "main.js": "/Team16/static/js/main.fb0330c6.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland-drive.jpg": "/Team16/static/media/mulholland-drive.d988b4999281e7db8809.jpg",
     "static/media/the-matrix.jpg": "/Team16/static/media/the-matrix.874c36d00d9ec6af151c.jpg",
@@ -14,7 +14,7 @@
     "static/media/the-silence-of-the-lambs.jpg": "/Team16/static/media/the-silence-of-the-lambs.d449471574d3329d1ff6.jpg",
     "static/media/citizen-kane.jpg": "/Team16/static/media/citizen-kane.7ff6f635e15b4f9de64c.jpg",
     "static/media/taxi-driver.jpg": "/Team16/static/media/taxi-driver.fe7fb64a3a2cb4656e33.jpg",
-    "static/media/the-hunger-games:-catching-fire.jpg": "/Team16/static/media/the-hunger-games:-catching-fire.4508be22cdb9287eba30.jpg",
+    "static/media/the-hunger-games-catching-fire.jpg": "/Team16/static/media/the-hunger-games-catching-fire.4508be22cdb9287eba30.jpg",
     "static/media/blade-runner-2049.jpg": "/Team16/static/media/blade-runner-2049.4ffed5ac99a6d01aa4a6.jpg",
     "static/media/the-breakfast-club.jpg": "/Team16/static/media/the-breakfast-club.7325bbc5a76affbd95d8.jpg",
     "static/media/succession.jpg": "/Team16/static/media/succession.4d2fc1efbbef2dda17ab.jpg",
@@ -111,11 +111,11 @@
     "static/media/mr.-robot.jpg": "/Team16/static/media/mr.-robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
     "main.a6a9253a.css.map": "/Team16/static/css/main.a6a9253a.css.map",
-    "main.f311000a.js.map": "/Team16/static/js/main.f311000a.js.map",
+    "main.fb0330c6.js.map": "/Team16/static/js/main.fb0330c6.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a6a9253a.css",
-    "static/js/main.f311000a.js"
+    "static/js/main.fb0330c6.js"
   ]
 }

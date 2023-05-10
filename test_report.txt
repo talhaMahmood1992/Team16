@@ -10,11 +10,11 @@ PASS src/Components/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    2.58 |     2.35 |    4.87 |    2.69 |                   
+All files                       |    2.62 |      2.4 |    4.91 |    2.73 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-43             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-964             
+  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-954             
   UserData.tsx                  |       0 |        0 |       0 |       0 | 4-125             
  src/Components                 |   19.51 |       50 |      24 |   19.51 |                   
   MediaRatting.tsx              |   28.57 |       50 |      40 |   28.57 | 14-26             
@@ -58,5 +58,5 @@ All files                       |    2.58 |     2.35 |    4.87 |    2.69 |
 Test Suites: 2 passed, 2 total
 Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        4.072 s
+Time:        4.487 s
 Ran all test suites.
