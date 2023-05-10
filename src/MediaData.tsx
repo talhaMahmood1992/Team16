@@ -953,5 +953,5 @@ export let mediaData: Media[] = [
 
 mediaData = mediaData.map((media) => ({
     ...media,
-    image: slugify(media.title) + ".jpg"
+    image: require("./imgs/media-covers/" + slugify(media.title) + ".jpg")
 }));
