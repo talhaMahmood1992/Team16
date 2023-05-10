@@ -29,7 +29,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 rating: data.rating,
                 image: data.image,
                 genres: [],
-                _id: nanoid()
+                _id: media._id
             };
             updateMediaInList(createdMedia);
 
