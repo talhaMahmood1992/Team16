@@ -3,7 +3,6 @@ import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { updateMediaInList } from "../../MediaData";
-import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import axios from "axios";
 import { Media, UserSubmitForm } from "../../Interfaces";
