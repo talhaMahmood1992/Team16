@@ -118,4 +118,9 @@ export function updateDeletedWatchedMedia(
         }
         UserData[userIndex] = newUser;
     }
+    // return getWatchedList(UserData[userIndex]);
+}
+export function getWatchedList(user: UserInterface): Media[] {
+    const watchedList: Media[] = user.watched.map((item) => item.media);
+    return watchedList;
 }

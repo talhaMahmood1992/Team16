@@ -1,49 +1,96 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import { getUserByUsername, updateDeletedWatchedMedia } from "../UserData";
+import {
+    getUserByUsername,
+    getWatchedList,
+    updateDeletedWatchedMedia
+} from "../UserData";
 import { mediaData } from "../MediaData";
 import { Media, UserInterface } from "../Interfaces";
-import RenderMedia from "./RenderMedia";
+import { SpecialRating } from "./MediaRatting";
 interface FavoriteMediaProps {
     userName: string;
 }
 export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
-    // eslint-disable-next-line prefer-const
-    const [deleteMedia, setDleteMedia] = useState<string>("");
-
     const [trashColor, setTrashColor] = useState<string>("black");
 
-    const currentUser = getUserByUsername(props.userName);
+    const [userMedia, setUserMedia] = useState<Media[]>([
+        ...getWatchedList(getUserByUsername(props.userName))
+    ]);
 
-    function getWatchedList(user: UserInterface): Media[] {
-        const watchedList: Media[] = user.watched.map((item) => item.media);
-        return watchedList;
-    }
     function FindMedia(searchTerm: string) {
         const filteredData = mediaData.filter(
             (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
         );
         return filteredData[0];
     }
+    useEffect(() => {
+        document.addEventListener("click", handleClick);
+        return () => {
+            document.removeEventListener("click", handleClick);
+        };
+    });
+
+    function handleClick() {
+        setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
+    }
 
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("newMedia") as string;
         //Set the color of the star back to the original one
-        setDleteMedia(toDelete);
-
-        updateDeletedWatchedMedia(currentUser.username, {
+        setTrashColor("black");
+        updateDeletedWatchedMedia(props.userName, {
             ...FindMedia(toDelete)
         });
-        setTrashColor("black");
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
         //To change the color of the star when the image can be dragged into the favoritesList
         setTrashColor("green");
     }
+    function handleOnDrag(e: React.DragEvent, newMedia: string) {
+        e.dataTransfer.setData("newMedia", newMedia);
+    }
+
+    const MediaToButton = (
+        mediaItem: Media
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ): JSX.Element => {
+        return (
+            <div
+                key={mediaItem._id}
+                className="media-item"
+                data-testid="mediaItem"
+                draggable
+                onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
+            >
+                <img src={mediaItem.image} alt={mediaItem.title} />
+                <div className="media-details">
+                    <p className="media-year" data-testid="mediaYear">
+                        {mediaItem.yearReleased}
+                    </p>
+                    <div className="media-rating">
+                        {<SpecialRating></SpecialRating>}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <>
+            <div
+                className="media-list-container"
+                data-testid="mediaListContainer"
+            >
+                <div className="media-list">
+                    {[...userMedia].map((mediaItem) =>
+                        MediaToButton(mediaItem)
+                    )}
+                </div>
+            </div>
+
             <div
                 className="header-container"
                 onDrop={handleOnDrop}
@@ -53,8 +100,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
             </div>
-            {console.log(getWatchedList(currentUser))}{" "}
-            <RenderMedia MediaData={getWatchedList(currentUser)}></RenderMedia>
+            {console.log(userMedia)}
         </>
     );
 };
