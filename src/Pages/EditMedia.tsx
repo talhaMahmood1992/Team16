@@ -22,7 +22,10 @@ const MediaToButton = (
 ): JSX.Element => {
     return (
         <div key={mediaItem._id} className="media-item">
-            <img src={mediaItem.image} alt={mediaItem.title} />
+            <img
+                src={require("../imgs/media-covers/" + mediaItem.image)}
+                alt={mediaItem.title}
+            />
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}

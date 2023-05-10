@@ -30,19 +30,19 @@ export const Slider = (): JSX.Element => {
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/21_jump_street.jpg")}
+                            src={require("../../imgs/media-covers/21-jump-street.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/black_mirror.jpg")}
+                            src={require("../../imgs/media-covers/black-mirror.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/breaking_bad.jpg")}
+                            src={require("../../imgs/media-covers/breaking-bad.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
@@ -54,19 +54,19 @@ export const Slider = (): JSX.Element => {
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/game_of_thrones.jpg")}
+                            src={require("../../imgs/media-covers/game-of-thrones.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/gilmore_girls.jpg")}
+                            src={require("../../imgs/media-covers/gilmore-girls.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/hidden_figures.jpg")}
+                            src={require("../../imgs/media-covers/hidden-figures.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
@@ -78,25 +78,25 @@ export const Slider = (): JSX.Element => {
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/lawrence_of_arabia.jpg")}
+                            src={require("../../imgs/media-covers/american-psycho.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/mad_men.jpg")}
+                            src={require("../../imgs/media-covers/mad-men.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/modern_family.jpg")}
+                            src={require("../../imgs/media-covers/modern-family.jpg")}
                         />
                     </SwiperSlide>
                     <SwiperSlide className={classes.swiper_slide}>
                         <img
                             className={classes.slider_img}
-                            src={require("../../imgs/media-covers/my_neighbor_totoro.jpg")}
+                            src={require("../../imgs/media-covers/my-neighbor-totoro.jpg")}
                         />
                     </SwiperSlide>
                 </Swiper>

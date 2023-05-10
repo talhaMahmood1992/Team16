@@ -17,7 +17,10 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
             draggable
             onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
         >
-            <img src={mediaItem.image} alt={mediaItem.title} />
+            <img
+                src={require("../imgs/media-covers/" + mediaItem.image)}
+                alt={mediaItem.title}
+            />
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}
