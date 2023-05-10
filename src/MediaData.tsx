@@ -955,11 +955,3 @@ mediaData = mediaData.map((media) => ({
     ...media,
     image: slugify(media.title) + ".jpg"
 }));
-
-const hungerGames = mediaData.find(
-    (media) => media.title === "The Hunger Games: Catching Fire"
-);
-
-if (hungerGames) {
-    hungerGames.image = "the-hunger-games:-catching-fire.jpg";
-}
