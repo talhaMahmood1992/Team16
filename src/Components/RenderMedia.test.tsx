@@ -11,7 +11,7 @@ describe("RenderMedia", () => {
             type: "Movie",
             yearReleased: 1999,
             rating: 4,
-            image: require("../imgs/media-covers/fight_club.jpg"),
+            image: require("../imgs/media-covers/fight-club.jpg"),
             genres: ["Action", "Crime", "Drama", "Mystery", "Thriller"],
             _id: "1"
         },
