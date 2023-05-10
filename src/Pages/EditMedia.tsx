@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Media, Role } from "../Interfaces";
-import RatingFeature from "../Components/MediaRatting";
+import RatingFeature from "../Components/MediaRating";
 import { FindMedia } from "./BrowseMedia";
 import { NavLink } from "react-router-dom";
 interface EditMediaPageProps {
@@ -22,10 +22,7 @@ const MediaToButton = (
 ): JSX.Element => {
     return (
         <div key={mediaItem._id} className="media-item">
-            <img
-                src={require("../imgs/media-covers/" + mediaItem.image)}
-                alt={mediaItem.title}
-            />
+            <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}

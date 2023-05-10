@@ -3,7 +3,7 @@ import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
 import { Media } from "../Interfaces";
-import RatingFeature from "../Components/MediaRatting";
+import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
 function handleOnDrag(e: React.DragEvent, newMedia: string) {
     e.dataTransfer.setData("newMedia", newMedia);
@@ -17,10 +17,7 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
             draggable
             onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
         >
-            <img
-                src={require("../imgs/media-covers/" + mediaItem.image)}
-                alt={mediaItem.title}
-            />
+            <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}

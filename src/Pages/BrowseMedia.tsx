@@ -64,7 +64,11 @@ export const BrowseMedia = ({
                 const response = await axios.get(
                     "https://team16-c5r2.onrender.com/media" + searchQuery
                 );
-                const mediaData = response.data.data.media;
+                let mediaData: Media[] = response.data.data.media;
+                mediaData = mediaData.map((media) => ({
+                    ...media,
+                    image: require("../imgs/media-covers/" + media.image)
+                }));
                 setMediaList(mediaData);
             } catch (error) {
                 console.log(error);
