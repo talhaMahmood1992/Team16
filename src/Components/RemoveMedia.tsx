@@ -18,6 +18,13 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     const [userMedia, setUserMedia] = useState<Media[]>([
         ...getWatchedList(getUserByUsername(props.userName))
     ]);
+    function handleUserMedia(toDelete: string) {
+        setUserMedia([
+            ...updateDeletedWatchedMedia(props.userName, {
+                ...FindMedia(toDelete)
+            })
+        ]);
+    }
 
     function FindMedia(searchTerm: string) {
         const filteredData = mediaData.filter(
@@ -40,9 +47,12 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
         const toDelete = e.dataTransfer.getData("newMedia") as string;
         //Set the color of the star back to the original one
         setTrashColor("black");
-        updateDeletedWatchedMedia(props.userName, {
-            ...FindMedia(toDelete)
-        });
+
+        handleUserMedia(toDelete);
+        handleClick;
+
+        // setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
+        // window.location.reload();
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
