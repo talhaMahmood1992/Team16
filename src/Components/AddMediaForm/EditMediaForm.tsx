@@ -88,7 +88,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 </select>
                 <p>{errors.type?.message}</p>
 
-                <label htmlFor="rating">Year Released:</label>
+                <label htmlFor="rating">Rating:</label>
                 <input
                     type="number"
                     {...register("rating")}
