@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { Media } from "./Interfaces";
+import slugify from "react-slugify";
 
 export function findMedia(data: Media[], title: string): number {
     return data.findIndex((datum: Media): boolean => datum.title === title);
@@ -11,13 +12,13 @@ export function updateMediaInList(media: Media): void {
     }
 }
 
-export const mediaData: Media[] = [
+export let mediaData: Media[] = [
     {
         title: "2001 A Space Odyssey",
         type: "Movie",
         yearReleased: 1968,
         rating: 5,
-        image: require("./imgs/media-covers/2001_a_space_odyssey.jpg"),
+        image: "",
         genres: ["Adventure", "Drama", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -26,7 +27,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1979,
         rating: 5,
-        image: require("./imgs/media-covers/Apocalypse_Now.jpg"),
+        image: "",
         genres: ["Adventure", "History", "Thriller"],
         _id: nanoid()
     },
@@ -35,7 +36,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1941,
         rating: 5,
-        image: require("./imgs/media-covers/citizen_kane.jpg"),
+        image: "",
         genres: ["Drama", "Mystery"],
         _id: nanoid()
     },
@@ -44,7 +45,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1997,
         rating: 4,
-        image: require("./imgs/media-covers/titanic.jpg"),
+        image: "",
         genres: ["Drama", "History", "Romance"],
         _id: nanoid()
     },
@@ -53,7 +54,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2009,
         rating: 3,
-        image: require("./imgs/media-covers/the_blind_side.jpg"),
+        image: "",
         genres: ["Drama", "Sports"],
         _id: nanoid()
     },
@@ -62,7 +63,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2011,
         rating: 4,
-        image: require("./imgs/media-covers/black_mirror.jpg"),
+        image: "",
         genres: ["Drama", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -71,7 +72,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1978,
         rating: 4,
-        image: require("./imgs/media-covers/animal_house.jpg"),
+        image: "",
         genres: ["Comedy", "Romance"],
         _id: nanoid()
     },
@@ -80,7 +81,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1980,
         rating: 3,
-        image: require("./imgs/media-covers/caddyshack.jpg"),
+        image: "",
         genres: ["Comedy", "Sports"],
         _id: nanoid()
     },
@@ -89,7 +90,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1969,
         rating: 4,
-        image: require("./imgs/media-covers/easy_rider.jpg"),
+        image: "",
         genres: ["Adventure", "Comedy", "Western"],
         _id: nanoid()
     },
@@ -98,7 +99,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2003,
         rating: 3,
-        image: require("./imgs/media-covers/elephant.jpg"),
+        image: "",
         genres: ["Crime", "Horror", "Thriller"],
         _id: nanoid()
     },
@@ -107,7 +108,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2000,
         rating: 4,
-        image: require("./imgs/media-covers/gilmore_girls.jpg"),
+        image: "",
         genres: ["Comedy", "Drama"],
         _id: nanoid()
     },
@@ -116,7 +117,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1999,
         rating: 4,
-        image: require("./imgs/media-covers/Eyes_Wide_Shut.jpg"),
+        image: "",
         genres: ["Drama", "Mystery", "Romance", "Thriller"],
         _id: nanoid()
     },
@@ -125,7 +126,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 1994,
         rating: 4,
-        image: require("./imgs/media-covers/friends.jpg"),
+        image: "",
         genres: ["Comedy", "Romance"],
         _id: nanoid()
     },
@@ -134,7 +135,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1987,
         rating: 5,
-        image: require("./imgs/media-covers/full_metal_jacket.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "History"],
         _id: nanoid()
     },
@@ -143,7 +144,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1999,
         rating: 4,
-        image: require("./imgs/media-covers/fight_club.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Drama", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -152,7 +153,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2011,
         rating: 3,
-        image: require("./imgs/media-covers/drive.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -161,7 +162,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2005,
         rating: 5,
-        image: require("./imgs/media-covers/the_office.jpg"),
+        image: "",
         genres: ["Comedy", "Romance"],
         _id: nanoid()
     },
@@ -170,7 +171,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2009,
         rating: 3,
-        image: require("./imgs/media-covers/parks_and_recreation.jpg"),
+        image: "",
         genres: ["Comedy", "Romance"],
         _id: nanoid()
     },
@@ -179,25 +180,25 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1985,
         rating: 4,
-        image: require("./imgs/media-covers/the_breakfast_club.jpg"),
+        image: "",
         genres: ["Comedy", "Drama"],
         _id: nanoid()
     },
-    {
-        title: "Beetlejuice",
-        type: "Movie",
-        yearReleased: 1988,
-        rating: 4,
-        image: require("./imgs/media-covers/Beetlejuice.jpg"),
-        genres: ["Comedy", "Horror", "Kids", "Fantasy"],
-        _id: nanoid()
-    },
+    // {
+    //     title: "Beetlejuice",
+    //     type: "Movie",
+    //     yearReleased: 1988,
+    //     rating: 4,
+    //     image: "",
+    //     genres: ["Comedy", "Horror", "Kids", "Fantasy"],
+    //     _id: nanoid()
+    // },
     {
         title: "The Lorax",
         type: "Movie",
         yearReleased: 2012,
         rating: 3,
-        image: require("./imgs/media-covers/the_lorax.jpg"),
+        image: "",
         genres: ["Animated", "Comedy", "Kids"],
         _id: nanoid()
     },
@@ -206,7 +207,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2007,
         rating: 3,
-        image: require("./imgs/media-covers/kuwtk.jpg"),
+        image: "",
         genres: ["Reality", "Romance"],
         _id: nanoid()
     },
@@ -215,7 +216,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2011,
         rating: 3,
-        image: require("./imgs/media-covers/the_help.jpg"),
+        image: "",
         genres: ["Drama", "History"],
         _id: nanoid()
     },
@@ -224,7 +225,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2017,
         rating: 3,
-        image: require("./imgs/media-covers/hidden_figures.jpg"),
+        image: "",
         genres: ["Drama", "History"],
         _id: nanoid()
     },
@@ -233,7 +234,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2012,
         rating: 4,
-        image: require("./imgs/media-covers/the_hunger_games.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -242,7 +243,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2013,
         rating: 4,
-        image: require("./imgs/media-covers/hunger_games_catching_fire.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -251,7 +252,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1962,
         rating: 5,
-        image: require("./imgs/media-covers/lawrence_of_arabia.jpg"),
+        image: "",
         genres: ["Adventure", "Drama", "History"],
         _id: nanoid()
     },
@@ -260,7 +261,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1965,
         rating: 4,
-        image: require("./imgs/media-covers/doctor_zhivago.jpg"),
+        image: "",
         genres: ["Drama", "History", "Romance"],
         _id: nanoid()
     },
@@ -269,7 +270,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1993,
         rating: 4,
-        image: require("./imgs/media-covers/tombstone.jpg"),
+        image: "",
         genres: ["Drama", "History", "Western"],
         _id: nanoid()
     },
@@ -278,7 +279,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1992,
         rating: 4,
-        image: require("./imgs/media-covers/reservoir_dogs.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -287,7 +288,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1994,
         rating: 4,
-        image: require("./imgs/media-covers/pulp_fiction.jpg"),
+        image: "",
         genres: ["Comedy", "Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -296,7 +297,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1995,
         rating: 4,
-        image: require("./imgs/media-covers/se7en.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -305,7 +306,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1982,
         rating: 4,
-        image: require("./imgs/media-covers/blade_runner.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -314,25 +315,25 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2017,
         rating: 3,
-        image: require("./imgs/media-covers/blade_runner2049.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
-    {
-        title: "Fargo",
-        type: "Movie",
-        yearReleased: 1996,
-        rating: 4,
-        image: require("./imgs/media-covers/Fargo.jpg"),
-        genres: ["Comedy", "Crime", "Drama", "Thriller"],
-        _id: nanoid()
-    },
+    // {
+    //     title: "Fargo",
+    //     type: "Movie",
+    //     yearReleased: 1996,
+    //     rating: 4,
+    //     image: "",
+    //     genres: ["Comedy", "Crime", "Drama", "Thriller"],
+    //     _id: nanoid()
+    // },
     {
         title: "No Country for Old Men",
         type: "Movie",
         yearReleased: 2007,
         rating: 4,
-        image: require("./imgs/media-covers/No_Country_for_Old_Men.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Mystery", "Thriller", "Western"],
         _id: nanoid()
     },
@@ -341,7 +342,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1999,
         rating: 4,
-        image: require("./imgs/media-covers/the_matrix.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction"],
         _id: nanoid()
     },
@@ -350,7 +351,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2003,
         rating: 3,
-        image: require("./imgs/media-covers/matrix_reloaded.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction"],
         _id: nanoid()
     },
@@ -359,7 +360,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2003,
         rating: 2,
-        image: require("./imgs/media-covers/matrix_revolutions.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction"],
         _id: nanoid()
     },
@@ -368,7 +369,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2021,
         rating: 2,
-        image: require("./imgs/media-covers/matrix_resurrections.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction"],
         _id: nanoid()
     },
@@ -377,7 +378,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2014,
         rating: 3,
-        image: require("./imgs/media-covers/the_maze_runner.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -386,7 +387,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1991,
         rating: 3,
-        image: require("./imgs/media-covers/my_own_private_idaho.jpg"),
+        image: "",
         genres: ["Adventure", "Drama", "Romance"],
         _id: nanoid()
     },
@@ -395,7 +396,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1990,
         rating: 4,
-        image: require("./imgs/media-covers/my_neighbor_totoro.jpg"),
+        image: "",
         genres: ["Animated", "Fantasy", "Kids"],
         _id: nanoid()
     },
@@ -404,7 +405,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2009,
         rating: 4,
-        image: require("./imgs/media-covers/ponyo.jpg"),
+        image: "",
         genres: ["Adventure", "Animated", "Fantasy", "Kids"],
         _id: nanoid()
     },
@@ -413,7 +414,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2016,
         rating: 4,
-        image: require("./imgs/media-covers/nocturnal_animals.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Romance", "Thriller", "Western"],
         _id: nanoid()
     },
@@ -422,7 +423,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2000,
         rating: 4,
-        image: require("./imgs/media-covers/dancer_in_the_dark.jpg"),
+        image: "",
         genres: ["Drama"],
         _id: nanoid()
     },
@@ -431,7 +432,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2001,
         rating: 5,
-        image: require("./imgs/media-covers/donnie_darko.jpg"),
+        image: "",
         genres: ["Drama", "Horror", "Romance", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -440,7 +441,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2006,
         rating: 2,
-        image: require("./imgs/media-covers/southland_tales.jpg"),
+        image: "",
         genres: ["Comedy", "Drama", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -449,7 +450,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1994,
         rating: 4,
-        image: require("./imgs/media-covers/the_shawshank_redemption.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Mystery"],
         _id: nanoid()
     },
@@ -458,7 +459,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1939,
         rating: 5,
-        image: require("./imgs/media-covers/gone_with_the_wind.jpg"),
+        image: "",
         genres: ["Drama", "History", "Romance"],
         _id: nanoid()
     },
@@ -467,7 +468,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1959,
         rating: 5,
-        image: require("./imgs/media-covers/benhur.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Drama", "History", "Romance"],
         _id: nanoid()
     },
@@ -476,7 +477,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1988,
         rating: 4,
-        image: require("./imgs/media-covers/the_last_temptation_of_christ.jpg"),
+        image: "",
         genres: ["Drama"],
         _id: nanoid()
     },
@@ -485,7 +486,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2007,
         rating: 4,
-        image: require("./imgs/media-covers/superbad.jpg"),
+        image: "",
         genres: ["Comedy"],
         _id: nanoid()
     },
@@ -494,7 +495,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2009,
         rating: 3,
-        image: require("./imgs/media-covers/modern_family.jpg"),
+        image: "",
         genres: ["Comedy"],
         _id: nanoid()
     },
@@ -503,7 +504,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2015,
         rating: 3,
-        image: require("./imgs/media-covers/Mr_Robot.jpg"),
+        image: "",
         genres: ["Drama", "Thriller"],
         _id: nanoid()
     },
@@ -512,7 +513,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2011,
         rating: 3,
-        image: require("./imgs/media-covers/new_girl.jpg"),
+        image: "",
         genres: ["Comedy"],
         _id: nanoid()
     },
@@ -521,7 +522,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2000,
         rating: 3,
-        image: require("./imgs/media-covers/survivor.jpg"),
+        image: "",
         genres: ["Reality", "Sports"],
         _id: nanoid()
     },
@@ -530,7 +531,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2009,
         rating: 3,
-        image: require("./imgs/media-covers/shark_tank.jpg"),
+        image: "",
         genres: ["Reality"],
         _id: nanoid()
     },
@@ -539,7 +540,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2011,
         rating: 3,
-        image: require("./imgs/media-covers/shameless.jpg"),
+        image: "",
         genres: ["Comedy", "Drama"],
         _id: nanoid()
     },
@@ -548,7 +549,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2007,
         rating: 3,
-        image: require("./imgs/media-covers/icarly.jpg"),
+        image: "",
         genres: ["Comedy", "Kids"],
         _id: nanoid()
     },
@@ -557,7 +558,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2016,
         rating: 4,
-        image: require("./imgs/media-covers/the_good_place.jpg"),
+        image: "",
         genres: ["Comedy"],
         _id: nanoid()
     },
@@ -566,7 +567,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2012,
         rating: 4,
-        image: require("./imgs/media-covers/21_jump_street.jpg"),
+        image: "",
         genres: ["Action", "Comedy", "Crime"],
         _id: nanoid()
     },
@@ -575,7 +576,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2023,
         rating: 4,
-        image: require("./imgs/media-covers//mario.jpg"),
+        image: "",
         genres: ["Animated", "Adventure", "Comedy", "Kids"],
         _id: nanoid()
     },
@@ -584,7 +585,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2016,
         rating: 4,
-        image: require("./imgs/media-covers/stranger_things.jpg"),
+        image: "",
         genres: ["Drama", "Mystery", "Science Fiction"],
         _id: nanoid()
     },
@@ -593,7 +594,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2000,
         rating: 4,
-        image: require("./imgs/media-covers/american_psycho.jpg"),
+        image: "",
         genres: ["Comedy", "Crime", "Drama", "Horror", "Thriller"],
         _id: nanoid()
     },
@@ -602,7 +603,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1998,
         rating: 3,
-        image: require("./imgs/media-covers/buffalo66.jpg"),
+        image: "",
         genres: ["Comedy", "Crime", "Drama", "Romance"],
         _id: nanoid()
     },
@@ -611,7 +612,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1996,
         rating: 4,
-        image: require("./imgs/media-covers/scream.jpg"),
+        image: "",
         genres: ["Comedy", "Drama", "Horror", "Mystery"],
         _id: nanoid()
     },
@@ -620,7 +621,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1997,
         rating: 4,
-        image: require("./imgs/media-covers/Scream_2.jpg"),
+        image: "",
         genres: ["Comedy", "Drama", "Horror", "Mystery"],
         _id: nanoid()
     },
@@ -629,7 +630,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2022,
         rating: 4,
-        image: require("./imgs/media-covers/where_the_crawdads_sing.jpg"),
+        image: "",
         genres: ["Drama", "Mystery"],
         _id: nanoid()
     },
@@ -638,7 +639,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2001,
         rating: 3,
-        image: require("./imgs/media-covers/mulholland_drive.jpg"),
+        image: "",
         genres: ["Drama", "Mystery", "Romance", "Thriller"],
         _id: nanoid()
     },
@@ -647,7 +648,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 1999,
         rating: 4,
-        image: require("./imgs/media-covers/spongebob_squarepants.jpg"),
+        image: "",
         genres: ["Animated", "Comedy", "Kids"],
         _id: nanoid()
     },
@@ -656,7 +657,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 1990,
         rating: 5,
-        image: require("./imgs/media-covers/twin_peaks.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Horror", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -665,7 +666,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2007,
         rating: 4,
-        image: require("./imgs/media-covers/mad_men.jpg"),
+        image: "",
         genres: ["Drama", "History"],
         _id: nanoid()
     },
@@ -674,7 +675,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2008,
         rating: 5,
-        image: require("./imgs/media-covers/breaking_bad.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -683,7 +684,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2015,
         rating: 4,
-        image: require("./imgs/media-covers/better_call_saul.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -692,7 +693,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2011,
         rating: 5,
-        image: require("./imgs/media-covers/game_of_thrones.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Drama", "Fantasy"],
         _id: nanoid()
     },
@@ -701,7 +702,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2022,
         rating: 3,
-        image: require("./imgs/media-covers/house_of_dragon.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Drama", "Fantasy"],
         _id: nanoid()
     },
@@ -710,7 +711,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2018,
         rating: 4,
-        image: require("./imgs/media-covers/succession.jpg"),
+        image: "",
         genres: ["Comedy", "Drama"],
         _id: nanoid()
     },
@@ -719,7 +720,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2020,
         rating: 3,
-        image: require("./imgs/media-covers/the_scary_of_sixty_first.jpg"),
+        image: "",
         genres: ["Drama", "Horror", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -728,7 +729,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2005,
         rating: 3,
-        image: require("./imgs/media-covers/BatMan_Begins.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Superhero"],
         _id: nanoid()
     },
@@ -737,7 +738,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2008,
         rating: 5,
-        image: require("./imgs/media-covers/The_Dark_Knight.jpg"),
+        image: "",
         genres: ["Action", "Drama", "Superhero", "Thriller"],
         _id: nanoid()
     },
@@ -746,7 +747,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2012,
         rating: 4,
-        image: require("./imgs/media-covers/The_Dark_Knight_Rises.jpg"),
+        image: "",
         genres: ["Action", "Drama", "Superhero", "Thriller"],
         _id: nanoid()
     },
@@ -755,25 +756,25 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2022,
         rating: 4,
-        image: require("./imgs/media-covers/The_Batman.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Mystery", "Superhero"],
         _id: nanoid()
     },
-    {
-        title: "Joker",
-        type: "Movie",
-        yearReleased: 2019,
-        rating: 4,
-        image: require("./imgs/media-covers/Joker.jpg"),
-        genres: ["Crime", "Drama", "Superhero", "Thriller"],
-        _id: nanoid()
-    },
+    // {
+    //     title: "Joker",
+    //     type: "Movie",
+    //     yearReleased: 2019,
+    //     rating: 4,
+    //     image: "",
+    //     genres: ["Crime", "Drama", "Superhero", "Thriller"],
+    //     _id: nanoid()
+    // },
     {
         title: "The Prestige",
         type: "Movie",
         yearReleased: 2006,
         rating: 4,
-        image: require("./imgs/media-covers/The_Prestige.jpg"),
+        image: "",
         genres: ["Drama", "History", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
@@ -782,7 +783,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2007,
         rating: 4,
-        image: require("./imgs/media-covers/there_will_be_blood.jpg"),
+        image: "",
         genres: ["Drama", "History", "Thriller"],
         _id: nanoid()
     },
@@ -791,7 +792,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2008,
         rating: 4,
-        image: require("./imgs/media-covers/Iron_Man.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -800,7 +801,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2010,
         rating: 2,
-        image: require("./imgs/media-covers/Iron_Man2.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -809,7 +810,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2013,
         rating: 3,
-        image: require("./imgs/media-covers/Iron_Man3.jpg"),
+        image: "",
         genres: ["Action", "Adventure", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -818,7 +819,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2013,
         rating: 4,
-        image: require("./imgs/media-covers/wolf_of_wall_st.jpg"),
+        image: "",
         genres: ["Comedy", "Crime", "Drama"],
         _id: nanoid()
     },
@@ -827,7 +828,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2010,
         rating: 4,
-        image: require("./imgs/media-covers/shutter_island.jpg"),
+        image: "",
         genres: ["Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -836,7 +837,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1991,
         rating: 5,
-        image: require("./imgs/media-covers/the_silence_of_the_lambs.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Horror", "Mystery", "Thriller"],
         _id: nanoid()
     },
@@ -845,7 +846,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1976,
         rating: 5,
-        image: require("./imgs/media-covers/taxi_driver.jpg"),
+        image: "",
         genres: ["Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -854,7 +855,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1972,
         rating: 5,
-        image: require("./imgs/media-covers/The_Godfather.jpg"),
+        image: "",
         genres: ["Crime", "Drama"],
         _id: nanoid()
     },
@@ -863,7 +864,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1974,
         rating: 5,
-        image: require("./imgs/media-covers/godfather_p2.jpg"),
+        image: "",
         genres: ["Crime", "Drama"],
         _id: nanoid()
     },
@@ -872,7 +873,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1990,
         rating: 4,
-        image: require("./imgs/media-covers/godfather_p3.jpg"),
+        image: "",
         genres: ["Crime", "Drama"],
         _id: nanoid()
     },
@@ -881,7 +882,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1983,
         rating: 5,
-        image: require("./imgs/media-covers/scarface.jpg"),
+        image: "",
         genres: ["Action", "Crime", "Drama", "Thriller"],
         _id: nanoid()
     },
@@ -890,7 +891,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2002,
         rating: 4,
-        image: require("./imgs/media-covers/Spider_Man.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -899,7 +900,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2004,
         rating: 4,
-        image: require("./imgs/media-covers/Sipder_Man2.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -908,7 +909,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 2007,
         rating: 3,
-        image: require("./imgs/media-covers/Spider_Man3.jpg"),
+        image: "",
         genres: ["Action", "Science Fiction", "Superhero"],
         _id: nanoid()
     },
@@ -917,7 +918,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1999,
         rating: 4,
-        image: require("./imgs/media-covers/the_virgin_suicides.jpg"),
+        image: "",
         genres: ["Drama", "Mystery", "Romance", "Thriller"],
         _id: nanoid()
     },
@@ -926,7 +927,7 @@ export const mediaData: Media[] = [
         type: "Movie",
         yearReleased: 1985,
         rating: 4,
-        image: require("./imgs/media-covers/vision_question.jpg"),
+        image: "",
         genres: ["Drama", "Romance", "Sports"],
         _id: nanoid()
     },
@@ -935,7 +936,7 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2016,
         rating: 4,
-        image: require("./imgs/media-covers/westworld.jpg"),
+        image: "",
         genres: ["Action", "Drama", "Science Fiction", "Western"],
         _id: nanoid()
     },
@@ -944,8 +945,13 @@ export const mediaData: Media[] = [
         type: "Show",
         yearReleased: 2018,
         rating: 4,
-        image: require("./imgs/media-covers/yellowstone.jpg"),
+        image: "",
         genres: ["Drama", "Western"],
         _id: nanoid()
     }
 ];
+
+mediaData = mediaData.map((media) => ({
+    ...media,
+    image: require("./imgs/media-covers/" + slugify(media.title) + ".jpg")
+}));

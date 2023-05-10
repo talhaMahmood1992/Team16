@@ -1,7 +1,6 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
-import { SearchBar } from "../Components/Search";
 import { mediaData } from "../MediaData";
 import { Media, Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
@@ -9,6 +8,9 @@ import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
 import { updateWatchedMediaForUser } from "../UserData";
+import axios from "axios";
+import { SearchBar } from "../Components/SearchAndFilter/SearchBar";
+import { FilterButton } from "../Components/SearchAndFilter/FilterButton";
 
 interface FavoriteMediaProps {
     //UserName of the CurrentUser
@@ -25,10 +27,11 @@ export const BrowseMedia = ({
     handleEdits,
     role
 }: FavoriteMediaProps): JSX.Element => {
-    const [mediaList, setMediaList] = useState<Media[]>(mediaData);
-    function handleRender(mediaList: Media[]) {
-        setMediaList([...mediaList]);
-    }
+    const [mediaList, setMediaList] = useState<Media[]>([]);
+    const [searchQuery, setSearchQuery] = useState<string>("");
+    // function handleRender(mediaList: Media[]) {
+    //     setMediaList([...mediaList]);
+    // }
     const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
     const [favMedia, setFavMedia] = useState<Media[]>([]);
@@ -55,13 +58,34 @@ export const BrowseMedia = ({
         setStarColor("green");
     }
 
+    useEffect(() => {
+        const getMediaData = async () => {
+            try {
+                const response = await axios.get(
+                    "https://team16-c5r2.onrender.com/media" + searchQuery
+                );
+                let mediaData: Media[] = response.data.data.media;
+                mediaData = mediaData.map((media) => ({
+                    ...media,
+                    image: require("../imgs/media-covers/" + media.image)
+                }));
+                setMediaList(mediaData);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        getMediaData();
+    }, [searchQuery]);
+
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
                 <Slider />
             </div>
-            <SearchBar onSearch={handleRender} MediaData={mediaData} />
-            {<RenderMedia MediaData={mediaList} />}
+            <SearchBar setSearchQuery={setSearchQuery} />
+            <FilterButton setSearchQuery={setSearchQuery} />
+            <RenderMedia MediaData={mediaList} />
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">

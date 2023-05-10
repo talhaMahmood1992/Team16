@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Media, Role } from "../Interfaces";
-import RatingFeature from "../Components/MediaRatting";
+import RatingFeature from "../Components/MediaRating";
 import { FindMedia } from "./BrowseMedia";
 import { NavLink } from "react-router-dom";
 interface EditMediaPageProps {
