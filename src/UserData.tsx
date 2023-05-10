@@ -1,5 +1,6 @@
 import { Media, PersonalMedia, UserInterface } from "./Interfaces";
 import { findMedia, mediaData } from "./MediaData";
+import { nanoid } from "nanoid";
 
 export const UserData: UserInterface[] = [
     {
@@ -72,10 +73,10 @@ function createPersonalMediaList(
     mediaList: Media[],
     oldWatched: PersonalMedia[]
 ): PersonalMedia[] {
-    const newPersonalMedia = mediaList.map((media) => ({
-        media,
+    const newPersonalMedia = mediaList.map((med) => ({
+        media: { ...med, _id: nanoid() },
         review: "",
-        id: media._id
+        id: nanoid()
     }));
     return [...oldWatched, ...newPersonalMedia];
 }
