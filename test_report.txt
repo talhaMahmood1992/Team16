@@ -24,7 +24,7 @@ All files                       |    2.62 |      2.4 |    4.91 |    2.73 |
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 34-139            
   AddUserForm.tsx               |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 12-113            
+  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 11-112            
   FormSchema.tsx                |       0 |      100 |     100 |       0 | 3-4               
   UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
@@ -58,5 +58,5 @@ All files                       |    2.62 |      2.4 |    4.91 |    2.73 |
 Test Suites: 2 passed, 2 total
 Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        4.487 s
+Time:        4.278 s
 Ran all test suites.
