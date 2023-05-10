@@ -18,6 +18,13 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     const [userMedia, setUserMedia] = useState<Media[]>([
         ...getWatchedList(getUserByUsername(props.userName))
     ]);
+    function handleUserMedia(toDelete: string) {
+        setUserMedia([
+            ...updateDeletedWatchedMedia(props.userName, {
+                ...FindMedia(toDelete)
+            })
+        ]);
+    }
 
     function FindMedia(searchTerm: string) {
         const filteredData = mediaData.filter(
@@ -25,24 +32,15 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
         );
         return filteredData[0];
     }
-    useEffect(() => {
-        document.addEventListener("click", handleClick);
-        return () => {
-            document.removeEventListener("click", handleClick);
-        };
-    });
-
-    function handleClick() {
-        setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
-    }
 
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("newMedia") as string;
         //Set the color of the star back to the original one
         setTrashColor("black");
-        updateDeletedWatchedMedia(props.userName, {
-            ...FindMedia(toDelete)
-        });
+        handleUserMedia(toDelete);
+
+        // setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
+        // window.location.reload();
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
@@ -85,9 +83,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
                 data-testid="mediaListContainer"
             >
                 <div className="media-list">
-                    {[...userMedia].map((mediaItem) =>
-                        MediaToButton(mediaItem)
-                    )}
+                    {userMedia.map((mediaItem) => MediaToButton(mediaItem))}
                 </div>
             </div>
 

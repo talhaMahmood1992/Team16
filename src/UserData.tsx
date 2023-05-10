@@ -1,5 +1,6 @@
 import { Media, PersonalMedia, UserInterface } from "./Interfaces";
 import { findMedia, mediaData } from "./MediaData";
+import { nanoid } from "nanoid";
 
 export const UserData: UserInterface[] = [
     {
@@ -72,10 +73,10 @@ function createPersonalMediaList(
     mediaList: Media[],
     oldWatched: PersonalMedia[]
 ): PersonalMedia[] {
-    const newPersonalMedia = mediaList.map((media) => ({
-        media,
+    const newPersonalMedia = mediaList.map((med) => ({
+        media: { ...med, _id: nanoid() },
         review: "",
-        id: media._id
+        id: nanoid()
     }));
     return [...oldWatched, ...newPersonalMedia];
 }
@@ -98,12 +99,12 @@ export function updateWatchedMediaForUser(
 export function updateDeletedWatchedMedia(
     userName: string,
     media: Media
-): void {
+): Media[] {
     const userIndex = UserData.findIndex((user) => user.username === userName);
     if (userIndex >= 0) {
         if (UserData[userIndex].watched.length === 1) {
             UserData[userIndex].watched = [];
-            return;
+            return [];
         }
 
         const newUser = { ...UserData[userIndex] };
@@ -118,7 +119,7 @@ export function updateDeletedWatchedMedia(
         }
         UserData[userIndex] = newUser;
     }
-    // return getWatchedList(UserData[userIndex]);
+    return getWatchedList(UserData[userIndex]);
 }
 export function getWatchedList(user: UserInterface): Media[] {
     const watchedList: Media[] = user.watched.map((item) => item.media);
