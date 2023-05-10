@@ -114,6 +114,14 @@ export const AddMediaForm = (): JSX.Element => {
                 </select>
                 <p>{errors.type?.message}</p>
 
+                <label htmlFor="rating">Rating:</label>
+                <input
+                    type="number"
+                    placeholder="Rating..."
+                    {...register("rating")}
+                />
+                <p>{errors.rating?.message}</p>
+
                 {/**
                 <label htmlFor="genres">Genres:</label>
                 <select {...register("genres")}>

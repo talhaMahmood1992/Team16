@@ -1,6 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
@@ -69,16 +69,17 @@ export const MainNavigation = ({
                         </NavLink>
                     </li>
                 )}
-
-                <li>
-                    <button
-                        className={classes.role_button}
-                        onClick={showSettingsHandler}
-                    >
-                        <IoMdSettings className={classes.icon} />{" "}
-                        <span>{role}</span>
-                    </button>
-                </li>
+                {useLocation().pathname === "/" && (
+                    <li>
+                        <button
+                            className={classes.role_button}
+                            onClick={showSettingsHandler}
+                        >
+                            <IoMdSettings className={classes.icon} />{" "}
+                            <span>{role}</span>
+                        </button>
+                    </li>
+                )}
             </ul>
         </nav>
     );

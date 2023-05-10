@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import classes from "./MainHeader.module.css";
 import { MainNavigation } from "./MainNavigation";
 import { Role } from "../Interfaces";
-// import { useLocation } from "react-router-dom";
 
 interface MainHeaderProps {
     showSettingsHandler: () => void;
@@ -20,12 +19,10 @@ export const MainHeader = ({
             <NavLink to="/" className={classes.logo}>
                 PROJECTX
             </NavLink>
-            {/* {useLocation().pathname !== "/mylists" && ( */}
             <MainNavigation
                 showSettingsHandler={showSettingsHandler}
                 role={role}
             />
-            {/* )} */}
         </header>
     );
 };

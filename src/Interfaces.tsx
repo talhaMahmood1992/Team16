@@ -44,12 +44,10 @@ export interface Media {
 }
 export interface PersonalMedia {
     media: Media;
-    review: string;
     id: string;
 }
 export interface UserInterface {
     username: string;
     watched: PersonalMedia[];
-    // toWatch: Media[];
     role: "Default" | "Admin" | "Super";
 }
