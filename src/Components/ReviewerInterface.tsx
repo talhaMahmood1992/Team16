@@ -1,16 +1,19 @@
-/* eslint-disable no-extra-parens */
-import React, { useEffect } from "react";
+import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { Media, Role } from "../Interfaces";
-import RatingFeature from "../Components/MediaRatting";
-import { FindMedia } from "./BrowseMedia";
+import React, { useEffect } from "react";
+import { Role } from "../Interfaces";
 import { NavLink } from "react-router-dom";
 
-interface EditMediaPageProps {
+interface ReviewerInterfaceProps {
     role: Role;
-    titles: string[];
-    setter: React.Dispatch<React.SetStateAction<Media>>;
+    review: string;
+    setter: React.Dispatch<React.SetStateAction<string>>;
 }
+/*
+function updateReview(event: React.ChangeEvent<HTMLInputElement>) {
+    setReview(event.target.value);
+}
+
 const prepareRevision = (
     media: Media,
     setter: React.Dispatch<React.SetStateAction<Media>>
@@ -41,35 +44,34 @@ const MediaToButton = (
         </div>
     );
 };
-export default function ListToButons(props: {
-    MediaData: Media[];
-    setter: React.Dispatch<React.SetStateAction<Media>>;
-}): JSX.Element {
-    const mediaList = props.MediaData.map((Media) => {
-        return {
-            ...Media
-        };
-    });
-    return (
-        <div className="media-list-container" data-testid="mediaListContainer">
-            <div className="media-list">
-                {mediaList.map((mediaItem) =>
-                    MediaToButton(mediaItem, props.setter)
-                )}
-            </div>
-        </div>
-    );
-}
-function RenderSelectedMediaButtons(props: EditMediaPageProps) {
-    const filteredMedia = props.titles.map((title: string) => FindMedia(title));
+*/
+export const ReviewerInterface = (
+    props: ReviewerInterfaceProps
+): JSX.Element => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (props.role != "Default") {
+            navigate("/");
+        }
+    }, [props.role]);
     return (
         <div>
-            <ListToButons MediaData={filteredMedia} setter={props.setter} />
+            <h2>Review Media</h2>
+            <Form.Control value={props.review} />
+            <NavLink to="/mediaRevision">
+                <p>Edit This Media</p>
+            </NavLink>
         </div>
     );
+};
+
+/*
+interface EditInterfaceProps {
+    role: Role;
+    media: Media;
 }
 
-export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
+export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
     const navigate = useNavigate();
     useEffect(() => {
         if (props.role == "Default") {
@@ -79,11 +81,8 @@ export const EditMediaPage = (props: EditMediaPageProps): JSX.Element => {
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <RenderSelectedMediaButtons
-                titles={props.titles}
-                role={props.role}
-                setter={props.setter}
-            />
+            <EditMediaForm media={props.media} />
         </>
     );
 };
+*/

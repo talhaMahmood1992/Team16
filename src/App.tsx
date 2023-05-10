@@ -15,12 +15,15 @@ import { EditorInterface } from "./Pages/EditorInterface";
 import { mediaData } from "./MediaData";
 import { Media } from "./Interfaces";
 import { AddUser } from "./Pages/AddUser";
+import { ReviewerInterface } from "./Components/ReviewerInterface";
+
 // import axios from "axios";
 function App(): JSX.Element {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const [role, setRole] = useState<Role>("Default");
     const [superList, setSuperList] = useState<string[]>([]);
     const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
+    const [mediaReview, setMediaReview] = useState<string>("");
 
     // what is the name of the currentUser
     const [currentUserName, setCurrentUser] = useState<string>("Default");
@@ -96,6 +99,16 @@ function App(): JSX.Element {
                     path="/mediaRevision"
                     element={
                         <EditorInterface role={role} media={changeMedia} />
+                    }
+                />
+                <Route
+                    path="/mediaReview"
+                    element={
+                        <ReviewerInterface
+                            role={role}
+                            review={mediaReview}
+                            setter={setMediaReview}
+                        />
                     }
                 />
                 <Route path="/*" element={<NotFound />} />
