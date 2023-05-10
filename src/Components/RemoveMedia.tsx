@@ -7,7 +7,7 @@ import {
     updateDeletedWatchedMedia
 } from "../UserData";
 import { mediaData } from "../MediaData";
-import { Media, UserInterface } from "../Interfaces";
+import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRatting";
 interface FavoriteMediaProps {
     userName: string;
