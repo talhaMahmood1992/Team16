@@ -80,8 +80,7 @@ function createPersonalMediaList(
     }));
     return [...oldWatched, ...newPersonalMedia];
 }
-//The function consumes a userName and NewMedia, finds it userInterface
-//in the userData and changed its Wathced property
+//The function consumes a userName and NewMedia, finds it userInterface in the userData and changed its Wathced property
 //and changed
 export function updateWatchedMediaForUser(
     userName: string,
