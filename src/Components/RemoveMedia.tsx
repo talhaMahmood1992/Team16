@@ -8,7 +8,7 @@ import {
 } from "../UserData";
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
-import { SpecialRating } from "./MediaRatting";
+import { SpecialRating } from "./MediaRating";
 interface FavoriteMediaProps {
     userName: string;
 }

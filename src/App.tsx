@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Settings } from "./Components/Settings";
+import { Settings } from "./Components/Settings/Settings";
 import { MainHeader } from "./Layout/MainHeader";
 import { AddMediaPage } from "./Pages/AddMediaPage";
 // import { FriendsPage } from "./Pages/FriendsPage";

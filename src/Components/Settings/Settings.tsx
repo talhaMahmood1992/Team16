@@ -1,10 +1,10 @@
 import React from "react";
-import Modal from "../UI/Modal";
+import Modal from "../../UI/Modal";
 import { IoMdSettings } from "react-icons/io";
 import classes from "./Settings.module.css";
-import { BasicDropdown } from "../UI/BasicDropdown";
-import { Role } from "../Interfaces";
-import { getUserNames } from "../UserData";
+import { BasicDropdown } from "../../UI/BasicDropdown";
+import { Role } from "../../Interfaces";
+import { getUserNames } from "../../UserData";
 
 interface SettingsProps {
     hideSettingsHandler: () => void;
@@ -29,6 +29,7 @@ export const Settings = ({
         roleInfo = "Super user is even... better";
     }
     handleCurrentUser(role);
+
     return (
         <Modal
             hideSettingsHandler={hideSettingsHandler}

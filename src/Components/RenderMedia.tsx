@@ -3,7 +3,7 @@ import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
 import { Media } from "../Interfaces";
-import RatingFeature from "../Components/MediaRatting";
+import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
 function handleOnDrag(e: React.DragEvent, newMedia: string) {
     e.dataTransfer.setData("newMedia", newMedia);
