@@ -5,16 +5,18 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+PASS src/Testing/MediaRating.test.tsx
 PASS src/Components/MediaRating.test.tsx
+PASS src/Testing/RenderMedia.test.tsx
 PASS src/Components/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    2.67 |      2.4 |    5.04 |    2.78 |                   
+All files                       |    2.64 |     2.35 |    5.04 |    2.75 |                   
  src                            |       0 |        0 |       0 |       0 |                   
-  App.tsx                       |       0 |        0 |       0 |       0 | 20-43             
+  App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-954             
+  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-955             
   UserData.tsx                  |       0 |        0 |       0 |       0 | 5-125             
  src/Components                 |   21.62 |       50 |   26.08 |   21.62 |                   
   MediaRating.tsx               |   28.57 |       50 |      40 |   28.57 | 14-26             
@@ -24,7 +26,7 @@ All files                       |    2.67 |      2.4 |    5.04 |    2.78 |
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 34-139            
   AddUserForm.tsx               |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 11-112            
+  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 15-115            
   FormSchema.tsx                |       0 |      100 |     100 |       0 | 3-4               
   UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
@@ -43,10 +45,10 @@ All files                       |    2.67 |      2.4 |    5.04 |    2.78 |
  src/Pages                      |       0 |        0 |       0 |       0 |                   
   AddMediaPage.tsx              |       0 |        0 |       0 |       0 | 10-17             
   AddUser.tsx                   |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx               |       0 |        0 |       0 |       0 | 24-120            
-  EditMedia.tsx                 |       0 |        0 |       0 |       0 | 13-79             
-  EditorInterface.tsx           |       0 |        0 |       0 |       0 | 11-18             
-  Favorites.tsx                 |       0 |      100 |       0 |       0 | 8-9               
+  BrowseMedia.tsx               |       0 |        0 |       0 |       0 | 25-123            
+  EditMedia.tsx                 |       0 |        0 |       0 |       0 | 13-78             
+  EditorInterface.tsx           |       0 |        0 |       0 |       0 | 12-19             
+  Favorites.tsx                 |       0 |      100 |       0 |       0 | 7-8               
   HomePage.tsx                  |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx             |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx                  |       0 |      100 |       0 |       0 | 5-16              
@@ -55,8 +57,8 @@ All files                       |    2.67 |      2.4 |    5.04 |    2.78 |
   Modal.tsx                     |       0 |      100 |       0 |       0 | 20-39             
 --------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 2 passed, 2 total
-Tests:       16 passed, 16 total
+Test Suites: 4 passed, 4 total
+Tests:       32 passed, 32 total
 Snapshots:   0 total
-Time:        4.325 s
+Time:        5.272 s
 Ran all test suites.
