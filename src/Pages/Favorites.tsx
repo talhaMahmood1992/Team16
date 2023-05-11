@@ -1,7 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import { DeleteMedia } from "../Components/RemoveMedia";
-// import { NavLink } from "react-router-dom";
 interface FavoriteMediaProps {
     userName: string;
 }

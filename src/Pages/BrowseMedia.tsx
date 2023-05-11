@@ -19,15 +19,18 @@ interface FavoriteMediaProps {
     handleEdits: (titles: string[]) => void;
     //Role of the current User
     role: Role;
+    listOfMedia: Media[];
 }
 
 export const BrowseMedia = ({
     userName,
     superTitles,
     handleEdits,
-    role
+    role,
+    listOfMedia
 }: FavoriteMediaProps): JSX.Element => {
-    const [mediaList, setMediaList] = useState<Media[]>([]);
+    //currently not necessary if we do not use a backend
+    const [mediaList, setMediaList] = useState<Media[]>(listOfMedia);
     const [searchQuery, setSearchQuery] = useState<string>("");
     // function handleRender(mediaList: Media[]) {
     //     setMediaList([...mediaList]);
@@ -85,7 +88,7 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            <RenderMedia MediaData={mediaList} />
+            <RenderMedia MediaData={searchQuery ? mediaList : listOfMedia} />
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">

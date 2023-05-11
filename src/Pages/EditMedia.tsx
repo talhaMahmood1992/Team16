@@ -26,7 +26,6 @@ const MediaToButton = (
             <div className="media-details">
                 <p className="media-year" data-testid="mediaYear">
                     {mediaItem.yearReleased}
-                    {mediaItem.title}
                 </p>
                 <div className="media-rating">
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}

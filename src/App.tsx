@@ -21,6 +21,7 @@ function App(): JSX.Element {
     const [role, setRole] = useState<Role>("Default");
     const [superList, setSuperList] = useState<string[]>([]);
     const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
+    const [mediaList, setMediaList] = useState<Media[]>(mediaData);
 
     // what is the name of the currentUser
     const [currentUserName, setCurrentUser] = useState<string>("Default");
@@ -81,6 +82,7 @@ function App(): JSX.Element {
                             handleEdits={handleEdits}
                             role={role}
                             userName={currentUserName}
+                            listOfMedia={mediaList}
                         />
                     }
                 />
@@ -88,7 +90,11 @@ function App(): JSX.Element {
                 <Route
                     path="/mediaRevision"
                     element={
-                        <EditorInterface role={role} media={changeMedia} />
+                        <EditorInterface
+                            role={role}
+                            media={changeMedia}
+                            mediaSetter={setMediaList}
+                        />
                     }
                 />
                 <Route path="/*" element={<NotFound />} />
