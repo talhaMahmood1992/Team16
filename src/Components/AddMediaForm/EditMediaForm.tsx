@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { mediaData, updateMediaInList } from "../../MediaData";
+import { updateMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
 import axios from "axios";
 import { Media, UserSubmitForm } from "../../Interfaces";
@@ -34,8 +34,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                 genres: [],
                 _id: props.media._id
             };
-            updateMediaInList(createdMedia);
-            props.mediaSetter(mediaData);
+            props.mediaSetter(updateMediaInList(createdMedia));
             navigate("/editMedia");
         }
     };

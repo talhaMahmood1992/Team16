@@ -5,11 +5,12 @@ import slugify from "react-slugify";
 export function findMedia(data: Media[], title: string): number {
     return data.findIndex((datum: Media): boolean => datum.title === title);
 }
-export function updateMediaInList(media: Media): void {
+export function updateMediaInList(media: Media): Media[] {
     const index = mediaData.findIndex((m) => m._id === media._id);
     if (index >= 0) {
         mediaData[index] = media;
     }
+    return mediaData;
 }
 
 export let mediaData: Media[] = [

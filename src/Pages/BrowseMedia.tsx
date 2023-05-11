@@ -29,6 +29,7 @@ export const BrowseMedia = ({
     role,
     listOfMedia
 }: FavoriteMediaProps): JSX.Element => {
+    //currently not necessary if we do not use a backend
     const [mediaList, setMediaList] = useState<Media[]>(listOfMedia);
     const [searchQuery, setSearchQuery] = useState<string>("");
     // function handleRender(mediaList: Media[]) {
@@ -87,7 +88,7 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            <RenderMedia MediaData={mediaList} />
+            <RenderMedia MediaData={searchQuery ? mediaList : listOfMedia} />
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">
