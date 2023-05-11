@@ -2,19 +2,23 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { updateMediaInList } from "../../MediaData";
+import { mediaData, updateMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
 import axios from "axios";
 import { Media, UserSubmitForm } from "../../Interfaces";
+import { useNavigate } from "react-router-dom";
 /* eslint no-extra-parens: "off" */
-
-export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
+interface EditMediaFormProps {
+    media: Media;
+    mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
+}
+export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
         getValues
     } = useForm<UserSubmitForm>({
         resolver: yupResolver(schema)
@@ -28,11 +32,11 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 rating: data.rating,
                 image: data.image,
                 genres: [],
-                _id: media._id
+                _id: props.media._id
             };
             updateMediaInList(createdMedia);
-
-            reset();
+            props.mediaSetter(mediaData);
+            navigate("/editMedia");
         }
     };
 
@@ -56,7 +60,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
     } else {
         imageHTMLoutput = (
             <div className={classes.image_goes_here}>
-                <img src={media.image} alt={media.title} />
+                <img src={props.media.image} alt={props.media.title} />
             </div>
         );
     }
@@ -68,7 +72,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 <input
                     type="text"
                     {...register("title")}
-                    defaultValue={media.title}
+                    defaultValue={props.media.title}
                 />
                 <p>{errors.title?.message}</p>
 
@@ -76,22 +80,22 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 <input
                     type="number"
                     {...register("yearReleased")}
-                    defaultValue={media.yearReleased}
+                    defaultValue={props.media.yearReleased}
                 />
                 <p>{errors.yearReleased?.message}</p>
 
                 <label htmlFor="type">Media type:</label>
-                <select {...register("type")} defaultValue={media.type}>
+                <select {...register("type")} defaultValue={props.media.type}>
                     <option value="Movie">Movie</option>
                     <option value="Show">Show</option>
                 </select>
                 <p>{errors.type?.message}</p>
 
-                <label htmlFor="rating">Year Released:</label>
+                <label htmlFor="rating">Rating:</label>
                 <input
                     type="number"
                     {...register("rating")}
-                    defaultValue={media.rating}
+                    defaultValue={props.media.rating}
                 />
                 <p>{errors.rating?.message}</p>
 
@@ -107,7 +111,7 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 <input
                     id="media-poster-input"
                     type="text"
-                    defaultValue={media.image}
+                    defaultValue={props.media.image}
                     {...register("image", {
                         onChange: (e) => imageLinkChangeHandler(e)
                     })}

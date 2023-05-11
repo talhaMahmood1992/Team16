@@ -19,15 +19,17 @@ interface FavoriteMediaProps {
     handleEdits: (titles: string[]) => void;
     //Role of the current User
     role: Role;
+    listOfMedia: Media[];
 }
 
 export const BrowseMedia = ({
     userName,
     superTitles,
     handleEdits,
-    role
+    role,
+    listOfMedia
 }: FavoriteMediaProps): JSX.Element => {
-    const [mediaList, setMediaList] = useState<Media[]>([]);
+    const [mediaList, setMediaList] = useState<Media[]>(listOfMedia);
     const [searchQuery, setSearchQuery] = useState<string>("");
     // function handleRender(mediaList: Media[]) {
     //     setMediaList([...mediaList]);

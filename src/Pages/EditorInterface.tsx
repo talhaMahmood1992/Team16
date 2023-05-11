@@ -6,6 +6,7 @@ import { Media, Role } from "../Interfaces";
 interface EditInterfaceProps {
     role: Role;
     media: Media;
+    mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
 }
 
 export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
@@ -18,7 +19,10 @@ export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <EditMediaForm media={props.media} />
+            <EditMediaForm
+                media={props.media}
+                mediaSetter={props.mediaSetter}
+            />
         </>
     );
 };
