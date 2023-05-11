@@ -319,15 +319,15 @@ export let mediaData: Media[] = [
         genres: ["Action", "Adventure", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
-    // {
-    //     title: "Fargo",
-    //     type: "Movie",
-    //     yearReleased: 1996,
-    //     rating: 4,
-    //     image: "",
-    //     genres: ["Comedy", "Crime", "Drama", "Thriller"],
-    //     _id: nanoid()
-    // },
+    {
+        title: "Fargo",
+        type: "Movie",
+        yearReleased: 1996,
+        rating: 4,
+        image: "",
+        genres: ["Comedy", "Crime", "Drama", "Thriller"],
+        _id: nanoid()
+    },
     {
         title: "No Country for Old Men",
         type: "Movie",
