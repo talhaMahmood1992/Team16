@@ -5,7 +5,9 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+PASS src/Testing/MediaRating.test.tsx
 PASS src/Components/MediaRating.test.tsx
+PASS src/Testing/RenderMedia.test.tsx
 PASS src/Components/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -55,8 +57,8 @@ All files                       |    2.67 |      2.4 |    5.04 |    2.78 |
   Modal.tsx                     |       0 |      100 |       0 |       0 | 20-39             
 --------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 2 passed, 2 total
-Tests:       16 passed, 16 total
+Test Suites: 4 passed, 4 total
+Tests:       32 passed, 32 total
 Snapshots:   0 total
-Time:        4.085 s
+Time:        7.553 s
 Ran all test suites.
