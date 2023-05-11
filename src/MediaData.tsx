@@ -184,15 +184,15 @@ export let mediaData: Media[] = [
         genres: ["Comedy", "Drama"],
         _id: nanoid()
     },
-    // {
-    //     title: "Beetlejuice",
-    //     type: "Movie",
-    //     yearReleased: 1988,
-    //     rating: 4,
-    //     image: "",
-    //     genres: ["Comedy", "Horror", "Kids", "Fantasy"],
-    //     _id: nanoid()
-    // },
+    {
+        title: "Beetlejuice",
+        type: "Movie",
+        yearReleased: 1988,
+        rating: 4,
+        image: "",
+        genres: ["Comedy", "Horror", "Kids", "Fantasy"],
+        _id: nanoid()
+    },
     {
         title: "The Lorax",
         type: "Movie",
@@ -760,15 +760,15 @@ export let mediaData: Media[] = [
         genres: ["Action", "Crime", "Mystery", "Superhero"],
         _id: nanoid()
     },
-    // {
-    //     title: "Joker",
-    //     type: "Movie",
-    //     yearReleased: 2019,
-    //     rating: 4,
-    //     image: "",
-    //     genres: ["Crime", "Drama", "Superhero", "Thriller"],
-    //     _id: nanoid()
-    // },
+    {
+        title: "Joker",
+        type: "Movie",
+        yearReleased: 2019,
+        rating: 4,
+        image: "",
+        genres: ["Crime", "Drama", "Superhero", "Thriller"],
+        _id: nanoid()
+    },
     {
         title: "The Prestige",
         type: "Movie",
