@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Team16/static/css/main.7c1f0201.css",
-    "main.js": "/Team16/static/js/main.a1792a04.js",
+    "main.js": "/Team16/static/js/main.74050cd2.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland-drive.jpg": "/Team16/static/media/mulholland-drive.d988b4999281e7db8809.jpg",
     "static/media/the-matrix.jpg": "/Team16/static/media/the-matrix.874c36d00d9ec6af151c.jpg",
@@ -43,10 +43,10 @@
     "static/media/yellowstone.jpg": "/Team16/static/media/yellowstone.5d3f22437e799be75193.jpg",
     "static/media/iron-man-2.jpg": "/Team16/static/media/iron-man-2.2c64b74b30a849c7cb21.jpg",
     "static/media/doctor-zhivago.jpg": "/Team16/static/media/doctor-zhivago.e7cfa49ad86ed2c90a33.jpg",
-    "static/media/Fargo.jpg": "/Team16/static/media/Fargo.dfcb205690be3e5fe402.jpg",
+    "static/media/fargo.jpg": "/Team16/static/media/fargo.dfcb205690be3e5fe402.jpg",
     "static/media/dancer-in-the-dark.jpg": "/Team16/static/media/dancer-in-the-dark.e6ebb3f5b3500a589538.jpg",
     "static/media/scream-2.jpg": "/Team16/static/media/scream-2.da94942dbd3b157752c8.jpg",
-    "static/media/Beetlejuice.jpg": "/Team16/static/media/Beetlejuice.aa2673edfd1a112f533e.jpg",
+    "static/media/beetlejuice.jpg": "/Team16/static/media/beetlejuice.aa2673edfd1a112f533e.jpg",
     "static/media/house-of-the-dragon.jpg": "/Team16/static/media/house-of-the-dragon.68252203dd8181f1a2ad.jpg",
     "static/media/the-scary-of-sixty-first.jpg": "/Team16/static/media/the-scary-of-sixty-first.876b042b9a5086286a5f.jpg",
     "static/media/se7en.jpg": "/Team16/static/media/se7en.889d6a8a85f1838c89b5.jpg",
@@ -57,7 +57,7 @@
     "static/media/iron-man-3.jpg": "/Team16/static/media/iron-man-3.22b11d268a440cb28089.jpg",
     "static/media/dog.jpg": "/Team16/static/media/dog.42a984b4572d040c26ea.jpg",
     "static/media/twin-peaks.jpg": "/Team16/static/media/twin-peaks.4f8ce16df3785d486647.jpg",
-    "static/media/Joker.jpg": "/Team16/static/media/Joker.e715ddc7934d25f6f883.jpg",
+    "static/media/joker.jpg": "/Team16/static/media/joker.e715ddc7934d25f6f883.jpg",
     "static/media/batman-begins.jpg": "/Team16/static/media/batman-begins.5c56ddcc2b36b2fad6a1.jpg",
     "static/media/the-godfather-part-iii.jpg": "/Team16/static/media/the-godfather-part-iii.e6daa5af34a97bfed440.jpg",
     "static/media/the-dark-knight.jpg": "/Team16/static/media/the-dark-knight.fc950b5e5098ebbfae7d.jpg",
@@ -111,11 +111,11 @@
     "static/media/mr-robot.jpg": "/Team16/static/media/mr-robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
     "main.7c1f0201.css.map": "/Team16/static/css/main.7c1f0201.css.map",
-    "main.a1792a04.js.map": "/Team16/static/js/main.a1792a04.js.map",
+    "main.74050cd2.js.map": "/Team16/static/js/main.74050cd2.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7c1f0201.css",
-    "static/js/main.a1792a04.js"
+    "static/js/main.74050cd2.js"
   ]
 }
