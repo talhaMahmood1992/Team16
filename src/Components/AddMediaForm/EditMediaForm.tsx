@@ -26,7 +26,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
             const createdMedia = {
-                title: props.media.title,
+                title: data.title,
                 type: data.type,
                 yearReleased: data.yearReleased,
                 rating: data.rating,
@@ -67,6 +67,14 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     return (
         <div className={classes.form_wrapper}>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+                <label htmlFor="title">Media title:</label>
+                <input
+                    type="text"
+                    {...register("title")}
+                    defaultValue={props.media.title}
+                />
+                <p>{errors.title?.message}</p>
+
                 <label htmlFor="yearReleased">Year Released:</label>
                 <input
                     type="number"
