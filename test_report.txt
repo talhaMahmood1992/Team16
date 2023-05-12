@@ -6,13 +6,13 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/Testing/MediaRating.test.tsx
-PASS src/Components/MediaRating.test.tsx
+PASS src/Testing/FilterButton.test.tsx
+PASS src/Testing/SearchBar.test.tsx
 PASS src/Testing/RenderMedia.test.tsx
-PASS src/Components/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    2.64 |     2.35 |    5.04 |    2.75 |                   
+All files                       |   18.54 |    17.64 |    16.8 |   18.96 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
@@ -32,9 +32,9 @@ All files                       |    2.64 |     2.35 |    5.04 |    2.75 |
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
   ActiveUsers.tsx               |       0 |      100 |       0 |       0 | 4-5               
   HeroSection.tsx               |       0 |      100 |       0 |       0 | 6-7               
- src/Components/SearchAndFilter |       0 |        0 |       0 |       0 |                   
-  FilterButton.tsx              |       0 |        0 |       0 |       0 | 10-35             
-  SearchBar.tsx                 |       0 |        0 |       0 |       0 | 12-39             
+ src/Components/SearchAndFilter |     100 |      100 |     100 |     100 |                   
+  FilterButton.tsx              |     100 |      100 |     100 |     100 |                   
+  SearchBar.tsx                 |     100 |      100 |     100 |     100 |                   
  src/Components/Settings        |       0 |        0 |       0 |       0 |                   
   Settings.tsx                  |       0 |        0 |       0 |       0 | 16-33             
  src/Components/Slider          |       0 |      100 |       0 |       0 |                   
@@ -52,13 +52,13 @@ All files                       |    2.64 |     2.35 |    5.04 |    2.75 |
   HomePage.tsx                  |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx             |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx                  |       0 |      100 |       0 |       0 | 5-16              
- src/UI                         |       0 |        0 |       0 |       0 |                   
-  BasicDropdown.tsx             |       0 |        0 |       0 |       0 | 13-88             
+ src/UI                         |      70 |     62.5 |   66.66 |   68.96 |                   
+  BasicDropdown.tsx             |    91.3 |     62.5 |   88.88 |    90.9 | 35-36             
   Modal.tsx                     |       0 |      100 |       0 |       0 | 20-39             
 --------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 4 passed, 4 total
-Tests:       32 passed, 32 total
+Tests:       29 passed, 29 total
 Snapshots:   0 total
-Time:        5.272 s
+Time:        4.994 s
 Ran all test suites.
