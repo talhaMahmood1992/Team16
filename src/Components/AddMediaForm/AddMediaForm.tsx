@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { mediaData } from "../../MediaData";
+//import { mediaData } from "../../MediaData";
 import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import { AiFillPlusCircle } from "react-icons/ai";
@@ -31,10 +31,12 @@ import { useNavigate } from "react-router-dom";
     "Thriller",
     "Western];
 */
+
 interface addMediaFormProps {
     mediaList: Media[];
     mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
 }
+
 export const AddMediaForm = (props: addMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
     const navigate = useNavigate();
@@ -58,7 +60,7 @@ export const AddMediaForm = (props: addMediaFormProps): JSX.Element => {
                 genres: [],
                 _id: nanoid()
             };
-            mediaData.push(newMedia);
+            //mediaData.push(newMedia);
             props.mediaSetter([...props.mediaList, newMedia]);
             navigate("/");
         }
