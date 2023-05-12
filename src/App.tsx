@@ -62,7 +62,13 @@ function App(): JSX.Element {
                 />
                 <Route
                     path="/addMedia"
-                    element={<AddMediaPage role={role} />}
+                    element={
+                        <AddMediaPage
+                            role={role}
+                            mediaList={mediaList}
+                            mediaSetter={setMediaList}
+                        />
+                    }
                 />
                 <Route
                     path="/editMedia"

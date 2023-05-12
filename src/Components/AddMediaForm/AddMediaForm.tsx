@@ -7,7 +7,8 @@ import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
 import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
-import { UserSubmitForm } from "../../Interfaces";
+import { Media, UserSubmitForm } from "../../Interfaces";
+import { useNavigate } from "react-router-dom";
 /* eslint no-extra-parens: "off" */
 
 /*const genreList = [
@@ -30,14 +31,17 @@ import { UserSubmitForm } from "../../Interfaces";
     "Thriller",
     "Western];
 */
-
-export const AddMediaForm = (): JSX.Element => {
+interface addMediaFormProps {
+    mediaList: Media[];
+    mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
+}
+export const AddMediaForm = (props: addMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
         getValues
     } = useForm<UserSubmitForm>({
         resolver: yupResolver(schema)
@@ -45,7 +49,7 @@ export const AddMediaForm = (): JSX.Element => {
 
     const onSubmit = (data: UserSubmitForm): void => {
         if (data.image.endsWith(".jpg")) {
-            mediaData.push({
+            const newMedia = {
                 title: data.title,
                 type: data.type,
                 yearReleased: data.yearReleased,
@@ -53,8 +57,10 @@ export const AddMediaForm = (): JSX.Element => {
                 image: data.image,
                 genres: [],
                 _id: nanoid()
-            });
-            reset();
+            };
+            mediaData.push(newMedia);
+            props.mediaSetter([...props.mediaList, newMedia]);
+            navigate("/");
         }
     };
 
