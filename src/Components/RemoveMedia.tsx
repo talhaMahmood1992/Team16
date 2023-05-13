@@ -27,14 +27,15 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     }
 
     function FindMedia(searchTerm: string) {
-        const filteredData = mediaData.filter(
-            (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
+        const filteredData = userMedia.filter(
+            (media) => media._id === searchTerm
         );
+        // console.log("Found id", filteredData[0]._id);
         return filteredData[0];
     }
 
     function handleOnDrop(e: React.DragEvent) {
-        const toDelete = e.dataTransfer.getData("newMedia") as string;
+        const toDelete = e.dataTransfer.getData("mediaId") as string;
         //Set the color of the star back to the original one
         setTrashColor("black");
         handleUserMedia(toDelete);
@@ -47,8 +48,8 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
         //To change the color of the star when the image can be dragged into the favoritesList
         setTrashColor("green");
     }
-    function handleOnDrag(e: React.DragEvent, newMedia: string) {
-        e.dataTransfer.setData("newMedia", newMedia);
+    function handleOnDrag(e: React.DragEvent, mediaId: string) {
+        e.dataTransfer.setData("mediaId", mediaId);
     }
 
     const MediaToButton = (
@@ -61,7 +62,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
                 className="media-item"
                 data-testid="mediaItem"
                 draggable
-                onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
+                onDragStart={(e) => handleOnDrag(e, mediaItem._id)}
             >
                 <img src={mediaItem.image} alt={mediaItem.title} />
                 <div className="media-details">
@@ -96,7 +97,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
             </div>
-            {console.log(userMedia)}
+            {/* {console.log(userMedia)} */}
         </>
     );
 };
