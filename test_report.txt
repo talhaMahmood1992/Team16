@@ -12,15 +12,15 @@ PASS src/Testing/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   18.54 |    17.64 |    16.8 |   18.96 |                   
+All files                       |   18.72 |    18.07 |    16.8 |   19.16 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
   MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-955             
-  UserData.tsx                  |       0 |        0 |       0 |       0 | 5-125             
+  UserData.tsx                  |       0 |        0 |       0 |       0 | 5-120             
  src/Components                 |   21.62 |       50 |   26.08 |   21.62 |                   
   MediaRating.tsx               |   28.57 |       50 |      40 |   28.57 | 14-26             
-  RemoveMedia.tsx               |       0 |      100 |       0 |       0 | 15-86             
+  RemoveMedia.tsx               |       0 |      100 |       0 |       0 | 15-87             
   RenderMedia.tsx               |      75 |      100 |   66.66 |      75 | 9,18              
   ReviewMedia.tsx               |       0 |      100 |       0 |       0 | 5-12              
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
@@ -60,5 +60,5 @@ All files                       |   18.54 |    17.64 |    16.8 |   18.96 |
 Test Suites: 4 passed, 4 total
 Tests:       29 passed, 29 total
 Snapshots:   0 total
-Time:        4.994 s
+Time:        4.857 s
 Ran all test suites.
