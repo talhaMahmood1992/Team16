@@ -5,6 +5,7 @@ export type UserSubmitForm = {
     yearReleased: number;
     rating: number;
     type: mediaType;
+    genres: mediaGenre[];
     image: string;
 };
 export type UserAddForm = {

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { updateMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
 import axios from "axios";
-import { Media, UserSubmitForm } from "../../Interfaces";
+import { Media, UserSubmitForm, mediaGenre } from "../../Interfaces";
 import { useNavigate } from "react-router-dom";
 /* eslint no-extra-parens: "off" */
 interface EditMediaFormProps {
@@ -14,6 +14,27 @@ interface EditMediaFormProps {
 }
 export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
+    const GENRES = [
+        "Action",
+        "Adventure",
+        "Animated",
+        "Comedy",
+        "Crime",
+        "Drama",
+        "Fantasy",
+        "History",
+        "Horror",
+        "Kids",
+        "Mystery",
+        "Reality",
+        "Romance",
+        "Science Fiction",
+        "Sports",
+        "Superhero",
+        "Thriller",
+        "Western"
+    ];
+
     const navigate = useNavigate();
     const {
         register,
@@ -98,13 +119,18 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                 />
                 <p>{errors.rating?.message}</p>
 
-                {/**
                 <label htmlFor="genres">Genres:</label>
-                <select {...register("genres")}>
-                    MAP GENRES HERE for a MULIT-SELECT CHECKBOX
+                <select
+                    {...register("genres")}
+                    defaultValue={props.media.genres}
+                >
+                    {GENRES.map((genre: string) => (
+                        <option key={genre} value={genre}>
+                            {genre}
+                        </option>
+                    ))}
                 </select>
                 <p>{errors.genres?.message}</p>
-                */}
 
                 <label htmlFor="image">Media Poster:</label>
                 <input

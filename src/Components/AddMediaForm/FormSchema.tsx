@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import { mediaGenre } from "../../Interfaces";
 
 export const currentYear = new Date().getFullYear();
 export const schema = yup.object().shape({
@@ -25,5 +26,6 @@ export const schema = yup.object().shape({
         .required("Rating is required")
         .typeError("Rating has to be a number"),
     type: yup.string().required(),
+    genres: yup.string().required(),
     image: yup.string().required("Image address is required")
 });
