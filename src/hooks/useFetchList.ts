@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { MediaInterface } from "../interfaces/MediaInterface";
+import { addImageToMedia } from "../utils/media-config";
 
 export const useFetchList = (
     fetchFunction: any,
@@ -15,10 +15,7 @@ export const useFetchList = (
             const response = await fetchFunction(searchQuery);
             let responseData = response.data.data;
             if (listType === "media") {
-                responseData = responseData.map((media: MediaInterface) => ({
-                    ...media,
-                    image: require(`../imgs/media-covers/${media.image}`)
-                }));
+                responseData = addImageToMedia(responseData);
             }
             setData(responseData);
         } catch (error) {

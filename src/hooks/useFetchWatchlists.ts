@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import { nanoid } from "nanoid";
+import { addImageToMedia, addMediaId } from "../utils/media-config";
 
 export const useFetchWatchlists = (
     fetchFunction: any,
     userId: string | undefined
 ) => {
-    const [data, setData] = useState({ watched: [], toWatch: [] });
+    const [watched, setWatched] = useState<MediaInterface[]>([]);
+    const [toWatch, setToWatch] = useState<MediaInterface[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
 
@@ -14,23 +15,16 @@ export const useFetchWatchlists = (
         try {
             const response = await fetchFunction(userId);
             const responseData = response.data.data;
-            responseData.watched = responseData.watched.map(
-                (media: MediaInterface) => ({
-                    ...media,
-                    image: require(`../imgs/media-covers/${media.image}`),
-                    mediaId: nanoid()
-                })
-            );
-            responseData.toWatch = responseData.toWatch.map(
-                (media: MediaInterface) => ({
-                    ...media,
-                    image: require(`../imgs/media-covers/${media.image}`),
-                    mediaId: nanoid()
-                })
-            );
 
-            console.log(responseData);
-            setData(responseData);
+            responseData.watched = addImageToMedia(responseData.watched);
+            responseData.watched = addMediaId(responseData.watched);
+            responseData.toWatch = addImageToMedia(responseData.toWatch);
+            responseData.toWatch = addMediaId(responseData.toWatch);
+
+            console.log(responseData.watched);
+            console.log(responseData.toWatch);
+            setWatched(responseData.watched);
+            setToWatch(responseData.toWatch);
         } catch (error) {
             console.log(error);
             setError(true);
@@ -42,5 +36,5 @@ export const useFetchWatchlists = (
         fetchData();
     }, [fetchData]);
 
-    return [data, loading, error, setData] as const;
+    return [watched, toWatch, loading, error, setWatched, setToWatch] as const;
 };

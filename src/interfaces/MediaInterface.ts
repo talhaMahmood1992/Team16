@@ -22,6 +22,7 @@ export type mediaGenre =
 
 export interface MediaInterface {
     _id: string;
+    mediaId?: string;
     title: string;
     type: mediaType;
     yearReleased: number;

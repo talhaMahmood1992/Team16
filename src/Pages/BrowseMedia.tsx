@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
 import { mediaData } from "../MediaData";
 import { Media, Role } from "../Interfaces";
@@ -29,7 +29,7 @@ export const BrowseMedia = ({
     role
 }: FavoriteMediaProps): JSX.Element => {
     const [searchQuery, setSearchQuery] = useState<string>("");
-    const [mediaList, loading, error] = useFetchList(
+    const [mediaList, loading] = useFetchList(
         getMediaData,
         "media",
         searchQuery
@@ -63,6 +63,8 @@ export const BrowseMedia = ({
         e.preventDefault();
         setStarColor("green");
     }
+
+    console.log(mediaList);
 
     return (
         <section className="page">
