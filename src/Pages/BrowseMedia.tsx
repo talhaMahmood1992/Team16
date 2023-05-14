@@ -8,9 +8,10 @@ import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
 import { updateWatchedMediaForUser } from "../UserData";
-import axios from "axios";
 import { SearchBar } from "../Components/SearchAndFilter/SearchBar";
 import { FilterButton } from "../Components/SearchAndFilter/FilterButton";
+import { useFetchList } from "../hooks/useFetchList";
+import { getMediaData } from "../api/mediaApi";
 
 interface FavoriteMediaProps {
     //UserName of the CurrentUser
@@ -27,8 +28,13 @@ export const BrowseMedia = ({
     handleEdits,
     role
 }: FavoriteMediaProps): JSX.Element => {
-    const [mediaList, setMediaList] = useState<Media[]>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
+    const [mediaList, loading, error] = useFetchList(
+        getMediaData,
+        "media",
+        searchQuery
+    );
+    // const [mediaList, setMediaList] = useState<Media[]>([]);
     // function handleRender(mediaList: Media[]) {
     //     setMediaList([...mediaList]);
     // }
@@ -58,26 +64,6 @@ export const BrowseMedia = ({
         setStarColor("green");
     }
 
-    useEffect(() => {
-        const getMediaData = async () => {
-            try {
-                const response = await axios.get(
-                    "https://team16-c5r2.onrender.com/media" + searchQuery
-                );
-                let mediaData: Media[] = response.data.data.media;
-                mediaData = mediaData.map((media) => ({
-                    ...media,
-                    image: require("../imgs/media-covers/" + media.image)
-                }));
-                setMediaList(mediaData);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        getMediaData();
-    }, [searchQuery]);
-
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
@@ -85,7 +71,7 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            <RenderMedia MediaData={mediaList} />
+            {!loading && <RenderMedia MediaData={mediaList} />}
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">

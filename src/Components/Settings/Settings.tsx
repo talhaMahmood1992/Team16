@@ -1,34 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import Modal from "../../UI/Modal";
 import { IoMdSettings } from "react-icons/io";
 import classes from "./Settings.module.css";
 import { BasicDropdown } from "../../UI/BasicDropdown";
-import { Role } from "../../Interfaces";
-import { getUserNames } from "../../UserData";
+import { useFetchList } from "../../hooks/useFetchList";
+import { getUsersList } from "../../api/usersApi";
+import { UserInterface } from "../../Interfaces";
+import { CurrentUserContext } from "../../store/currentUserContext";
 
 interface SettingsProps {
     hideSettingsHandler: () => void;
-    role: Role;
-    setRole: (role: Role) => void;
-    handleCurrentUser: (userName: string) => void;
 }
 
 export const Settings = ({
-    hideSettingsHandler,
-    role,
-    setRole,
-    handleCurrentUser
+    hideSettingsHandler
 }: SettingsProps): JSX.Element => {
+    const [usersList, loading] = useFetchList(getUsersList, "users");
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+
     let roleInfo = "Default";
 
-    if (role === "Default") {
-        roleInfo = "Default user can do certain things";
-    } else if (role === "Admin") {
-        roleInfo = "Admin user has a lot more power, they are better";
-    } else if (role === "Super") {
-        roleInfo = "Super user is even... better";
+    if (currentUser) {
+        if (currentUser.role === "Default") {
+            roleInfo = "Default user can do certain things";
+        } else if (currentUser.role === "Admin") {
+            roleInfo = "Admin user has a lot more power, they are better";
+        } else if (currentUser.role === "Super") {
+            roleInfo = "Super user is even... better";
+        }
     }
-    handleCurrentUser(role);
+
+    const setCurrentUserFromName = (name: string) => {
+        const user = usersList.find(
+            (user: UserInterface) => user.username == name
+        );
+        setCurrentUser(user!);
+    };
 
     return (
         <Modal
@@ -39,15 +46,19 @@ export const Settings = ({
                 <IoMdSettings /> Settings
             </h2>
             <section className={classes.settings_info}>
-                <h3>Current Role: {role}</h3>
+                <h3>Current Role: {currentUser?.role}</h3>
                 <p>{roleInfo}</p>
             </section>
             <div className={classes.dropdown}>
-                <BasicDropdown
-                    items={getUserNames()}
-                    title={"Change Role"}
-                    onClick={setRole}
-                />
+                {!loading && (
+                    <BasicDropdown
+                        items={usersList.map(
+                            (user: UserInterface) => user.username
+                        )}
+                        title={"Change User"}
+                        onClick={setCurrentUserFromName}
+                    />
+                )}
             </div>
             <button
                 className={classes.close_button}

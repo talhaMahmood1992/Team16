@@ -7,22 +7,17 @@ import { Role } from "../Interfaces";
 
 interface MainHeaderProps {
     showSettingsHandler: () => void;
-    role: Role;
 }
 
 export const MainHeader = ({
-    showSettingsHandler,
-    role
+    showSettingsHandler
 }: MainHeaderProps): JSX.Element => {
     return (
         <header className={classes.header}>
             <NavLink to="/" className={classes.logo}>
                 PROJECTX
             </NavLink>
-            <MainNavigation
-                showSettingsHandler={showSettingsHandler}
-                role={role}
-            />
+            <MainNavigation showSettingsHandler={showSettingsHandler} />
         </header>
     );
 };

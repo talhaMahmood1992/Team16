@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
@@ -7,16 +7,18 @@ import { IoSearchCircleSharp } from "react-icons/io5";
 import { IoPencil } from "react-icons/io5";
 import classes from "./MainNavigation.module.css";
 import { Role } from "../Interfaces";
+import { CurrentUserContext } from "../store/currentUserContext";
 
 interface MainNavigationProps {
     showSettingsHandler: () => void;
-    role: Role;
 }
 
 export const MainNavigation = ({
-    showSettingsHandler,
-    role
+    showSettingsHandler
 }: MainNavigationProps): JSX.Element => {
+    const { currentUser } = useContext(CurrentUserContext);
+    const { role, username } = currentUser!;
+
     return (
         <nav>
             <ul className={classes.main_nav_list}>
@@ -76,7 +78,7 @@ export const MainNavigation = ({
                             onClick={showSettingsHandler}
                         >
                             <IoMdSettings className={classes.icon} />{" "}
-                            <span>{role}</span>
+                            <span>{username}</span>
                         </button>
                     </li>
                 )}
