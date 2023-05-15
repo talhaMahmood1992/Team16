@@ -2,20 +2,22 @@
 import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
-import { Media } from "../Interfaces";
 import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
-function handleOnDrag(e: React.DragEvent, newMedia: string) {
-    e.dataTransfer.setData("newMedia", newMedia);
+import { MediaInterface } from "../interfaces/MediaInterface";
+import { nanoid } from "nanoid";
+function handleOnDrag(e: React.DragEvent, mediaId: string) {
+    e.dataTransfer.setData("mediaId", mediaId);
 }
-export const mediaToElement = (mediaItem: Media): JSX.Element => {
+export const mediaToElement = (mediaItem: MediaInterface): JSX.Element => {
     return (
         <div
-            key={mediaItem._id}
+            key={nanoid()}
             className="media-item"
             data-testid="mediaItem"
             draggable
-            onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            onDragStart={(e) => handleOnDrag(e, mediaItem["_id"]!)}
         >
             <img src={mediaItem.image} alt={mediaItem.title} />
             <div className="media-details">
@@ -33,7 +35,7 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
 export default function RenderMedia({
     MediaData
 }: {
-    MediaData: Media[];
+    MediaData: MediaInterface[];
 }): JSX.Element {
     const mediaList = MediaData.map((Media) => {
         return {

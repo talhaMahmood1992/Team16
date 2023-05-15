@@ -9,6 +9,7 @@ import {
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRating";
+import { nanoid } from "nanoid";
 interface FavoriteMediaProps {
     userName: string;
 }
@@ -57,7 +58,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     ): JSX.Element => {
         return (
             <div
-                key={mediaItem._id}
+                key={nanoid()}
                 className="media-item"
                 data-testid="mediaItem"
                 draggable

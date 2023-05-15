@@ -22,15 +22,15 @@ export let mediaData: Media[] = [
         genres: ["Adventure", "Drama", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
-    {
-        title: "Apocalypse Now",
-        type: "Movie",
-        yearReleased: 1979,
-        rating: 5,
-        image: "",
-        genres: ["Adventure", "History", "Thriller"],
-        _id: nanoid()
-    },
+    // {
+    //     title: "Apocalypse Now",
+    //     type: "Movie",
+    //     yearReleased: 1979,
+    //     rating: 5,
+    //     image: "",
+    //     genres: ["Adventure", "History", "Thriller"],
+    //     _id: nanoid()
+    // },
     {
         title: "Citizen Kane",
         type: "Movie",
@@ -319,15 +319,15 @@ export let mediaData: Media[] = [
         genres: ["Action", "Adventure", "Science Fiction", "Thriller"],
         _id: nanoid()
     },
-    // {
-    //     title: "Fargo",
-    //     type: "Movie",
-    //     yearReleased: 1996,
-    //     rating: 4,
-    //     image: "",
-    //     genres: ["Comedy", "Crime", "Drama", "Thriller"],
-    //     _id: nanoid()
-    // },
+    {
+        title: "Fargo",
+        type: "Movie",
+        yearReleased: 1996,
+        rating: 4,
+        image: "",
+        genres: ["Comedy", "Crime", "Drama", "Thriller"],
+        _id: nanoid()
+    },
     {
         title: "No Country for Old Men",
         type: "Movie",
@@ -760,15 +760,15 @@ export let mediaData: Media[] = [
         genres: ["Action", "Crime", "Mystery", "Superhero"],
         _id: nanoid()
     },
-    // {
-    //     title: "Joker",
-    //     type: "Movie",
-    //     yearReleased: 2019,
-    //     rating: 4,
-    //     image: "",
-    //     genres: ["Crime", "Drama", "Superhero", "Thriller"],
-    //     _id: nanoid()
-    // },
+    {
+        title: "Joker",
+        type: "Movie",
+        yearReleased: 2019,
+        rating: 4,
+        image: "",
+        genres: ["Crime", "Drama", "Superhero", "Thriller"],
+        _id: nanoid()
+    },
     {
         title: "The Prestige",
         type: "Movie",
