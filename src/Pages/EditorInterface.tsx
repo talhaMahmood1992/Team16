@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { EditMediaForm } from "../Components/AddMediaForm/EditMediaForm";
+import { EditMediaForm } from "../Components/Forms/EditMediaForm/EditMediaForm";
 import { Media, Role } from "../Interfaces";
 
 interface EditInterfaceProps {

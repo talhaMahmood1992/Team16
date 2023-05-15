@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./AddMediaForm.module.css";
+import classes from "../Form.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./FormSchema";
-import { UserSubmitForm, mediaGenre } from "../../Interfaces";
-import { addMedia } from "../../api/mediaApi";
+import { schema } from "./AddMediaFormSchema";
+import { UserSubmitForm, mediaGenre } from "../../../Interfaces";
+import { addMedia } from "../../../api/mediaApi";
 /* eslint no-extra-parens: "off" */
 
 const genreList: mediaGenre[] = [
@@ -108,7 +108,7 @@ export const AddMediaForm = (): JSX.Element => {
             </form>
             <img
                 className={classes.image_holder}
-                src={require("../../imgs/media-covers/default-media-img.jpg")}
+                src={require("../../../imgs/media-covers/default-media-img.jpg")}
             />
         </div>
     );

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AddUserForm } from "../Components/AddMediaForm/AddUserForm";
+import { AddUserForm } from "../Components/Forms/AddUserForm/AddUserForm";
 import { Role } from "../Interfaces";
 
 interface AddUserProps {

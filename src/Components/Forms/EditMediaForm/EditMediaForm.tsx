@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState } from "react";
-import classes from "./AddMediaForm.module.css";
+import classes from "../Form.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { updateMediaInList } from "../../MediaData";
-import { schema } from "./FormSchema";
+import { updateMediaInList } from "../../../MediaData";
+import { schema } from "../AddMediaForm/AddMediaFormSchema";
 import axios from "axios";
-import { Media, UserSubmitForm } from "../../Interfaces";
+import { Media, UserSubmitForm } from "../../../Interfaces";
 /* eslint no-extra-parens: "off" */
 
 export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {

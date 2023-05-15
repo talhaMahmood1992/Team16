@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./AddMediaForm.module.css";
+import classes from "../Form.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./UserFormSchema";
-import { UserAddForm } from "../../Interfaces";
-import { addUser } from "../../api/usersApi";
+import { schema } from "./AddUserFormSchema";
+import { UserAddForm } from "../../../Interfaces";
+import { addUser } from "../../../api/usersApi";
 
 export const AddUserForm = (): JSX.Element => {
     const {

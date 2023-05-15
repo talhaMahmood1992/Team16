@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AddMediaForm } from "../Components/AddMediaForm/AddMediaForm";
 import { Role } from "../Interfaces";
+import { AddMediaForm } from "../Components/Forms/AddMediaForm/AddMediaForm";
 
 interface AddMediaPageProps {
     role: Role;
