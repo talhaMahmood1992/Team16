@@ -35,6 +35,9 @@ export const Settings = ({
             (user: UserInterface) => user.username == name
         );
         setCurrentUser(user!);
+        if (user) {
+            localStorage.setItem("userId", user["_id"]);
+        }
     };
 
     return (

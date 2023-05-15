@@ -21,7 +21,8 @@ export const AddUserForm = (): JSX.Element => {
             await addUser({
                 ...data,
                 watched: [],
-                toWatch: []
+                toWatch: [],
+                role: "Default"
             });
             reset();
         } catch (error) {
@@ -40,13 +41,6 @@ export const AddUserForm = (): JSX.Element => {
                 />
                 <p>{errors.username?.message}</p>
 
-                <label htmlFor="role">Role:</label>
-                <select {...register("role")}>
-                    <option value="Default">Default</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Super">Super</option>
-                </select>
-                <p>{errors.role?.message}</p>
                 <input type="submit" />
             </form>
         </div>

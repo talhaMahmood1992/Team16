@@ -12,14 +12,15 @@ import { MainHeader } from "./Layout/MainHeader";
 import { Settings } from "./Components/Settings/Settings";
 import React, { useContext, useEffect, useState } from "react";
 import { useFetchItem } from "./hooks/useFetchItem";
-import { getDefaultUser } from "./api/usersApi";
+import { getInitialUser } from "./api/usersApi";
 import { CurrentUserContext } from "./store/currentUserContext";
 import { Media } from "./Interfaces";
 import { mediaData } from "./MediaData";
 
 export const Router = () => {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
-    const [defaultUser, loading] = useFetchItem(getDefaultUser);
+    const userId = localStorage.getItem("userId");
+    const [initialUser, loading] = useFetchItem(() => getInitialUser(userId!));
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
     const [superList, setSuperList] = useState<string[]>([]);
@@ -41,11 +42,10 @@ export const Router = () => {
     };
 
     useEffect(() => {
-        if (defaultUser && !currentUser) {
-            setCurrentUser(defaultUser);
-            console.log(defaultUser);
+        if (initialUser && !currentUser) {
+            setCurrentUser(initialUser);
         }
-    }, [defaultUser]);
+    }, [initialUser]);
 
     let output;
 

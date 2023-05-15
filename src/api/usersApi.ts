@@ -2,7 +2,6 @@ import { ENDPOINTS } from "../constants/endpoints";
 import { UserInterface } from "../interfaces/UserInterface";
 import { api } from "../utils/api";
 
-const DEFAULT_USER_ID = "645fd04509b4ba6a7a37acc1";
 const { USERS, WATCHLISTS } = ENDPOINTS;
 
 export const getUsersList = async () => {
@@ -15,7 +14,7 @@ export const getUser = async (userId: string) => {
     return api.get(endpoint);
 };
 
-export const getDefaultUser = async () => await getUser(DEFAULT_USER_ID);
+export const getInitialUser = async (userId: string) => await getUser(userId);
 
 export const getUserWatchlists = async (userId: string) => {
     const endpoint = `${USERS}/${userId}/${WATCHLISTS}`;
