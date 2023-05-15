@@ -10,6 +10,7 @@ export type UserSubmitForm = {
 };
 export type UserAddForm = {
     username: string;
+    role: Role;
 };
 export type mediaType = "Movie" | "Show";
 export type mediaGenre =

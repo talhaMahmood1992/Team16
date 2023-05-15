@@ -2,10 +2,9 @@ import React from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { UserData } from "../../UserData";
 import { schema } from "./UserFormSchema";
-// import axios from "axios";
 import { UserAddForm } from "../../Interfaces";
+import { addUser } from "../../api/usersApi";
 
 export const AddUserForm = (): JSX.Element => {
     const {
@@ -17,13 +16,17 @@ export const AddUserForm = (): JSX.Element => {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data: UserAddForm): void => {
-        UserData.push({
-            username: data.username,
-            watched: [],
-            role: "Default"
-        });
-        reset();
+    const onSubmit = async (data: UserAddForm) => {
+        try {
+            await addUser({
+                ...data,
+                watched: [],
+                toWatch: []
+            });
+            reset();
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -36,6 +39,14 @@ export const AddUserForm = (): JSX.Element => {
                     {...register("username")}
                 />
                 <p>{errors.username?.message}</p>
+
+                <label htmlFor="role">Role:</label>
+                <select {...register("role")}>
+                    <option value="Default">Default</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Super">Super</option>
+                </select>
+                <p>{errors.role?.message}</p>
                 <input type="submit" />
             </form>
         </div>

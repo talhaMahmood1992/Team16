@@ -1,4 +1,5 @@
 import { ENDPOINTS } from "../constants/endpoints";
+import { UserInterface } from "../interfaces/UserInterface";
 import { api } from "../utils/api";
 
 const DEFAULT_USER_ID = "645fd04509b4ba6a7a37acc1";
@@ -27,4 +28,9 @@ export const updateUser = async (
 ) => {
     const endpoint = `${USERS}/${userId}`;
     return api.patch(endpoint, watchlists);
+};
+
+export const addUser = async (user: UserInterface) => {
+    const endpoint = USERS;
+    return api.post(endpoint, user);
 };
