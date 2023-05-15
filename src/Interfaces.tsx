@@ -5,7 +5,7 @@ export type UserSubmitForm = {
     yearReleased: number;
     rating: number;
     type: mediaType;
-    genres: mediaGenre[];
+    //genres: mediaGenre[];
     image: string;
 };
 export type UserAddForm = {
@@ -39,7 +39,7 @@ export interface Media {
     yearReleased: number;
     rating: number;
     image: string;
-    genres: mediaGenre[];
+    genres: string[];
     _id: string;
     //reviews: string[];
 }

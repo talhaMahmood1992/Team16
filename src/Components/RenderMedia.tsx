@@ -25,6 +25,11 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
                 <div className="media-rating">
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
                 </div>
+                <p>
+                    {mediaItem.genres[0]}
+                    {mediaItem.genres.length > 1 ? ", " : " "}
+                    {mediaItem.genres[1]}
+                </p>
             </div>
         </div>
     );
