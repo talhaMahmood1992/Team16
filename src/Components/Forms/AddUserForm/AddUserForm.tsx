@@ -52,18 +52,3 @@ export const AddUserForm = (): JSX.Element => {
         </div>
     );
 };
-
-//  useEffect(() => {
-//         const getMediaData = async () => {
-//             try {
-//                 const mediaData = await axios.get(
-//                     "https://team16-c5r2.onrender.com/media"
-//                 );
-//                 console.log(mediaData);
-//             } catch (error) {
-//                 console.log(error);
-//             }
-//         };
-
-//         getMediaData();
-//     }, []);

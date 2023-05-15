@@ -7,7 +7,7 @@ import { UserSubmitForm, mediaGenre } from "../../../Interfaces";
 import { addMedia } from "../../../api/mediaApi";
 /* eslint no-extra-parens: "off" */
 
-const genreList: mediaGenre[] = [
+export const genreList: mediaGenre[] = [
     "Action",
     "Adventure",
     "Animated",

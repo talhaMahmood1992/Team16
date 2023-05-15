@@ -2,10 +2,6 @@ import * as yup from "yup";
 
 export const currentYear = new Date().getFullYear();
 export const schema = yup.object().shape({
-    title: yup
-        .string()
-        .required("Title is required")
-        .typeError("Title has to be a string"),
     yearReleased: yup
         .number()
         .positive("Year Released has to be positive")

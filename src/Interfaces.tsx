@@ -8,6 +8,14 @@ export type UserSubmitForm = {
     image: string;
     genres: mediaGenre[];
 };
+
+export type EditMediaSubmitForm = {
+    genres: mediaGenre[];
+    rating: number;
+    type: mediaType;
+    yearReleased: number;
+};
+
 export type UserAddForm = {
     username: string;
     role: Role;

@@ -1,81 +1,42 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import classes from "../Form.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { updateMediaInList } from "../../../MediaData";
-import { schema } from "../AddMediaForm/AddMediaFormSchema";
-import axios from "axios";
-import { Media, UserSubmitForm } from "../../../Interfaces";
+import { schema } from "./EditMediaFromSchema";
+import { EditMediaSubmitForm, mediaGenre } from "../../../Interfaces";
+import { genreList } from "../AddMediaForm/AddMediaForm";
+import { MediaInterface } from "../../../interfaces/MediaInterface";
 /* eslint no-extra-parens: "off" */
 
-export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
-    const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
+export const EditMediaForm = ({
+    media
+}: {
+    media: MediaInterface;
+}): JSX.Element => {
+    const checkedMedia = genreList.filter((genre: mediaGenre) =>
+        media.genres.includes(genre)
+    );
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        reset,
-        getValues
-    } = useForm<UserSubmitForm>({
-        resolver: yupResolver(schema)
+        formState: { errors }
+    } = useForm<EditMediaSubmitForm>({
+        resolver: yupResolver(schema),
+        defaultValues: { genres: checkedMedia }
     });
-    const onSubmit = (data: UserSubmitForm): void => {
-        if (data.image.endsWith(".jpg")) {
-            const createdMedia = {
-                title: data.title,
-                type: data.type,
-                yearReleased: data.yearReleased,
-                rating: data.rating,
-                image: data.image,
-                genres: [],
-                _id: media._id
-            };
-            updateMediaInList(createdMedia);
-
-            reset();
-        }
+    const onSubmit = (data: EditMediaSubmitForm): void => {
+        console.log(data);
     };
-
-    const checkImage = (url: string) => {
-        return axios
-            .get(url)
-            .then(() => true)
-            .catch(() => false);
-    };
-
-    const imageLinkChangeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
-        let imageValid = await checkImage(e.target.value);
-        imageValid = imageValid && e.target.value != "";
-        setImageLinkvalid(imageValid);
-    };
-
-    let imageHTMLoutput;
-
-    if (imageLinkValid) {
-        imageHTMLoutput = <img src={getValues("image")} />;
-    } else {
-        imageHTMLoutput = (
-            <div className={classes.image_goes_here}>
-                <img src={media.image} alt={media.title} />
-            </div>
-        );
-    }
 
     return (
         <div className={classes.form_wrapper}>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-                <label htmlFor="title">Media title:</label>
-                <input
-                    type="text"
-                    {...register("title")}
-                    defaultValue={media.title}
-                />
-                <p>{errors.title?.message}</p>
+                <label htmlFor="title">Media title: {media.title}</label>
 
                 <label htmlFor="yearReleased">Year Released:</label>
                 <input
                     type="number"
-                    {...register("yearReleased")}
+                    {...register("yearReleased", { valueAsNumber: true })}
                     defaultValue={media.yearReleased}
                 />
                 <p>{errors.yearReleased?.message}</p>
@@ -87,35 +48,36 @@ export const EditMediaForm = ({ media }: { media: Media }): JSX.Element => {
                 </select>
                 <p>{errors.type?.message}</p>
 
-                <label htmlFor="rating">Year Released:</label>
+                <div className={classes.genres}>
+                    {genreList.map((genre: mediaGenre) => {
+                        return (
+                            <div
+                                key={genre}
+                                className={classes.genre_checkbox_group}
+                            >
+                                <input
+                                    type="checkbox"
+                                    {...register("genres")}
+                                    value={genre}
+                                />
+                                <label>{genre}</label>
+                            </div>
+                        );
+                    })}
+                </div>
+                <p>{errors.genres?.message}</p>
+
+                <label htmlFor="rating">Rating:</label>
                 <input
                     type="number"
-                    {...register("rating")}
+                    {...register("rating", { valueAsNumber: true })}
                     defaultValue={media.rating}
                 />
                 <p>{errors.rating?.message}</p>
 
-                {/**
-                <label htmlFor="genres">Genres:</label>
-                <select {...register("genres")}>
-                    MAP GENRES HERE for a MULIT-SELECT CHECKBOX
-                </select>
-                <p>{errors.genres?.message}</p>
-                */}
-
-                <label htmlFor="image">Media Poster:</label>
-                <input
-                    id="media-poster-input"
-                    type="text"
-                    defaultValue={media.image}
-                    {...register("image", {
-                        onChange: (e) => imageLinkChangeHandler(e)
-                    })}
-                />
-                <p>{errors.image?.message}</p>
                 <input type="submit" />
             </form>
-            <div className={classes.image_holder}>{imageHTMLoutput}</div>
+            <img className={classes.image_holder} src={media.image} />
         </div>
     );
 };
