@@ -25,5 +25,5 @@ export const schema = yup.object().shape({
         .required("Rating is required")
         .typeError("Rating has to be a number"),
     type: yup.string().required(),
-    image: yup.string().required("Image address is required")
+    genres: yup.array().min(1, "Genres are required")
 });

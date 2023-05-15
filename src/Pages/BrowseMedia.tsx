@@ -64,8 +64,6 @@ export const BrowseMedia = ({
         setStarColor("green");
     }
 
-    console.log(mediaList);
-
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">

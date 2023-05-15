@@ -21,7 +21,7 @@ export type mediaGenre =
     | "Western";
 
 export interface MediaInterface {
-    _id: string;
+    _id?: string;
     mediaId?: string;
     title: string;
     type: mediaType;

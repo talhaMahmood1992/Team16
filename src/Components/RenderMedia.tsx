@@ -2,13 +2,13 @@
 import React from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
-import { Media } from "../Interfaces";
 import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
+import { MediaInterface } from "../interfaces/MediaInterface";
 function handleOnDrag(e: React.DragEvent, newMedia: string) {
     e.dataTransfer.setData("newMedia", newMedia);
 }
-export const mediaToElement = (mediaItem: Media): JSX.Element => {
+export const mediaToElement = (mediaItem: MediaInterface): JSX.Element => {
     return (
         <div
             key={mediaItem._id}
@@ -33,7 +33,7 @@ export const mediaToElement = (mediaItem: Media): JSX.Element => {
 export default function RenderMedia({
     MediaData
 }: {
-    MediaData: Media[];
+    MediaData: MediaInterface[];
 }): JSX.Element {
     const mediaList = MediaData.map((Media) => {
         return {
