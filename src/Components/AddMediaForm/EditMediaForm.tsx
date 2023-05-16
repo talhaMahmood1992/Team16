@@ -14,6 +14,7 @@ interface EditMediaFormProps {
     media: Media;
     mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
     superSetter: React.Dispatch<React.SetStateAction<string[]>>;
+    superList: string[];
 }
 export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
@@ -85,10 +86,22 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
 
     //Runs when you hit the big red scary button
     const onRemoval = (): void => {
-        console.log("He Pressed the Button!");
         props.mediaSetter(removeMediaInList(props.media));
-        props.superSetter([]);
-        navigate("/");
+
+        const removeTitle = () => {
+            const editableList = [...props.superList];
+            const index = editableList.findIndex(
+                (title) => title === props.media.title
+            );
+            if (index >= 0) {
+                editableList.splice(index, 1);
+            }
+
+            return editableList;
+        };
+
+        props.superSetter(removeTitle());
+        navigate("/editMedia");
     };
 
     const checkImage = (url: string) => {

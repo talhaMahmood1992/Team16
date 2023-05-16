@@ -101,6 +101,7 @@ function App(): JSX.Element {
                             media={changeMedia}
                             mediaSetter={setMediaList}
                             superSetter={setSuperList}
+                            superList={superList}
                         />
                     }
                 />
