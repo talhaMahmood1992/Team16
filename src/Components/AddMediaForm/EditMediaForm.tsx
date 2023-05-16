@@ -13,6 +13,7 @@ import { Form, Button } from "react-bootstrap";
 interface EditMediaFormProps {
     media: Media;
     mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
+    superSetter: React.Dispatch<React.SetStateAction<string[]>>;
 }
 export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
@@ -86,6 +87,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const onRemoval = (): void => {
         console.log("He Pressed the Button!");
         props.mediaSetter(removeMediaInList(props.media));
+        props.superSetter([]);
         navigate("/");
     };
 
@@ -117,6 +119,10 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     return (
         <div className={classes.form_wrapper}>
             <div className={classes.form}>
+                <Button variant="outline-danger" onClick={onRemoval}>
+                    <h2>Remove This Media</h2>
+                </Button>
+                <br />
                 <Form.Group onSubmit={handleSubmit(onSubmit)}>
                     <form>
                         <label htmlFor="yearReleased">Year Released:</label>
@@ -175,10 +181,6 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                         <input type="submit" />
                     </form>
                 </Form.Group>
-                <br />
-                <Button variant="outline-danger" onClick={onRemoval}>
-                    <h2>Remove This Media</h2>
-                </Button>
             </div>
             <div className={classes.image_holder}>{imageHTMLoutput}</div>
         </div>

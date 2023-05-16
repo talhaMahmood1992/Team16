@@ -100,6 +100,7 @@ function App(): JSX.Element {
                             role={role}
                             media={changeMedia}
                             mediaSetter={setMediaList}
+                            superSetter={setSuperList}
                         />
                     }
                 />
