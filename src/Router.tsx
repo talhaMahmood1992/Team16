@@ -20,6 +20,7 @@ import { mediaData } from "./MediaData";
 export const Router = () => {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
     const userId = localStorage.getItem("userId");
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const [initialUser, loading] = useFetchItem(() => getInitialUser(userId!));
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
@@ -27,6 +28,7 @@ export const Router = () => {
     const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
 
     // what is the name of the currentUser
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [currentUserName, setCurrentUserName] = useState<string>("Default");
 
     function handleEdits(titles: string[]) {
@@ -51,6 +53,7 @@ export const Router = () => {
 
     if (currentUser && !loading) {
         const { role } = currentUser;
+        // eslint-disable-next-line no-extra-parens
         output = (
             <>
                 <MainHeader showSettingsHandler={showSettingsHandler} />
@@ -61,10 +64,7 @@ export const Router = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     {/* <Route path="/friends" element={<FriendsPage />} /> */}
-                    <Route
-                        path="/mylists"
-                        element={<FavoritesPage userName={currentUserName} />}
-                    />
+                    <Route path="/mylists" element={<FavoritesPage />} />
                     <Route
                         path="/addMedia"
                         element={<AddMediaPage role={role} />}

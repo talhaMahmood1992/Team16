@@ -34,7 +34,7 @@ export const Watched = (props: WatchedProps): JSX.Element => {
     };
 
     const testData = () => {
-        const updatedWatched = [...toWatch, props.media];
+        const updatedWatched = [...watched, props.media];
 
         setWatched(updatedWatched);
         setToWatch([...toWatch]);

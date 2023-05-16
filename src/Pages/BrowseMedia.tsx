@@ -97,6 +97,7 @@ export const BrowseMedia = ({
             {!loading && <RenderMedia MediaData={mediaList} />}
             {role !== "Super" && role !== "Admin" ? (
                 <div className="header-container">
+                    <h5>ToWatch</h5>
                     <h1 onDrop={handleToWatchDrop} onDragOver={handleDragOver}>
                         <FaStar style={{ color: starColor }} />
                     </h1>
@@ -112,6 +113,14 @@ export const BrowseMedia = ({
                     <br></br>
                     <br></br>
                     <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h5>Watched</h5>
                     <h1 onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
                         <VscWatch style={{ color: starColor }} />
                     </h1>
