@@ -19,3 +19,8 @@ export const updateMedia = async (
     const endpoint = `${MEDIA}/${mediaId}`;
     return api.patch(endpoint, updatedFields);
 };
+
+export const deleteMedia = async (mediaId: string) => {
+    const endpoint = `${MEDIA}/${mediaId}`;
+    return api.delete(endpoint);
+};

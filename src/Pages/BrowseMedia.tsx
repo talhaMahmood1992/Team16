@@ -29,7 +29,7 @@ export const BrowseMedia = ({
     role
 }: FavoriteMediaProps): JSX.Element => {
     const [searchQuery, setSearchQuery] = useState<string>("");
-    const [mediaList, loading] = useFetchList(
+    const [mediaList, loading, error, setMediaList] = useFetchList(
         getMediaData,
         "media",
         searchQuery
@@ -71,7 +71,12 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            {!loading && <RenderMedia MediaData={mediaList} />}
+            {!loading && (
+                <RenderMedia
+                    MediaData={mediaList}
+                    setMediaList={setMediaList}
+                />
+            )}
             {role !== "Super" && role !== "Admin" ? (
                 <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
                     <div className="header-container">

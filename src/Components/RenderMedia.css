@@ -24,6 +24,7 @@ ul {
     padding: 0.625rem;
     background-color: var(--grey-1);
     color: #fff;
+    position: relative;
 }
 
 /* Style for the media item image */
@@ -54,4 +55,23 @@ ul {
     font-size: 0.875rem;
     color: var(--primary);
     margin-top: 0.313rem;
+}
+
+.remove-media-button {
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: -5%;
+    right: -7%;
+
+    transition: all 300ms;
+}
+
+.remove-media-button:hover {
+    color: red;
+}
+
+.remove-media-button svg {
+    font-size: 3rem;
 }

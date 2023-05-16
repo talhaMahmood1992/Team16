@@ -12,8 +12,10 @@ interface DeleteUserProps {
 }
 
 export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
-    const [usersList, loading] = useFetchList(getUsersList, "users");
-    const [usersListState, setUsersListState] = useState<UserInterface[]>([]);
+    const [usersList, loading, error, setUsersList] = useFetchList(
+        getUsersList,
+        "users"
+    );
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -25,27 +27,21 @@ export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
     const deleteUserHandler = async (userId: string) => {
         try {
             await deleteUser(userId);
-            const updatedUsersListState = usersListState.filter(
+            const updatedUsersList = usersList.filter(
                 (user: UserInterface) => user._id !== userId
             );
-            setUsersListState(updatedUsersListState);
+            setUsersList(updatedUsersList);
         } catch (error) {
             console.log(error);
         }
     };
-
-    useEffect(() => {
-        if (usersList) {
-            setUsersListState(usersList);
-        }
-    }, [usersList]);
 
     return (
         <>
             <h2 className="heading-secondary">Delete User</h2>
             <div className={classes.users_list}>
                 {!loading &&
-                    usersListState.map((user: UserInterface) => {
+                    usersList.map((user: UserInterface) => {
                         if (user.role === "Default") {
                             return (
                                 <div
