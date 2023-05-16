@@ -33,3 +33,8 @@ export const addUser = async (user: UserInterface) => {
     const endpoint = USERS;
     return api.post(endpoint, user);
 };
+
+export const deleteUser = async (userId: string) => {
+    const endpoint = `${USERS}/${userId}`;
+    return api.delete(endpoint);
+};

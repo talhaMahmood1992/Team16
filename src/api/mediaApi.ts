@@ -11,3 +11,11 @@ export const getMediaData = async (searchQuery: string) => {
 export const addMedia = async (media: MediaInterface) => {
     return api.post(MEDIA, media);
 };
+
+export const updateMedia = async (
+    mediaId: string,
+    updatedFields: MediaInterface
+) => {
+    const endpoint = `${MEDIA}/${mediaId}`;
+    return api.patch(endpoint, updatedFields);
+};

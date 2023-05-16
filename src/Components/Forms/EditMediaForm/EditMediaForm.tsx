@@ -6,6 +6,8 @@ import { schema } from "./EditMediaFromSchema";
 import { EditMediaSubmitForm, mediaGenre } from "../../../Interfaces";
 import { genreList } from "../AddMediaForm/AddMediaForm";
 import { MediaInterface } from "../../../interfaces/MediaInterface";
+import { getMediaData } from "../../../api/mediaApi";
+import slugify from "react-slugify";
 /* eslint no-extra-parens: "off" */
 
 export const EditMediaForm = ({
@@ -24,8 +26,21 @@ export const EditMediaForm = ({
         resolver: yupResolver(schema),
         defaultValues: { genres: checkedMedia }
     });
-    const onSubmit = (data: EditMediaSubmitForm): void => {
-        console.log(data);
+    const onSubmit = async (data: EditMediaSubmitForm) => {
+        try {
+            // const slugifiedTitle = slugify(media.title);
+            // console.log(slugifiedTitle);
+            // let mediaImage = media.image;
+            // mediaImage = mediaImage.replace(/\..*\./g, ".");
+            // mediaImage = mediaImage.replace(/\..*\./g, ".");
+            // console.log(mediaImage);
+            // const recievedMedia = await getMediaData(
+            //     `?search=${slugifiedTitle}`
+            // );
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
