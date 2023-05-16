@@ -12,11 +12,11 @@ PASS src/Testing/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   18.24 |    17.97 |   16.39 |    18.7 |                   
+All files                       |   17.28 |     17.2 |   15.74 |   17.74 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-955             
+  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-962             
   UserData.tsx                  |       0 |        0 |       0 |       0 | 5-120             
  src/Components                 |   21.62 |       50 |   26.08 |   21.62 |                   
   MediaRating.tsx               |   28.57 |       50 |      40 |   28.57 | 14-26             
@@ -24,9 +24,9 @@ All files                       |   18.24 |    17.97 |   16.39 |    18.7 |
   RenderMedia.tsx               |      75 |       50 |   66.66 |      75 | 9,18              
   ReviewMedia.tsx               |       0 |      100 |       0 |       0 | 5-12              
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
-  AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 34-139            
+  AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 40-147            
   AddUserForm.tsx               |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 17-166            
+  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 19-190            
   FormSchema.tsx                |       0 |      100 |     100 |       0 | 4-5               
   UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
@@ -43,11 +43,11 @@ All files                       |   18.24 |    17.97 |   16.39 |    18.7 |
   MainHeader.tsx                |       0 |      100 |       0 |       0 | 13-17             
   MainNavigation.tsx            |       0 |        0 |       0 |       0 | 16-20             
  src/Pages                      |       0 |        0 |       0 |       0 |                   
-  AddMediaPage.tsx              |       0 |        0 |       0 |       0 | 10-17             
+  AddMediaPage.tsx              |       0 |        0 |       0 |       0 | 12-19             
   AddUser.tsx                   |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx               |       0 |        0 |       0 |       0 | 25-123            
+  BrowseMedia.tsx               |       0 |        0 |       0 |       0 | 25-122            
   EditMedia.tsx                 |       0 |        0 |       0 |       0 | 13-82             
-  EditorInterface.tsx           |       0 |        0 |       0 |       0 | 12-19             
+  EditorInterface.tsx           |       0 |        0 |       0 |       0 | 14-21             
   Favorites.tsx                 |       0 |      100 |       0 |       0 | 7-8               
   HomePage.tsx                  |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx             |       0 |      100 |       0 |       0 | 4-5               
@@ -60,5 +60,5 @@ All files                       |   18.24 |    17.97 |   16.39 |    18.7 |
 Test Suites: 4 passed, 4 total
 Tests:       29 passed, 29 total
 Snapshots:   0 total
-Time:        5.146 s
+Time:        5.239 s
 Ran all test suites.
