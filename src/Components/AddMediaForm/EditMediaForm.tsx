@@ -5,12 +5,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { updateMediaInList, removeMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
 import axios from "axios";
-import { Media, mediaType } from "../../Interfaces";
+import { Media, Role, mediaType } from "../../Interfaces";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 /* eslint no-extra-parens: "off" */
 
 interface EditMediaFormProps {
+    role: Role;
     media: Media;
     mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
     superSetter: React.Dispatch<React.SetStateAction<string[]>>;
@@ -132,9 +133,13 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     return (
         <div className={classes.form_wrapper}>
             <div className={classes.form}>
-                <Button variant="outline-danger" onClick={onRemoval}>
-                    <h2>Remove This Media</h2>
-                </Button>
+                {props.role == "Super" ? (
+                    <Button variant="outline-danger" onClick={onRemoval}>
+                        <h2>Remove This Media</h2>
+                    </Button>
+                ) : (
+                    <></>
+                )}
                 <br />
                 <Form.Group onSubmit={handleSubmit(onSubmit)}>
                     <form>
