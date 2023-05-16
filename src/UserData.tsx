@@ -101,16 +101,11 @@ export function updateDeletedWatchedMedia(
 ): Media[] {
     const userIndex = UserData.findIndex((user) => user.username === userName);
     if (userIndex >= 0) {
-        if (UserData[userIndex].watched.length === 1) {
-            UserData[userIndex].watched = [];
-            return [];
-        }
-
         const newUser = { ...UserData[userIndex] };
         newUser.watched = [...newUser.watched]; // create a copy of watched array
 
         const indexToRemove = newUser.watched.findIndex(
-            (userMedia) => userMedia.media.title === media.title
+            (userMedia) => userMedia.media._id === media._id
         );
 
         if (indexToRemove >= 0) {

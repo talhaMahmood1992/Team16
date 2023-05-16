@@ -31,6 +31,10 @@ const MediaToButton = (
                     {<RatingFeature rating={mediaItem.rating}></RatingFeature>}
                 </div>
             </div>
+            <p>
+                {mediaItem.genres[0]}
+                {mediaItem.genres.length > 1 ? "," : ""} {mediaItem.genres[1]}
+            </p>
             <NavLink
                 to="/mediaRevision"
                 onClick={() => prepareRevision(mediaItem, setter)}
