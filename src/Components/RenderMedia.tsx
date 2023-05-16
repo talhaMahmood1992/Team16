@@ -5,13 +5,14 @@ import React from "react";
 import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
 import { MediaInterface } from "../interfaces/MediaInterface";
+import { nanoid } from "nanoid";
 function handleOnDrag(e: React.DragEvent, newMedia: string) {
     e.dataTransfer.setData("newMedia", newMedia);
 }
 export const mediaToElement = (mediaItem: MediaInterface): JSX.Element => {
     return (
         <div
-            key={mediaItem._id}
+            key={nanoid()}
             className="media-item"
             data-testid="mediaItem"
             draggable

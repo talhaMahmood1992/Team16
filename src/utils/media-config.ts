@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 export const addImageToMedia = (media: MediaInterface[]) => {
     return media.map((media: MediaInterface) => ({
         ...media,
-        image: require(`../imgs/media-covers/${media.image}`)
+        image: mediaImageHandler(media)
     }));
 };
 
@@ -27,4 +27,14 @@ export const removeMediaId = (media: MediaInterface[]) => {
     const copiedMedia = [...media];
     copiedMedia.map((media: MediaInterface) => delete media.mediaId);
     return copiedMedia;
+};
+
+export const mediaImageHandler = (media: MediaInterface) => {
+    let image;
+    try {
+        image = require(`../imgs/media-covers/${media.image}`);
+    } catch (error) {
+        image = require("../imgs/media-covers/default-media-img.jpg");
+    }
+    return image;
 };
