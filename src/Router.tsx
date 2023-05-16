@@ -103,6 +103,5 @@ export const Router = () => {
             </>
         );
     }
-
     return <>{output}</>;
 };

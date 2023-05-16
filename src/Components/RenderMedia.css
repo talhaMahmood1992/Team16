@@ -24,6 +24,7 @@ ul {
     padding: 0.625rem;
     background-color: var(--grey-1);
     color: #fff;
+    position: relative;
 }
 
 /* Style for the media item image */

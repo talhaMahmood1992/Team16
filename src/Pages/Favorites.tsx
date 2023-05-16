@@ -1,15 +1,11 @@
-/* eslint-disable no-extra-parens */
 import React, { useContext } from "react";
 import { getUserWatchlists } from "../api/usersApi";
 import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
-// import RenderMedia from "../Components/RenderMedia";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { SpecialRating } from "../Components/MediaRating";
-import { ToDeleteMedia } from "../Components/DeleteMedia";
-// import { MediaInterface } from "../interfaces/MediaInterface";
-// import { removeImageFromMedia, removeMediaId } from "../utils/media-config";
-// import { NavLink } from "react-router-dom";
+import { DeleteMedia } from "../Components/RemoveMedia";
+
 export const FavoritesPage = (): JSX.Element => {
     const { currentUser } = useContext(CurrentUserContext);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,23 +23,11 @@ export const FavoritesPage = (): JSX.Element => {
         console.log("here ");
         const MediaToMove = e.dataTransfer.getData("mediaId") as string;
         console.log(MediaToMove, "Will be added to ToWatch");
-        //Set the color of the star back to the original one
-        // setTrashColor("black");
-        // console.log(toWatch);
-        // console.log(watched);
-
-        // updateDeletedMedia(FindMedia(toDelete));
     }
     function handleOnDropWatched(e: React.DragEvent) {
         console.log("here ");
         const MediaToMove = e.dataTransfer.getData("mediaId") as string;
         console.log(MediaToMove, "Will be added to Watched");
-        //Set the color of the star back to the original one
-        // setTrashColor("black");
-        // console.log(toWatch);
-        // console.log(watched);
-
-        // updateDeletedMedia(FindMedia(toDelete));
     }
 
     const MediaToButton = (
@@ -107,8 +91,7 @@ export const FavoritesPage = (): JSX.Element => {
                         watched.map((mediaItem) => MediaToButton(mediaItem))}
                 </div>
             </div>
-
-            <ToDeleteMedia></ToDeleteMedia>
+            <DeleteMedia></DeleteMedia>
         </>
     );
 };

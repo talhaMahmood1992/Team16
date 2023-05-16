@@ -39,16 +39,13 @@ export const BrowseMedia = ({
         "media",
         searchQuery
     );
-    // const [mediaList, setMediaList] = useState<Media[]>([]);
-    // function handleRender(mediaList: Media[]) {
-    //     setMediaList([...mediaList]);
-    // }
     const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
     const [toWatchMedia, setToWatchMedia] = useState<MediaInterface>();
     const [watchedMedia, setWatchedMedia] = useState<MediaInterface>();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [watchColor, setWatchColor] = useState<string>("Green");
+    const [watchColor, setWatchColor] = useState<string>("black");
+    const [isSaving, setIsSaving] = useState(false);
 
     function FindMedia(searchTerm: string) {
         const filteredData = mediaList.filter(
@@ -62,7 +59,8 @@ export const BrowseMedia = ({
         //Update the state and then update the userData
         setToWatchMedia(FindMedia(mediaRecieved));
         // updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
-        setStarColor("black");
+        setStarColor("green");
+        setWatchColor("black");
     }
     function handleWatchedDrop(e: React.DragEvent) {
         const mediaRecieved = e.dataTransfer.getData("newMedia") as string;
@@ -70,6 +68,7 @@ export const BrowseMedia = ({
         setWatchedMedia(FindMedia(mediaRecieved));
         // updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
         setStarColor("black");
+        setWatchColor("green");
     }
 
     function handleOnEditsDrop(e: React.DragEvent) {
@@ -84,8 +83,23 @@ export const BrowseMedia = ({
     //To change the color of the star when the image can be dragged into the favoritesList
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
-        setStarColor("green");
+        setStarColor("black");
+        setWatchColor("black");
     }
+    function handleColor() {
+        setStarColor("black");
+        setWatchColor("black");
+    }
+    const handleClick = () => {
+        setIsSaving(true);
+
+        // Simulating an asynchronous save operation
+        setTimeout(() => {
+            // Save logic here...
+
+            setIsSaving(false);
+        }, 2000);
+    };
 
     return (
         <section className="page">
@@ -98,7 +112,11 @@ export const BrowseMedia = ({
             {role !== "Super" && role !== "Admin" ? (
                 <div className="header-container">
                     <h5>ToWatch</h5>
-                    <h1 onDrop={handleToWatchDrop} onDragOver={handleDragOver}>
+                    <h1
+                        onDrop={handleToWatchDrop}
+                        onDragOver={handleDragOver}
+                        onDragEnd={handleColor}
+                    >
                         <FaStar style={{ color: starColor }} />
                     </h1>
                     <br></br>
@@ -122,13 +140,39 @@ export const BrowseMedia = ({
                     <br></br>
                     <h5>Watched</h5>
                     <h1 onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
-                        <VscWatch style={{ color: starColor }} />
+                        <VscWatch style={{ color: watchColor }} />
                     </h1>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <button
+                        className="save-button"
+                        onClick={handleClick}
+                        disabled={isSaving}
+                    >
+                        {isSaving ? "Saving..." : "Save"}
+                    </button>
+                    ;
                 </div>
             ) : (
                 <></>
             )}
-
             {role === "Super" || role === "Admin" ? (
                 <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
                     <div className="header-container">

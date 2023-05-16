@@ -9,21 +9,18 @@ import {
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRating";
-interface FavoriteMediaProps {
-    userName: string;
-}
-export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
+export const DeleteMedia = (): JSX.Element => {
     const [trashColor, setTrashColor] = useState<string>("black");
 
-    const [userMedia, setUserMedia] = useState<Media[]>([
-        ...getWatchedList(getUserByUsername(props.userName))
-    ]);
+    // const [userMedia, setUserMedia] = useState<Media[]>([
+    //     ...getWatchedList(getUserByUsername(props.userName))
+    // ]);
     function handleUserMedia(toDelete: string) {
-        setUserMedia([
-            ...updateDeletedWatchedMedia(props.userName, {
-                ...FindMedia(toDelete)
-            })
-        ]);
+        // setUserMedia([
+        //     ...updateDeletedWatchedMedia(props.userName, {
+        //         ...FindMedia(toDelete)
+        //     })
+        // ]);
     }
 
     function FindMedia(searchTerm: string) {
@@ -34,10 +31,11 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
     }
 
     function handleOnDrop(e: React.DragEvent) {
-        const toDelete = e.dataTransfer.getData("newMedia") as string;
+        const toDelete = e.dataTransfer.getData("mediaId") as string;
+        console.log(toDelete);
         //Set the color of the star back to the original one
         setTrashColor("black");
-        handleUserMedia(toDelete);
+        // handleUserMedia(toDelete);
 
         // setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
         // window.location.reload();
@@ -78,14 +76,14 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
 
     return (
         <>
-            <div
+            {/* <div
                 className="media-list-container"
                 data-testid="mediaListContainer"
             >
                 <div className="media-list">
                     {userMedia.map((mediaItem) => MediaToButton(mediaItem))}
                 </div>
-            </div>
+            </div> */}
 
             <div
                 className="header-container"
@@ -96,7 +94,7 @@ export const DeleteMedia = (props: FavoriteMediaProps): JSX.Element => {
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
             </div>
-            {console.log(userMedia)}
+            {/* {console.log(userMedia)} */}
         </>
     );
 };
