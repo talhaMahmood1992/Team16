@@ -12,6 +12,13 @@ export function updateMediaInList(media: Media): Media[] {
     }
     return mediaData;
 }
+export function removeMediaInList(media: Media): Media[] {
+    const index = mediaData.findIndex((m) => m._id === media._id);
+    if (index >= 0) {
+        mediaData.splice(index, 1);
+    }
+    return mediaData;
+}
 
 export let mediaData: Media[] = [
     {

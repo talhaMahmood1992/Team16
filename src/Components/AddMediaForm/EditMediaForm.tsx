@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { updateMediaInList } from "../../MediaData";
+import { updateMediaInList, removeMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
 import axios from "axios";
 import { Media, mediaType } from "../../Interfaces";
@@ -81,8 +81,12 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
             navigate("/editMedia");
         }
     };
+
+    //Runs when you hit the big red scary button
     const onRemoval = (): void => {
         console.log("He Pressed the Button!");
+        props.mediaSetter(removeMediaInList(props.media));
+        navigate("/");
     };
 
     const checkImage = (url: string) => {
