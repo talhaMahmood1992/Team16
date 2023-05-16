@@ -1,5 +1,6 @@
 //Types
 export type Role = "Default" | "Admin" | "Super";
+
 export type UserSubmitForm = {
     title: string;
     yearReleased: number;

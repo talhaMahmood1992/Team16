@@ -33,6 +33,17 @@ export const MainNavigation = ({
                         </NavLink>
                     </li>
                 )}
+                {role === "Super" /* eslint-disable-line */ && ( //Now Add Media will only show for the Super
+                    <li>
+                        <NavLink
+                            to="/DeleteUser"
+                            className={classes.main_nav_link}
+                        >
+                            <IoSearchCircleSharp className={classes.icon} />
+                            <span>Delete User</span>
+                        </NavLink>
+                    </li>
+                )}
 
                 {role === "Super" /* eslint-disable-line */ && ( //Now Add Media will only show for the Super
                     <li>

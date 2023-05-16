@@ -16,6 +16,7 @@ import { getInitialUser } from "./api/usersApi";
 import { CurrentUserContext } from "./store/currentUserContext";
 import { Media } from "./Interfaces";
 import { mediaData } from "./MediaData";
+import { DeleteUser } from "./Pages/DeleteUser";
 
 export const Router = () => {
     const [settingsIsShown, setSettingsIsShown] = useState<boolean>(false);
@@ -99,6 +100,10 @@ export const Router = () => {
                     />
                     <Route path="/*" element={<NotFound />} />
                     <Route path="/AddUser" element={<AddUser role={role} />} />
+                    <Route
+                        path="/DeleteUser"
+                        element={<DeleteUser role={role} />}
+                    />
                 </Routes>
             </>
         );
