@@ -7,6 +7,8 @@ interface EditInterfaceProps {
     role: Role;
     media: Media;
     mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
+    superSetter: React.Dispatch<React.SetStateAction<string[]>>;
+    superList: string[];
 }
 
 export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
@@ -22,6 +24,8 @@ export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
             <EditMediaForm
                 media={props.media}
                 mediaSetter={props.mediaSetter}
+                superSetter={props.superSetter}
+                superList={props.superList}
             />
         </>
     );

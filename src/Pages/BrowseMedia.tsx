@@ -51,7 +51,6 @@ export const BrowseMedia = ({
         if (!superTitles.includes(newEdit)) {
             setEdits([...edits, newEdit]);
             handleEdits([...edits, newEdit]);
-            console.log([...edits, newEdit]);
             setStarColor("black");
         }
     }
