@@ -22,6 +22,7 @@ export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
         <>
             <h2 className="heading-secondary">Edit Media</h2>
             <EditMediaForm
+                role={props.role}
                 media={props.media}
                 mediaSetter={props.mediaSetter}
                 superSetter={props.superSetter}
