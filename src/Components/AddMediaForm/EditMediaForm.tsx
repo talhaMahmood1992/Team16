@@ -7,6 +7,7 @@ import { schema } from "./FormSchema";
 import { Media, Role, mediaType } from "../../Interfaces";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import { UserData } from "../../UserData";
 /* eslint no-extra-parens: "off" */
 
 interface EditMediaFormProps {
@@ -87,13 +88,24 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
 
         const removeTitle = () => {
             const editableList = [...props.superList];
-            const index = editableList.findIndex(
+            const editIndex = editableList.findIndex(
                 (title) => title === props.media.title
             );
-            if (index >= 0) {
-                editableList.splice(index, 1);
+            if (editIndex >= 0) {
+                editableList.splice(editIndex, 1);
             }
-
+            UserData.forEach(function (user) {
+                let favIndex = user.watched.findIndex(
+                    (userMedia) => userMedia.media.title === props.media.title
+                );
+                while (favIndex >= 0) {
+                    user.watched.splice(favIndex, 1);
+                    favIndex = user.watched.findIndex(
+                        (userMedia) =>
+                            userMedia.media.title === props.media.title
+                    );
+                }
+            });
             return editableList;
         };
 
