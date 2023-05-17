@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import {
-    getUserByUsername,
-    getWatchedList,
-    updateDeletedWatchedMedia
-} from "../UserData";
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRating";

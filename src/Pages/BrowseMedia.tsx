@@ -45,7 +45,7 @@ export const BrowseMedia = ({
     const [watchedMedia, setWatchedMedia] = useState<MediaInterface[]>([]);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watchColor, setWatchColor] = useState<string>("black");
-    const [isSaving, setIsSaving] = useState(false);
+    // const [isSaving, setIsSaving] = useState(false);
 
     function FindMedia(searchTerm: string) {
         const filteredData = mediaList.filter(
@@ -96,16 +96,16 @@ export const BrowseMedia = ({
         setStarColor("black");
         setWatchColor("black");
     }
-    const handleClick = () => {
-        setIsSaving(true);
+    // const handleClick = () => {
+    //     setIsSaving(true);
 
-        // Simulating an asynchronous save operation
-        setTimeout(() => {
-            // Save logic here...
+    //     // Simulating an asynchronous save operation
+    //     setTimeout(() => {
+    //         // Save logic here...
 
-            setIsSaving(false);
-        }, 2000);
-    };
+    //         setIsSaving(false);
+    //     }, 2000);
+    // };
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
@@ -171,13 +171,10 @@ export const BrowseMedia = ({
                     <br></br>
                     <br></br>
                     <br></br>
-                    <button
-                        className="save-button"
-                        onClick={handleClick}
-                        disabled={isSaving}
-                    >
-                        {isSaving ? "Saving..." : "Save"}
-                    </button>
+                    <UpdateUserMedia
+                        toWatchMedia={toWatchMedia}
+                        watchedMedia={watchedMedia}
+                    ></UpdateUserMedia>
                     ;
                 </div>
             ) : (
@@ -194,10 +191,6 @@ export const BrowseMedia = ({
             ) : (
                 <></>
             )}
-            <UpdateUserMedia
-                toWatchMedia={toWatchMedia}
-                watchedMedia={watchedMedia}
-            ></UpdateUserMedia>
         </section>
     );
 };
