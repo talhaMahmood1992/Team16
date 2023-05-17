@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-extra-parens */
 import React, { useContext, useState } from "react";
 import { getUserWatchlists, updateUser } from "../../api/usersApi";
@@ -7,27 +6,12 @@ import { useFetchWatchlists } from "../../hooks/useFetchWatchlists";
 import { MediaInterface } from "../../interfaces/MediaInterface";
 import { removeImageFromMedia, removeMediaId } from "../../utils/media-config";
 import "./SaveButton.css";
+import { removeDuplicateMedia } from "./UpdateUserMedia";
+
 interface toWatchProps {
-    toWatchMedia: MediaInterface[];
     watchedMedia: MediaInterface[];
 }
-export function removeDuplicateMedia(
-    mediaList: MediaInterface[]
-): MediaInterface[] {
-    const uniqueMedia: MediaInterface[] = [];
-    const ids: Set<string> = new Set();
-
-    for (const media of mediaList) {
-        if (!ids.has(media["_id"]!)) {
-            uniqueMedia.push(media);
-            ids.add(media["_id"]!);
-        }
-    }
-
-    return uniqueMedia;
-}
-
-export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
+export const UpdateEditMedia = (props: toWatchProps): JSX.Element => {
     const [isSaving, setIsSaving] = useState(false);
 
     const { currentUser } = useContext(CurrentUserContext);
@@ -35,33 +19,34 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
         useFetchWatchlists(getUserWatchlists, currentUser?._id);
 
-    const saveData = async () => {
-        setIsSaving(true);
+    const saveData = () => {
+        // setIsSaving(true);
 
         let updatedWatched = removeDuplicateMedia([
             ...watched,
             ...props.watchedMedia
         ]);
-        let updatedToWatch = [...toWatch, ...props.toWatchMedia];
+
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
-        updatedToWatch = removeImageFromMedia(updatedToWatch);
-        updatedToWatch = removeMediaId(updatedToWatch);
 
+        setIsSaving(true);
+        saveAPICall(updatedWatched);
+        setIsSaving(false);
+    };
+
+    const saveAPICall = async (updatedWatched: MediaInterface[]) => {
         try {
             await updateUser(currentUser?._id, {
                 watched: updatedWatched,
-                toWatch: updatedToWatch
+                toWatch: []
             });
             setWatched(updatedWatched);
-            setToWatch(updatedToWatch);
+            console.log("updated user");
         } catch (error) {
+            console.log("There is an error");
             console.log(error);
         }
-        setTimeout(() => {
-            // Save logic here...
-            setIsSaving(false);
-        }, 2000);
     };
     return (
         <>

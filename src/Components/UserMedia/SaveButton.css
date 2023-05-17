@@ -5,6 +5,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    z-index: 800;
 }
 
 .save-button:hover {
