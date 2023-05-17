@@ -6,6 +6,7 @@ import { MediaInterface } from "../interfaces/MediaInterface";
 import { SpecialRating } from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/RemoveMedia";
 import { nanoid } from "nanoid";
+import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 
 export const FavoritesPage = (): JSX.Element => {
     const { currentUser } = useContext(CurrentUserContext);
@@ -17,20 +18,30 @@ export const FavoritesPage = (): JSX.Element => {
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
-        //To change the color of the star when the image can be dragged into the favoritesList
     }
 
-    function handleOnDropToWatch(e: React.DragEvent) {
-        const MediaToMove = e.dataTransfer.getData("mediaId") as string;
-        console.log(MediaToMove, "Will be added to ToWatch");
-    }
     function handleOnDropWatched(e: React.DragEvent) {
-        console.log("here ");
         const MediaToMove = e.dataTransfer.getData("mediaId") as string;
-        console.log(MediaToMove, "Will be added to Watched");
+        const searchInToWatch = toWatch.find(
+            (media) => media._id === MediaToMove
+        );
+        if (searchInToWatch) {
+            const indexToRemove = toWatch.findIndex(
+                (media) => media._id === searchInToWatch._id
+            );
+
+            if (indexToRemove >= 0) {
+                const mediaToDel: MediaInterface = toWatch[indexToRemove];
+
+                toWatch.splice(indexToRemove, 1);
+                setToWatch([...toWatch]);
+                setWatched([...watched, mediaToDel]);
+                console.log("Here Fine me");
+            }
+        }
     }
 
-    const MediaToButton = (
+    const DragableMediaToButton = (
         mediaItem: MediaInterface
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ): JSX.Element => {
@@ -56,6 +67,24 @@ export const FavoritesPage = (): JSX.Element => {
         );
     };
 
+    const MediaToButton = (
+        mediaItem: MediaInterface
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ): JSX.Element => {
+        return (
+            <div key={nanoid()} className="media-item" data-testid="mediaItem">
+                <img src={mediaItem.image} alt={mediaItem.title} />
+                <div className="media-details">
+                    <p className="media-year" data-testid="mediaYear">
+                        {mediaItem.yearReleased}
+                    </p>
+                    <div className="media-rating">
+                        {<SpecialRating></SpecialRating>}
+                    </div>
+                </div>
+            </div>
+        );
+    };
     return (
         <>
             <section className="page">
@@ -66,14 +95,12 @@ export const FavoritesPage = (): JSX.Element => {
                 data-testid="mediaListContainer"
             >
                 <h2>To Watch</h2>
-                <div
-                    className="media-list"
-                    onDrop={handleOnDropToWatch}
-                    onDragOver={handleDragOver}
-                >
+                <div className="media-list">
                     {!loading &&
                         !error &&
-                        toWatch.map((mediaItem) => MediaToButton(mediaItem))}
+                        toWatch.map((mediaItem) =>
+                            DragableMediaToButton(mediaItem)
+                        )}
                 </div>
             </div>
             <div
@@ -89,6 +116,11 @@ export const FavoritesPage = (): JSX.Element => {
                     {!loading &&
                         !error &&
                         watched.map((mediaItem) => MediaToButton(mediaItem))}
+                    <h3>Update the list</h3>
+                    <DeleteUserMedia
+                        toWatchMedia={toWatch}
+                        watchedMedia={watched}
+                    ></DeleteUserMedia>
                 </div>
             </div>
             <DeleteMedia></DeleteMedia>

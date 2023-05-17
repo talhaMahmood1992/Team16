@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-extra-parens */
 import React, { useContext, useState } from "react";
 import { getUserWatchlists, updateUser } from "../../api/usersApi";
@@ -10,6 +11,20 @@ interface toWatchProps {
     toWatchMedia: MediaInterface[];
     watchedMedia: MediaInterface[];
 }
+function removeDuplicateMedia(mediaList: MediaInterface[]): MediaInterface[] {
+    const uniqueMedia: MediaInterface[] = [];
+    const ids: Set<string> = new Set();
+
+    for (const media of mediaList) {
+        if (!ids.has(media["_id"]!)) {
+            uniqueMedia.push(media);
+            ids.add(media["_id"]!);
+        }
+    }
+
+    return uniqueMedia;
+}
+
 export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const [isSaving, setIsSaving] = useState(false);
 
@@ -21,7 +36,10 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const saveData = async () => {
         setIsSaving(true);
 
-        let updatedWatched = [...watched, ...props.watchedMedia];
+        let updatedWatched = removeDuplicateMedia([
+            ...watched,
+            ...props.watchedMedia
+        ]);
         let updatedToWatch = [...toWatch, ...props.toWatchMedia];
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);

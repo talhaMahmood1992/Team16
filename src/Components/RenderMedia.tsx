@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { SetStateAction, useContext } from "react";
+import React, { useContext } from "react";
 //import { mediaData } from "../MediaData";
 //import MediaFeature from "../Components/MediaRatting";
 import RatingFeature from "./MediaRating";
@@ -37,6 +37,7 @@ export const mediaToElement = (
             {currentUser && currentUser.role === "Super" && (
                 <button
                     className="remove-media-button"
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                     onClick={() => deleteMediaHandler(mediaItem._id!)}
                 >
                     <RiDeleteBin2Fill />

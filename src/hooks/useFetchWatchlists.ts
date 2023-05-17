@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import { addImageToMedia } from "../utils/media-config";
+import { addImageToMedia, addMediaId } from "../utils/media-config";
 
 export const useFetchWatchlists = (
     fetchFunction: any,
@@ -18,7 +18,7 @@ export const useFetchWatchlists = (
             responseData.watched = addImageToMedia(responseData.watched);
             // responseData.watched = addMediaId(responseData.watched);
             responseData.toWatch = addImageToMedia(responseData.toWatch);
-            // responseData.toWatch = addMediaId(responseData.toWatch);
+            responseData.toWatch = addMediaId(responseData.toWatch);
 
             setWatched(responseData.watched);
             setToWatch(responseData.toWatch);

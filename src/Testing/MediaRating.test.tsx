@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import RatingFeature from "./MediaRating";
+import RatingFeature from "../Components/MediaRating";
 import "@testing-library/jest-dom/extend-expect";
 
 //Test that the component renders without throwing an error:

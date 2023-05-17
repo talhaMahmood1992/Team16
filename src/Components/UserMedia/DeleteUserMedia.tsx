@@ -41,6 +41,7 @@ export const DeleteUserMedia = (props: DeleteMediaProps): JSX.Element => {
             // Save logic here...
             setIsSaving(false);
         }, 2000);
+        // window.location.reload();
     };
     return (
         <>
