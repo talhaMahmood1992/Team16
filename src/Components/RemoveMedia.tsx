@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import { CurrentUserContext } from "../store/currentUserContext";
-import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
-import { getUserWatchlists } from "../api/usersApi";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import { DeleteUserMedia } from "./UserMedia/DeleteUserMedia";
 
 interface deleteMediaProps {
     toWatch: MediaInterface[];
@@ -80,10 +76,10 @@ export const DeleteMedia = ({
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
             </div>
-            <DeleteUserMedia
+            {/* <DeleteUserMedia
                 toWatchMedia={[...toWatch]}
                 watchedMedia={[...watched]}
-            ></DeleteUserMedia>
+            ></DeleteUserMedia> */}
         </>
     );
 };
