@@ -18,7 +18,6 @@ interface EditMediaFormProps {
     superList: string[];
 }
 export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
-    const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
     const [genreList, setGenreList] = useState<string[]>(props.media.genres);
     function updateGenreList(event: React.ChangeEvent<HTMLInputElement>) {
         const genre = event.target.value;
@@ -64,26 +63,23 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        getValues
+        formState: { errors }
     } = useForm<EditSubmitForm>({
         resolver: yupResolver(schema)
     });
+
     const onSubmit = (data: EditSubmitForm): void => {
-        console.log(props.media.image);
-        if (data.image.endsWith(".jpg")) {
-            const createdMedia = {
-                title: props.media.title,
-                type: data.type,
-                yearReleased: data.yearReleased,
-                rating: data.rating,
-                image: data.image,
-                genres: genreList,
-                _id: props.media._id
-            };
-            props.mediaSetter(updateMediaInList(createdMedia));
-            navigate("/editMedia");
-        }
+        const createdMedia = {
+            title: props.media.title,
+            type: data.type,
+            yearReleased: data.yearReleased,
+            rating: data.rating,
+            image: props.media.image,
+            genres: genreList,
+            _id: props.media._id
+        };
+        props.mediaSetter(updateMediaInList(createdMedia));
+        navigate("/editMedia");
     };
 
     //Runs when you hit the big red scary button
@@ -106,31 +102,6 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
         navigate("/editMedia");
     };
 
-    const checkImage = (url: string) => {
-        return axios
-            .get(url)
-            .then(() => true)
-            .catch(() => false);
-    };
-
-    const imageLinkChangeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
-        let imageValid = await checkImage(e.target.value);
-        imageValid = imageValid && e.target.value != "";
-        setImageLinkvalid(imageValid);
-    };
-
-    let imageHTMLoutput;
-
-    if (imageLinkValid) {
-        imageHTMLoutput = <img src={getValues("image")} />;
-    } else {
-        imageHTMLoutput = (
-            <div className={classes.image_goes_here}>
-                <img src={props.media.image} alt={props.media.title} />
-            </div>
-        );
-    }
-
     return (
         <div className={classes.form_wrapper}>
             <div className={classes.form}>
@@ -143,7 +114,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                 )}
                 <br />
                 <Form.Group onSubmit={handleSubmit(onSubmit)}>
-                    <form>
+                    <form className={classes.form_group}>
                         <label htmlFor="yearReleased">Year Released:</label>
                         <input
                             type="number"
@@ -151,6 +122,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                             defaultValue={props.media.yearReleased}
                         />
                         <p>{errors.yearReleased?.message}</p>
+                        <br />
 
                         <label htmlFor="type">Media type:</label>
                         <select
@@ -161,6 +133,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                             <option value="Show">Show</option>
                         </select>
                         <p>{errors.type?.message}</p>
+                        <br />
 
                         <label htmlFor="rating">Rating:</label>
                         <input
@@ -169,39 +142,33 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
                             defaultValue={props.media.rating}
                         />
                         <p>{errors.rating?.message}</p>
+                        <br />
 
                         <label htmlFor="genres">Genres:</label>
-
-                        {GENRES.map((genre: string) => (
-                            <Form.Check
-                                //{...register("genres")}
-                                type="checkbox"
-                                defaultValue={genreList}
-                                key={genre}
-                                id={genre}
-                                value={genre}
-                                label={genre}
-                                name={genre}
-                                checked={genreList.includes(genre)}
-                                onChange={updateGenreList}
-                            />
-                        ))}
-
-                        <label htmlFor="image">Media Poster:</label>
-                        <input
-                            id="media-poster-input"
-                            type="text"
-                            defaultValue={props.media.image}
-                            {...register("image", {
-                                onChange: (e) => imageLinkChangeHandler(e)
-                            })}
-                        />
-                        <p>{errors.image?.message}</p>
+                        <div className={classes.checkbox}>
+                            {GENRES.map((genre: string) => (
+                                <Form.Check
+                                    //{...register("genres")}
+                                    type="checkbox"
+                                    defaultValue={genreList}
+                                    key={genre}
+                                    id={genre}
+                                    value={genre}
+                                    label={genre}
+                                    name={genre}
+                                    checked={genreList.includes(genre)}
+                                    onChange={updateGenreList}
+                                />
+                            ))}
+                        </div>
+                        <br />
                         <input type="submit" />
                     </form>
                 </Form.Group>
             </div>
-            <div className={classes.image_holder}>{imageHTMLoutput}</div>
+            <div className={classes.image_holder}>
+                <img src={props.media.image} />
+            </div>
         </div>
     );
 };

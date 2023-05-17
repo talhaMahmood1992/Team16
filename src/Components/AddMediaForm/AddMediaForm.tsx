@@ -38,63 +38,30 @@ interface addMediaFormProps {
 }
 
 export const AddMediaForm = (props: addMediaFormProps): JSX.Element => {
-    const [imageLinkValid, setImageLinkvalid] = useState<boolean>(false);
     const navigate = useNavigate();
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        getValues
+        formState: { errors }
     } = useForm<UserSubmitForm>({
         resolver: yupResolver(schema)
     });
 
     const onSubmit = (data: UserSubmitForm): void => {
-        if (data.image.endsWith(".jpg")) {
-            const newMedia = {
-                title: data.title,
-                type: data.type,
-                yearReleased: data.yearReleased,
-                rating: data.rating,
-                image: data.image,
-                genres: [],
-                _id: nanoid()
-            };
-            //mediaData.push(newMedia);
-            props.mediaSetter([...props.mediaList, newMedia]);
-            navigate("/");
-        }
+        const newMedia = {
+            title: data.title,
+            type: data.type,
+            yearReleased: data.yearReleased,
+            rating: data.rating,
+            image: require("../../imgs/media-covers/dog-media.jpg"),
+            genres: [],
+            _id: nanoid()
+        };
+        console.log(newMedia);
+        //mediaData.push(newMedia);
+        props.mediaSetter([...props.mediaList, newMedia]);
+        navigate("/");
     };
-
-    const checkImage = (url: string) => {
-        return axios
-            .get(url)
-            .then(() => true)
-            .catch(() => false);
-    };
-
-    const imageLinkChangeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
-        let imageValid = await checkImage(e.target.value);
-        imageValid = imageValid && e.target.value != "";
-        setImageLinkvalid(imageValid);
-    };
-
-    let imageHTMLoutput;
-
-    if (imageLinkValid) {
-        imageHTMLoutput = <img src={getValues("image")} />;
-    } else {
-        imageHTMLoutput = (
-            <div className={classes.image_goes_here}>
-                <AiFillPlusCircle
-                    onClick={() =>
-                        document.getElementById("media-poster-input")?.focus()
-                    }
-                />
-                <p>Add Image</p>
-            </div>
-        );
-    }
 
     return (
         <div className={classes.form_wrapper}>
@@ -138,19 +105,11 @@ export const AddMediaForm = (props: addMediaFormProps): JSX.Element => {
                 <p>{errors.genres?.message}</p>
                 */}
 
-                <label htmlFor="image">Media Poster:</label>
-                <input
-                    id="media-poster-input"
-                    type="text"
-                    placeholder="Media poster link address..."
-                    {...register("image", {
-                        onChange: (e) => imageLinkChangeHandler(e)
-                    })}
-                />
-                <p>{errors.image?.message}</p>
                 <input type="submit" />
             </form>
-            <div className={classes.image_holder}>{imageHTMLoutput}</div>
+            <div className={classes.image_holder}>
+                <img src={require("../../imgs/media-covers/dog-media.jpg")} />
+            </div>
         </div>
     );
 };

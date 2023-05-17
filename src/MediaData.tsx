@@ -959,7 +959,17 @@ export let mediaData: Media[] = [
     }
 ];
 
+const imageHandler = (media: Media) => {
+    let image;
+    try {
+        image = require("./imgs/media-covers/" + slugify(media.title) + ".jpg");
+    } catch (error) {
+        image = require("./imgs/media-covers/dog-media.jpg");
+    }
+    return image;
+};
+
 mediaData = mediaData.map((media) => ({
     ...media,
-    image: require("./imgs/media-covers/" + slugify(media.title) + ".jpg")
+    image: imageHandler(media)
 }));

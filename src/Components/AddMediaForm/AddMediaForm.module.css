@@ -78,3 +78,14 @@
 .image_goes_here svg:hover {
     color: var(--primary);
 }
+
+.checkbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 10px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+}

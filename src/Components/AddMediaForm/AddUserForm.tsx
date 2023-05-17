@@ -6,13 +6,14 @@ import { UserData } from "../../UserData";
 import { schema } from "./UserFormSchema";
 // import axios from "axios";
 import { UserAddForm } from "../../Interfaces";
+import { useNavigate } from "react-router-dom";
 
 export const AddUserForm = (): JSX.Element => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        reset
+        formState: { errors }
     } = useForm<UserAddForm>({
         resolver: yupResolver(schema)
     });
@@ -23,7 +24,7 @@ export const AddUserForm = (): JSX.Element => {
             watched: [],
             role: "Default"
         });
-        reset();
+        navigate("/");
     };
 
     return (
