@@ -35,6 +35,7 @@ export const DeleteMedia = (): JSX.Element => {
         console.log(toDelete);
         //Set the color of the star back to the original one
         setTrashColor("black");
+
         // handleUserMedia(toDelete);
 
         // setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
