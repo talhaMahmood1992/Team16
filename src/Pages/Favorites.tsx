@@ -4,12 +4,14 @@ import { getUserWatchlists } from "../api/usersApi";
 import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import { SpecialRating } from "../Components/MediaRating";
+import RatingFeature, { SpecialRating } from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/RemoveMedia";
 import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
+import { useNavigate } from "react-router-dom";
 
 export const FavoritesPage = (): JSX.Element => {
+    const navigate = useNavigate();
     const { currentUser } = useContext(CurrentUserContext);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
@@ -77,8 +79,23 @@ export const FavoritesPage = (): JSX.Element => {
                     <p className="media-year" data-testid="mediaYear">
                         {mediaItem.yearReleased}
                     </p>
+                    {currentUser && currentUser.role !== "Default" && (
+                        <button
+                            onClick={() =>
+                                navigate("/mediaRevision", {
+                                    state: { mediaItem, watched }
+                                })
+                            }
+                        >
+                            Edit Media
+                        </button>
+                    )}
                     <div className="media-rating">
-                        {<SpecialRating></SpecialRating>}
+                        {currentUser && currentUser.role === "Default" ? (
+                            <SpecialRating />
+                        ) : (
+                            <RatingFeature rating={mediaItem.rating} />
+                        )}
                     </div>
                 </div>
             </div>

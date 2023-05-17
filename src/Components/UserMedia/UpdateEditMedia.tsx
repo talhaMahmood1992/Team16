@@ -37,7 +37,11 @@ export const UpdateEditMedia = (props: toWatchProps): JSX.Element => {
 
     const saveAPICall = async (updatedWatched: MediaInterface[]) => {
         try {
-            await updateUser(currentUser?._id, {
+            await updateUser("645e8ce9a3aae9249f9fdf2f", {
+                watched: updatedWatched,
+                toWatch: []
+            });
+            await updateUser("645e8ce9a3aae9249f9fdf2e", {
                 watched: updatedWatched,
                 toWatch: []
             });
