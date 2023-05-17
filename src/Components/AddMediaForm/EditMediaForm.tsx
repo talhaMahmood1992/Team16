@@ -1,10 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { updateMediaInList, removeMediaInList } from "../../MediaData";
 import { schema } from "./FormSchema";
-import axios from "axios";
 import { Media, Role, mediaType } from "../../Interfaces";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";

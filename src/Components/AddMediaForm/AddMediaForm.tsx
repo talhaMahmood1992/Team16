@@ -1,12 +1,10 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import classes from "./AddMediaForm.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 //import { mediaData } from "../../MediaData";
 import { nanoid } from "nanoid";
 import { schema } from "./FormSchema";
-import { AiFillPlusCircle } from "react-icons/ai";
-import axios from "axios";
 import { Media, UserSubmitForm } from "../../Interfaces";
 import { useNavigate } from "react-router-dom";
 /* eslint no-extra-parens: "off" */
