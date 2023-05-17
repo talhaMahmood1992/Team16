@@ -22,7 +22,25 @@ export const FavoritesPage = (): JSX.Element => {
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
     }
+    function handleOnDropToWatch(e: React.DragEvent) {
+        const MediaToMove = e.dataTransfer.getData("mediaId") as string;
+        const searchInToWatch = watched.find(
+            (media) => media["mediaId"] === MediaToMove
+        );
+        if (searchInToWatch) {
+            const indexToRemove = watched.findIndex(
+                (media) => media._id === searchInToWatch._id
+            );
 
+            if (indexToRemove >= 0) {
+                const mediaToDel: MediaInterface = watched[indexToRemove];
+
+                watched.splice(indexToRemove, 1);
+                setToWatch([...toWatch, mediaToDel]);
+                setWatched([...watched]);
+            }
+        }
+    }
     function handleOnDropWatched(e: React.DragEvent) {
         const MediaToMove = e.dataTransfer.getData("mediaId") as string;
         const searchInToWatch = toWatch.find(
@@ -101,7 +119,7 @@ export const FavoritesPage = (): JSX.Element => {
                     <h2>To Watch</h2>
                     <div
                         className="media-list"
-                        // onDrop={handleOnDropToWatch}
+                        onDrop={handleOnDropToWatch}
                         onDragOver={handleDragOver}
                     >
                         {!loading &&

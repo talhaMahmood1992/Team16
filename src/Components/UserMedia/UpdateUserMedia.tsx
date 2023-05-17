@@ -38,10 +38,7 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const saveData = async () => {
         setIsSaving(true);
 
-        let updatedWatched = removeDuplicateMedia([
-            ...watched,
-            ...props.watchedMedia
-        ]);
+        let updatedWatched = [...watched, ...props.watchedMedia];
         let updatedToWatch = [...toWatch, ...props.toWatchMedia];
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
