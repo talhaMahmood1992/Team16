@@ -12,11 +12,11 @@ PASS src/Testing/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   17.23 |    16.84 |   15.74 |   17.68 |                   
+All files                       |   18.54 |    19.27 |   17.09 |   19.09 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-962             
+  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-972             
   UserData.tsx                  |       0 |        0 |       0 |       0 | 5-120             
  src/Components                 |   21.62 |       50 |   26.08 |   21.62 |                   
   MediaRating.tsx               |   28.57 |       50 |      40 |   28.57 | 14-26             
@@ -24,9 +24,9 @@ All files                       |   17.23 |    16.84 |   15.74 |   17.68 |
   RenderMedia.tsx               |      75 |       50 |   66.66 |      75 | 9,18              
   ReviewMedia.tsx               |       0 |      100 |       0 |       0 | 5-12              
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
-  AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 40-147            
-  AddUserForm.tsx               |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 20-196            
+  AddMediaForm.tsx              |       0 |      100 |       0 |       0 | 38-64             
+  AddUserForm.tsx               |       0 |      100 |       0 |       0 | 11-30             
+  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 19-149            
   FormSchema.tsx                |       0 |      100 |     100 |       0 | 4-5               
   UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
@@ -60,5 +60,5 @@ All files                       |   17.23 |    16.84 |   15.74 |   17.68 |
 Test Suites: 4 passed, 4 total
 Tests:       29 passed, 29 total
 Snapshots:   0 total
-Time:        7.223 s
+Time:        5.153 s
 Ran all test suites.
