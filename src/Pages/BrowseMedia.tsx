@@ -184,7 +184,7 @@ export const BrowseMedia = ({
                 <></>
             )}
             {role === "Super" || role === "Admin" ? (
-                <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
+                <div onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
                     <div className="header-container">
                         <GiFlexibleLamp
                             style={{ color: starColor, fontSize: "24px" }}

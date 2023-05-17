@@ -60,7 +60,7 @@ export const MainNavigation = ({
                 {role === "Admin" || role === "Super" ? (
                     <li>
                         <NavLink
-                            to="/editMedia"
+                            to="/mylists"
                             className={classes.main_nav_link}
                         >
                             <IoPencil className={classes.icon} />
