@@ -1,3 +1,4 @@
+import { EditMediaSubmitForm } from "../Interfaces";
 import { ENDPOINTS } from "../constants/endpoints";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { api } from "../utils/api";
@@ -14,7 +15,7 @@ export const addMedia = async (media: MediaInterface) => {
 
 export const updateMedia = async (
     mediaId: string,
-    updatedFields: MediaInterface
+    updatedFields: EditMediaSubmitForm
 ) => {
     const endpoint = `${MEDIA}/${mediaId}`;
     return api.patch(endpoint, updatedFields);

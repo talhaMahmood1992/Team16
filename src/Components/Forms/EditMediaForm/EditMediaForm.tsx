@@ -6,8 +6,9 @@ import { schema } from "./EditMediaFromSchema";
 import { EditMediaSubmitForm, mediaGenre } from "../../../Interfaces";
 import { genreList } from "../AddMediaForm/AddMediaForm";
 import { MediaInterface } from "../../../interfaces/MediaInterface";
-import { getMediaData } from "../../../api/mediaApi";
+import { getMediaData, updateMedia } from "../../../api/mediaApi";
 import slugify from "react-slugify";
+import { useLocation } from "react-router-dom";
 /* eslint no-extra-parens: "off" */
 
 export const EditMediaForm = ({
@@ -15,8 +16,10 @@ export const EditMediaForm = ({
 }: {
     media: MediaInterface;
 }): JSX.Element => {
+    const location = useLocation();
+    const mediaItem = location.state.mediaItem;
     const checkedMedia = genreList.filter((genre: mediaGenre) =>
-        media.genres.includes(genre)
+        mediaItem.genres.includes(genre)
     );
     const {
         register,
@@ -28,16 +31,7 @@ export const EditMediaForm = ({
     });
     const onSubmit = async (data: EditMediaSubmitForm) => {
         try {
-            // const slugifiedTitle = slugify(media.title);
-            // console.log(slugifiedTitle);
-            // let mediaImage = media.image;
-            // mediaImage = mediaImage.replace(/\..*\./g, ".");
-            // mediaImage = mediaImage.replace(/\..*\./g, ".");
-            // console.log(mediaImage);
-            // const recievedMedia = await getMediaData(
-            //     `?search=${slugifiedTitle}`
-            // );
-            console.log(data);
+            await updateMedia(mediaItem._id, data);
         } catch (error) {
             console.log(error);
         }
@@ -46,18 +40,18 @@ export const EditMediaForm = ({
     return (
         <div className={classes.form_wrapper}>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-                <label htmlFor="title">Media title: {media.title}</label>
+                <label htmlFor="title">Media title: {mediaItem.title}</label>
 
                 <label htmlFor="yearReleased">Year Released:</label>
                 <input
                     type="number"
                     {...register("yearReleased", { valueAsNumber: true })}
-                    defaultValue={media.yearReleased}
+                    defaultValue={mediaItem.yearReleased}
                 />
                 <p>{errors.yearReleased?.message}</p>
 
                 <label htmlFor="type">Media type:</label>
-                <select {...register("type")} defaultValue={media.type}>
+                <select {...register("type")} defaultValue={mediaItem.type}>
                     <option value="Movie">Movie</option>
                     <option value="Show">Show</option>
                 </select>
@@ -86,13 +80,13 @@ export const EditMediaForm = ({
                 <input
                     type="number"
                     {...register("rating", { valueAsNumber: true })}
-                    defaultValue={media.rating}
+                    defaultValue={mediaItem.rating}
                 />
                 <p>{errors.rating?.message}</p>
 
                 <input type="submit" />
             </form>
-            <img className={classes.image_holder} src={media.image} />
+            <img className={classes.image_holder} src={mediaItem.image} />
         </div>
     );
 };
