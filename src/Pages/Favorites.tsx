@@ -36,7 +36,6 @@ export const FavoritesPage = (): JSX.Element => {
                 toWatch.splice(indexToRemove, 1);
                 setToWatch([...toWatch]);
                 setWatched([...watched, mediaToDel]);
-                console.log("Here Fine me");
             }
         }
     }
@@ -52,27 +51,8 @@ export const FavoritesPage = (): JSX.Element => {
                 data-testid="mediaItem"
                 draggable
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                onDragStart={(e) => handleOnDrag(e, mediaItem["_id"]!)}
+                onDragStart={(e) => handleOnDrag(e, mediaItem["mediaId"]!)}
             >
-                <img src={mediaItem.image} alt={mediaItem.title} />
-                <div className="media-details">
-                    <p className="media-year" data-testid="mediaYear">
-                        {mediaItem.yearReleased}
-                    </p>
-                    <div className="media-rating">
-                        {<SpecialRating></SpecialRating>}
-                    </div>
-                </div>
-            </div>
-        );
-    };
-
-    const MediaToButton = (
-        mediaItem: MediaInterface
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ): JSX.Element => {
-        return (
-            <div key={nanoid()} className="media-item" data-testid="mediaItem">
                 <img src={mediaItem.image} alt={mediaItem.title} />
                 <div className="media-details">
                     <p className="media-year" data-testid="mediaYear">
@@ -95,6 +75,7 @@ export const FavoritesPage = (): JSX.Element => {
                 data-testid="mediaListContainer"
             >
                 <h2>To Watch</h2>
+                {console.log("sfs", toWatch)}
                 <div className="media-list">
                     {!loading &&
                         !error &&
@@ -115,7 +96,9 @@ export const FavoritesPage = (): JSX.Element => {
                 >
                     {!loading &&
                         !error &&
-                        watched.map((mediaItem) => MediaToButton(mediaItem))}
+                        watched.map((mediaItem) =>
+                            DragableMediaToButton(mediaItem)
+                        )}
                     <h3>Update the list</h3>
                     <DeleteUserMedia
                         toWatchMedia={toWatch}
@@ -123,7 +106,12 @@ export const FavoritesPage = (): JSX.Element => {
                     ></DeleteUserMedia>
                 </div>
             </div>
-            <DeleteMedia></DeleteMedia>
+            <DeleteMedia
+                toWatch={toWatch}
+                watched={watched}
+                setToWatch={setToWatch}
+                setWatched={setWatched}
+            ></DeleteMedia>
         </>
     );
 };

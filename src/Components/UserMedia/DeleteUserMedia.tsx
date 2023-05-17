@@ -26,7 +26,7 @@ export const DeleteUserMedia = (props: DeleteMediaProps): JSX.Element => {
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
         updatedToWatch = removeImageFromMedia(updatedToWatch);
-        updatedToWatch = removeMediaId(updatedToWatch);
+        // updatedToWatch = removeMediaId(updatedToWatch);
 
         try {
             await updateUser(currentUser?._id, {

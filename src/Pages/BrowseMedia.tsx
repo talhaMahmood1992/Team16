@@ -15,13 +15,11 @@ import { getMediaData } from "../api/mediaApi";
 import { VscWatch } from "react-icons/vsc";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
-
 interface FavoriteMediaProps {
     //UserName of the CurrentUser
     userName: string;
     superTitles: string[];
     handleEdits: (titles: string[]) => void;
-    //Role of the current User
     role: Role;
 }
 
@@ -43,9 +41,7 @@ export const BrowseMedia = ({
     const [starColor, setStarColor] = useState<string>("black");
     const [toWatchMedia, setToWatchMedia] = useState<MediaInterface[]>([]);
     const [watchedMedia, setWatchedMedia] = useState<MediaInterface[]>([]);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watchColor, setWatchColor] = useState<string>("black");
-    // const [isSaving, setIsSaving] = useState(false);
 
     function FindMedia(searchTerm: string) {
         const filteredData: MediaInterface[] = mediaList.filter(
@@ -57,17 +53,14 @@ export const BrowseMedia = ({
 
     function handleToWatchDrop(e: React.DragEvent) {
         const mediaRecieved = e.dataTransfer.getData("newMedia") as string;
-        //Update the state and then update the userData
         if (FindMedia(mediaRecieved)["title"] !== "") {
             setToWatchMedia([...toWatchMedia, FindMedia(mediaRecieved)]);
         }
-        // updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
         setStarColor("green");
         setWatchColor("black");
     }
     function handleWatchedDrop(e: React.DragEvent) {
         const mediaRecieved = e.dataTransfer.getData("newMedia") as string;
-        //Update the state and then update the userData
         if (FindMedia(mediaRecieved)["title"] !== "") {
             setWatchedMedia([...watchedMedia, FindMedia(mediaRecieved)]);
         }

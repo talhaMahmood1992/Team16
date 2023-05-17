@@ -6,32 +6,61 @@ import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { getUserWatchlists } from "../api/usersApi";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { DeleteUserMedia } from "./UserMedia/DeleteUserMedia";
-export const DeleteMedia = (): JSX.Element => {
-    const [trashColor, setTrashColor] = useState<string>("black");
-    const { currentUser } = useContext(CurrentUserContext);
+
+interface deleteMediaProps {
+    toWatch: MediaInterface[];
+    watched: MediaInterface[];
+    setToWatch: (media: MediaInterface[]) => void;
+    setWatched: (media: MediaInterface[]) => void;
+}
+
+export const DeleteMedia = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [watched, toWatch, loading, error, setWatched, setToWatch] =
-        useFetchWatchlists(getUserWatchlists, currentUser?._id);
+    toWatch,
+    watched,
+    setToWatch,
+    setWatched
+}: deleteMediaProps): JSX.Element => {
+    const [trashColor, setTrashColor] = useState<string>("black");
 
     function handleUserMedia(toDelete: MediaInterface) {
-        const indexToRemove = toWatch.findIndex(
-            (media) => media._id === toDelete._id
+        let indexToRemove = toWatch.findIndex(
+            (media) => media["mediaId"] === toDelete["mediaId"]
         );
 
         if (indexToRemove >= 0) {
             const toWatchCopy = [...toWatch];
             toWatchCopy.splice(indexToRemove, 1); // remove the element at indexToRemove
             setToWatch([...toWatchCopy]);
-            setWatched([...watched]);
+            // setWatched([...watched]);
+        }
+        indexToRemove = watched.findIndex(
+            (media) => media["mediaId"] === toDelete["mediaId"]
+        );
+
+        if (indexToRemove >= 0) {
+            const watchedCopy = [...watched];
+            watchedCopy.splice(indexToRemove, 1); // remove the element at indexToRemove
+            // setToWatch([...toWatchCopy]);
+            setWatched([...watchedCopy]);
         }
     }
 
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("mediaId") as string;
-        const searchInToWatch = toWatch.find((media) => media._id === toDelete);
+        console.log(toDelete, "MediaID");
+        const searchInToWatch = toWatch.find(
+            (media) => media["mediaId"] === toDelete
+        );
 
         if (searchInToWatch) {
             handleUserMedia(searchInToWatch);
+        }
+        const searchInWatched = watched.find(
+            (media) => media["mediaId"] === toDelete
+        );
+        if (searchInWatched) {
+            handleUserMedia(searchInWatched);
         }
 
         setTrashColor("black");

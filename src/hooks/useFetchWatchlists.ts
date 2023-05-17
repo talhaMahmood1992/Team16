@@ -16,7 +16,7 @@ export const useFetchWatchlists = (
             const response = await fetchFunction(userId);
             const responseData = response.data.data;
             responseData.watched = addImageToMedia(responseData.watched);
-            // responseData.watched = addMediaId(responseData.watched);
+            responseData.watched = addMediaId(responseData.watched);
             responseData.toWatch = addImageToMedia(responseData.toWatch);
             responseData.toWatch = addMediaId(responseData.toWatch);
 
