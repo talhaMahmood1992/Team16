@@ -12,7 +12,7 @@ PASS src/Testing/RenderMedia.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   17.28 |    16.84 |   15.74 |   17.74 |                   
+All files                       |   17.23 |    16.84 |   15.74 |   17.68 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
   Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
@@ -26,7 +26,7 @@ All files                       |   17.28 |    16.84 |   15.74 |   17.74 |
  src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
   AddMediaForm.tsx              |       0 |        0 |       0 |       0 | 40-147            
   AddUserForm.tsx               |       0 |      100 |       0 |       0 | 10-29             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 20-195            
+  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 20-196            
   FormSchema.tsx                |       0 |      100 |     100 |       0 | 4-5               
   UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
  src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
@@ -60,5 +60,5 @@ All files                       |   17.28 |    16.84 |   15.74 |   17.74 |
 Test Suites: 4 passed, 4 total
 Tests:       29 passed, 29 total
 Snapshots:   0 total
-Time:        5.773 s
+Time:        5.009 s
 Ran all test suites.
