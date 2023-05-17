@@ -59,28 +59,39 @@ export const FavoritesPage = (): JSX.Element => {
     return (
         <>
             <section className="page">
-                <h2 className="heading-secondary">My Favorites</h2>
+                {currentUser && currentUser.role === "Default" && (
+                    <h2 className="heading-secondary">My Favorites</h2>
+                )}
+                {currentUser && currentUser.role !== "Default" && (
+                    <h2 className="heading-secondary">Edit Media</h2>
+                )}
             </section>
-            <div
-                className="media-list-container"
-                data-testid="mediaListContainer"
-            >
-                <h2>To Watch</h2>
+            {currentUser && currentUser.role === "Default" && (
                 <div
-                    className="media-list"
-                    onDrop={handleOnDropToWatch}
-                    onDragOver={handleDragOver}
+                    className="media-list-container"
+                    data-testid="mediaListContainer"
                 >
-                    {!loading &&
-                        !error &&
-                        toWatch.map((mediaItem) => MediaToButton(mediaItem))}
+                    <h2>To Watch</h2>
+                    <div
+                        className="media-list"
+                        onDrop={handleOnDropToWatch}
+                        onDragOver={handleDragOver}
+                    >
+                        {!loading &&
+                            !error &&
+                            toWatch.map((mediaItem) =>
+                                MediaToButton(mediaItem)
+                            )}
+                    </div>
                 </div>
-            </div>
+            )}
             <div
                 className="media-list-container"
                 data-testid="mediaListContainer"
             >
-                <h2>Watched</h2>
+                {currentUser && currentUser.role === "Default" && (
+                    <h2>Watched</h2>
+                )}
                 <div
                     className="media-list"
                     onDrop={handleOnDropWatched}

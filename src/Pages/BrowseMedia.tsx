@@ -15,6 +15,7 @@ import { getMediaData } from "../api/mediaApi";
 import { VscWatch } from "react-icons/vsc";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
+import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
 
 interface FavoriteMediaProps {
     //UserName of the CurrentUser
@@ -71,7 +72,6 @@ export const BrowseMedia = ({
         if (FindMedia(mediaRecieved)["title"] !== "") {
             setWatchedMedia([...watchedMedia, FindMedia(mediaRecieved)]);
         }
-        console.log("Watched", watchedMedia);
 
         setStarColor("black");
         setWatchColor("green");
@@ -171,12 +171,36 @@ export const BrowseMedia = ({
                 <></>
             )}
             {role === "Super" || role === "Admin" ? (
-                <div onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
-                    <div className="header-container">
-                        <GiFlexibleLamp
-                            style={{ color: starColor, fontSize: "24px" }}
-                        />
+                <div className="header-container">
+                    <div onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
+                        <div className="header-container">
+                            <GiFlexibleLamp
+                                style={{ color: starColor, fontSize: "24px" }}
+                            />
+                        </div>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <UpdateEditMedia
+                        watchedMedia={watchedMedia}
+                    ></UpdateEditMedia>
                 </div>
             ) : (
                 <></>

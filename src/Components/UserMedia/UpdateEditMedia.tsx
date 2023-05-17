@@ -6,11 +6,11 @@ import { useFetchWatchlists } from "../../hooks/useFetchWatchlists";
 import { MediaInterface } from "../../interfaces/MediaInterface";
 import { removeImageFromMedia, removeMediaId } from "../../utils/media-config";
 import "./SaveButton.css";
+
 interface toWatchProps {
-    toWatchMedia: MediaInterface[];
     watchedMedia: MediaInterface[];
 }
-export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
+export const UpdateEditMedia = (props: toWatchProps): JSX.Element => {
     const [isSaving, setIsSaving] = useState(false);
 
     const { currentUser } = useContext(CurrentUserContext);
@@ -18,30 +18,39 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
         useFetchWatchlists(getUserWatchlists, currentUser?._id);
 
-    const saveData = async () => {
-        setIsSaving(true);
+    const watchedIds = watched.map((media: MediaInterface) => media.title);
 
-        let updatedWatched = [...watched, ...props.watchedMedia];
-        let updatedToWatch = [...toWatch, ...props.toWatchMedia];
+    const saveData = () => {
+        // setIsSaving(true);
+
+        let updatedWatched: MediaInterface[] = watched;
+
+        for (const media of props.watchedMedia) {
+            if (!watchedIds.includes(media.title)) {
+                updatedWatched.push(media);
+            }
+        }
+
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
-        updatedToWatch = removeImageFromMedia(updatedToWatch);
-        updatedToWatch = removeMediaId(updatedToWatch);
 
+        setIsSaving(true);
+        saveAPICall(updatedWatched);
+        setIsSaving(false);
+    };
+
+    const saveAPICall = async (updatedWatched: MediaInterface[]) => {
         try {
             await updateUser(currentUser?._id, {
                 watched: updatedWatched,
-                toWatch: updatedToWatch
+                toWatch: []
             });
             setWatched(updatedWatched);
-            setToWatch(updatedToWatch);
+            console.log("updated user");
         } catch (error) {
+            console.log("There is an error");
             console.log(error);
         }
-        setTimeout(() => {
-            // Save logic here...
-            setIsSaving(false);
-        }, 2000);
     };
     return (
         <>

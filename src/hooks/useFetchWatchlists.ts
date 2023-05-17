@@ -20,8 +20,6 @@ export const useFetchWatchlists = (
             responseData.toWatch = addImageToMedia(responseData.toWatch);
             responseData.toWatch = addMediaId(responseData.toWatch);
 
-            console.log(responseData.watched);
-            console.log(responseData.toWatch);
             setWatched(responseData.watched);
             setToWatch(responseData.toWatch);
         } catch (error) {
