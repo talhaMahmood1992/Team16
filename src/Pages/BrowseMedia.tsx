@@ -96,16 +96,6 @@ export const BrowseMedia = ({
         setStarColor("black");
         setWatchColor("black");
     }
-    // const handleClick = () => {
-    //     setIsSaving(true);
-
-    //     // Simulating an asynchronous save operation
-    //     setTimeout(() => {
-    //         // Save logic here...
-
-    //         setIsSaving(false);
-    //     }, 2000);
-    // };
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
