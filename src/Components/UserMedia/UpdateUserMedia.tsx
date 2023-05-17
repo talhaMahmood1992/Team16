@@ -5,18 +5,19 @@ import { CurrentUserContext } from "../../store/currentUserContext";
 import { useFetchWatchlists } from "../../hooks/useFetchWatchlists";
 import { MediaInterface } from "../../interfaces/MediaInterface";
 import { removeImageFromMedia, removeMediaId } from "../../utils/media-config";
-interface WatchedProps {
-    media: MediaInterface;
+interface toWatchProps {
+    toWatchMedia: MediaInterface[];
+    watchedMedia: MediaInterface[];
 }
-export const Watched = (props: WatchedProps): JSX.Element => {
+export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const { currentUser } = useContext(CurrentUserContext);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
         useFetchWatchlists(getUserWatchlists, currentUser?._id);
 
     const saveData = async () => {
-        let updatedWatched = [...watched];
-        let updatedToWatch = [...toWatch];
+        let updatedWatched = [...watched, ...props.toWatchMedia];
+        let updatedToWatch = [...toWatch, ...props.watchedMedia];
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
         updatedToWatch = removeImageFromMedia(updatedToWatch);
@@ -33,17 +34,9 @@ export const Watched = (props: WatchedProps): JSX.Element => {
         }
     };
 
-    const testData = () => {
-        const updatedWatched = [...watched, props.media];
-
-        setWatched(updatedWatched);
-        setToWatch([...toWatch]);
-    };
-
     return (
         <>
-            <button onClick={saveData}>Save Wathced</button>
-            <button onClick={testData}>Add media</button>
+            <button onClick={saveData}>Save</button>
         </>
     );
 };
