@@ -4,7 +4,7 @@ import { getUserWatchlists } from "../api/usersApi";
 import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import { SpecialRating } from "../Components/MediaRating";
+import RatingFeature, { SpecialRating } from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/RemoveMedia";
 import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
@@ -65,7 +65,7 @@ export const FavoritesPage = (): JSX.Element => {
                         <button
                             onClick={() =>
                                 navigate("/mediaRevision", {
-                                    state: { mediaItem }
+                                    state: { mediaItem, watched }
                                 })
                             }
                         >
@@ -73,7 +73,11 @@ export const FavoritesPage = (): JSX.Element => {
                         </button>
                     )}
                     <div className="media-rating">
-                        {<SpecialRating></SpecialRating>}
+                        {currentUser && currentUser.role === "Default" ? (
+                            <SpecialRating />
+                        ) : (
+                            <RatingFeature rating={mediaItem.rating} />
+                        )}
                     </div>
                 </div>
             </div>

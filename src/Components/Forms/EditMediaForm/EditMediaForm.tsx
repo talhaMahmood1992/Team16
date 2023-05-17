@@ -9,6 +9,11 @@ import { MediaInterface } from "../../../interfaces/MediaInterface";
 import { getMediaData, updateMedia } from "../../../api/mediaApi";
 import slugify from "react-slugify";
 import { useLocation } from "react-router-dom";
+import { updateUser } from "../../../api/usersApi";
+import {
+    removeImageFromMedia,
+    removeMediaId
+} from "../../../utils/media-config";
 /* eslint no-extra-parens: "off" */
 
 export const EditMediaForm = ({
@@ -17,6 +22,7 @@ export const EditMediaForm = ({
     media: MediaInterface;
 }): JSX.Element => {
     const location = useLocation();
+    const editList = location.state.watched;
     const mediaItem = location.state.mediaItem;
     const checkedMedia = genreList.filter((genre: mediaGenre) =>
         mediaItem.genres.includes(genre)
@@ -32,6 +38,20 @@ export const EditMediaForm = ({
     const onSubmit = async (data: EditMediaSubmitForm) => {
         try {
             await updateMedia(mediaItem._id, data);
+            let updatedEditList = editList.filter(
+                (media: MediaInterface) => media._id !== mediaItem._id
+            );
+            updatedEditList = removeMediaId(updatedEditList);
+            updatedEditList = removeImageFromMedia(updatedEditList);
+            console.log(updatedEditList);
+            await updateUser("645e8ce9a3aae9249f9fdf2f", {
+                watched: updatedEditList,
+                toWatch: []
+            });
+            await updateUser("645e8ce9a3aae9249f9fdf2e", {
+                watched: updatedEditList,
+                toWatch: []
+            });
         } catch (error) {
             console.log(error);
         }
