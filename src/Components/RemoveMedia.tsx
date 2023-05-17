@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import {
-    getUserByUsername,
-    getWatchedList,
-    updateDeletedWatchedMedia
-} from "../UserData";
 import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRating";
@@ -32,9 +27,10 @@ export const DeleteMedia = (): JSX.Element => {
 
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("mediaId") as string;
-        console.log(toDelete);
+        console.log("This is the ID I will remove:", toDelete);
         //Set the color of the star back to the original one
         setTrashColor("black");
+        // console.log("This is the ID", toDelete);
 
         // handleUserMedia(toDelete);
 
@@ -46,34 +42,34 @@ export const DeleteMedia = (): JSX.Element => {
         //To change the color of the star when the image can be dragged into the favoritesList
         setTrashColor("green");
     }
-    function handleOnDrag(e: React.DragEvent, newMedia: string) {
-        e.dataTransfer.setData("newMedia", newMedia);
-    }
+    // function handleOnDrag(e: React.DragEvent, mediaId: string) {
+    //     e.dataTransfer.setData("mediaId", mediaId);
+    // }
 
-    const MediaToButton = (
-        mediaItem: Media
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ): JSX.Element => {
-        return (
-            <div
-                key={mediaItem._id}
-                className="media-item"
-                data-testid="mediaItem"
-                draggable
-                onDragStart={(e) => handleOnDrag(e, mediaItem.title)}
-            >
-                <img src={mediaItem.image} alt={mediaItem.title} />
-                <div className="media-details">
-                    <p className="media-year" data-testid="mediaYear">
-                        {mediaItem.yearReleased}
-                    </p>
-                    <div className="media-rating">
-                        {<SpecialRating></SpecialRating>}
-                    </div>
-                </div>
-            </div>
-        );
-    };
+    // const MediaToButton = (
+    //     mediaItem: Media
+    //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // ): JSX.Element => {
+    //     return (
+    //         <div
+    //             key={mediaItem._id}
+    //             className="media-item"
+    //             data-testid="mediaItem"
+    //             draggable
+    //             onDragStart={(e) => handleOnDrag(e, mediaItem["_id"])}
+    //         >
+    //             <img src={mediaItem.image} alt={mediaItem.title} />
+    //             <div className="media-details">
+    //                 <p className="media-year" data-testid="mediaYear">
+    //                     {mediaItem.yearReleased}
+    //                 </p>
+    //                 <div className="media-rating">
+    //                     {<SpecialRating></SpecialRating>}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
+    // };
 
     return (
         <>

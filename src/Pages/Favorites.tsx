@@ -41,7 +41,7 @@ export const FavoritesPage = (): JSX.Element => {
                 data-testid="mediaItem"
                 draggable
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                onDragStart={(e) => handleOnDrag(e, mediaItem["title"]!)}
+                onDragStart={(e) => handleOnDrag(e, mediaItem["_id"]!)}
             >
                 <img src={mediaItem.image} alt={mediaItem.title} />
                 <div className="media-details">
