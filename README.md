@@ -3,8 +3,10 @@
 ## How to run locally
 
 - Checkout code: `git clone https://github.com/talhaMahmood1992/final-project-starter.git`
+- Backend: 'https://github.com/Abdulrahman-Abdulhamid/team16backend'
 - Install dependencies: `npm install`
 - Run Server: `npm run start`
+
 
 ## Personas
 
