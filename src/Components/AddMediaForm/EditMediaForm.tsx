@@ -70,6 +70,7 @@ export const EditMediaForm = (props: EditMediaFormProps): JSX.Element => {
         resolver: yupResolver(schema)
     });
     const onSubmit = (data: EditSubmitForm): void => {
+        console.log(props.media.image);
         if (data.image.endsWith(".jpg")) {
             const createdMedia = {
                 title: props.media.title,
