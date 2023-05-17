@@ -1,87 +1,65 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import { mediaData } from "../MediaData";
 import { Media } from "../Interfaces";
 import { SpecialRating } from "./MediaRating";
+import { CurrentUserContext } from "../store/currentUserContext";
+import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
+import { getUserWatchlists } from "../api/usersApi";
+import { MediaInterface } from "../interfaces/MediaInterface";
+import { DeleteUserMedia } from "./UserMedia/DeleteUserMedia";
 export const DeleteMedia = (): JSX.Element => {
     const [trashColor, setTrashColor] = useState<string>("black");
+    const { currentUser } = useContext(CurrentUserContext);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [watched, toWatch, loading, error, setWatched, setToWatch] =
+        useFetchWatchlists(getUserWatchlists, currentUser?._id);
 
-    // const [userMedia, setUserMedia] = useState<Media[]>([
-    //     ...getWatchedList(getUserByUsername(props.userName))
-    // ]);
-    function handleUserMedia(toDelete: string) {
-        // setUserMedia([
-        //     ...updateDeletedWatchedMedia(props.userName, {
-        //         ...FindMedia(toDelete)
-        //     })
-        // ]);
-    }
-
-    function FindMedia(searchTerm: string) {
-        const filteredData = mediaData.filter(
-            (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
+    function handleUserMedia(toDelete: MediaInterface) {
+        console.log("Will delete media ", toDelete, " from", toWatch);
+        let indexToRemove = toWatch.findIndex(
+            (media) => media._id === toDelete._id
         );
-        return filteredData[0];
+
+        if (indexToRemove >= 0) {
+            console.log("To Watch before del", toWatch);
+
+            toWatch.splice(indexToRemove, 1); // remove the element at indexToRemove
+            console.log("To Watch after del", toWatch);
+            setToWatch([...toWatch]);
+        } else {
+            indexToRemove = watched.findIndex(
+                (media) => media._id === toDelete._id
+            );
+            console.log("Before del", watched);
+
+            watched.splice(indexToRemove, 1); // remove the element at indexToRemove
+            console.log("After del", watched);
+
+            setWatched([...watched]);
+        }
     }
 
     function handleOnDrop(e: React.DragEvent) {
         const toDelete = e.dataTransfer.getData("mediaId") as string;
-        console.log("This is the ID I will remove:", toDelete);
-        //Set the color of the star back to the original one
+        const searchInToWatch = toWatch.find((media) => media._id === toDelete);
+        const searchInWatched = watched.find((media) => media._id === toDelete);
+
+        if (searchInToWatch) {
+            handleUserMedia(searchInToWatch);
+        } else {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            handleUserMedia(searchInWatched!);
+        }
+
         setTrashColor("black");
-        // console.log("This is the ID", toDelete);
-
-        // handleUserMedia(toDelete);
-
-        // setUserMedia([...getWatchedList(getUserByUsername(props.userName))]);
-        // window.location.reload();
     }
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
-        //To change the color of the star when the image can be dragged into the favoritesList
         setTrashColor("green");
     }
-    // function handleOnDrag(e: React.DragEvent, mediaId: string) {
-    //     e.dataTransfer.setData("mediaId", mediaId);
-    // }
-
-    // const MediaToButton = (
-    //     mediaItem: Media
-    //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    // ): JSX.Element => {
-    //     return (
-    //         <div
-    //             key={mediaItem._id}
-    //             className="media-item"
-    //             data-testid="mediaItem"
-    //             draggable
-    //             onDragStart={(e) => handleOnDrag(e, mediaItem["_id"])}
-    //         >
-    //             <img src={mediaItem.image} alt={mediaItem.title} />
-    //             <div className="media-details">
-    //                 <p className="media-year" data-testid="mediaYear">
-    //                     {mediaItem.yearReleased}
-    //                 </p>
-    //                 <div className="media-rating">
-    //                     {<SpecialRating></SpecialRating>}
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // };
-
     return (
         <>
-            {/* <div
-                className="media-list-container"
-                data-testid="mediaListContainer"
-            >
-                <div className="media-list">
-                    {userMedia.map((mediaItem) => MediaToButton(mediaItem))}
-                </div>
-            </div> */}
-
             <div
                 className="header-container"
                 onDrop={handleOnDrop}
@@ -91,6 +69,10 @@ export const DeleteMedia = (): JSX.Element => {
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
             </div>
+            <DeleteUserMedia
+                toWatchMedia={[...toWatch]}
+                watchedMedia={[...watched]}
+            ></DeleteUserMedia>
             {/* {console.log(userMedia)} */}
         </>
     );

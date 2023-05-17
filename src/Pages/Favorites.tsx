@@ -5,6 +5,7 @@ import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { SpecialRating } from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/RemoveMedia";
+import { nanoid } from "nanoid";
 
 export const FavoritesPage = (): JSX.Element => {
     const { currentUser } = useContext(CurrentUserContext);
@@ -20,7 +21,6 @@ export const FavoritesPage = (): JSX.Element => {
     }
 
     function handleOnDropToWatch(e: React.DragEvent) {
-        console.log("here ");
         const MediaToMove = e.dataTransfer.getData("mediaId") as string;
         console.log(MediaToMove, "Will be added to ToWatch");
     }
@@ -36,7 +36,7 @@ export const FavoritesPage = (): JSX.Element => {
     ): JSX.Element => {
         return (
             <div
-                key={mediaItem["mediaId"]}
+                key={nanoid()}
                 className="media-item"
                 data-testid="mediaItem"
                 draggable

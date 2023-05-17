@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Role } from "../Interfaces";
 import { UserInterface } from "../interfaces/UserInterface";
@@ -12,6 +13,7 @@ interface DeleteUserProps {
 }
 
 export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [usersList, loading, error, setUsersList] = useFetchList(
         getUsersList,
         "users"

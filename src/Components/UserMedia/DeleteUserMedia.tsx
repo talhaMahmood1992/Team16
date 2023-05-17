@@ -6,11 +6,11 @@ import { useFetchWatchlists } from "../../hooks/useFetchWatchlists";
 import { MediaInterface } from "../../interfaces/MediaInterface";
 import { removeImageFromMedia, removeMediaId } from "../../utils/media-config";
 import "./SaveButton.css";
-interface toWatchProps {
+interface DeleteMediaProps {
     toWatchMedia: MediaInterface[];
     watchedMedia: MediaInterface[];
 }
-export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
+export const DeleteUserMedia = (props: DeleteMediaProps): JSX.Element => {
     const [isSaving, setIsSaving] = useState(false);
 
     const { currentUser } = useContext(CurrentUserContext);
@@ -21,8 +21,8 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const saveData = async () => {
         setIsSaving(true);
 
-        let updatedWatched = [...watched, ...props.watchedMedia];
-        let updatedToWatch = [...toWatch, ...props.toWatchMedia];
+        let updatedWatched = [...props.watchedMedia];
+        let updatedToWatch = [...props.toWatchMedia];
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
         updatedToWatch = removeImageFromMedia(updatedToWatch);

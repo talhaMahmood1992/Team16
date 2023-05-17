@@ -48,10 +48,11 @@ export const BrowseMedia = ({
     // const [isSaving, setIsSaving] = useState(false);
 
     function FindMedia(searchTerm: string) {
-        const filteredData = mediaList.filter(
+        const filteredData: MediaInterface[] = mediaList.filter(
             (media) => media["title"] === searchTerm
         );
-        return filteredData[0];
+        const media: MediaInterface = { ...filteredData[0] };
+        return media;
     }
 
     function handleToWatchDrop(e: React.DragEvent) {
@@ -60,7 +61,6 @@ export const BrowseMedia = ({
         if (FindMedia(mediaRecieved)["title"] !== "") {
             setToWatchMedia([...toWatchMedia, FindMedia(mediaRecieved)]);
         }
-        console.log("toWatch", toWatchMedia);
         // updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
         setStarColor("green");
         setWatchColor("black");
@@ -71,7 +71,6 @@ export const BrowseMedia = ({
         if (FindMedia(mediaRecieved)["title"] !== "") {
             setWatchedMedia([...watchedMedia, FindMedia(mediaRecieved)]);
         }
-        console.log("Watched", watchedMedia);
 
         setStarColor("black");
         setWatchColor("green");
@@ -82,7 +81,6 @@ export const BrowseMedia = ({
         if (!superTitles.includes(newEdit)) {
             setEdits([...edits, newEdit]);
             handleEdits([...edits, newEdit]);
-            console.log([...edits, newEdit]);
             setStarColor("black");
         }
     }
