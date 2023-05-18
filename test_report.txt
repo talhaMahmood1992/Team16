@@ -1,94 +1,166 @@
 
 > react-typescript-starter@0.1.0 test
-> react-scripts test --coverage
+> react-scripts test --transformIgnorePatterns "node_modules/(?!axios)/" --coverage
 
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/Testing/MediaRating.test.tsx
+PASS src/Testing/MediaRating.test.tsx (8.112 s)
 PASS src/Testing/FilterButton.test.tsx
 PASS src/Testing/SearchBar.test.tsx
-------------------------------------|---------|----------|---------|---------|-------------------
-File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------------------------|---------|----------|---------|---------|-------------------
-All files                           |    8.72 |     9.74 |    9.75 |    8.65 |                   
- src                                |       0 |        0 |       0 |       0 |                   
-  App.tsx                           |       0 |        0 |       0 |       0 | 6-10              
-  Interfaces.tsx                    |       0 |        0 |       0 |       0 |                   
-  Router.tsx                        |       0 |        0 |       0 |       0 | 18-82             
- src/Components                     |    3.84 |    11.76 |    9.09 |    3.84 |                   
-  DeleteMedia.tsx                   |       0 |        0 |       0 |       0 | 13-69             
-  MediaRating.tsx                   |   28.57 |       50 |      40 |   28.57 | 14-26             
-  RenderMedia.tsx                   |       0 |        0 |       0 |       0 | 11-81             
- src/Components/FilterByGenre       |       0 |      100 |       0 |       0 |                   
-  FilterByGenre.tsx                 |       0 |      100 |       0 |       0 | 19-52             
-  FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                 
- src/Components/Forms/AddMediaForm  |       0 |      100 |       0 |       0 |                   
-  AddMediaForm.tsx                  |       0 |      100 |       0 |       0 | 10-83             
-  AddMediaFormSchema.ts             |       0 |      100 |     100 |       0 | 3-4               
- src/Components/Forms/AddUserForm   |       0 |      100 |       0 |       0 |                   
-  AddUserForm.tsx                   |       0 |      100 |       0 |       0 | 9-33              
-  AddUserFormSchema.ts              |       0 |      100 |     100 |       0 | 3                 
- src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                   
-  EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91             
-  EditMediaFromSchema.ts            |       0 |      100 |     100 |       0 | 3-4               
- src/Components/Forms/UserEditMedia |       0 |        0 |       0 |       0 |                   
-  UserEditMedia.tsx                 |       0 |        0 |       0 |       0 | 17-100            
-  UserEditMediaSchema.ts            |       0 |      100 |     100 |       0 | 3-4               
- src/Components/HeroSeciton         |       0 |      100 |       0 |       0 |                   
-  ActiveUsers.tsx                   |       0 |      100 |       0 |       0 | 4-5               
-  HeroSection.tsx                   |       0 |      100 |       0 |       0 | 6-7               
- src/Components/SearchAndFilter     |     100 |      100 |     100 |     100 |                   
-  FilterButton.tsx                  |     100 |      100 |     100 |     100 |                   
-  SearchBar.tsx                     |     100 |      100 |     100 |     100 |                   
- src/Components/Settings            |       0 |        0 |       0 |       0 |                   
-  Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61             
- src/Components/Slider              |       0 |      100 |       0 |       0 |                   
-  Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10              
- src/Components/SortByRating        |       0 |        0 |       0 |       0 |                   
-  SortByRating.tsx                  |       0 |        0 |       0 |       0 | 11-27             
- src/Components/UserMedia           |       0 |        0 |       0 |       0 |                   
-  DeleteUserMedia.tsx               |       0 |        0 |       0 |       0 | 12-56             
-  UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55             
-  UpdateUserMedia.tsx               |       0 |        0 |       0 |       0 | 16-61             
- src/Layout                         |       0 |        0 |       0 |       0 |                   
-  MainHeader.tsx                    |       0 |      100 |       0 |       0 | 10-13             
-  MainNavigation.tsx                |       0 |        0 |       0 |       0 | 16-22             
- src/Pages                          |       0 |        0 |       0 |       0 |                   
-  AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17             
-  AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74             
-  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56             
-  EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12             
-  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-174            
-  HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5               
-  LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5               
-  NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16              
- src/UI                             |      70 |     62.5 |   66.66 |   68.96 |                   
-  BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34             
-  Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39             
- src/api                            |       0 |        0 |       0 |       0 |                   
-  mediaApi.ts                       |       0 |      100 |       0 |       0 | 6-26              
-  usersApi.ts                       |       0 |        0 |       0 |       0 | 5-47              
- src/constants                      |       0 |      100 |     100 |       0 |                   
-  endpoints.ts                      |       0 |      100 |     100 |       0 | 1-5               
- src/hooks                          |       0 |        0 |       0 |       0 |                   
-  useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23              
-  useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32              
-  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-37              
- src/interfaces                     |       0 |        0 |       0 |       0 |                   
-  MediaInterface.ts                 |       0 |        0 |       0 |       0 |                   
-  UserInterface.ts                  |       0 |        0 |       0 |       0 |                   
- src/store                          |       0 |      100 |       0 |       0 |                   
-  currentUserContext.tsx            |       0 |      100 |       0 |       0 | 13-22             
- src/utils                          |       0 |      100 |       0 |       0 |                   
-  api-config.ts                     |       0 |      100 |     100 |       0 | 1                 
-  api.ts                            |       0 |      100 |     100 |       0 | 4                 
-  media-config.ts                   |       0 |      100 |       0 |       0 | 5-39              
-------------------------------------|---------|----------|---------|---------|-------------------
+PASS src/Testing/AddUserForm.test.tsx
+PASS src/Testing/RenderMedia.test.tsx
+PASS src/Testing/ActiveUsers.test.tsx
+PASS src/Testing/AddMediaForm.test.tsx
+------------------------------------|---------|----------|---------|---------|-----------------------------
+File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
+------------------------------------|---------|----------|---------|---------|-----------------------------
+All files                           |    17.1 |    11.03 |   15.85 |   17.13 |                             
+ src                                |       0 |        0 |       0 |       0 |                             
+  App.tsx                           |       0 |        0 |       0 |       0 | 6-10                        
+  Interfaces.tsx                    |       0 |        0 |       0 |       0 |                             
+  Router.tsx                        |       0 |        0 |       0 |       0 | 18-82                       
+ src/Components                     |   19.23 |    23.52 |   27.27 |   19.23 |                             
+  DeleteMedia.tsx                   |       0 |        0 |       0 |       0 | 13-69                       
+  MediaRating.tsx                   |   28.57 |       50 |      40 |   28.57 | 14-26                       
+  RenderMedia.tsx                   |   47.05 |       40 |   44.44 |   47.05 | 11,24-44,61-68              
+ src/Components/FilterByGenre       |       0 |      100 |       0 |       0 |                             
+  FilterByGenre.tsx                 |       0 |      100 |       0 |       0 | 19-52                       
+  FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                           
+ src/Components/Forms/AddMediaForm  |   61.53 |      100 |   66.66 |   61.53 |                             
+  AddMediaForm.tsx                  |   54.54 |      100 |   66.66 |   54.54 | 41-49                       
+  AddMediaFormSchema.ts             |     100 |      100 |     100 |     100 |                             
+ src/Components/Forms/AddUserForm   |   77.77 |      100 |     100 |   77.77 |                             
+  AddUserForm.tsx                   |      75 |      100 |     100 |      75 | 27-29                       
+  AddUserFormSchema.ts              |     100 |      100 |     100 |     100 |                             
+ src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                             
+  EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91                       
+  EditMediaFromSchema.ts            |       0 |      100 |     100 |       0 | 3-4                         
+ src/Components/Forms/UserEditMedia |       0 |        0 |       0 |       0 |                             
+  UserEditMedia.tsx                 |       0 |        0 |       0 |       0 | 17-100                      
+  UserEditMediaSchema.ts            |       0 |      100 |     100 |       0 | 3-4                         
+ src/Components/HeroSeciton         |      50 |      100 |      50 |      50 |                             
+  ActiveUsers.tsx                   |     100 |      100 |     100 |     100 |                             
+  HeroSection.tsx                   |       0 |      100 |       0 |       0 | 6-7                         
+ src/Components/SearchAndFilter     |     100 |      100 |     100 |     100 |                             
+  FilterButton.tsx                  |     100 |      100 |     100 |     100 |                             
+  SearchBar.tsx                     |     100 |      100 |     100 |     100 |                             
+ src/Components/Settings            |       0 |        0 |       0 |       0 |                             
+  Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61                       
+ src/Components/Slider              |       0 |      100 |       0 |       0 |                             
+  Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10                        
+ src/Components/SortByRating        |       0 |        0 |       0 |       0 |                             
+  SortByRating.tsx                  |       0 |        0 |       0 |       0 | 11-27                       
+ src/Components/UserMedia           |       0 |        0 |       0 |       0 |                             
+  DeleteUserMedia.tsx               |       0 |        0 |       0 |       0 | 12-56                       
+  UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55                       
+  UpdateUserMedia.tsx               |       0 |        0 |       0 |       0 | 16-61                       
+ src/Layout                         |       0 |        0 |       0 |       0 |                             
+  MainHeader.tsx                    |       0 |      100 |       0 |       0 | 10-13                       
+  MainNavigation.tsx                |       0 |        0 |       0 |       0 | 16-22                       
+ src/Pages                          |       0 |        0 |       0 |       0 |                             
+  AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17                       
+  AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17                       
+  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74                       
+  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56                       
+  EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12                       
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-174                      
+  HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5                         
+  LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5                         
+  NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16                        
+ src/UI                             |      70 |     62.5 |   66.66 |   68.96 |                             
+  BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34                       
+  Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39                       
+ src/api                            |   44.11 |        0 |    9.09 |   45.45 |                             
+  mediaApi.ts                       |   45.45 |      100 |       0 |   45.45 | 9,13,20-21,25-26            
+  usersApi.ts                       |   43.47 |        0 |   14.28 |   45.45 | 8-9,13-14,24-29,36-37,46-47 
+ src/constants                      |     100 |      100 |     100 |     100 |                             
+  endpoints.ts                      |     100 |      100 |     100 |     100 |                             
+ src/hooks                          |       0 |        0 |       0 |       0 |                             
+  useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23                        
+  useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32                        
+  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-37                        
+ src/interfaces                     |       0 |        0 |       0 |       0 |                             
+  MediaInterface.ts                 |       0 |        0 |       0 |       0 |                             
+  UserInterface.ts                  |       0 |        0 |       0 |       0 |                             
+ src/store                          |      50 |      100 |       0 |      50 |                             
+  currentUserContext.tsx            |      50 |      100 |       0 |      50 | 20-22                       
+ src/utils                          |    9.52 |      100 |       0 |   11.76 |                             
+  api-config.ts                     |     100 |      100 |     100 |     100 |                             
+  api.ts                            |     100 |      100 |     100 |     100 |                             
+  media-config.ts                   |       0 |      100 |       0 |       0 | 5-39                        
+------------------------------------|---------|----------|---------|---------|-----------------------------
 
-Test Suites: 3 passed, 3 total
-Tests:       24 passed, 24 total
+Test Suites: 7 passed, 7 total
+Tests:       45 passed, 45 total
 Snapshots:   0 total
-Time:        4.834 s
+Time:        21.631 s
 Ran all test suites.
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "AxiosError {
+      message: 'Request failed with status code 400',
+      name: 'AxiosError',
+      code: 'ERR_BAD_REQUEST',
+      config: {
+        transitional: {
+          silentJSONParsing: true,
+          forcedJSONParsing: true,
+          clarifyTimeoutError: false
+        },
+        adapter: [ 'xhr', 'http' ],
+        transformRequest: [ [Function: transformRequest] ],
+        transformResponse: [ [Function: transformResponse] ],
+        timeout: 0,
+        xsrfCookieName: 'XSRF-TOKEN',
+        xsrfHeaderName: 'X-XSRF-TOKEN',
+        maxContentLength: -1,
+        maxBodyLength: -1,
+        env: { FormData: [Function], Blob: [class Blob] },
+        validateStatus: [Function: validateStatus],
+        headers: AxiosHeaders {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        baseURL: 'https://team16-c5r2.onrender.com',
+        method: 'post',
+        url: '/users',
+        data: '{"username":"Hello","watched":[],"toWatch":[],"role":"Default"}'
+      },
+      request: XMLHttpRequest {},
+      response: {
+        data: { status: 'fail', message: [Object] },
+        status: 400,
+        statusText: 'Bad Request',
+        headers: AxiosHeaders {
+          'content-type': 'application/json; charset=utf-8',
+          'content-length': '112'
+        },
+        config: {
+          transitional: [Object],
+          adapter: [Array],
+          transformRequest: [Array],
+          transformResponse: [Array],
+          timeout: 0,
+          xsrfCookieName: 'XSRF-TOKEN',
+          xsrfHeaderName: 'X-XSRF-TOKEN',
+          maxContentLength: -1,
+          maxBodyLength: -1,
+          env: [Object],
+          validateStatus: [Function: validateStatus],
+          headers: [AxiosHeaders],
+          baseURL: 'https://team16-c5r2.onrender.com',
+          method: 'post',
+          url: '/users',
+          data: '{"username":"Hello","watched":[],"toWatch":[],"role":"Default"}'
+        },
+        request: XMLHttpRequest {}
+      }
+    }".
+
+
+
+      at console.log (node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:281:15)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
