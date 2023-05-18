@@ -32,7 +32,7 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
     const { currentUser } = useContext(CurrentUserContext);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
-        useFetchWatchlists(getUserWatchlists, currentUser?._id);
+        useFetchWatchlists(getUserWatchlists, currentUser?._id, "");
 
     const saveData = async () => {
         setIsSaving(true);

@@ -10,13 +10,15 @@ import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 import { useNavigate } from "react-router-dom";
 import { FilterByGenre } from "../Components/FilterByGenre/FilterByGenre";
+import { SortByRating } from "../Components/SortByRating/SortByRating";
 
 export const FavoritesPage = (): JSX.Element => {
     const navigate = useNavigate();
     const { currentUser } = useContext(CurrentUserContext);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [ratingQuery, setRatingQuery] = useState<string>("");
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
-        useFetchWatchlists(getUserWatchlists, currentUser?._id);
+        useFetchWatchlists(getUserWatchlists, currentUser?._id, ratingQuery);
 
     const [filteredWatched, setFilteredWatched] = useState<MediaInterface[]>(
         []
@@ -90,6 +92,14 @@ export const FavoritesPage = (): JSX.Element => {
                     <p className="media-year" data-testid="mediaYear">
                         {mediaItem.yearReleased}
                     </p>
+                    <div className="media-rating">
+                        <RatingFeature rating={mediaItem.rating} />
+                    </div>
+                    <p>
+                        {mediaItem.genres[0]}
+                        {mediaItem.genres.length > 1 ? ", " : " "}
+                        {mediaItem.genres[1]}
+                    </p>
                     <button
                         onClick={() =>
                             navigate("/mediaRevision", {
@@ -104,9 +114,6 @@ export const FavoritesPage = (): JSX.Element => {
                     >
                         Edit Media
                     </button>
-                    <div className="media-rating">
-                        <RatingFeature rating={mediaItem.rating} />
-                    </div>
                 </div>
             </div>
         );
@@ -129,6 +136,7 @@ export const FavoritesPage = (): JSX.Element => {
                     setFilteredToWatch={setFilteredToWatch}
                 />
             )}
+            <SortByRating setRatingQuery={setRatingQuery} />
             {currentUser && currentUser.role === "Default" && (
                 <div
                     className="media-list-container"
