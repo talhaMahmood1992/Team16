@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import RatingFeature from "../Components/MediaRating";
 import "@testing-library/jest-dom/extend-expect";
+import RatingFeature from "../Components/MediaRating";
 
 //Test that the component renders without throwing an error:
 describe("RatingFeature tests", () => {

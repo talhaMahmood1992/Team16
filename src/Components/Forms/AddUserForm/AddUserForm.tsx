@@ -35,6 +35,7 @@ export const AddUserForm = (): JSX.Element => {
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
                 <label htmlFor="username">Username:</label>
                 <input
+                    id="username"
                     type="text"
                     placeholder="Username..."
                     {...register("username")}

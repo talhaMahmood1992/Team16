@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-import { SearchBar } from "../Components/SearchAndFilter/SearchBar";
 import "@testing-library/jest-dom/extend-expect";
+import { SearchBar } from "../Components/SearchAndFilter/SearchBar";
 
 test("renders SearchBar without errors", () => {
     const setSearchQuery = jest.fn();

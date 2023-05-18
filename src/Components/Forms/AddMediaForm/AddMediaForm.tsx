@@ -5,7 +5,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./AddMediaFormSchema";
 import { UserSubmitForm, mediaGenre } from "../../../Interfaces";
 import { addMedia } from "../../../api/mediaApi";
-/* eslint no-extra-parens: "off" */
 
 export const genreList: mediaGenre[] = [
     "Action",
@@ -59,6 +58,7 @@ export const AddMediaForm = (): JSX.Element => {
                     type="text"
                     placeholder="Media title..."
                     {...register("title")}
+                    data-testid="media-title-input"
                 />
                 <p>{errors.title?.message}</p>
 
@@ -67,11 +67,12 @@ export const AddMediaForm = (): JSX.Element => {
                     type="number"
                     placeholder="Year Released..."
                     {...register("yearReleased")}
+                    data-testid="year-released-input"
                 />
                 <p>{errors.yearReleased?.message}</p>
 
                 <label htmlFor="type">Media type:</label>
-                <select {...register("type")}>
+                <select {...register("type")} data-testid="media-type-select">
                     <option value="Movie">Movie</option>
                     <option value="Show">Show</option>
                 </select>
@@ -89,6 +90,7 @@ export const AddMediaForm = (): JSX.Element => {
                                     type="checkbox"
                                     {...register("genres")}
                                     value={genre}
+                                    data-testid={`genre-checkbox-${genre}`}
                                 />
                                 <label>{genre}</label>
                             </div>
@@ -102,6 +104,7 @@ export const AddMediaForm = (): JSX.Element => {
                     type="number"
                     placeholder="Rating..."
                     {...register("rating")}
+                    data-testid="rating-input"
                 />
                 <p>{errors.rating?.message}</p>
                 <input type="submit" />
@@ -109,6 +112,7 @@ export const AddMediaForm = (): JSX.Element => {
             <img
                 className={classes.image_holder}
                 src={require("../../../imgs/media-covers/default-media-img.jpg")}
+                alt="Media cover"
             />
         </div>
     );

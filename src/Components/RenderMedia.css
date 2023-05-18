@@ -75,3 +75,10 @@ ul {
 .remove-media-button svg {
     font-size: 3rem;
 }
+.dragging {
+    opacity: 0.5;
+}
+
+.droppable {
+    background-color: #606c61;
+}

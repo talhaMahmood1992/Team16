@@ -1,10 +1,10 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import {
     FilterButton,
     FilterProps
 } from "../Components/SearchAndFilter/FilterButton";
-import "@testing-library/jest-dom/extend-expect";
 
 describe("FilterButton component", () => {
     const setSearchQueryMock = jest.fn();
