@@ -22,7 +22,24 @@ export const DeleteUserMedia = (props: DeleteMediaProps): JSX.Element => {
         updatedWatched = removeImageFromMedia(updatedWatched);
         updatedWatched = removeMediaId(updatedWatched);
         updatedToWatch = removeImageFromMedia(updatedToWatch);
-
+        if (currentUser?.role === "Admin" || currentUser?.role === "Super") {
+            try {
+                await updateUser("645e8ce9a3aae9249f9fdf2f", {
+                    watched: updatedWatched,
+                    toWatch: updatedToWatch
+                });
+                await updateUser("645e8ce9a3aae9249f9fdf2e", {
+                    watched: updatedWatched,
+                    toWatch: updatedToWatch
+                });
+                console.log("updated user");
+            } catch (error) {
+                console.log(error);
+            }
+            setTimeout(() => {
+                setIsSaving(false);
+            }, 2000);
+        }
         try {
             await updateUser(currentUser?._id, {
                 watched: updatedWatched,
