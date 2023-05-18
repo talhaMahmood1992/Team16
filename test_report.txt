@@ -11,7 +11,7 @@ PASS src/Testing/SearchBar.test.tsx
 ------------------------------------|---------|----------|---------|---------|-------------------
 File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------------------|---------|----------|---------|---------|-------------------
-All files                           |    8.72 |     9.86 |    9.75 |    8.65 |                   
+All files                           |    8.72 |     9.74 |    9.75 |    8.65 |                   
  src                                |       0 |        0 |       0 |       0 |                   
   App.tsx                           |       0 |        0 |       0 |       0 | 6-10              
   Interfaces.tsx                    |       0 |        0 |       0 |       0 |                   
@@ -60,7 +60,7 @@ All files                           |    8.72 |     9.86 |    9.75 |    8.65 |
   BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74             
   DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56             
   EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12             
-  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-169            
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-174            
   HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16              
@@ -90,5 +90,5 @@ All files                           |    8.72 |     9.86 |    9.75 |    8.65 |
 Test Suites: 3 passed, 3 total
 Tests:       24 passed, 24 total
 Snapshots:   0 total
-Time:        6.641 s
+Time:        4.834 s
 Ran all test suites.

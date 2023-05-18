@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Team16/static/css/main.811aba80.css",
-    "main.js": "/Team16/static/js/main.0c892787.js",
+    "main.js": "/Team16/static/js/main.2b23a377.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland-drive.jpg": "/Team16/static/media/mulholland-drive.d988b4999281e7db8809.jpg",
     "static/media/the-matrix.jpg": "/Team16/static/media/the-matrix.874c36d00d9ec6af151c.jpg",
@@ -113,11 +113,11 @@
     "static/media/mr-robot.jpg": "/Team16/static/media/mr-robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
     "main.811aba80.css.map": "/Team16/static/css/main.811aba80.css.map",
-    "main.0c892787.js.map": "/Team16/static/js/main.0c892787.js.map",
+    "main.2b23a377.js.map": "/Team16/static/js/main.2b23a377.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.811aba80.css",
-    "static/js/main.0c892787.js"
+    "static/js/main.2b23a377.js"
   ]
 }
