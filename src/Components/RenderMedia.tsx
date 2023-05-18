@@ -34,7 +34,7 @@ export const mediaToElement = (
                 <p>
                     {mediaItem.genres[0]}
                     {mediaItem.genres.length > 1 ? ", " : " "}
-                    {mediaItem.genres[1]}
+                    {mediaItem.genres[1]}...
                 </p>
             </div>
             {currentUser && currentUser.role === "Super" && (

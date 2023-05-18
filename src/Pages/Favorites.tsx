@@ -92,6 +92,14 @@ export const FavoritesPage = (): JSX.Element => {
                     <p className="media-year" data-testid="mediaYear">
                         {mediaItem.yearReleased}
                     </p>
+                    <div className="media-rating">
+                        <RatingFeature rating={mediaItem.rating} />
+                    </div>
+                    <p>
+                        {mediaItem.genres[0]}
+                        {mediaItem.genres.length > 1 ? ", " : " "}
+                        {mediaItem.genres[1]}
+                    </p>
                     <button
                         onClick={() =>
                             navigate("/mediaRevision", {
@@ -106,9 +114,6 @@ export const FavoritesPage = (): JSX.Element => {
                     >
                         Edit Media
                     </button>
-                    <div className="media-rating">
-                        <RatingFeature rating={mediaItem.rating} />
-                    </div>
                 </div>
             </div>
         );
