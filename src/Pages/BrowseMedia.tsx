@@ -18,7 +18,6 @@ import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
 
 interface BrowseMediaProps {
     role: Role;
-    listOfMedia: Media[];
 }
 
 export const BrowseMedia = ({

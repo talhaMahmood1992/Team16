@@ -4,7 +4,6 @@ import { CurrentUserContextProvider } from "./store/currentUserContext";
 
 function App(): JSX.Element {
     const userId = localStorage.getItem("userId");
-    const [mediaList, setMediaList] = useState<Media[]>(mediaData);
     if (!userId) {
         localStorage.setItem("userId", "645fd04509b4ba6a7a37acc1");
     }

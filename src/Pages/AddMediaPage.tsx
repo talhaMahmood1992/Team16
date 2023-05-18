@@ -5,24 +5,19 @@ import { AddMediaForm } from "../Components/Forms/AddMediaForm/AddMediaForm";
 
 interface AddMediaPageProps {
     role: Role;
-    mediaList: Media[];
-    mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
 }
 
-export const AddMediaPage = (props: AddMediaPageProps): JSX.Element => {
+export const AddMediaPage = ({ role }: AddMediaPageProps): JSX.Element => {
     const navigate = useNavigate();
     useEffect(() => {
-        if (props.role !== "Super") {
+        if (role !== "Super") {
             navigate("/");
         }
-    }, [props.role]);
+    }, [role]);
     return (
         <>
             <h2 className="heading-secondary">Add Media</h2>
-            <AddMediaForm
-                mediaList={props.mediaList}
-                mediaSetter={props.mediaSetter}
-            />
+            <AddMediaForm />
         </>
     );
 };
