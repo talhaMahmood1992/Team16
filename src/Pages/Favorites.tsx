@@ -1,14 +1,15 @@
 /* eslint-disable no-extra-parens */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getUserWatchlists } from "../api/usersApi";
 import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import RatingFeature, { SpecialRating } from "../Components/MediaRating";
+import RatingFeature from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/DeleteMedia";
 import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 import { useNavigate } from "react-router-dom";
+import { FilterByGenre } from "../Components/FilterByGenre/FilterByGenre";
 
 export const FavoritesPage = (): JSX.Element => {
     const navigate = useNavigate();
@@ -16,6 +17,14 @@ export const FavoritesPage = (): JSX.Element => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [watched, toWatch, loading, error, setWatched, setToWatch] =
         useFetchWatchlists(getUserWatchlists, currentUser?._id);
+
+    const [filteredWatched, setFilteredWatched] = useState<MediaInterface[]>(
+        []
+    );
+    const [filteredToWatch, setFilteredToWatch] = useState<MediaInterface[]>(
+        []
+    );
+
     function handleOnDrag(e: React.DragEvent, mediaId: string) {
         e.dataTransfer.setData("mediaId", mediaId);
     }
@@ -61,11 +70,10 @@ export const FavoritesPage = (): JSX.Element => {
         }
     }
 
-    const updateEditedWatchedHandler = (mediaList: MediaInterface[]) => {
-        setWatched([]);
-        setToWatch([]);
-        console.log("in updaetEditedWatchedHandler");
-    };
+    useEffect(() => {
+        setFilteredWatched(watched);
+        setFilteredToWatch(toWatch);
+    }, [watched, toWatch]);
 
     const DragableMediaToButton = (mediaItem: MediaInterface): JSX.Element => {
         return (
@@ -114,6 +122,14 @@ export const FavoritesPage = (): JSX.Element => {
                 )}
             </section>
             {currentUser && currentUser.role === "Default" && (
+                <FilterByGenre
+                    watched={watched}
+                    toWatch={toWatch}
+                    setFilteredWatched={setFilteredWatched}
+                    setFilteredToWatch={setFilteredToWatch}
+                />
+            )}
+            {currentUser && currentUser.role === "Default" && (
                 <div
                     className="media-list-container"
                     data-testid="mediaListContainer"
@@ -126,7 +142,7 @@ export const FavoritesPage = (): JSX.Element => {
                     >
                         {!loading &&
                             !error &&
-                            toWatch.map((mediaItem) =>
+                            filteredToWatch.map((mediaItem) =>
                                 DragableMediaToButton(mediaItem)
                             )}
                     </div>
@@ -146,7 +162,7 @@ export const FavoritesPage = (): JSX.Element => {
                 >
                     {!loading &&
                         !error &&
-                        watched.map((mediaItem) =>
+                        filteredWatched.map((mediaItem) =>
                             DragableMediaToButton(mediaItem)
                         )}
                     <DeleteUserMedia
