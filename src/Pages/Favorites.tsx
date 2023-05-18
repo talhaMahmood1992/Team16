@@ -61,6 +61,12 @@ export const FavoritesPage = (): JSX.Element => {
         }
     }
 
+    const updateEditedWatchedHandler = (mediaList: MediaInterface[]) => {
+        setWatched([]);
+        setToWatch([]);
+        console.log("in updaetEditedWatchedHandler");
+    };
+
     const DragableMediaToButton = (mediaItem: MediaInterface): JSX.Element => {
         return (
             <div
@@ -76,23 +82,22 @@ export const FavoritesPage = (): JSX.Element => {
                     <p className="media-year" data-testid="mediaYear">
                         {mediaItem.yearReleased}
                     </p>
-                    {currentUser && currentUser.role !== "Default" && (
-                        <button
-                            onClick={() =>
-                                navigate("/mediaRevision", {
-                                    state: { mediaItem, watched }
-                                })
-                            }
-                        >
-                            Edit Media
-                        </button>
-                    )}
+                    <button
+                        onClick={() =>
+                            navigate("/mediaRevision", {
+                                state: {
+                                    mediaItem,
+                                    watched,
+                                    toWatch,
+                                    userId: currentUser?._id
+                                }
+                            })
+                        }
+                    >
+                        Edit Media
+                    </button>
                     <div className="media-rating">
-                        {currentUser && currentUser.role === "Default" ? (
-                            <SpecialRating />
-                        ) : (
-                            <RatingFeature rating={mediaItem.rating} />
-                        )}
+                        <RatingFeature rating={mediaItem.rating} />
                     </div>
                 </div>
             </div>
