@@ -123,14 +123,14 @@ export const FavoritesPage = (): JSX.Element => {
                     <h2 className="heading-secondary">Edit Media</h2>
                 )}
             </section>
-            {/* {currentUser && currentUser.role === "Default" && (
+            {currentUser && currentUser.role === "Default" && (
                 <FilterByGenre
                     watched={watched}
                     toWatch={toWatch}
                     setFilteredWatched={setFilteredWatched}
                     setFilteredToWatch={setFilteredToWatch}
                 />
-            )} */}
+            )}
             <SortByRating setRatingQuery={setRatingQuery} />
             {currentUser && currentUser.role === "Default" && (
                 <div
@@ -145,7 +145,7 @@ export const FavoritesPage = (): JSX.Element => {
                     >
                         {!loading &&
                             !error &&
-                            toWatch.map((mediaItem) =>
+                            filteredToWatch.map((mediaItem) =>
                                 DragableMediaToButton(mediaItem)
                             )}
                     </div>
@@ -165,7 +165,7 @@ export const FavoritesPage = (): JSX.Element => {
                 >
                     {!loading &&
                         !error &&
-                        watched.map((mediaItem) =>
+                        filteredWatched.map((mediaItem) =>
                             DragableMediaToButton(mediaItem)
                         )}
                     <DeleteUserMedia
