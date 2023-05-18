@@ -11,7 +11,7 @@ PASS src/Testing/SearchBar.test.tsx
 ------------------------------------|---------|----------|---------|---------|-------------------
 File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------------------|---------|----------|---------|---------|-------------------
-All files                           |    8.92 |     10.2 |    9.87 |    8.86 |                   
+All files                           |    8.72 |     9.86 |    9.75 |    8.65 |                   
  src                                |       0 |        0 |       0 |       0 |                   
   App.tsx                           |       0 |        0 |       0 |       0 | 6-10              
   Interfaces.tsx                    |       0 |        0 |       0 |       0 |                   
@@ -45,6 +45,8 @@ All files                           |    8.92 |     10.2 |    9.87 |    8.86 |
   Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61             
  src/Components/Slider              |       0 |      100 |       0 |       0 |                   
   Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10              
+ src/Components/SortByRating        |       0 |        0 |       0 |       0 |                   
+  SortByRating.tsx                  |       0 |        0 |       0 |       0 | 11-27             
  src/Components/UserMedia           |       0 |        0 |       0 |       0 |                   
   DeleteUserMedia.tsx               |       0 |        0 |       0 |       0 | 12-56             
   UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55             
@@ -58,22 +60,22 @@ All files                           |    8.92 |     10.2 |    9.87 |    8.86 |
   BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74             
   DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56             
   EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12             
-  Favorites.tsx                     |       0 |        0 |       0 |       0 | 14-166            
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-169            
   HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5               
   LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5               
   NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16              
  src/UI                             |      70 |     62.5 |   66.66 |   68.96 |                   
   BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34             
   Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39             
- src/api                            |       0 |      100 |       0 |       0 |                   
+ src/api                            |       0 |        0 |       0 |       0 |                   
   mediaApi.ts                       |       0 |      100 |       0 |       0 | 6-26              
-  usersApi.ts                       |       0 |      100 |       0 |       0 | 5-39              
+  usersApi.ts                       |       0 |        0 |       0 |       0 | 5-47              
  src/constants                      |       0 |      100 |     100 |       0 |                   
   endpoints.ts                      |       0 |      100 |     100 |       0 | 1-5               
  src/hooks                          |       0 |        0 |       0 |       0 |                   
   useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23              
   useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32              
-  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-36              
+  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-37              
  src/interfaces                     |       0 |        0 |       0 |       0 |                   
   MediaInterface.ts                 |       0 |        0 |       0 |       0 |                   
   UserInterface.ts                  |       0 |        0 |       0 |       0 |                   
@@ -88,5 +90,5 @@ All files                           |    8.92 |     10.2 |    9.87 |    8.86 |
 Test Suites: 3 passed, 3 total
 Tests:       24 passed, 24 total
 Snapshots:   0 total
-Time:        6.508 s
+Time:        6.641 s
 Ran all test suites.
