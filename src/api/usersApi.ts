@@ -16,8 +16,16 @@ export const getUser = async (userId: string) => {
 
 export const getInitialUser = async (userId: string) => await getUser(userId);
 
-export const getUserWatchlists = async (userId: string) => {
-    const endpoint = `${USERS}/${userId}/${WATCHLISTS}`;
+export const getUserWatchlists = async (
+    userId: string,
+    ratingQuery: string
+) => {
+    let endpoint;
+    if (ratingQuery) {
+        endpoint = `${USERS}/${userId}/${WATCHLISTS}${ratingQuery}`;
+    } else {
+        endpoint = `${USERS}/${userId}/${WATCHLISTS}`;
+    }
     return api.get(endpoint);
 };
 

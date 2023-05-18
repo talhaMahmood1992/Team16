@@ -4,7 +4,8 @@ import { addImageToMedia, addMediaId } from "../utils/media-config";
 
 export const useFetchWatchlists = (
     fetchFunction: any,
-    userId: string | undefined
+    userId: string | undefined,
+    ratingQuery?: string
 ) => {
     const [watched, setWatched] = useState<MediaInterface[]>([]);
     const [toWatch, setToWatch] = useState<MediaInterface[]>([]);
@@ -13,7 +14,7 @@ export const useFetchWatchlists = (
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await fetchFunction(userId);
+            const response = await fetchFunction(userId, ratingQuery);
             const responseData = response.data.data;
             responseData.watched = addImageToMedia(responseData.watched);
             responseData.watched = addMediaId(responseData.watched);
@@ -27,7 +28,7 @@ export const useFetchWatchlists = (
             setError(true);
         }
         setLoading(false);
-    }, []);
+    }, [ratingQuery]);
 
     useEffect(() => {
         fetchData();
