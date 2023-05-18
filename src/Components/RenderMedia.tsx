@@ -1,7 +1,5 @@
 /* eslint-disable no-extra-parens */
 import React, { useContext } from "react";
-//import { mediaData } from "../MediaData";
-//import MediaFeature from "../Components/MediaRatting";
 import RatingFeature from "./MediaRating";
 import "./RenderMedia.css"; // Import CSS file for styling
 import { MediaInterface } from "../interfaces/MediaInterface";
