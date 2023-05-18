@@ -41,7 +41,7 @@ export const FavoritesPage = (): JSX.Element => {
         );
         if (searchInToWatch) {
             const indexToRemove = watched.findIndex(
-                (media) => media._id === searchInToWatch._id
+                (media) => media["mediaId"] === searchInToWatch["mediaId"]
             );
 
             if (indexToRemove >= 0) {
@@ -60,7 +60,7 @@ export const FavoritesPage = (): JSX.Element => {
         );
         if (searchInToWatch) {
             const indexToRemove = toWatch.findIndex(
-                (media) => media._id === searchInToWatch._id
+                (media) => media["mediaId"] === searchInToWatch["mediaId"]
             );
 
             if (indexToRemove >= 0) {
