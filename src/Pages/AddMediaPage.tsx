@@ -16,7 +16,6 @@ export const AddMediaPage = ({ role }: AddMediaPageProps): JSX.Element => {
     }, [role]);
     return (
         <>
-            <h2 className="heading-secondary">Add Media</h2>
             <AddMediaForm />
         </>
     );
