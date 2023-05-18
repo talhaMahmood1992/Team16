@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Team16/static/css/main.4000256e.css",
-    "main.js": "/Team16/static/js/main.600825d6.js",
+    "main.css": "/Team16/static/css/main.9bde947c.css",
+    "main.js": "/Team16/static/js/main.fa3f7875.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland-drive.jpg": "/Team16/static/media/mulholland-drive.d988b4999281e7db8809.jpg",
     "static/media/the-matrix.jpg": "/Team16/static/media/the-matrix.874c36d00d9ec6af151c.jpg",
@@ -63,6 +63,7 @@
     "static/media/the-dark-knight.jpg": "/Team16/static/media/the-dark-knight.fc950b5e5098ebbfae7d.jpg",
     "static/media/the-dark-knight-rises.jpg": "/Team16/static/media/the-dark-knight-rises.92b2e09a6752e2aa2102.jpg",
     "static/media/lawrence-of-arabia.jpg": "/Team16/static/media/lawrence-of-arabia.eb0b0c1b36c964fbf516.jpg",
+    "static/media/default-media-img.jpg": "/Team16/static/media/default-media-img.d27672f1714576d53e30.jpg",
     "static/media/no-country-for-old-men.jpg": "/Team16/static/media/no-country-for-old-men.7b8a6b25f249d46c7238.jpg",
     "static/media/the-godfather.jpg": "/Team16/static/media/the-godfather.46c5bf54ba6255027658.jpg",
     "static/media/dog-media.jpg": "/Team16/static/media/dog-media.1354378e6461f59f993f.jpg",
@@ -111,12 +112,12 @@
     "static/media/fight-club.jpg": "/Team16/static/media/fight-club.9a3f1c7565a02e40be0a.jpg",
     "static/media/mr-robot.jpg": "/Team16/static/media/mr-robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
-    "main.4000256e.css.map": "/Team16/static/css/main.4000256e.css.map",
-    "main.600825d6.js.map": "/Team16/static/js/main.600825d6.js.map",
+    "main.9bde947c.css.map": "/Team16/static/css/main.9bde947c.css.map",
+    "main.fa3f7875.js.map": "/Team16/static/js/main.fa3f7875.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4000256e.css",
-    "static/js/main.600825d6.js"
+    "static/css/main.9bde947c.css",
+    "static/js/main.fa3f7875.js"
   ]
 }

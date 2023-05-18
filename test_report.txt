@@ -8,57 +8,85 @@ Browserslist: caniuse-lite is outdated. Please run:
 PASS src/Testing/MediaRating.test.tsx
 PASS src/Testing/FilterButton.test.tsx
 PASS src/Testing/SearchBar.test.tsx
-PASS src/Testing/RenderMedia.test.tsx
---------------------------------|---------|----------|---------|---------|-------------------
-File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   18.12 |    19.27 |   16.66 |   18.64 |                   
- src                            |       0 |        0 |       0 |       0 |                   
-  App.tsx                       |       0 |        0 |       0 |       0 | 20-44             
-  Interfaces.tsx                |       0 |        0 |       0 |       0 |                   
-  MediaData.tsx                 |       0 |        0 |       0 |       0 | 6-972             
-  UserData.tsx                  |       0 |        0 |       0 |       0 | 5-120             
- src/Components                 |   21.62 |       50 |   26.08 |   21.62 |                   
-  MediaRating.tsx               |   28.57 |       50 |      40 |   28.57 | 14-26             
-  RemoveMedia.tsx               |       0 |      100 |       0 |       0 | 15-87             
-  RenderMedia.tsx               |      75 |       50 |   66.66 |      75 | 9,18              
-  ReviewMedia.tsx               |       0 |      100 |       0 |       0 | 5-12              
- src/Components/AddMediaForm    |       0 |        0 |       0 |       0 |                   
-  AddMediaForm.tsx              |       0 |      100 |       0 |       0 | 38-64             
-  AddUserForm.tsx               |       0 |      100 |       0 |       0 | 11-30             
-  EditMediaForm.tsx             |       0 |        0 |       0 |       0 | 20-161            
-  FormSchema.tsx                |       0 |      100 |     100 |       0 | 4-5               
-  UserFormSchema.tsx            |       0 |      100 |     100 |       0 | 3-4               
- src/Components/HeroSeciton     |       0 |      100 |       0 |       0 |                   
-  ActiveUsers.tsx               |       0 |      100 |       0 |       0 | 4-5               
-  HeroSection.tsx               |       0 |      100 |       0 |       0 | 6-7               
- src/Components/SearchAndFilter |     100 |      100 |     100 |     100 |                   
-  FilterButton.tsx              |     100 |      100 |     100 |     100 |                   
-  SearchBar.tsx                 |     100 |      100 |     100 |     100 |                   
- src/Components/Settings        |       0 |        0 |       0 |       0 |                   
-  Settings.tsx                  |       0 |        0 |       0 |       0 | 16-33             
- src/Components/Slider          |       0 |      100 |       0 |       0 |                   
-  Slider.tsx                    |       0 |      100 |       0 |       0 | 9-10              
- src/Layout                     |       0 |        0 |       0 |       0 |                   
-  MainHeader.tsx                |       0 |      100 |       0 |       0 | 13-17             
-  MainNavigation.tsx            |       0 |        0 |       0 |       0 | 16-20             
- src/Pages                      |       0 |        0 |       0 |       0 |                   
-  AddMediaPage.tsx              |       0 |        0 |       0 |       0 | 12-19             
-  AddUser.tsx                   |       0 |        0 |       0 |       0 | 10-17             
-  BrowseMedia.tsx               |       0 |        0 |       0 |       0 | 25-122            
-  EditMedia.tsx                 |       0 |        0 |       0 |       0 | 13-82             
-  EditorInterface.tsx           |       0 |        0 |       0 |       0 | 14-21             
-  Favorites.tsx                 |       0 |      100 |       0 |       0 | 7-8               
-  HomePage.tsx                  |       0 |      100 |       0 |       0 | 4-5               
-  LearnMorePage.tsx             |       0 |      100 |       0 |       0 | 4-5               
-  NotFound.tsx                  |       0 |      100 |       0 |       0 | 5-16              
- src/UI                         |      70 |     62.5 |   66.66 |   68.96 |                   
-  BasicDropdown.tsx             |    91.3 |     62.5 |   88.88 |    90.9 | 35-36             
-  Modal.tsx                     |       0 |      100 |       0 |       0 | 20-39             
---------------------------------|---------|----------|---------|---------|-------------------
+------------------------------------|---------|----------|---------|---------|-------------------
+File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------------------|---------|----------|---------|---------|-------------------
+All files                           |    8.92 |     10.2 |    9.87 |    8.86 |                   
+ src                                |       0 |        0 |       0 |       0 |                   
+  App.tsx                           |       0 |        0 |       0 |       0 | 6-10              
+  Interfaces.tsx                    |       0 |        0 |       0 |       0 |                   
+  Router.tsx                        |       0 |        0 |       0 |       0 | 18-82             
+ src/Components                     |    3.84 |    11.76 |    9.09 |    3.84 |                   
+  DeleteMedia.tsx                   |       0 |        0 |       0 |       0 | 13-69             
+  MediaRating.tsx                   |   28.57 |       50 |      40 |   28.57 | 14-26             
+  RenderMedia.tsx                   |       0 |        0 |       0 |       0 | 11-81             
+ src/Components/FilterByGenre       |       0 |      100 |       0 |       0 |                   
+  FilterByGenre.tsx                 |       0 |      100 |       0 |       0 | 19-52             
+  FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                 
+ src/Components/Forms/AddMediaForm  |       0 |      100 |       0 |       0 |                   
+  AddMediaForm.tsx                  |       0 |      100 |       0 |       0 | 10-83             
+  AddMediaFormSchema.ts             |       0 |      100 |     100 |       0 | 3-4               
+ src/Components/Forms/AddUserForm   |       0 |      100 |       0 |       0 |                   
+  AddUserForm.tsx                   |       0 |      100 |       0 |       0 | 9-33              
+  AddUserFormSchema.ts              |       0 |      100 |     100 |       0 | 3                 
+ src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                   
+  EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91             
+  EditMediaFromSchema.ts            |       0 |      100 |     100 |       0 | 3-4               
+ src/Components/Forms/UserEditMedia |       0 |        0 |       0 |       0 |                   
+  UserEditMedia.tsx                 |       0 |        0 |       0 |       0 | 17-100            
+  UserEditMediaSchema.ts            |       0 |      100 |     100 |       0 | 3-4               
+ src/Components/HeroSeciton         |       0 |      100 |       0 |       0 |                   
+  ActiveUsers.tsx                   |       0 |      100 |       0 |       0 | 4-5               
+  HeroSection.tsx                   |       0 |      100 |       0 |       0 | 6-7               
+ src/Components/SearchAndFilter     |     100 |      100 |     100 |     100 |                   
+  FilterButton.tsx                  |     100 |      100 |     100 |     100 |                   
+  SearchBar.tsx                     |     100 |      100 |     100 |     100 |                   
+ src/Components/Settings            |       0 |        0 |       0 |       0 |                   
+  Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61             
+ src/Components/Slider              |       0 |      100 |       0 |       0 |                   
+  Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10              
+ src/Components/UserMedia           |       0 |        0 |       0 |       0 |                   
+  DeleteUserMedia.tsx               |       0 |        0 |       0 |       0 | 12-56             
+  UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55             
+  UpdateUserMedia.tsx               |       0 |        0 |       0 |       0 | 16-61             
+ src/Layout                         |       0 |        0 |       0 |       0 |                   
+  MainHeader.tsx                    |       0 |      100 |       0 |       0 | 10-13             
+  MainNavigation.tsx                |       0 |        0 |       0 |       0 | 16-22             
+ src/Pages                          |       0 |        0 |       0 |       0 |                   
+  AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17             
+  AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17             
+  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74             
+  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56             
+  EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12             
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 14-166            
+  HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5               
+  LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5               
+  NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16              
+ src/UI                             |      70 |     62.5 |   66.66 |   68.96 |                   
+  BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34             
+  Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39             
+ src/api                            |       0 |      100 |       0 |       0 |                   
+  mediaApi.ts                       |       0 |      100 |       0 |       0 | 6-26              
+  usersApi.ts                       |       0 |      100 |       0 |       0 | 5-39              
+ src/constants                      |       0 |      100 |     100 |       0 |                   
+  endpoints.ts                      |       0 |      100 |     100 |       0 | 1-5               
+ src/hooks                          |       0 |        0 |       0 |       0 |                   
+  useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23              
+  useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32              
+  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-36              
+ src/interfaces                     |       0 |        0 |       0 |       0 |                   
+  MediaInterface.ts                 |       0 |        0 |       0 |       0 |                   
+  UserInterface.ts                  |       0 |        0 |       0 |       0 |                   
+ src/store                          |       0 |      100 |       0 |       0 |                   
+  currentUserContext.tsx            |       0 |      100 |       0 |       0 | 13-22             
+ src/utils                          |       0 |      100 |       0 |       0 |                   
+  api-config.ts                     |       0 |      100 |     100 |       0 | 1                 
+  api.ts                            |       0 |      100 |     100 |       0 | 4                 
+  media-config.ts                   |       0 |      100 |       0 |       0 | 5-39              
+------------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 4 passed, 4 total
-Tests:       29 passed, 29 total
+Test Suites: 3 passed, 3 total
+Tests:       24 passed, 24 total
 Snapshots:   0 total
-Time:        5.334 s
+Time:        6.508 s
 Ran all test suites.
