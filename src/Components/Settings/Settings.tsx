@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable no-extra-parens */
 import React, { useContext } from "react";
 import Modal from "../../UI/Modal";
 import { IoMdSettings } from "react-icons/io";

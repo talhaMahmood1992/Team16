@@ -2,7 +2,6 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
-import { mediaData } from "../MediaData";
 import { Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import "./Header.css";
@@ -17,21 +16,14 @@ import { MediaInterface } from "../interfaces/MediaInterface";
 import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
 import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
 
-interface FavoriteMediaProps {
-    //UserName of the CurrentUser
-    userName: string;
-    superTitles: string[];
-    handleEdits: (titles: string[]) => void;
+interface BrowseMediaProps {
     role: Role;
 }
 
 export const BrowseMedia = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    userName,
-    superTitles,
-    handleEdits,
     role
-}: FavoriteMediaProps): JSX.Element => {
+}: BrowseMediaProps): JSX.Element => {
     const [searchQuery, setSearchQuery] = useState<string>("");
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [mediaList, loading, error, setMediaList] = useFetchList(
@@ -39,7 +31,6 @@ export const BrowseMedia = ({
         "media",
         searchQuery
     );
-    const [edits, setEdits] = useState<string[]>(superTitles);
     const [starColor, setStarColor] = useState<string>("black");
     const [toWatchMedia, setToWatchMedia] = useState<MediaInterface[]>([]);
     const [watchedMedia, setWatchedMedia] = useState<MediaInterface[]>([]);
@@ -69,15 +60,6 @@ export const BrowseMedia = ({
 
         setStarColor("black");
         setWatchColor("green");
-    }
-
-    function handleOnEditsDrop(e: React.DragEvent) {
-        const newEdit = e.dataTransfer.getData("newMedia") as string;
-        if (!superTitles.includes(newEdit)) {
-            setEdits([...edits, newEdit]);
-            handleEdits([...edits, newEdit]);
-            setStarColor("black");
-        }
     }
     //To change the color of the star when the image can be dragged into the favoritesList
     function handleDragOver(e: React.DragEvent) {
@@ -201,9 +183,3 @@ export const BrowseMedia = ({
         </section>
     );
 };
-export function FindMedia(searchTerm: string) {
-    const filteredData = mediaData.filter(
-        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
-    );
-    return filteredData[0];
-}

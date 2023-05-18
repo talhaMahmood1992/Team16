@@ -4,7 +4,7 @@ import { getUserWatchlists } from "../api/usersApi";
 import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
-import RatingFeature, { SpecialRating } from "../Components/MediaRating";
+import RatingFeature from "../Components/MediaRating";
 import { DeleteMedia } from "../Components/DeleteMedia";
 import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
@@ -60,12 +60,6 @@ export const FavoritesPage = (): JSX.Element => {
             }
         }
     }
-
-    const updateEditedWatchedHandler = (mediaList: MediaInterface[]) => {
-        setWatched([]);
-        setToWatch([]);
-        console.log("in updaetEditedWatchedHandler");
-    };
 
     const DragableMediaToButton = (mediaItem: MediaInterface): JSX.Element => {
         return (

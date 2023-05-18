@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-extra-parens */
 import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
@@ -6,7 +7,6 @@ import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { IoPencil } from "react-icons/io5";
 import classes from "./MainNavigation.module.css";
-import { Role } from "../Interfaces";
 import { CurrentUserContext } from "../store/currentUserContext";
 
 interface MainNavigationProps {

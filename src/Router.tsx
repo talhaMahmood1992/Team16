@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./Pages/HomePage";
 import { FavoritesPage } from "./Pages/Favorites";
 import { AddMediaPage } from "./Pages/AddMediaPage";
-import { EditMediaPage } from "./Pages/EditMedia";
 import { BrowseMedia } from "./Pages/BrowseMedia";
 import { LearnMorePage } from "./Pages/LearnMorePage";
 import { EditorInterface } from "./Pages/EditorInterface";
@@ -14,8 +13,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useFetchItem } from "./hooks/useFetchItem";
 import { getInitialUser } from "./api/usersApi";
 import { CurrentUserContext } from "./store/currentUserContext";
-import { Media } from "./Interfaces";
-import { mediaData } from "./MediaData";
 import { DeleteUser } from "./Pages/DeleteUser";
 
 export const Router = () => {
@@ -25,16 +22,9 @@ export const Router = () => {
     const [initialUser, loading] = useFetchItem(() => getInitialUser(userId!));
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
-    const [superList, setSuperList] = useState<string[]>([]);
-    const [changeMedia, setChangeMedia] = useState<Media>(mediaData[0]);
-
     // what is the name of the currentUser
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [currentUserName, setCurrentUserName] = useState<string>("Default");
-
-    function handleEdits(titles: string[]) {
-        setSuperList([...titles]);
-    }
 
     const showSettingsHandler = (): void => {
         setSettingsIsShown(true);
@@ -71,32 +61,13 @@ export const Router = () => {
                         element={<AddMediaPage role={role} />}
                     />
                     <Route
-                        path="/editMedia"
-                        element={
-                            <EditMediaPage
-                                role={role}
-                                titles={superList}
-                                setter={setChangeMedia}
-                            />
-                        }
-                    />
-                    <Route
                         path="/browseMedia"
-                        element={
-                            <BrowseMedia
-                                superTitles={superList}
-                                handleEdits={handleEdits}
-                                role={role}
-                                userName={currentUserName}
-                            />
-                        }
+                        element={<BrowseMedia role={role} />}
                     />
                     <Route path="/learnMorePage" element={<LearnMorePage />} />
                     <Route
                         path="/mediaRevision"
-                        element={
-                            <EditorInterface role={role} media={changeMedia} />
-                        }
+                        element={<EditorInterface role={role} />}
                     />
                     <Route path="/*" element={<NotFound />} />
                     <Route path="/AddUser" element={<AddUser role={role} />} />

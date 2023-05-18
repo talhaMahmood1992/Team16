@@ -6,8 +6,6 @@ import { schema } from "./UserEditMediaSchema";
 import { EditMediaSubmitForm, mediaGenre } from "../../../Interfaces";
 import { genreList } from "../AddMediaForm/AddMediaForm";
 import { MediaInterface } from "../../../interfaces/MediaInterface";
-import { getMediaData, updateMedia } from "../../../api/mediaApi";
-import slugify from "react-slugify";
 import { useLocation } from "react-router-dom";
 import { updateUser } from "../../../api/usersApi";
 import {
@@ -16,11 +14,7 @@ import {
 } from "../../../utils/media-config";
 /* eslint no-extra-parens: "off" */
 
-export const UserEditMediaForm = ({
-    media
-}: {
-    media: MediaInterface;
-}): JSX.Element => {
+export const UserEditMediaForm = (): JSX.Element => {
     const location = useLocation();
     const mediaItem = location.state.mediaItem;
     const watched = location.state.watched;
