@@ -1,85 +1,77 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-extra-parens */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Slider } from "../Components/Slider/Slider";
-import { mediaData } from "../MediaData";
-import { Media, Role } from "../Interfaces";
+import { Role } from "../Interfaces";
 import RenderMedia from "../Components/RenderMedia";
 import "./Header.css";
 import { FaStar } from "react-icons/fa";
 import { GiFlexibleLamp } from "react-icons/gi";
-import { updateWatchedMediaForUser } from "../UserData";
-import axios from "axios";
 import { SearchBar } from "../Components/SearchAndFilter/SearchBar";
 import { FilterButton } from "../Components/SearchAndFilter/FilterButton";
+import { useFetchList } from "../hooks/useFetchList";
+import { getMediaData } from "../api/mediaApi";
+import { VscWatch } from "react-icons/vsc";
+import { MediaInterface } from "../interfaces/MediaInterface";
+import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
+import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
 
-interface FavoriteMediaProps {
-    //UserName of the CurrentUser
-    userName: string;
-    superTitles: string[];
-    handleEdits: (titles: string[]) => void;
-    //Role of the current User
+interface BrowseMediaProps {
     role: Role;
     listOfMedia: Media[];
 }
 
 export const BrowseMedia = ({
-    userName,
-    superTitles,
-    handleEdits,
-    role,
-    listOfMedia
-}: FavoriteMediaProps): JSX.Element => {
-    //currently not necessary if we do not use a backend
-    const [mediaList, setMediaList] = useState<Media[]>(listOfMedia);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    role
+}: BrowseMediaProps): JSX.Element => {
     const [searchQuery, setSearchQuery] = useState<string>("");
-    // function handleRender(mediaList: Media[]) {
-    //     setMediaList([...mediaList]);
-    // }
-    const [edits, setEdits] = useState<string[]>(superTitles);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [mediaList, loading, error, setMediaList] = useFetchList(
+        getMediaData,
+        "media",
+        searchQuery
+    );
     const [starColor, setStarColor] = useState<string>("black");
-    const [favMedia, setFavMedia] = useState<Media[]>([]);
+    const [toWatchMedia, setToWatchMedia] = useState<MediaInterface[]>([]);
+    const [watchedMedia, setWatchedMedia] = useState<MediaInterface[]>([]);
+    const [watchColor, setWatchColor] = useState<string>("black");
 
-    function handleOnFavoritesDrop(e: React.DragEvent) {
-        const newFavorite = e.dataTransfer.getData("newMedia") as string;
-        //Update the state and then update the userData
-        setFavMedia([...favMedia, FindMedia(newFavorite)]);
-        updateWatchedMediaForUser(userName, [FindMedia(newFavorite)]);
-        setStarColor("black");
+    function FindMedia(searchTerm: string) {
+        const filteredData: MediaInterface[] = mediaList.filter(
+            (media) => media["title"] === searchTerm
+        );
+        const media: MediaInterface = { ...filteredData[0] };
+        return media;
     }
-    function handleOnEditsDrop(e: React.DragEvent) {
-        const newEdit = e.dataTransfer.getData("newMedia") as string;
-        if (!superTitles.includes(newEdit)) {
-            setEdits([...edits, newEdit]);
-            handleEdits([...edits, newEdit]);
-            setStarColor("black");
+
+    function handleToWatchDrop(e: React.DragEvent) {
+        const mediaRecieved = e.dataTransfer.getData("newMedia") as string;
+        if (FindMedia(mediaRecieved)["title"] !== "") {
+            setToWatchMedia([...toWatchMedia, FindMedia(mediaRecieved)]);
         }
+        setStarColor("green");
+        setWatchColor("black");
+    }
+    function handleWatchedDrop(e: React.DragEvent) {
+        const mediaRecieved = e.dataTransfer.getData("newMedia") as string;
+        if (FindMedia(mediaRecieved)["title"] !== "") {
+            setWatchedMedia([...watchedMedia, FindMedia(mediaRecieved)]);
+        }
+
+        setStarColor("black");
+        setWatchColor("green");
     }
     //To change the color of the star when the image can be dragged into the favoritesList
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
-        setStarColor("green");
+        setStarColor("black");
+        setWatchColor("black");
     }
-
-    useEffect(() => {
-        const getMediaData = async () => {
-            try {
-                const response = await axios.get(
-                    "https://team16-c5r2.onrender.com/media" + searchQuery
-                );
-                let mediaData: Media[] = response.data.data.media;
-                mediaData = mediaData.map((media) => ({
-                    ...media,
-                    image: require("../imgs/media-covers/" + media.image)
-                }));
-                setMediaList(mediaData);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        getMediaData();
-    }, [searchQuery]);
-
+    function handleColor() {
+        setStarColor("black");
+        setWatchColor("black");
+    }
     return (
         <section className="page">
             <div className="HeroSection_section_hero__bCGwu">
@@ -87,27 +79,104 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            <RenderMedia MediaData={searchQuery ? mediaList : listOfMedia} />
+            {!loading && (
+                <RenderMedia
+                    MediaData={mediaList}
+                    setMediaList={setMediaList}
+                />
+            )}
             {role !== "Super" && role !== "Admin" ? (
-                <div onDrop={handleOnFavoritesDrop} onDragOver={handleDragOver}>
-                    <div className="header-container">
-                        <h1>
-                            <FaStar style={{ color: starColor }} />
-                        </h1>
-                    </div>
-                    <br />
+                <div className="header-container">
+                    <h5>ToWatch</h5>
+                    <h1
+                        onDrop={handleToWatchDrop}
+                        onDragOver={handleDragOver}
+                        onDragEnd={handleColor}
+                    >
+                        <FaStar style={{ color: starColor }} />
+                    </h1>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h5>Watched</h5>
+                    <h1 onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
+                        <VscWatch style={{ color: watchColor }} />
+                    </h1>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <UpdateUserMedia
+                        toWatchMedia={toWatchMedia}
+                        watchedMedia={watchedMedia}
+                    ></UpdateUserMedia>
+                    ;
                 </div>
             ) : (
                 <></>
             )}
-
             {role === "Super" || role === "Admin" ? (
-                <div onDrop={handleOnEditsDrop} onDragOver={handleDragOver}>
-                    <div className="header-container">
-                        <GiFlexibleLamp
-                            style={{ color: starColor, fontSize: "24px" }}
-                        />
+                <div className="header-container">
+                    <div onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
+                        <div className="header-container">
+                            <GiFlexibleLamp
+                                style={{ color: starColor, fontSize: "24px" }}
+                            />
+                        </div>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <UpdateEditMedia
+                        watchedMedia={watchedMedia}
+                    ></UpdateEditMedia>
                 </div>
             ) : (
                 <></>
@@ -115,9 +184,3 @@ export const BrowseMedia = ({
         </section>
     );
 };
-export function FindMedia(searchTerm: string) {
-    const filteredData = mediaData.filter(
-        (media) => media.title.toLowerCase() === searchTerm.toLowerCase()
-    );
-    return filteredData[0];
-}

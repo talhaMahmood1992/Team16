@@ -1,22 +1,24 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-extra-parens */
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { IoPencil } from "react-icons/io5";
 import classes from "./MainNavigation.module.css";
-import { Role } from "../Interfaces";
+import { CurrentUserContext } from "../store/currentUserContext";
 
 interface MainNavigationProps {
     showSettingsHandler: () => void;
-    role: Role;
 }
 
 export const MainNavigation = ({
-    showSettingsHandler,
-    role
+    showSettingsHandler
 }: MainNavigationProps): JSX.Element => {
+    const { currentUser } = useContext(CurrentUserContext);
+    const { role, username } = currentUser!;
+
     return (
         <nav>
             <ul className={classes.main_nav_list}>
@@ -28,6 +30,17 @@ export const MainNavigation = ({
                         >
                             <IoSearchCircleSharp className={classes.icon} />
                             <span>Add Media</span>
+                        </NavLink>
+                    </li>
+                )}
+                {role === "Super" /* eslint-disable-line */ && ( //Now Add Media will only show for the Super
+                    <li>
+                        <NavLink
+                            to="/DeleteUser"
+                            className={classes.main_nav_link}
+                        >
+                            <IoSearchCircleSharp className={classes.icon} />
+                            <span>Delete User</span>
                         </NavLink>
                     </li>
                 )}
@@ -47,7 +60,7 @@ export const MainNavigation = ({
                 {role === "Admin" || role === "Super" ? (
                     <li>
                         <NavLink
-                            to="/editMedia"
+                            to="/mylists"
                             className={classes.main_nav_link}
                         >
                             <IoPencil className={classes.icon} />
@@ -76,7 +89,7 @@ export const MainNavigation = ({
                             onClick={showSettingsHandler}
                         >
                             <IoMdSettings className={classes.icon} />{" "}
-                            <span>{role}</span>
+                            <span>{username}</span>
                         </button>
                     </li>
                 )}

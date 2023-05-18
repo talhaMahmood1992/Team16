@@ -1,5 +1,6 @@
 //Types
 export type Role = "Default" | "Admin" | "Super";
+
 export type UserSubmitForm = {
     title: string;
     yearReleased: number;
@@ -7,10 +8,20 @@ export type UserSubmitForm = {
     type: mediaType;
     //genres: mediaGenre[];
     image: string;
+    genres: mediaGenre[];
 };
+
+export type EditMediaSubmitForm = {
+    genres: mediaGenre[];
+    rating: number;
+    type: mediaType;
+    yearReleased: number;
+};
+
 export type UserAddForm = {
     username: string;
 };
+
 export type mediaType = "Movie" | "Show";
 export type mediaGenre =
     | "Action"

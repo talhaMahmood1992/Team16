@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import classes from "./BasicDropdown.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 
-import { Role } from "../Interfaces";
-
 interface BasicDropdownProps {
     title: string;
-    items: (string | Role)[];
+    items: string[];
     onClick: (item: any) => void /* eslint-disable-line */;
 }
 
@@ -68,8 +66,8 @@ export const BasicDropdown = ({
 };
 
 interface DropdownItemProps {
-    onClick: (item: string | Role) => void;
-    text: string | Role;
+    onClick: (item: string) => void;
+    text: string;
     toggleDropdownHandler: () => void;
 }
 

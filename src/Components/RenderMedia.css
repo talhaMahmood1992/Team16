@@ -24,6 +24,7 @@ ul {
     padding: 0.625rem;
     background-color: var(--grey-1);
     color: #fff;
+    position: relative;
 }
 
 /* Style for the media item image */
@@ -55,17 +56,22 @@ ul {
     color: var(--primary);
     margin-top: 0.313rem;
 }
-.black-container {
-    position: fixed;
-    top: 0;
-    right: 0rem;
-    width: 10rem;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
+
+.remove-media-button {
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: -5%;
+    right: -7%;
+
+    transition: all 300ms;
 }
-.button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+
+.remove-media-button:hover {
+    color: red;
+}
+
+.remove-media-button svg {
+    font-size: 3rem;
 }

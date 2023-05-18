@@ -1,33 +1,19 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { EditMediaForm } from "../Components/AddMediaForm/EditMediaForm";
-import { Media, Role } from "../Interfaces";
+/* eslint-disable no-extra-parens */
+import React from "react";
+import { EditMediaForm } from "../Components/Forms/EditMediaForm/EditMediaForm";
+import { Role } from "../Interfaces";
+import { UserEditMediaForm } from "../Components/Forms/UserEditMedia/UserEditMedia";
 
 interface EditInterfaceProps {
     role: Role;
-    media: Media;
-    mediaSetter: React.Dispatch<React.SetStateAction<Media[]>>;
-    superSetter: React.Dispatch<React.SetStateAction<string[]>>;
-    superList: string[];
 }
 
 export const EditorInterface = (props: EditInterfaceProps): JSX.Element => {
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (props.role == "Default") {
-            navigate("/");
-        }
-    }, [props.role]);
     return (
         <>
             <h2 className="heading-secondary">Edit Media</h2>
-            <EditMediaForm
-                role={props.role}
-                media={props.media}
-                mediaSetter={props.mediaSetter}
-                superSetter={props.superSetter}
-                superList={props.superList}
-            />
+            {props.role !== "Default" && <EditMediaForm />}
+            {props.role === "Default" && <UserEditMediaForm />}
         </>
     );
 };
