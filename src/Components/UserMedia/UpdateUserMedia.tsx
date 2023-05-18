@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable no-extra-parens */
 import React, { useContext, useState } from "react";
 import { getUserWatchlists, updateUser } from "../../api/usersApi";
 import { CurrentUserContext } from "../../store/currentUserContext";
@@ -56,7 +55,6 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
             console.log(error);
         }
         setTimeout(() => {
-            // Save logic here...
             setIsSaving(false);
         }, 2000);
     };

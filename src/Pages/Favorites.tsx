@@ -5,7 +5,7 @@ import { CurrentUserContext } from "../store/currentUserContext";
 import { useFetchWatchlists } from "../hooks/useFetchWatchlists";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import RatingFeature, { SpecialRating } from "../Components/MediaRating";
-import { DeleteMedia } from "../Components/RemoveMedia";
+import { DeleteMedia } from "../Components/DeleteMedia";
 import { nanoid } from "nanoid";
 import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 import { useNavigate } from "react-router-dom";
@@ -61,10 +61,7 @@ export const FavoritesPage = (): JSX.Element => {
         }
     }
 
-    const DragableMediaToButton = (
-        mediaItem: MediaInterface
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ): JSX.Element => {
+    const DragableMediaToButton = (mediaItem: MediaInterface): JSX.Element => {
         return (
             <div
                 key={nanoid()}
@@ -147,7 +144,6 @@ export const FavoritesPage = (): JSX.Element => {
                         watched.map((mediaItem) =>
                             DragableMediaToButton(mediaItem)
                         )}
-                    <h3>Update the list</h3>
                     <DeleteUserMedia
                         toWatchMedia={toWatch}
                         watchedMedia={watched}
