@@ -6,10 +6,14 @@ import { schema } from "./AddUserFormSchema";
 import { UserAddForm } from "../../../Interfaces";
 import { addUser } from "../../../api/usersApi";
 import { LoadingSpinner } from "../../../UI/LoadingSpinner";
+import { ErrorDisplay } from "../../../UI/ErrorDisplay";
+import { SuccessfulDisplay } from "../../../UI/SuccessfulDisplay";
 /* eslint no-extra-parens: "off" */
 
 export const AddUserForm = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
     const {
         register,
@@ -21,6 +25,8 @@ export const AddUserForm = (): JSX.Element => {
     });
 
     const onSubmit = async (data: UserAddForm) => {
+        setIsSubmitted(true);
+        setError(false);
         setLoading(true);
         try {
             await addUser({
@@ -31,7 +37,7 @@ export const AddUserForm = (): JSX.Element => {
             });
             reset();
         } catch (error) {
-            console.log(error);
+            setError(true);
         }
         setLoading(false);
     };
@@ -55,8 +61,14 @@ export const AddUserForm = (): JSX.Element => {
                     <input type="submit" />
                 </form>
             </div>
-            {loading && (
+            {loading && !error && (
                 <LoadingSpinner message="Adding user..." color="yellow" />
+            )}
+            {!loading && error && (
+                <ErrorDisplay message="No duplicate Usernames" color="yellow" />
+            )}
+            {!loading && !error && isSubmitted && (
+                <SuccessfulDisplay message="Added User" color="yellow" />
             )}
         </div>
     );

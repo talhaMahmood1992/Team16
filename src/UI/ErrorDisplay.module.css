@@ -1,0 +1,39 @@
+.error_display_yellow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--grey-1);
+    padding: 1.5rem 0;
+}
+
+.error_display_black {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--primary);
+    padding: 1.5rem 0;
+}
+
+.error_text_black {
+    font-size: 2rem;
+    color: black;
+}
+
+.error_text_yellow {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.error_yellow svg {
+    font-size: 10rem;
+    color: var(--primary);
+}
+
+.error_black svg {
+    font-size: 10rem;
+    color: var(--grey-1);
+}
