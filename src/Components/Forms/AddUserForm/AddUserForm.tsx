@@ -6,6 +6,7 @@ import { schema } from "./AddUserFormSchema";
 import { UserAddForm } from "../../../Interfaces";
 import { addUser } from "../../../api/usersApi";
 import { LoadingSpinner } from "../../../UI/LoadingSpinner";
+/* eslint no-extra-parens: "off" */
 
 export const AddUserForm = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(false);

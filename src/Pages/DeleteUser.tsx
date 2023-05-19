@@ -8,6 +8,8 @@ import { deleteUser, getUsersList } from "../api/usersApi";
 import classes from "./DeleteUser.module.css";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 import { LoadingSpinner } from "../UI/LoadingSpinner";
+/* eslint no-extra-parens: "off" */
+/* eslint @typescript-eslint/no-unused-vars: "off" */
 
 interface DeleteUserProps {
     role: Role;
