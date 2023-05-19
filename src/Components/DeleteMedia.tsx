@@ -74,9 +74,10 @@ export const DeleteMedia = ({
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
-                <h1>
+                <h1 data-testid="trash-can">
                     <FaTrash style={{ color: trashColor }} />
                 </h1>
+                <p data-testid="Trash">Trash Here</p>
             </div>
         </>
     );

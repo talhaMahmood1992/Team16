@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Role } from "../Interfaces";
 import { UserInterface } from "../interfaces/UserInterface";
@@ -7,14 +7,18 @@ import { useFetchList } from "../hooks/useFetchList";
 import { deleteUser, getUsersList } from "../api/usersApi";
 import classes from "./DeleteUser.module.css";
 import { RiDeleteBack2Fill } from "react-icons/ri";
+import { LoadingSpinner } from "../UI/LoadingSpinner";
+/* eslint no-extra-parens: "off" */
+/* eslint @typescript-eslint/no-unused-vars: "off" */
 
 interface DeleteUserProps {
     role: Role;
 }
 
 export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [usersList, loading, error, setUsersList] = useFetchList(
+    // eslint-disable @typescript-eslint/no-unused-vars
+    const [deletingLoading, setDeletingLoading] = useState<boolean>(false);
+    const [usersList, usersLoading, error, setUsersList] = useFetchList(
         getUsersList,
         "users"
     );
@@ -27,6 +31,7 @@ export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
     }, [role]);
 
     const deleteUserHandler = async (userId: string) => {
+        setDeletingLoading(true);
         try {
             await deleteUser(userId);
             const updatedUsersList = usersList.filter(
@@ -36,13 +41,15 @@ export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
         } catch (error) {
             console.log(error);
         }
+        setDeletingLoading(false);
     };
 
     return (
         <>
             <h2 className="heading-secondary">Delete User</h2>
             <div className={classes.users_list}>
-                {!loading &&
+                {!usersLoading &&
+                    !deletingLoading &&
                     usersList.map((user: UserInterface) => {
                         if (user.role === "Default") {
                             return (
@@ -62,6 +69,15 @@ export const DeleteUser = ({ role }: DeleteUserProps): JSX.Element => {
                             );
                         }
                     })}
+                {usersLoading && !deletingLoading && (
+                    <LoadingSpinner
+                        message="fetching users..."
+                        color="yellow"
+                    />
+                )}
+                {deletingLoading && (
+                    <LoadingSpinner message="deleting user..." color="yellow" />
+                )}
             </div>
         </>
     );
