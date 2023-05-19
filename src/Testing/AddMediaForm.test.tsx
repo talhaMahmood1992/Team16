@@ -8,17 +8,17 @@ describe("AddMediaForm", () => {
         render(<AddMediaForm />);
     });
 
-    it("renders the rating input", () => {
+    it("renders the Media title", () => {
         const ratingInput = screen.getByTestId("Media-title");
         expect(ratingInput).toBeInTheDocument();
     });
 
-    it("renders the media title input", () => {
+    it("renders the media genre", () => {
         const mediaTitleInput = screen.getByTestId("media-genre");
         expect(mediaTitleInput).toBeInTheDocument();
     });
 
-    it("renders the media title input", () => {
+    it("renders the media released", () => {
         const mediaTitleInput = screen.getByTestId("year-released-input");
         expect(mediaTitleInput).toBeInTheDocument();
     });
@@ -27,7 +27,7 @@ describe("AddMediaForm", () => {
         const ratingInput = screen.getByTestId("rating-input");
         expect(ratingInput).toBeInTheDocument();
     });
-    it("renders the rating input", () => {
+    it("renders the rating Rating", () => {
         const ratingInput = screen.getByTestId("Rating");
         expect(ratingInput).toBeInTheDocument();
     });

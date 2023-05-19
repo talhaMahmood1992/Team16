@@ -11,7 +11,7 @@ describe("FilterByGenre", () => {
         jest.clearAllMocks();
     });
 
-    it("should render the 'filter' button", () => {
+    it("should render the 'Filter' button", () => {
         render(
             <FilterByGenre
                 watched={[]}
@@ -20,7 +20,7 @@ describe("FilterByGenre", () => {
                 setFilteredToWatch={mockSetFilteredToWatch}
             />
         );
-        expect(screen.getByText("filter")).toBeInTheDocument();
+        expect(screen.getByText("Filter")).toBeInTheDocument();
     });
 
     it("should render the FilterByGenre component", () => {
@@ -57,7 +57,7 @@ describe("FilterByGenre", () => {
                 setFilteredToWatch={mockSetFilteredToWatch}
             />
         );
-        const submitButton = screen.getByText("filter");
+        const submitButton = screen.getByText("Filter");
         fireEvent.click(submitButton);
     });
 
@@ -73,7 +73,7 @@ describe("FilterByGenre", () => {
         const genreCheckboxes = screen.getAllByTestId("genre-checkbox");
         fireEvent.click(genreCheckboxes[0]);
         fireEvent.click(genreCheckboxes[2]);
-        const submitButton = screen.getByText("filter");
+        const submitButton = screen.getByText("Filter");
         fireEvent.click(submitButton);
     });
 
@@ -89,7 +89,7 @@ describe("FilterByGenre", () => {
         const genreCheckboxes = screen.getAllByTestId("genre-checkbox");
         fireEvent.click(genreCheckboxes[0]);
         fireEvent.click(genreCheckboxes[2]);
-        const submitButton = screen.getByText("filter");
+        const submitButton = screen.getByText("Filter");
         fireEvent.click(submitButton);
         const checkedCheckboxes: any[] = [];
         expect(checkedCheckboxes).toHaveLength(0);

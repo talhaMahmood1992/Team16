@@ -167,14 +167,12 @@ export const FavoritesPage = (): JSX.Element => {
                                 ? `${classes.box}`
                                 : `${classes.edit_box}`
                         }
+                        onDrop={handleOnDropToWatch}
+                        onDragOver={handleDragOver}
                         data-testid="mediaListContainer"
                     >
                         <h2 className={classes.title}>To Watch</h2>
-                        <div
-                            className="media-list"
-                            onDrop={handleOnDropToWatch}
-                            onDragOver={handleDragOver}
-                        >
+                        <div className="media-list">
                             {!loading &&
                                 !error &&
                                 filteredToWatch.map((mediaItem) =>
@@ -189,16 +187,13 @@ export const FavoritesPage = (): JSX.Element => {
                             ? `${classes.box}`
                             : ""
                     }
-                    data-testid="mediaListContainer"
+                    onDrop={handleOnDropWatched}
+                    onDragOver={handleDragOver}
                 >
                     {currentUser && currentUser.role === "Default" && (
                         <h2 className={classes.title}>Watched</h2>
                     )}
-                    <div
-                        className="media-list"
-                        onDrop={handleOnDropWatched}
-                        onDragOver={handleDragOver}
-                    >
+                    <div className="media-list">
                         {!loading &&
                             !error &&
                             filteredWatched.map((mediaItem) =>
