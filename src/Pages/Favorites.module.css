@@ -36,9 +36,9 @@
 
 .genreSort {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 100px 10px 0px;
+    padding: 1rem 6rem;
 }
 
 .edit_button {

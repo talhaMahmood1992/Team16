@@ -16,6 +16,7 @@ import { MediaInterface } from "../interfaces/MediaInterface";
 import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
 import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
 import { LoadingSpinner } from "../UI/LoadingSpinner";
+/* eslint @typescript-eslint/no-unused-vars: "off" */
 
 interface BrowseMediaProps {
     role: Role;
@@ -90,56 +91,25 @@ export const BrowseMedia = ({
             )}
             {role !== "Super" && role !== "Admin" ? (
                 <div className="header-container">
-                    <h5>ToWatch</h5>
-                    <h1
-                        onDrop={handleToWatchDrop}
-                        onDragOver={handleDragOver}
-                        onDragEnd={handleColor}
-                    >
-                        <FaStar style={{ color: starColor }} />
-                    </h1>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <h5>Watched</h5>
-                    <h1 onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
-                        <VscWatch style={{ color: watchColor }} />
-                    </h1>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <div className="watchlist">
+                        <h5>ToWatch</h5>
+                        <h1
+                            onDrop={handleToWatchDrop}
+                            onDragOver={handleDragOver}
+                            onDragEnd={handleColor}
+                        >
+                            <FaStar />
+                        </h1>
+                    </div>
+                    <div className="watchlist">
+                        <h5>Watched</h5>
+                        <h1
+                            onDrop={handleWatchedDrop}
+                            onDragOver={handleDragOver}
+                        >
+                            <VscWatch />
+                        </h1>
+                    </div>
                     <UpdateUserMedia
                         toWatchMedia={toWatchMedia}
                         watchedMedia={watchedMedia}
@@ -152,31 +122,10 @@ export const BrowseMedia = ({
             {role === "Super" || role === "Admin" ? (
                 <div className="header-container">
                     <div onDrop={handleWatchedDrop} onDragOver={handleDragOver}>
-                        <div className="header-container">
-                            <GiFlexibleLamp
-                                style={{ color: starColor, fontSize: "24px" }}
-                            />
+                        <div className="edit-lamp">
+                            <GiFlexibleLamp />
                         </div>
                     </div>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <UpdateEditMedia
                         watchedMedia={watchedMedia}
                     ></UpdateEditMedia>
