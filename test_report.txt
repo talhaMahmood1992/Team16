@@ -5,14 +5,282 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/Testing/MediaRating.test.tsx (7.732 s)
+PASS src/Testing/MediaRating.test.tsx (8.407 s)
+PASS src/Testing/DeleteMedia.test.tsx
 PASS src/Testing/FilterByGenre.test.tsx
+PASS src/Testing/UpdateUserMedia.test.tsx
 PASS src/Testing/FilterButton.test.tsx
 PASS src/Testing/SearchBar.test.tsx
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "AxiosError {
+      message: 'Request failed with status code 400',
+      name: 'AxiosError',
+      code: 'ERR_BAD_REQUEST',
+      config: {
+        transitional: {
+          silentJSONParsing: true,
+          forcedJSONParsing: true,
+          clarifyTimeoutError: false
+        },
+        adapter: [ 'xhr', 'http' ],
+        transformRequest: [ [Function: transformRequest] ],
+        transformResponse: [ [Function: transformResponse] ],
+        timeout: 0,
+        xsrfCookieName: 'XSRF-TOKEN',
+        xsrfHeaderName: 'X-XSRF-TOKEN',
+        maxContentLength: -1,
+        maxBodyLength: -1,
+        env: { FormData: [Function], Blob: [class Blob] },
+        validateStatus: [Function: validateStatus],
+        headers: AxiosHeaders {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': null
+        },
+        baseURL: 'https://team16-c5r2.onrender.com',
+        method: 'get',
+        url: '/users/undefined/watchlists',
+        data: undefined
+      },
+      request: XMLHttpRequest {},
+      response: {
+        data: { status: 'fail', message: [Object] },
+        status: 400,
+        statusText: 'Bad Request',
+        headers: AxiosHeaders {
+          'content-type': 'application/json; charset=utf-8',
+          'content-length': '194'
+        },
+        config: {
+          transitional: [Object],
+          adapter: [Array],
+          transformRequest: [Array],
+          transformResponse: [Array],
+          timeout: 0,
+          xsrfCookieName: 'XSRF-TOKEN',
+          xsrfHeaderName: 'X-XSRF-TOKEN',
+          maxContentLength: -1,
+          maxBodyLength: -1,
+          env: [Object],
+          validateStatus: [Function: validateStatus],
+          headers: [AxiosHeaders],
+          baseURL: 'https://team16-c5r2.onrender.com',
+          method: 'get',
+          url: '/users/undefined/watchlists',
+          data: undefined
+        },
+        request: XMLHttpRequest {}
+      }
+    }".
+
+
+
+      at console.log (node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at src/hooks/useFetchWatchlists.ts:473:15
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: An update to UpdateUserMedia inside a test was not wrapped in act(...).
+
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at fn (/home/runner/work/Team16/Team16/src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+
+
+
+      at fn (src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnIfNotCurrentlyActingUpdatesInDev (node_modules/react-dom/cjs/react-dom.development.js:24064:9)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16135:9)
+      at src/hooks/useFetchWatchlists.ts:477:7
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+        at fn (/home/runner/work/Team16/Team16/src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+
+
+
+      at fn (src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnAboutUpdateOnUnmountedFiberInDEV (node_modules/react-dom/cjs/react-dom.development.js:23914:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21840:5)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16139:5)
+      at src/hooks/useFetchWatchlists.ts:477:7
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: An update to UpdateUserMedia inside a test was not wrapped in act(...).
+
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at fn (/home/runner/work/Team16/Team16/src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+
+
+
+      at fn (src/Components/UserMedia/UpdateUserMedia.tsx:597:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnIfNotCurrentlyActingUpdatesInDev (node_modules/react-dom/cjs/react-dom.development.js:24064:9)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16135:9)
+      at src/hooks/useFetchWatchlists.ts:482:5
+
 PASS src/Testing/AddUserForm.test.tsx
+PASS src/Testing/DeleteUserMedia.test.tsx
 PASS src/Testing/RenderMedia.test.tsx
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "AxiosError {
+      message: 'Request failed with status code 400',
+      name: 'AxiosError',
+      code: 'ERR_BAD_REQUEST',
+      config: {
+        transitional: {
+          silentJSONParsing: true,
+          forcedJSONParsing: true,
+          clarifyTimeoutError: false
+        },
+        adapter: [ 'xhr', 'http' ],
+        transformRequest: [ [Function: transformRequest] ],
+        transformResponse: [ [Function: transformResponse] ],
+        timeout: 0,
+        xsrfCookieName: 'XSRF-TOKEN',
+        xsrfHeaderName: 'X-XSRF-TOKEN',
+        maxContentLength: -1,
+        maxBodyLength: -1,
+        env: { FormData: [Function], Blob: [class Blob] },
+        validateStatus: [Function: validateStatus],
+        headers: AxiosHeaders {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        baseURL: 'https://team16-c5r2.onrender.com',
+        method: 'patch',
+        url: '/users/undefined',
+        data: '{"watched":[],"toWatch":[]}'
+      },
+      request: XMLHttpRequest {},
+      response: {
+        data: { status: 'fail', message: [Object] },
+        status: 400,
+        statusText: 'Bad Request',
+        headers: AxiosHeaders {
+          'content-type': 'application/json; charset=utf-8',
+          'content-length': '194'
+        },
+        config: {
+          transitional: [Object],
+          adapter: [Array],
+          transformRequest: [Array],
+          transformResponse: [Array],
+          timeout: 0,
+          xsrfCookieName: 'XSRF-TOKEN',
+          xsrfHeaderName: 'X-XSRF-TOKEN',
+          maxContentLength: -1,
+          maxBodyLength: -1,
+          env: [Object],
+          validateStatus: [Function: validateStatus],
+          headers: [AxiosHeaders],
+          baseURL: 'https://team16-c5r2.onrender.com',
+          method: 'patch',
+          url: '/users/undefined',
+          data: '{"watched":[],"toWatch":[]}'
+        },
+        request: XMLHttpRequest {}
+      }
+    }".
+
+
+
+      at console.log (node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at saveData (src/Components/UserMedia/UpdateUserMedia.tsx:715:15)
+
 PASS src/Testing/ActiveUsers.test.tsx
 PASS src/Testing/SortByRating.test.tsx
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: An update to AddUserForm inside a test was not wrapped in act(...).
+
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at fn (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+
+
+
+      at fn (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnIfNotCurrentlyActingUpdatesInDev (node_modules/react-dom/cjs/react-dom.development.js:24064:9)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16135:9)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:552:7)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+        at fn (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+
+
+
+      at fn (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnAboutUpdateOnUnmountedFiberInDEV (node_modules/react-dom/cjs/react-dom.development.js:23914:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21840:5)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16139:5)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:552:7)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: An update to AddUserForm inside a test was not wrapped in act(...).
+
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at fn (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+
+
+
+      at fn (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
+      at console.call (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnIfNotCurrentlyActingUpdatesInDev (node_modules/react-dom/cjs/react-dom.development.js:24064:9)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16135:9)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:557:5)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
 FAIL src/Testing/AddMediaForm.test.tsx
   ● AddMediaForm › renders the rating input
 
@@ -706,156 +974,89 @@ FAIL src/Testing/AddMediaForm.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------------------|---------|----------|---------|---------|-----------------------------
-File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
-------------------------------------|---------|----------|---------|---------|-----------------------------
-All files                           |   21.47 |    19.21 |   19.76 |   21.56 |                             
- src                                |       0 |        0 |       0 |       0 |                             
-  App.tsx                           |       0 |        0 |       0 |       0 | 6-10                        
-  Interfaces.tsx                    |       0 |        0 |       0 |       0 |                             
-  Router.tsx                        |       0 |        0 |       0 |       0 | 18-82                       
- src/Components                     |   19.23 |    23.52 |   27.27 |   19.23 |                             
-  DeleteMedia.tsx                   |       0 |        0 |       0 |       0 | 13-69                       
-  MediaRating.tsx                   |   28.57 |       50 |      40 |   28.57 | 14-26                       
-  RenderMedia.tsx                   |   47.05 |       40 |   44.44 |   47.05 | 11,24-44,61-68              
- src/Components/FilterByGenre       |   66.66 |      100 |   42.85 |   66.66 |                             
-  FilterByGenre.tsx                 |   71.42 |      100 |   42.85 |   71.42 | 31-32,38,41                 
-  FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                           
- src/Components/Forms/AddMediaForm  |      55 |       60 |   66.66 |      55 |                             
-  AddMediaForm.tsx                  |      50 |       60 |   66.66 |      50 | 49-62                       
-  AddMediaFormSchema.ts             |     100 |      100 |     100 |     100 |                             
- src/Components/Forms/AddUserForm   |   81.25 |       90 |     100 |   81.25 |                             
-  AddUserForm.tsx                   |      80 |       90 |     100 |      80 | 38-42                       
-  AddUserFormSchema.ts              |     100 |      100 |     100 |     100 |                             
- src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                             
-  EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91                       
-  EditMediaFromSchema.ts            |       0 |      100 |     100 |       0 | 3-4                         
- src/Components/Forms/UserEditMedia |       0 |        0 |       0 |       0 |                             
-  UserEditMedia.tsx                 |       0 |        0 |       0 |       0 | 17-100                      
-  UserEditMediaSchema.ts            |       0 |      100 |     100 |       0 | 3-4                         
- src/Components/HeroSeciton         |      50 |      100 |      50 |      50 |                             
-  ActiveUsers.tsx                   |     100 |      100 |     100 |     100 |                             
-  HeroSection.tsx                   |       0 |      100 |       0 |       0 | 6-7                         
- src/Components/SearchAndFilter     |     100 |      100 |     100 |     100 |                             
-  FilterButton.tsx                  |     100 |      100 |     100 |     100 |                             
-  SearchBar.tsx                     |     100 |      100 |     100 |     100 |                             
- src/Components/Settings            |       0 |        0 |       0 |       0 |                             
-  Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61                       
- src/Components/Slider              |       0 |      100 |       0 |       0 |                             
-  Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10                        
- src/Components/SortByRating        |      60 |    33.33 |     100 |      60 |                             
-  SortByRating.tsx                  |      60 |    33.33 |     100 |      60 | 16-20                       
- src/Components/UserMedia           |       0 |        0 |       0 |       0 |                             
-  DeleteUserMedia.tsx               |       0 |        0 |       0 |       0 | 12-56                       
-  UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55                       
-  UpdateUserMedia.tsx               |       0 |        0 |       0 |       0 | 16-61                       
- src/Layout                         |       0 |        0 |       0 |       0 |                             
-  MainHeader.tsx                    |       0 |      100 |       0 |       0 | 10-13                       
-  MainNavigation.tsx                |       0 |        0 |       0 |       0 | 16-22                       
- src/Pages                          |       0 |        0 |       0 |       0 |                             
-  AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17                       
-  AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17                       
-  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 24-75                       
-  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 18-63                       
-  EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12                       
-  Favorites.tsx                     |       0 |        0 |       0 |       0 | 16-178                      
-  HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5                         
-  LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5                         
-  NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16                        
- src/UI                             |   72.22 |     42.3 |   66.66 |   71.42 |                             
-  BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34                       
-  ErrorDisplay.tsx                  |      50 |        0 |       0 |      50 | 14                          
-  LoadingSpinner.tsx                |     100 |       50 |     100 |     100 | 16-30                       
-  Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39                       
-  SuccessfulDisplay.tsx             |     100 |       50 |     100 |     100 | 17-33                       
- src/api                            |   44.11 |        0 |    9.09 |   45.45 |                             
-  mediaApi.ts                       |   45.45 |      100 |       0 |   45.45 | 9,13,20-21,25-26            
-  usersApi.ts                       |   43.47 |        0 |   14.28 |   45.45 | 8-9,13-14,24-29,36-37,46-47 
- src/constants                      |     100 |      100 |     100 |     100 |                             
-  endpoints.ts                      |     100 |      100 |     100 |     100 |                             
- src/hooks                          |       0 |        0 |       0 |       0 |                             
-  useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23                        
-  useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32                        
-  useFetchWatchlists.ts             |       0 |      100 |       0 |       0 | 5-37                        
- src/interfaces                     |       0 |        0 |       0 |       0 |                             
-  MediaInterface.ts                 |       0 |        0 |       0 |       0 |                             
-  UserInterface.ts                  |       0 |        0 |       0 |       0 |                             
- src/store                          |      50 |      100 |       0 |      50 |                             
-  currentUserContext.tsx            |      50 |      100 |       0 |      50 | 20-22                       
- src/utils                          |    9.52 |      100 |       0 |   11.76 |                             
-  api-config.ts                     |     100 |      100 |     100 |     100 |                             
-  api.ts                            |     100 |      100 |     100 |     100 |                             
-  media-config.ts                   |       0 |      100 |       0 |       0 | 5-39                        
-------------------------------------|---------|----------|---------|---------|-----------------------------
-Test Suites: 1 failed, 8 passed, 9 total
-Tests:       2 failed, 53 passed, 55 total
+------------------------------------|---------|----------|---------|---------|--------------------
+File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
+------------------------------------|---------|----------|---------|---------|--------------------
+All files                           |   32.21 |    24.13 |   27.54 |   32.42 |                    
+ src                                |       0 |        0 |       0 |       0 |                    
+  App.tsx                           |       0 |        0 |       0 |       0 | 6-10               
+  Interfaces.tsx                    |       0 |        0 |       0 |       0 |                    
+  Router.tsx                        |       0 |        0 |       0 |       0 | 18-82              
+ src/Components                     |      25 |    23.52 |   31.81 |      25 |                    
+  DeleteMedia.tsx                   |   10.71 |        0 |    12.5 |   10.71 | 25-67              
+  MediaRating.tsx                   |   28.57 |       50 |      40 |   28.57 | 14-26              
+  RenderMedia.tsx                   |   47.05 |       40 |   44.44 |   47.05 | 11,24-44,61-68     
+ src/Components/FilterByGenre       |   66.66 |      100 |   42.85 |   66.66 |                    
+  FilterByGenre.tsx                 |   71.42 |      100 |   42.85 |   71.42 | 31-32,38,41        
+  FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                  
+ src/Components/Forms/AddMediaForm  |      55 |       60 |   66.66 |      55 |                    
+  AddMediaForm.tsx                  |      50 |       60 |   66.66 |      50 | 49-62              
+  AddMediaFormSchema.ts             |     100 |      100 |     100 |     100 |                    
+ src/Components/Forms/AddUserForm   |   81.25 |       90 |     100 |   81.25 |                    
+  AddUserForm.tsx                   |      80 |       90 |     100 |      80 | 38-42              
+  AddUserFormSchema.ts              |     100 |      100 |     100 |     100 |                    
+ src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                    
+  EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91              
+  EditMediaFromSchema.ts            |       0 |      100 |     100 |       0 | 3-4                
+ src/Components/Forms/UserEditMedia |       0 |        0 |       0 |       0 |                    
+  UserEditMedia.tsx                 |       0 |        0 |       0 |       0 | 17-100             
+  UserEditMediaSchema.ts            |       0 |      100 |     100 |       0 | 3-4                
+ src/Components/HeroSeciton         |      50 |      100 |      50 |      50 |                    
+  ActiveUsers.tsx                   |     100 |      100 |     100 |     100 |                    
+  HeroSection.tsx                   |       0 |      100 |       0 |       0 | 6-7                
+ src/Components/SearchAndFilter     |     100 |      100 |     100 |     100 |                    
+  FilterButton.tsx                  |     100 |      100 |     100 |     100 |                    
+  SearchBar.tsx                     |     100 |      100 |     100 |     100 |                    
+ src/Components/Settings            |       0 |        0 |       0 |       0 |                    
+  Settings.tsx                      |       0 |        0 |       0 |       0 | 17-61              
+ src/Components/Slider              |       0 |      100 |       0 |       0 |                    
+  Slider.tsx                        |       0 |      100 |       0 |       0 | 9-10               
+ src/Components/SortByRating        |      60 |    33.33 |     100 |      60 |                    
+  SortByRating.tsx                  |      60 |    33.33 |     100 |      60 | 16-20              
+ src/Components/UserMedia           |      50 |       75 |   45.45 |      50 |                    
+  DeleteUserMedia.tsx               |      56 |    83.33 |      50 |      56 | 26-40,48-53        
+  UpdateEditMedia.tsx               |       0 |        0 |       0 |       0 | 14-55              
+  UpdateUserMedia.tsx               |   81.48 |      100 |      75 |   81.48 | 52-58              
+ src/Layout                         |       0 |        0 |       0 |       0 |                    
+  MainHeader.tsx                    |       0 |      100 |       0 |       0 | 10-13              
+  MainNavigation.tsx                |       0 |        0 |       0 |       0 | 16-22              
+ src/Pages                          |       0 |        0 |       0 |       0 |                    
+  AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17              
+  AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17              
+  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 24-75              
+  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 18-63              
+  EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12              
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 16-178             
+  HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5                
+  LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5                
+  NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16               
+ src/UI                             |   72.22 |     42.3 |   66.66 |   71.42 |                    
+  BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34              
+  ErrorDisplay.tsx                  |      50 |        0 |       0 |      50 | 14                 
+  LoadingSpinner.tsx                |     100 |       50 |     100 |     100 | 16-30              
+  Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39              
+  SuccessfulDisplay.tsx             |     100 |       50 |     100 |     100 | 17-33              
+ src/api                            |   58.82 |       50 |   27.27 |    60.6 |                    
+  mediaApi.ts                       |   45.45 |      100 |       0 |   45.45 | 9,13,20-21,25-26   
+  usersApi.ts                       |   65.21 |       50 |   42.85 |   68.18 | 8-9,13-14,25,46-47 
+ src/constants                      |     100 |      100 |     100 |     100 |                    
+  endpoints.ts                      |     100 |      100 |     100 |     100 |                    
+ src/hooks                          |   21.15 |        0 |   33.33 |   21.15 |                    
+  useFetchItem.ts                   |       0 |      100 |       0 |       0 | 3-23               
+  useFetchList.ts                   |       0 |        0 |       0 |       0 | 4-32               
+  useFetchWatchlists.ts             |   52.38 |      100 |     100 |   52.38 | 18-30              
+ src/interfaces                     |       0 |        0 |       0 |       0 |                    
+  MediaInterface.ts                 |       0 |        0 |       0 |       0 |                    
+  UserInterface.ts                  |       0 |        0 |       0 |       0 |                    
+ src/store                          |      50 |      100 |       0 |      50 |                    
+  currentUserContext.tsx            |      50 |      100 |       0 |      50 | 20-22              
+ src/utils                          |   52.38 |      100 |   22.22 |    64.7 |                    
+  api-config.ts                     |     100 |      100 |     100 |     100 |                    
+  api.ts                            |     100 |      100 |     100 |     100 |                    
+  media-config.ts                   |   47.36 |      100 |   22.22 |      60 | 6,20,34-39         
+------------------------------------|---------|----------|---------|---------|--------------------
+Test Suites: 1 failed, 11 passed, 12 total
+Tests:       2 failed, 69 passed, 71 total
 Snapshots:   0 total
-Time:        22.753 s
+Time:        27.947 s
 Ran all test suites.
-
-  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
-    Attempted to log "Warning: An update to AddUserForm inside a test was not wrapped in act(...).
-
-    When testing, code that causes React state updates should be wrapped into act(...):
-
-    act(() => {
-      /* fire events that update state */
-    });
-    /* assert on the output */
-
-    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
-        at AddUserForm (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-
-
-
-      at AddUserForm (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-      at console.error (node_modules/@jest/console/build/BufferedConsole.js:163:10)
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:68:34)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:44:9)
-      at warnIfNotCurrentlyActingUpdatesInDEV (node_modules/react-dom/cjs/react-dom.development.js:23871:13)
-      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16092:13)
-      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:552:7)
-      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
-
-
-  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
-    Attempted to log "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-        at AddUserForm (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-
-
-
-      at AddUserForm (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-      at console.error (node_modules/@jest/console/build/BufferedConsole.js:163:10)
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:68:34)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:44:9)
-      at warnAboutUpdateOnUnmountedFiberInDEV (node_modules/react-dom/cjs/react-dom.development.js:23726:13)
-      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21678:9)
-      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16095:9)
-      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:552:7)
-      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
-
-
-  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
-    Attempted to log "Warning: An update to AddUserForm inside a test was not wrapped in act(...).
-
-    When testing, code that causes React state updates should be wrapped into act(...):
-
-    act(() => {
-      /* fire events that update state */
-    });
-    /* assert on the output */
-
-    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
-        at AddUserForm (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-
-
-
-      at AddUserForm (src/Components/Forms/AddUserForm/AddUserForm.tsx:462:12)".
-      at console.error (node_modules/@jest/console/build/BufferedConsole.js:163:10)
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:68:34)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:44:9)
-      at warnIfNotCurrentlyActingUpdatesInDEV (node_modules/react-dom/cjs/react-dom.development.js:23871:13)
-      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16092:13)
-      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:557:5)
-      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
-
