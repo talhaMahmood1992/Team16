@@ -46,7 +46,7 @@ export const FilterByGenre = ({
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={classes.filter} onSubmit={handleSubmit(onSubmit)}>
             <div className={classes.checkbox_group}>
                 {genreList.map((genre: mediaGenre) => {
                     return (
@@ -61,7 +61,9 @@ export const FilterByGenre = ({
                     );
                 })}
             </div>
-            <button type="submit">filter</button>
+            <button className={classes.filter_button} type="submit">
+                Filter
+            </button>
         </form>
     );
 };

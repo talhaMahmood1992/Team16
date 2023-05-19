@@ -11,6 +11,7 @@ import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 import { useNavigate } from "react-router-dom";
 import { FilterByGenre } from "../Components/FilterByGenre/FilterByGenre";
 import { SortByRating } from "../Components/SortByRating/SortByRating";
+import classes from "./Favorites.module.css";
 
 export const FavoritesPage = (): JSX.Element => {
     const navigate = useNavigate();
@@ -101,6 +102,7 @@ export const FavoritesPage = (): JSX.Element => {
                         {mediaItem.genres[1]}
                     </p>
                     <button
+                        className={classes.edit_button}
                         onClick={() =>
                             navigate("/mediaRevision", {
                                 state: {
@@ -119,64 +121,66 @@ export const FavoritesPage = (): JSX.Element => {
         );
     };
     return (
-        <>
+        <div className={classes.page_color}>
             <section className="page">
-                {currentUser && currentUser.role === "Default" && (
-                    <h2 className="heading-secondary">My Favorites</h2>
-                )}
                 {currentUser && currentUser.role !== "Default" && (
                     <h2 className="heading-secondary">Edit Media</h2>
                 )}
             </section>
-            {currentUser && currentUser.role === "Default" && (
-                <FilterByGenre
-                    watched={watched}
-                    toWatch={toWatch}
-                    setFilteredWatched={setFilteredWatched}
-                    setFilteredToWatch={setFilteredToWatch}
-                />
-            )}
-            <SortByRating setRatingQuery={setRatingQuery} />
-            {currentUser && currentUser.role === "Default" && (
-                <div
-                    className="media-list-container"
-                    data-testid="mediaListContainer"
-                >
-                    <h2>To Watch</h2>
+            <div className={classes.genreSort}>
+                <div className={classes.genre}>
+                    {currentUser && currentUser.role === "Default" && (
+                        <FilterByGenre
+                            watched={watched}
+                            toWatch={toWatch}
+                            setFilteredWatched={setFilteredWatched}
+                            setFilteredToWatch={setFilteredToWatch}
+                        />
+                    )}
+                </div>
+                <div className={classes.sort}>
+                    <SortByRating setRatingQuery={setRatingQuery} />
+                </div>
+            </div>
+            <div className={classes.row}>
+                {currentUser && currentUser.role === "Default" && (
+                    <div
+                        className={classes.box}
+                        data-testid="mediaListContainer"
+                    >
+                        <h2 className={classes.title}>To Watch</h2>
+                        <div
+                            className="media-list"
+                            onDrop={handleOnDropToWatch}
+                            onDragOver={handleDragOver}
+                        >
+                            {!loading &&
+                                !error &&
+                                filteredToWatch.map((mediaItem) =>
+                                    DragableMediaToButton(mediaItem)
+                                )}
+                        </div>
+                    </div>
+                )}
+                <div className={classes.box} data-testid="mediaListContainer">
+                    {currentUser && currentUser.role === "Default" && (
+                        <h2 className={classes.title}>Watched</h2>
+                    )}
                     <div
                         className="media-list"
-                        onDrop={handleOnDropToWatch}
+                        onDrop={handleOnDropWatched}
                         onDragOver={handleDragOver}
                     >
                         {!loading &&
                             !error &&
-                            filteredToWatch.map((mediaItem) =>
+                            filteredWatched.map((mediaItem) =>
                                 DragableMediaToButton(mediaItem)
                             )}
+                        <DeleteUserMedia
+                            toWatchMedia={toWatch}
+                            watchedMedia={watched}
+                        ></DeleteUserMedia>
                     </div>
-                </div>
-            )}
-            <div
-                className="media-list-container"
-                data-testid="mediaListContainer"
-            >
-                {currentUser && currentUser.role === "Default" && (
-                    <h2>Watched</h2>
-                )}
-                <div
-                    className="media-list"
-                    onDrop={handleOnDropWatched}
-                    onDragOver={handleDragOver}
-                >
-                    {!loading &&
-                        !error &&
-                        filteredWatched.map((mediaItem) =>
-                            DragableMediaToButton(mediaItem)
-                        )}
-                    <DeleteUserMedia
-                        toWatchMedia={toWatch}
-                        watchedMedia={watched}
-                    ></DeleteUserMedia>
                 </div>
             </div>
             <DeleteMedia
@@ -185,6 +189,6 @@ export const FavoritesPage = (): JSX.Element => {
                 setToWatch={setToWatch}
                 setWatched={setWatched}
             ></DeleteMedia>
-        </>
+        </div>
     );
 };

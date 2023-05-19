@@ -1,0 +1,57 @@
+.page_color {
+    background-color: var(--grey-1);
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    padding-left: 30px;
+}
+
+.box {
+    background-color: var(--primary);
+    width: 48%;
+    max-height: 76vh;
+    overflow-y: scroll;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--grey-1);
+}
+
+.sort {
+    padding-left: 20px;
+}
+
+.genreSort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 100px 10px 0px;
+}
+
+.edit_button {
+    font-weight: 550;
+    font-size: 1.2rem;
+    width: 7rem;
+    height: 2rem;
+
+    border-radius: 0.9rem;
+    border: none;
+
+    transition: all 300ms;
+}
+
+.edit_button {
+    color: black;
+    background-color: var(--primary);
+}
+
+.edit_button:hover {
+    color: var(--primary);
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.4rem var(--primary);
+}
