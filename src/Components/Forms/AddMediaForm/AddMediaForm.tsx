@@ -118,11 +118,14 @@ export const AddMediaForm = (): JSX.Element => {
                     </div>
                     <p>{errors.genres?.message}</p>
 
-                    <label htmlFor="rating">Rating:</label>
+                    <label data-testid="Rating" htmlFor="rating">
+                        Rating:
+                    </label>
                     <input
                         type="number"
                         placeholder="Rating..."
                         {...register("rating")}
+                        data-testid="rating-input"
                     />
                     <p>{errors.rating?.message}</p>
                     <input type="submit" />
