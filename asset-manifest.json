@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Team16/static/css/main.1a30044e.css",
-    "main.js": "/Team16/static/js/main.750170fc.js",
+    "main.css": "/Team16/static/css/main.2bbf50ae.css",
+    "main.js": "/Team16/static/js/main.774fab75.js",
     "static/js/787.4ef7427d.chunk.js": "/Team16/static/js/787.4ef7427d.chunk.js",
     "static/media/mulholland-drive.jpg": "/Team16/static/media/mulholland-drive.d988b4999281e7db8809.jpg",
     "static/media/the-matrix.jpg": "/Team16/static/media/the-matrix.874c36d00d9ec6af151c.jpg",
@@ -112,12 +112,12 @@
     "static/media/fight-club.jpg": "/Team16/static/media/fight-club.9a3f1c7565a02e40be0a.jpg",
     "static/media/mr-robot.jpg": "/Team16/static/media/mr-robot.e0d8766859db10156aed.jpg",
     "index.html": "/Team16/index.html",
-    "main.1a30044e.css.map": "/Team16/static/css/main.1a30044e.css.map",
-    "main.750170fc.js.map": "/Team16/static/js/main.750170fc.js.map",
+    "main.2bbf50ae.css.map": "/Team16/static/css/main.2bbf50ae.css.map",
+    "main.774fab75.js.map": "/Team16/static/js/main.774fab75.js.map",
     "787.4ef7427d.chunk.js.map": "/Team16/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a30044e.css",
-    "static/js/main.750170fc.js"
+    "static/css/main.2bbf50ae.css",
+    "static/js/main.774fab75.js"
   ]
 }
