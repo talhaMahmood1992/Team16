@@ -15,6 +15,7 @@ import { VscWatch } from "react-icons/vsc";
 import { MediaInterface } from "../interfaces/MediaInterface";
 import { UpdateUserMedia } from "../Components/UserMedia/UpdateUserMedia";
 import { UpdateEditMedia } from "../Components/UserMedia/UpdateEditMedia";
+import { LoadingSpinner } from "../UI/LoadingSpinner";
 
 interface BrowseMediaProps {
     role: Role;
@@ -78,6 +79,9 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
+            {loading && (
+                <LoadingSpinner message="fetching movies..." color="black" />
+            )}
             {!loading && (
                 <RenderMedia
                     MediaData={mediaList}
