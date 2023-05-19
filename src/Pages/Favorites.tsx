@@ -143,6 +143,18 @@ export const FavoritesPage = (): JSX.Element => {
                 <div className={classes.sort}>
                     <SortByRating setRatingQuery={setRatingQuery} />
                 </div>
+                <div>
+                    <DeleteUserMedia
+                        toWatchMedia={toWatch}
+                        watchedMedia={watched}
+                    ></DeleteUserMedia>
+                </div>
+                <DeleteMedia
+                    toWatch={toWatch}
+                    watched={watched}
+                    setToWatch={setToWatch}
+                    setWatched={setWatched}
+                ></DeleteMedia>
             </div>
             {loading && (
                 <LoadingSpinner message="fetching favorites..." color="black" />
@@ -192,19 +204,9 @@ export const FavoritesPage = (): JSX.Element => {
                             filteredWatched.map((mediaItem) =>
                                 DragableMediaToButton(mediaItem)
                             )}
-                        <DeleteUserMedia
-                            toWatchMedia={toWatch}
-                            watchedMedia={watched}
-                        ></DeleteUserMedia>
                     </div>
                 </div>
             </div>
-            <DeleteMedia
-                toWatch={toWatch}
-                watched={watched}
-                setToWatch={setToWatch}
-                setWatched={setWatched}
-            ></DeleteMedia>
         </div>
     );
 };

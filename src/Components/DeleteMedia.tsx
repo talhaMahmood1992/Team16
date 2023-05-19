@@ -67,18 +67,16 @@ export const DeleteMedia = ({
         setTrashColor("green");
     }
     return (
-        <>
-            <div
-                className="header-container"
-                data-testid="headerContainer"
-                onDrop={handleOnDrop}
-                onDragOver={handleDragOver}
-            >
-                <h1 data-testid="trash-can">
-                    <FaTrash style={{ color: trashColor }} />
-                </h1>
-                <p data-testid="Trash">Trash Here</p>
-            </div>
-        </>
+        <div
+            className="trash-container"
+            data-testid="headerContainer"
+            onDrop={handleOnDrop}
+            onDragOver={handleDragOver}
+        >
+            <h1 data-testid="trash-can">
+                <FaTrash style={{ color: "white" }} />
+            </h1>
+            <p data-testid="Trash">Trash Here</p>
+        </div>
     );
 };
