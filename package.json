@@ -22,7 +22,7 @@
         "react-router-dom": "^6.10.0",
         "react-scripts": "5.0.0",
         "react-slugify": "^3.0.2",
-        "swiper": "^9.2.2",
+        "swiper": "^9.3.2",
         "typescript": "^4.5.5",
         "web-vitals": "^2.1.4",
         "yup": "^1.1.1"

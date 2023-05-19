@@ -64,6 +64,7 @@ export const UpdateUserMedia = (props: toWatchProps): JSX.Element => {
                 className="save-button"
                 onClick={saveData}
                 disabled={isSaving}
+                data-testid="save-button"
             >
                 {isSaving ? "Saving..." : "Save"}
             </button>
