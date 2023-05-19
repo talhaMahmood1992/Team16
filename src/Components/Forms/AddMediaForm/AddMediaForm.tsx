@@ -6,6 +6,8 @@ import { schema } from "./AddMediaFormSchema";
 import { UserSubmitForm, mediaGenre } from "../../../Interfaces";
 import { addMedia } from "../../../api/mediaApi";
 import { LoadingSpinner } from "../../../UI/LoadingSpinner";
+import { ErrorDisplay } from "../../../UI/ErrorDisplay";
+import { SuccessfulDisplay } from "../../../UI/SuccessfulDisplay";
 /* eslint no-extra-parens: "off" */
 
 export const genreList: mediaGenre[] = [
@@ -31,6 +33,8 @@ export const genreList: mediaGenre[] = [
 
 export const AddMediaForm = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
     const {
         register,
@@ -42,6 +46,8 @@ export const AddMediaForm = (): JSX.Element => {
     });
 
     const onSubmit = async (data: UserSubmitForm) => {
+        setIsSubmitted(true);
+        setError(false);
         setLoading(true);
         try {
             const updatedData = {
@@ -51,7 +57,7 @@ export const AddMediaForm = (): JSX.Element => {
             await addMedia(updatedData);
             reset();
         } catch (error) {
-            console.log(error);
+            setError(true);
         }
         setLoading(false);
     };
@@ -126,8 +132,17 @@ export const AddMediaForm = (): JSX.Element => {
                     src={require("../../../imgs/media-covers/default-media-img.jpg")}
                 />
             </div>
-            {loading && (
+            {loading && !error && (
                 <LoadingSpinner message="adding media..." color="yellow" />
+            )}
+            {!loading && error && (
+                <ErrorDisplay
+                    message="No duplicate Media names"
+                    color="yellow"
+                />
+            )}
+            {!loading && !error && isSubmitted && (
+                <SuccessfulDisplay message="Added Media" color="yellow" />
             )}
         </div>
     );

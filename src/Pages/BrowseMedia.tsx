@@ -79,7 +79,7 @@ export const BrowseMedia = ({
             </div>
             <SearchBar setSearchQuery={setSearchQuery} />
             <FilterButton setSearchQuery={setSearchQuery} />
-            {loading && (
+            {loading && !error && (
                 <LoadingSpinner message="fetching movies..." color="black" />
             )}
             {!loading && (
