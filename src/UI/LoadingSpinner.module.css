@@ -1,0 +1,53 @@
+.loading_spinner_yellow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--grey-1);
+    padding: 1.5rem 0;
+}
+
+.loading_spinner_black {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--primary);
+    padding: 1.5rem 0;
+}
+
+.loading_text_black {
+    font-size: 2rem;
+    color: black;
+}
+
+.loading_text_yellow {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.spinner_yellow {
+    height: 10rem;
+    width: 10rem;
+    border: 1rem solid;
+    border-color: var(--primary) transparent var(--primary) transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinner_black {
+    height: 10rem;
+    width: 10rem;
+    border: 1rem solid;
+    border-color: black transparent black transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

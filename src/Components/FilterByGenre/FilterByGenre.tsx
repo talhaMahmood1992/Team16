@@ -46,11 +46,18 @@ export const FilterByGenre = ({
     };
 
     return (
-        <form className={classes.filter} onSubmit={handleSubmit(onSubmit)}>
-            <div className={classes.checkbox_group}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div
+                className={classes.checkbox_group}
+                data-testid="filter-by-genre"
+            >
                 {genreList.map((genre: mediaGenre) => {
                     return (
-                        <div key={genre} className={classes.checkbox}>
+                        <div
+                            key={genre}
+                            className={classes.checkbox}
+                            data-testid="genre-checkbox"
+                        >
                             <input
                                 type="checkbox"
                                 {...register("genres")}

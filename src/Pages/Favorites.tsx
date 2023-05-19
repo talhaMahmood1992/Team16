@@ -11,6 +11,7 @@ import { DeleteUserMedia } from "../Components/UserMedia/DeleteUserMedia";
 import { useNavigate } from "react-router-dom";
 import { FilterByGenre } from "../Components/FilterByGenre/FilterByGenre";
 import { SortByRating } from "../Components/SortByRating/SortByRating";
+import { LoadingSpinner } from "../UI/LoadingSpinner";
 import classes from "./Favorites.module.css";
 
 export const FavoritesPage = (): JSX.Element => {
@@ -142,6 +143,9 @@ export const FavoritesPage = (): JSX.Element => {
                     <SortByRating setRatingQuery={setRatingQuery} />
                 </div>
             </div>
+            {loading && (
+                <LoadingSpinner message="fetching favorites..." color="black" />
+            )}
             <div className={classes.row}>
                 {currentUser && currentUser.role === "Default" && (
                     <div

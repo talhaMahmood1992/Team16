@@ -26,7 +26,7 @@ export function SortByRating({
 
     return (
         <div>
-            <div>
+            <div data-testid="sort-by-rating">
                 <BasicDropdown
                     items={["High to Low", "Low to High"]}
                     title={"Rating"}
