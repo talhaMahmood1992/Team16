@@ -122,12 +122,13 @@ export const FavoritesPage = (): JSX.Element => {
         );
     };
     return (
-        <div className={classes.page_color}>
-            <section className="page">
-                {currentUser && currentUser.role !== "Default" && (
-                    <h2 className="heading-secondary">Edit Media</h2>
-                )}
-            </section>
+        <div
+            className={
+                currentUser && currentUser.role === "Default"
+                    ? `${classes.page_color}`
+                    : `${classes.edit_page_color}`
+            }
+        >
             <div className={classes.genreSort}>
                 <div className={classes.genre}>
                     {currentUser && currentUser.role === "Default" && (
@@ -149,7 +150,11 @@ export const FavoritesPage = (): JSX.Element => {
             <div className={classes.row}>
                 {currentUser && currentUser.role === "Default" && (
                     <div
-                        className={classes.box}
+                        className={
+                            currentUser && currentUser.role === "Default"
+                                ? `${classes.box}`
+                                : `${classes.edit_box}`
+                        }
                         data-testid="mediaListContainer"
                     >
                         <h2 className={classes.title}>To Watch</h2>
@@ -166,7 +171,14 @@ export const FavoritesPage = (): JSX.Element => {
                         </div>
                     </div>
                 )}
-                <div className={classes.box} data-testid="mediaListContainer">
+                <div
+                    className={
+                        currentUser && currentUser.role === "Default"
+                            ? `${classes.box}`
+                            : ""
+                    }
+                    data-testid="mediaListContainer"
+                >
                     {currentUser && currentUser.role === "Default" && (
                         <h2 className={classes.title}>Watched</h2>
                     )}

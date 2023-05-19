@@ -2,6 +2,10 @@
     background-color: var(--grey-1);
 }
 
+.edit_page_color {
+    background-color: var(--primary);
+}
+
 .row {
     display: flex;
     gap: 20px;
@@ -13,6 +17,10 @@
     width: 48%;
     max-height: 76vh;
     overflow-y: scroll;
+}
+
+.edit_box {
+    width: 100%;
 }
 
 .title {

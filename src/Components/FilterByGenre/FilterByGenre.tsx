@@ -46,7 +46,7 @@ export const FilterByGenre = ({
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={classes.filter} onSubmit={handleSubmit(onSubmit)}>
             <div
                 className={classes.checkbox_group}
                 data-testid="filter-by-genre"
