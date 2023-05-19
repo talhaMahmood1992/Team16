@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/Testing/MediaRating.test.tsx (7.637 s)
+PASS src/Testing/MediaRating.test.tsx (9.013 s)
 PASS src/Testing/FilterByGenre.test.tsx
 PASS src/Testing/FilterButton.test.tsx
 PASS src/Testing/SearchBar.test.tsx
@@ -13,11 +13,703 @@ PASS src/Testing/AddUserForm.test.tsx
 PASS src/Testing/RenderMedia.test.tsx
 PASS src/Testing/ActiveUsers.test.tsx
 PASS src/Testing/SortByRating.test.tsx
-PASS src/Testing/AddMediaForm.test.tsx
+FAIL src/Testing/AddMediaForm.test.tsx
+  ● AddMediaForm › renders the rating input
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="rating-input"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form_page"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form_wrapper"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"form"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"title"[39m
+              [36m>[39m
+                [0mMedia title:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mdata-testid[39m=[32m"Media-title"[39m
+                [33mname[39m=[32m"title"[39m
+                [33mplaceholder[39m=[32m"Media title..."[39m
+                [33mtype[39m=[32m"text"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"yearReleased"[39m
+              [36m>[39m
+                [0mYear Released:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mdata-testid[39m=[32m"year-released-input"[39m
+                [33mname[39m=[32m"yearReleased"[39m
+                [33mplaceholder[39m=[32m"Year Released..."[39m
+                [33mtype[39m=[32m"number"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"type"[39m
+              [36m>[39m
+                [0mMedia type:[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mdata-testid[39m=[32m"media-type-select"[39m
+                [33mname[39m=[32m"type"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Movie"[39m
+                [36m>[39m
+                  [0mMovie[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Show"[39m
+                [36m>[39m
+                  [0mShow[0m
+                [36m</option>[39m
+              [36m</select>[39m
+              [36m<p />[39m
+              [36m<label>[39m
+                [0mGenres:[0m
+              [36m</label>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"genres"[39m
+                [33mdata-testid[39m=[32m"media-genre"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Action"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Action"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAction[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Adventure"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Adventure"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAdventure[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Animated"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Animated"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAnimated[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Comedy"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Comedy"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mComedy[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Crime"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Crime"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mCrime[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Drama"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Drama"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mDrama[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Fantasy"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Fantasy"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mFantasy[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-History"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"History"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mHistory[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Horror"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Horror"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mHorror[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Kids"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Kids"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mKids[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Mystery"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Mystery"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mMystery[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Reality"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Reality"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mReality[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Romance"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Romance"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mRomance[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Science Fiction"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Science Fiction"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mScience Fiction[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Sports"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Sports"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mSports[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Superhero"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Superhero"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mSuperhero[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Thriller"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Thriller"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mThriller[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Western"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Western"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mWestern[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"rating"[39m
+              [36m>[39m
+                [0mRating:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mname[39m=[32m"rating"[39m
+                [33mplaceholder[39m=[32m"Rating..."[39m
+                [33mtype[39m=[32m"number"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<input[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m/>[39m
+            [36m</form>[39m
+            [36m<img[39m
+              [33mclass[39m=[32m"image_holder"[39m
+              [33msrc[39m=[32m"default-media-img.jpg"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      25 |
+      26 |     it("renders the rating input", () => {
+    > 27 |         const ratingInput = screen.getByTestId("rating-input");
+         |                                    ^
+      28 |         expect(ratingInput).toBeInTheDocument();
+      29 |     });
+      30 |     it("renders the rating input", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at allQuery (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
+      at query (node_modules/@testing-library/dom/dist/query-helpers.js:62:17)
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/Testing/AddMediaForm.test.tsx:27:36)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+  ● AddMediaForm › renders the rating input
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="Rating"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form_page"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form_wrapper"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"form"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"title"[39m
+              [36m>[39m
+                [0mMedia title:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mdata-testid[39m=[32m"Media-title"[39m
+                [33mname[39m=[32m"title"[39m
+                [33mplaceholder[39m=[32m"Media title..."[39m
+                [33mtype[39m=[32m"text"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"yearReleased"[39m
+              [36m>[39m
+                [0mYear Released:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mdata-testid[39m=[32m"year-released-input"[39m
+                [33mname[39m=[32m"yearReleased"[39m
+                [33mplaceholder[39m=[32m"Year Released..."[39m
+                [33mtype[39m=[32m"number"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"type"[39m
+              [36m>[39m
+                [0mMedia type:[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mdata-testid[39m=[32m"media-type-select"[39m
+                [33mname[39m=[32m"type"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Movie"[39m
+                [36m>[39m
+                  [0mMovie[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Show"[39m
+                [36m>[39m
+                  [0mShow[0m
+                [36m</option>[39m
+              [36m</select>[39m
+              [36m<p />[39m
+              [36m<label>[39m
+                [0mGenres:[0m
+              [36m</label>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"genres"[39m
+                [33mdata-testid[39m=[32m"media-genre"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Action"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Action"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAction[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Adventure"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Adventure"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAdventure[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Animated"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Animated"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mAnimated[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Comedy"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Comedy"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mComedy[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Crime"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Crime"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mCrime[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Drama"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Drama"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mDrama[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Fantasy"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Fantasy"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mFantasy[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-History"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"History"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mHistory[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Horror"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Horror"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mHorror[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Kids"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Kids"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mKids[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Mystery"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Mystery"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mMystery[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Reality"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Reality"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mReality[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Romance"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Romance"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mRomance[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Science Fiction"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Science Fiction"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mScience Fiction[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Sports"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Sports"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mSports[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Superhero"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Superhero"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mSuperhero[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Thriller"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Thriller"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mThriller[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"genre_checkbox_group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mdata-testid[39m=[32m"genre-checkbox-Western"[39m
+                    [33mname[39m=[32m"genres"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                    [33mvalue[39m=[32m"Western"[39m
+                  [36m/>[39m
+                  [36m<label>[39m
+                    [0mWestern[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<p />[39m
+              [36m<label[39m
+                [33mfor[39m=[32m"rating"[39m
+              [36m>[39m
+                [0mRating:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mname[39m=[32m"rating"[39m
+                [33mplaceholder[39m=[32m"Rating..."[39m
+                [33mtype[39m=[32m"number"[39m
+              [36m/>[39m
+              [36m<p />[39m
+              [36m<input[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m/>[39m
+            [36m</form>[39m
+            [36m<img[39m
+              [33mclass[39m=[32m"image_holder"[39m
+              [33msrc[39m=[32m"default-media-img.jpg"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      29 |     });
+      30 |     it("renders the rating input", () => {
+    > 31 |         const ratingInput = screen.getByTestId("Rating");
+         |                                    ^
+      32 |         expect(ratingInput).toBeInTheDocument();
+      33 |     });
+      34 | });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at allQuery (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
+      at query (node_modules/@testing-library/dom/dist/query-helpers.js:62:17)
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/Testing/AddMediaForm.test.tsx:31:36)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
 ------------------------------------|---------|----------|---------|---------|-----------------------------
 File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
 ------------------------------------|---------|----------|---------|---------|-----------------------------
-All files                           |   19.89 |    11.68 |    18.9 |   19.96 |                             
+All files                           |   20.37 |    13.79 |   19.39 |   20.45 |                             
  src                                |       0 |        0 |       0 |       0 |                             
   App.tsx                           |       0 |        0 |       0 |       0 | 6-10                        
   Interfaces.tsx                    |       0 |        0 |       0 |       0 |                             
@@ -29,11 +721,11 @@ All files                           |   19.89 |    11.68 |    18.9 |   19.96 |
  src/Components/FilterByGenre       |   66.66 |      100 |   42.85 |   66.66 |                             
   FilterByGenre.tsx                 |   71.42 |      100 |   42.85 |   71.42 | 31-32,38,41                 
   FilterByGenreSchema.ts            |       0 |      100 |     100 |       0 | 3                           
- src/Components/Forms/AddMediaForm  |   61.53 |      100 |   66.66 |   61.53 |                             
-  AddMediaForm.tsx                  |   54.54 |      100 |   66.66 |   54.54 | 41-49                       
+ src/Components/Forms/AddMediaForm  |   56.25 |       50 |   66.66 |   56.25 |                             
+  AddMediaForm.tsx                  |      50 |       50 |   66.66 |      50 | 45-56                       
   AddMediaFormSchema.ts             |     100 |      100 |     100 |     100 |                             
- src/Components/Forms/AddUserForm   |   77.77 |      100 |     100 |   77.77 |                             
-  AddUserForm.tsx                   |      75 |      100 |     100 |      75 | 27-29                       
+ src/Components/Forms/AddUserForm   |      75 |      100 |     100 |      75 |                             
+  AddUserForm.tsx                   |   72.72 |      100 |     100 |   72.72 | 32-36                       
   AddUserFormSchema.ts              |     100 |      100 |     100 |     100 |                             
  src/Components/Forms/EditMediaForm |       0 |      100 |       0 |       0 |                             
   EditMediaForm.tsx                 |       0 |      100 |       0 |       0 | 19-91                       
@@ -63,15 +755,16 @@ All files                           |   19.89 |    11.68 |    18.9 |   19.96 |
  src/Pages                          |       0 |        0 |       0 |       0 |                             
   AddMediaPage.tsx                  |       0 |        0 |       0 |       0 | 10-17                       
   AddUser.tsx                       |       0 |        0 |       0 |       0 | 10-17                       
-  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 23-74                       
-  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 15-56                       
+  BrowseMedia.tsx                   |       0 |        0 |       0 |       0 | 24-75                       
+  DeleteUser.tsx                    |       0 |        0 |       0 |       0 | 18-63                       
   EditorInterface.tsx               |       0 |        0 |       0 |       0 | 11-12                       
-  Favorites.tsx                     |       0 |        0 |       0 |       0 | 15-174                      
+  Favorites.tsx                     |       0 |        0 |       0 |       0 | 16-178                      
   HomePage.tsx                      |       0 |      100 |       0 |       0 | 4-5                         
   LearnMorePage.tsx                 |       0 |      100 |       0 |       0 | 4-5                         
   NotFound.tsx                      |       0 |      100 |       0 |       0 | 5-16                        
- src/UI                             |      70 |     62.5 |   66.66 |   68.96 |                             
+ src/UI                             |   71.87 |    57.14 |   69.23 |   70.96 |                             
   BasicDropdown.tsx                 |    91.3 |     62.5 |   88.88 |    90.9 | 33-34                       
+  LoadingSpinner.tsx                |     100 |       50 |     100 |     100 | 16-30                       
   Modal.tsx                         |       0 |      100 |       0 |       0 | 20-39                       
  src/api                            |   44.11 |        0 |    9.09 |   45.45 |                             
   mediaApi.ts                       |   45.45 |      100 |       0 |   45.45 | 9,13,20-21,25-26            
@@ -92,11 +785,10 @@ All files                           |   19.89 |    11.68 |    18.9 |   19.96 |
   api.ts                            |     100 |      100 |     100 |     100 |                             
   media-config.ts                   |       0 |      100 |       0 |       0 | 5-39                        
 ------------------------------------|---------|----------|---------|---------|-----------------------------
-
-Test Suites: 9 passed, 9 total
-Tests:       55 passed, 55 total
+Test Suites: 1 failed, 8 passed, 9 total
+Tests:       2 failed, 53 passed, 55 total
 Snapshots:   0 total
-Time:        20.928 s
+Time:        24.664 s
 Ran all test suites.
 
   ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
@@ -163,6 +855,48 @@ Ran all test suites.
 
 
       at console.log (node_modules/@jest/console/build/BufferedConsole.js:199:10)
-      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:281:15)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:370:15)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: An update to AddUserForm inside a test was not wrapped in act(...).
+
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at AddUserForm (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:306:12)".
+
+
+
+      at AddUserForm (src/Components/Forms/AddUserForm/AddUserForm.tsx:306:12)".
+      at console.error (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:68:34)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:44:9)
+      at warnIfNotCurrentlyActingUpdatesInDEV (node_modules/react-dom/cjs/react-dom.development.js:23871:13)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16092:13)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:375:5)
+      at node_modules/react-hook-form/dist/index.cjs.js:1200:11
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+        at AddUserForm (/home/runner/work/Team16/Team16/src/Components/Forms/AddUserForm/AddUserForm.tsx:306:12)".
+
+
+
+      at AddUserForm (src/Components/Forms/AddUserForm/AddUserForm.tsx:306:12)".
+      at console.error (node_modules/@jest/console/build/BufferedConsole.js:163:10)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:68:34)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:44:9)
+      at warnAboutUpdateOnUnmountedFiberInDEV (node_modules/react-dom/cjs/react-dom.development.js:23726:13)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21678:9)
+      at dispatchAction (node_modules/react-dom/cjs/react-dom.development.js:16095:9)
+      at onSubmit (src/Components/Forms/AddUserForm/AddUserForm.tsx:375:5)
       at node_modules/react-hook-form/dist/index.cjs.js:1200:11
 
