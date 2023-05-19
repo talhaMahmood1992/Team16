@@ -30,8 +30,8 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "test:cov": "react-scripts test --coverage --watchAll",
+        "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+        "test:cov": "react-scripts test --coverage --watchAll --transformIgnorePatterns \"node_modules/(?!axios)/\"",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",

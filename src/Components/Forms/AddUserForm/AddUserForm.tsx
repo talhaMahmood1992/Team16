@@ -45,6 +45,7 @@ export const AddUserForm = (): JSX.Element => {
                 >
                     <label htmlFor="username">Username:</label>
                     <input
+                        id="username"
                         type="text"
                         placeholder="Username..."
                         {...register("username")}

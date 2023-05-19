@@ -68,6 +68,7 @@ export const AddMediaForm = (): JSX.Element => {
                         type="text"
                         placeholder="Media title..."
                         {...register("title")}
+                        data-testid="Media-title"
                     />
                     <p>{errors.title?.message}</p>
 
@@ -76,18 +77,22 @@ export const AddMediaForm = (): JSX.Element => {
                         type="number"
                         placeholder="Year Released..."
                         {...register("yearReleased")}
+                        data-testid="year-released-input"
                     />
                     <p>{errors.yearReleased?.message}</p>
 
                     <label htmlFor="type">Media type:</label>
-                    <select {...register("type")}>
+                    <select
+                        {...register("type")}
+                        data-testid="media-type-select"
+                    >
                         <option value="Movie">Movie</option>
                         <option value="Show">Show</option>
                     </select>
                     <p>{errors.type?.message}</p>
 
                     <label>Genres:</label>
-                    <div className={classes.genres}>
+                    <div className={classes.genres} data-testid="media-genre">
                         {genreList.map((genre: mediaGenre) => {
                             return (
                                 <div
@@ -98,6 +103,7 @@ export const AddMediaForm = (): JSX.Element => {
                                         type="checkbox"
                                         {...register("genres")}
                                         value={genre}
+                                        data-testid={`genre-checkbox-${genre}`}
                                     />
                                     <label>{genre}</label>
                                 </div>
