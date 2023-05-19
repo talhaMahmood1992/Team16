@@ -58,7 +58,7 @@ export const AddMediaForm = (): JSX.Element => {
                     type="text"
                     placeholder="Media title..."
                     {...register("title")}
-                    data-testid="media-title-input"
+                    data-testid="Media-title"
                 />
                 <p>{errors.title?.message}</p>
 
@@ -79,7 +79,7 @@ export const AddMediaForm = (): JSX.Element => {
                 <p>{errors.type?.message}</p>
 
                 <label>Genres:</label>
-                <div className={classes.genres}>
+                <div className={classes.genres} data-testid="media-genre">
                     {genreList.map((genre: mediaGenre) => {
                         return (
                             <div
@@ -99,7 +99,9 @@ export const AddMediaForm = (): JSX.Element => {
                 </div>
                 <p>{errors.genres?.message}</p>
 
-                <label htmlFor="rating">Rating:</label>
+                <label data-testid="Rating" htmlFor="rating">
+                    Rating:
+                </label>
                 <input
                     type="number"
                     placeholder="Rating..."

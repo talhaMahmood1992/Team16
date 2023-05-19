@@ -43,7 +43,11 @@ export const BasicDropdown = ({
     });
 
     return (
-        <div className={classes.dropdown_wrapper} ref={menuRef}>
+        <div
+            className={classes.dropdown_wrapper}
+            ref={menuRef}
+            data-testid="basic-dropdown"
+        >
             <button
                 className={menuTriggerStyle}
                 onClick={toggleDropdownHandler}
